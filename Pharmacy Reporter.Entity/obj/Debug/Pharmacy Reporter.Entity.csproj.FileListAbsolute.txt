@@ -7,3 +7,9 @@ D:\TFS\EIP 3.0\bin\Pharmacy Reporter.Entity.pdb
 D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\obj\Debug\Pharmacy Reporter.Entity.csproj.CopyComplete
 D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\obj\Debug\Pharmacy Reporter.Entity.dll
 D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\obj\Debug\Pharmacy Reporter.Entity.pdb
+D:\bin\Pharmacy Reporter.Entity.xml
+D:\bin\Pharmacy Reporter.Entity.dll
+D:\bin\Pharmacy Reporter.Entity.pdb
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Entity\obj\Debug\Pharmacy Reporter.Entity.dll
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Entity\obj\Debug\Pharmacy Reporter.Entity.pdb
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Entity\obj\Debug\Pharmacy Reporter.Entity.csproj.CopyComplete

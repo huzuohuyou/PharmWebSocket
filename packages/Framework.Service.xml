@@ -1,0 +1,4391 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Framework.Service</name>
+    </assembly>
+    <members>
+        <member name="T:Framework.Service.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Properties.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Properties.Resources.CorFlags">
+            <summary>
+              查找 System.Byte[] 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="T:Framework.Service.HardwareDevice">
+            <summary>
+            硬件设备信息
+            </summary>
+        </member>
+        <member name="P:Framework.Service.HardwareDevice.CPUCounter">
+            <summary>
+            获取 CPU 使用率 (0~1)
+            </summary>
+        </member>
+        <member name="P:Framework.Service.HardwareDevice.TotalMemory">
+            <summary>
+            获取总物理内存容量
+            </summary>
+        </member>
+        <member name="P:Framework.Service.HardwareDevice.AvailableMemory">
+            <summary>
+            获取可用的物理内存容量
+            </summary>
+        </member>
+        <member name="P:Framework.Service.HardwareDevice.TotalDrive">
+            <summary>
+            获取驱动器总的空间大小
+            </summary>
+        </member>
+        <member name="P:Framework.Service.HardwareDevice.AvailableDrive">
+            <summary>
+            获取驱动器空闲可用的空间大小
+            </summary>
+        </member>
+        <member name="T:Framework.Service.DirectlyService">
+            <summary>
+            系统直连服务
+            </summary>
+        </member>
+        <member name="T:Framework.Service.IEarlyStartup">
+            <summary>
+            优先启动的服务程序接口
+            </summary>
+        </member>
+        <member name="M:Framework.Service.IEarlyStartup.Startup">
+            <summary>
+            启动接口程序
+            </summary>
+        </member>
+        <member name="T:Framework.Service.ServiceCallEventArgs">
+            <summary>
+            服务调用事件参数
+            </summary>
+        </member>
+        <member name="P:Framework.Service.ServiceCallEventArgs.Instance">
+            <summary>
+            调用的服务实例
+            </summary>
+        </member>
+        <member name="P:Framework.Service.ServiceCallEventArgs.Method">
+            <summary>
+            调用的服务方法
+            </summary>
+        </member>
+        <member name="P:Framework.Service.ServiceCallEventArgs.Parameters">
+            <summary>
+            调用参数集合
+            </summary>
+        </member>
+        <member name="P:Framework.Service.ServiceCallEventArgs.Environ">
+            <summary>
+            调用服务时的环境信息
+            </summary>
+        </member>
+        <member name="P:Framework.Service.ServiceCallEventArgs.ReturnValue">
+            <summary>
+            调用完成时的返回值
+            </summary>
+        </member>
+        <member name="T:Framework.Service.UserCertificatesManage">
+            <summary>
+            操作员绑定数字证书
+            </summary>
+        </member>
+        <member name="M:Framework.Service.UserCertificatesManage.Get_UserCertificates_ByUserID(System.String)">
+            <summary>
+            由用户内码获取绑定证书。
+            </summary>
+            <param name="userId">用户内码</param>
+        </member>
+        <member name="M:Framework.Service.UserCertificatesManage.Get_UserCertificates_ByUserCode(System.String,System.String)">
+            <summary>
+            由用户编号获取绑定证书。
+            </summary>
+            <param name="userCode">用户编号</param>
+            <param name="dbCode">数据编号</param>
+        </member>
+        <member name="M:Framework.Service.UserCertificatesManage.Get_UserCertificates_ByToken(System.String)">
+            <summary>
+            由证书令牌获取数字证书关联的用户信息
+            </summary>
+            <param name="token">证书令牌</param>
+        </member>
+        <member name="M:Framework.Service.UserCertificatesManage.Get_UserCertificate_ByCertificateID(System.String)">
+            <summary>
+            由证书编号获取证书关联用户信息
+            </summary>
+            <param name="certificateId">证书编号</param>
+        </member>
+        <member name="M:Framework.Service.UserCertificatesManage.Insert_UserCertificate(Framework.Entity.UserCertificateItem)">
+            <summary>
+            新增用户绑定正式
+            </summary>
+        </member>
+        <member name="M:Framework.Service.UserCertificatesManage.Update_UserCertificate(Framework.Entity.UserCertificateItem)">
+            <summary>
+            新增用户绑定正式
+            </summary>
+        </member>
+        <member name="M:Framework.Service.UserCertificatesManage.Update_UserCertificate_Enabled(System.String,System.Boolean)">
+            <summary>
+            更新用户绑定证书的启用状态
+            </summary>
+            <param name="certificateId">证书编号</param>
+            <param name="enabled">true表示启用，false表示停用</param>
+        </member>
+        <member name="M:Framework.Service.UserCertificatesManage.Delete_UserCertificates(System.String[])">
+            <summary>
+            删除用户绑定证书
+            </summary>
+            <param name="certifacateIds">证书编号</param>
+        </member>
+        <member name="T:Framework.Service.FormManage">
+            <summary>
+            窗口管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Service.FormManage.Get_Forms_ByAssembly(System.String)">
+            <summary>
+            指定的程序集文件中包括的窗口列表
+            </summary>
+            <param name="assemblyName">程序集名称</param>
+        </member>
+        <member name="M:Framework.Service.FormManage.Get_Forms(System.Nullable{Framework.Entity.Platform})">
+            <summary>
+            获取所有窗口
+            </summary>
+            <param name="platform">平台类别(缺省表示所有平台)</param>
+        </member>
+        <member name="M:Framework.Service.FormManage.Get_Forms_ByGroupName(System.String,System.Nullable{Framework.Entity.Platform})">
+            <summary>
+            根据分组名称获取窗口列表
+            </summary>
+            <param name="platform">平台类别(缺省表示所有平台)</param>
+            <param name="groupName">获取窗口列表的分组名称</param>
+        </member>
+        <member name="M:Framework.Service.FormManage.Get_GroupNames(System.Nullable{Framework.Entity.Platform})">
+            <summary>
+            获取窗口分组名
+            </summary>
+            <param name="platform">平台类别</param>
+        </member>
+        <member name="M:Framework.Service.FormManage.Delete_Forms(Framework.Entity.FormItem[])">
+            <summary>
+            删除指定的窗口列表
+            </summary>
+            <param name="forms">窗口信息列表</param>
+        </member>
+        <member name="M:Framework.Service.FormManage.Delete_Forms_ByFormCode(System.String,System.String[])">
+            <summary>
+            删除指定编号的窗口
+            </summary>
+            <param name="dbCode">数据编号</param>
+            <param name="formCodes">窗口编号</param>
+        </member>
+        <member name="M:Framework.Service.FormManage.Save_Forms(Framework.Entity.FormItem[])">
+            <summary>
+            保存窗口列表
+            </summary>
+            <param name="forms">窗口列表</param>
+        </member>
+        <member name="M:Framework.Service.FormManage.Insert_Forms(Framework.Entity.FormItem[])">
+            <summary>
+            新增窗口信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.FormManage.Update_Forms(Framework.Entity.FormItem[])">
+            <summary>
+            更新窗口信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.FormManage.Update_Forms(Framework.Entity.FormItem[],Framework.Entity.FormItem[])">
+            <summary>
+            更新窗口数据
+            </summary>
+            <param name="modifies">新增和修改的窗口列表</param>
+            <param name="deletes">删除的窗口列表</param>
+        </member>
+        <member name="T:Framework.Service.SuggestManage">
+            <summary>
+            意见反馈管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SuggestManage.IsExists_Suggest(System.String)">
+            <summary>
+            是否存在意见反馈信息
+            </summary>
+            <param name="suggestId">意见反馈编号</param>
+        </member>
+        <member name="M:Framework.Service.SuggestManage.Get_Suggest_BySuggestID(System.String)">
+            <summary>
+            获取意见反馈信息
+            </summary>
+            <param name="suggestId">意见反馈编号</param>
+        </member>
+        <member name="M:Framework.Service.SuggestManage.Get_Suggest_All">
+            <summary>
+            获取所有意见反馈列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SuggestManage.Query_Suggest(System.String,System.Nullable{System.Int32},System.String,App.FunctionLibrary.DatePair)">
+            <summary>
+            查询意见反馈列表
+            </summary>
+            <param name="summary">意见反馈标题</param>
+            <param name="level">意见反馈处理紧急等级</param>
+            <param name="userId">操作员编号</param>
+            <param name="createDate">用户提交反馈时间</param>
+        </member>
+        <member name="M:Framework.Service.SuggestManage.Insert_Suggest(Framework.Entity.SuggestItem)">
+            <summary>
+            新增意见反馈信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SuggestManage.Update_Suggest(Framework.Entity.SuggestItem)">
+            <summary>
+            修改意见反馈信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SuggestManage.Save_Suggest(Framework.Entity.SuggestItem)">
+            <summary>
+            保存意见反馈信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SuggestManage.Delete_Suggest(System.String)">
+            <summary>
+            删除意见反馈信息
+            </summary>
+            <param name="suggestId">意见反馈编号</param>
+        </member>
+        <member name="T:Framework.Service.CookiesManage">
+            <summary>
+            系统缓存信息操作
+            </summary>
+        </member>
+        <member name="P:Framework.Service.CookiesManage.User">
+            <summary>
+            操作员缓存信息
+            </summary>
+        </member>
+        <member name="P:Framework.Service.CookiesManage.Terminal">
+            <summary>
+            计算机缓存信息
+            </summary>
+        </member>
+        <member name="P:Framework.Service.CookiesManage.Item(System.String,System.String)">
+            <summary>
+            获取系统全局缓存信息。
+            </summary>
+            <param name="name">缓存名称</param>
+            <param name="defaultValue">缓存默认值</param>
+        </member>
+        <member name="P:Framework.Service.CookiesManage.Item(System.String)">
+            <summary>
+            获取或者设置系统全局缓存信息。
+            </summary>
+            <param name="name">缓存信息名称</param>
+        </member>
+        <member name="M:Framework.Service.CookiesManage.GetValue``1(System.String)">
+            <summary>
+            获取缓存信息。
+            </summary>
+            <typeparam name="T">缓存值的泛型类型。</typeparam>
+            <param name="name">缓存名称</param>
+        </member>
+        <member name="M:Framework.Service.CookiesManage.GetValue``1(System.String,``0)">
+            <summary>
+            获取缓存信息。
+            </summary>
+            <typeparam name="T">缓存值的泛型类型。</typeparam>
+            <param name="name">缓存名称</param>
+            <param name="defaultValue">缓存默认值</param>
+        </member>
+        <member name="M:Framework.Service.CookiesManage.Get_ValueCore(System.String,System.String,System.String)">
+            <summary>
+            获取系统缓存值(当UserID和TerminalCode同时缺省时表示全局缓存值)。
+            </summary>
+            <param name="terminalCode">终端机编号，如果以操作员绑定的缓存设置为空。</param>
+            <param name="userId">操作员ID号，如果以终端机绑定的缓存设置为空。</param>
+            <param name="name">缓存名称</param>
+            <returns>返回缓存值。</returns>
+        </member>
+        <member name="M:Framework.Service.CookiesManage.Set_ValueCore(System.String,System.Object,System.String,System.String)">
+            <summary>
+            设置系统缓存值(当UserID和TerminalCode同时缺省时表示全局缓存值)。
+            </summary>
+            <param name="terminalCode">终端机编号，如果以操作员绑定的缓存设置为空。</param>
+            <param name="userId">操作员ID号，如果以终端机绑定的缓存设置为空。</param>
+            <param name="name">缓存名称</param>
+            <param name="value">设置的缓存值</param>
+        </member>
+        <member name="M:Framework.Service.CookiesManage.Set_ValueCore_AlsoReturnTable(System.String,System.Object,System.String,System.String)">
+            <summary>
+            设置系统缓存值，并且返回新缓存值表(当UserID和TerminalCode同时缺省时表示全局缓存值)。
+            </summary>
+            <param name="terminalCode">终端机编号，如果以操作员绑定的缓存设置为空。</param>
+            <param name="userId">操作员ID号，如果以终端机绑定的缓存设置为空。</param>
+            <param name="name">缓存名称</param>
+            <param name="value">设置的缓存值</param>
+        </member>
+        <member name="M:Framework.Service.CookiesManage.Remove_ValueCore(System.String,System.String,System.String)">
+            <summary>
+            删除系统缓存值(当UserID和TerminalCode同时缺省时表示全局缓存值)。
+            </summary>
+            <param name="terminalCode">终端机编号，如果以操作员绑定的缓存设置为空。</param>
+            <param name="userId">操作员ID号，如果以终端机绑定的缓存设置为空。</param>
+            <param name="name">缓存名称</param>
+        </member>
+        <member name="M:Framework.Service.CookiesManage.Get_CookiesTableCore">
+            <summary>
+            获取会话相关的系统缓存值表。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.CookiesManage.CookiesIndexer.Item(System.String)">
+            <summary>
+            获取或者设置缓存信息。
+            </summary>
+            <param name="name">缓存名称</param>
+        </member>
+        <member name="P:Framework.Service.CookiesManage.CookiesIndexer.Item(System.String,System.String)">
+            <summary>
+            获取缓存信息。
+            </summary>
+            <param name="name">缓存名称</param>
+            <param name="defaultValue">缓存默认值</param>
+        </member>
+        <member name="M:Framework.Service.CookiesManage.CookiesIndexer.GetValue``1(System.String)">
+            <summary>
+            获取缓存信息。
+            </summary>
+            <typeparam name="T">缓存值的泛型类型。</typeparam>
+            <param name="name">缓存名称</param>
+        </member>
+        <member name="M:Framework.Service.CookiesManage.CookiesIndexer.GetValue``1(System.String,``0)">
+            <summary>
+            获取缓存信息。
+            </summary>
+            <typeparam name="T">缓存值的泛型类型。</typeparam>
+            <param name="name">缓存名称</param>
+            <param name="defaultValue">缓存默认值</param>
+        </member>
+        <member name="T:Framework.Service.DatabaseManage">
+            <summary>
+            数据库集群管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Get_DataBaseList">
+            <summary>
+            获取所有集群数据库列表(不包括当前数据库)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Get_DataBaseList_WithCurrent">
+            <summary>
+            获取所有集群数据库列表(包括当前数据库)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Get_DataBase_ByDbCode(System.String)">
+            <summary>
+            获取指定数据编号的分布式数据服务配置。
+            </summary>
+            <param name="dbcode">数据编号</param>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Insert_DataBase(Framework.Entity.DatabaseItem)">
+            <summary>
+            数据库集群新增数据配置
+            </summary>
+            <param name="item">数据配置项</param>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Update_DataBase(Framework.Entity.DatabaseItem)">
+            <summary>
+            数据库集群更新数据配置
+            </summary>
+            <param name="item">数据配置项</param>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Delete_DataBase(System.String)">
+            <summary>
+            删除数据编号的集群数据库配置
+            </summary>
+            <param name="dbCode">数据编号</param>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Save_DataBases(Framework.Entity.DatabaseItem[])">
+            <summary>
+            保存数据库集群列表(全删全增)。
+            </summary>
+            <param name="dbs">数据库集群列表</param>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Get_Tables_ByConnection(System.Type,System.String)">
+            <summary>
+            获取所有数据库用户自定义表(包括字段列表)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Get_Tables">
+            <summary>
+            获取所有数据库用户自定义表(包括字段列表)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Get_Views">
+            <summary>
+            获取视图列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Get_Functions">
+            <summary>
+            获取函数列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Get_Procedures">
+            <summary>
+            获取存储过程列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Get_Columns(System.String)">
+            <summary>
+            获取表的所有字段列表
+            </summary>
+            <param name="tableName">表名称(包括架构名)</param>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Get_CreateScripts(System.String[])">
+            <summary>
+            获取元素的创建脚本列表(Name表示元素名称,Value表示创建脚本)。
+            </summary> 
+            <param name="names">元素名称列表(不包括架构名)</param>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Query_Table(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            根据查询脚本获取查询结果数据表。
+            </summary>
+            <param name="queryScript">查询脚本(错误的查询脚本返回空表null)。</param>
+            <param name="params">脚本参数集(可选参数，如果没有参数可以传入 null)。</param>
+            <remarks>如果查询字符串以 Select 开始被认定为"SQL文本命令"，否则视为"存储过程"，不支持"表名称"的形式。</remarks>
+        </member>
+        <member name="M:Framework.Service.DatabaseManage.Execute(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            执行Transact-SQL脚本语句，并且返回受影响的行数。
+            </summary>
+            <param name="commandText">需要执行的SQL脚本语句字符串(错误的执行脚本返回0)。</param>
+            <param name="params">脚本参数集(可选参数，如果没有参数可以传入 null)。</param>
+        </member>
+        <member name="T:Framework.Service.DepartmentManage">
+            <summary>
+            组织机构管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Get_Depts_ByDbCode(System.String)">
+            <summary>
+            获取所有组织机构列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Get_Department(System.String)">
+            <summary>
+            获取机构信息(如果指定的机构编号不存在，返回null)。
+            </summary>
+            <param name="deptCode">机构编号</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Get_Depts_ByDeptType(System.String[])">
+            <summary>
+            根据机构类型获取机构列表。
+            </summary>
+            <param name="deptTypeCodes">机构类型编码数组</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Get_Depts_ByDeptType(System.Enum[])">
+            <summary>
+            根据机构类型获取机构列表。
+            </summary>
+            <param name="deptTypes">机构类型数组</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Get_Depts_ByDeptCode(System.String[])">
+            <summary>
+            获取全部机构列表(包括停用的机构)。
+            </summary>
+            <param name="deptCodes">指定的机构编号数组</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Get_RootDept(System.String)">
+            <summary>
+            获取指定部门的根部门
+            </summary>
+            <param name="deptCode">指定的部门编号</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.IsExists_ChildrenDepartment_ByDeptCode(System.String)">
+            <summary>
+            判断指定的组织机构编号是否存在子代组织机构
+            </summary>
+            <param name="deptCode">组织机构编号</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.IsSibship(System.String,System.String)">
+            <summary>
+            判断指定的父族组织机构和子族组织机构之间是否存在亲缘关系(父子关系).
+            </summary>
+            <param name="ownerCode">父族组织机构编号</param>
+            <param name="deptCode">子族组织机构编号</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Get_Depts_ByOwnerCode(System.String)">
+            <summary>
+            获取指定归属机构编码的机构列表
+            </summary>
+            <param name="ownerCode">指定的归属机构编码</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Get_DeptFamily_ByOwnerCode(System.String)">
+            <summary>
+            获取机构家族中的所有子辈机构列表(包括当前机构,包含停用机构)。
+            </summary>
+            <param name="deptCode">机构编码</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Get_DeptCodeFamily_ByOwner(System.String)">
+            <summary>
+            获取组织机构族中的所有子组织机构编码列表(包括当前组织机构,包含停用组织机构)。
+            </summary>
+            <param name="ownerCode">归属组织机构编码</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Get_Depts_WithUserRole(System.String,Framework.Entity.Platform)">
+            <summary>
+            获取所有的机构信息(带操作员和角色)。
+            </summary>
+            <param name="userId">操作员内码</param>
+            <param name="platform">适用平台</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Get_DeptFamily(System.String,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            获取组织机构族列表
+            </summary>
+            <param name="deptCode">搜索的组织机构编号</param>
+            <param name="searchChildren">true表示搜索所有子族组织机构，false表示搜索所有父族组织机构,null表示全族组织机构</param>
+            <param name="includeSelf">是否包含本组织机构</param>
+            <returns></returns>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Insert_Department(Framework.Entity.DepartmentItem[])">
+            <summary>
+            新增机构信息
+            </summary>
+            <param name="depts">新增的机构信息列表</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Update_Department(Framework.Entity.DepartmentItem,System.String)">
+            <summary>
+            修改机构信息
+            </summary>
+            <param name="item">修改的机构列表</param>
+            <param name="originalDeptCode">原机构编号(缺省表示不修改机构编号)</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Disabled_Department(System.String,System.Boolean)">
+            <summary>
+            机构停用
+            </summary>
+            <param name="deptCode">需要停用的机构编号</param>
+            <param name="disabled">停用状态,true表示停用，false表示启用。</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Delete_Department(System.String)">
+            <summary>
+            删除组织机构信息(同时删除子代组织机构)
+            </summary>
+            <param name="deptCode">组织机构编号</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Update_Ordinal(App.FunctionLibrary.Pair{System.Int32}[])">
+            <summary>
+            更新机构的显示索引
+            </summary>
+            <param name="pairs">Name表示机构编码,Value表示索引值</param>
+        </member>
+        <member name="M:Framework.Service.DepartmentManage.Update_CanLogin(System.String,System.Boolean)">
+            <summary>
+            更新组织机构的可登录状态
+            </summary>
+            <param name="deptCode">机构编号</param>
+            <param name="canlogin">可登录状态</param>
+        </member>
+        <member name="T:Framework.Service.DictionaryManage">
+            <summary>
+            系统字典表管理器
+            </summary>
+        </member>
+        <member name="P:Framework.Service.DictionaryManage.Item(System.String,System.String)">
+            <summary>
+            获取字典项
+            </summary>
+            <param name="ownerCode">字典归属编号</param>
+            <param name="dictCode">字典编号</param>
+        </member>
+        <member name="P:Framework.Service.DictionaryManage.Item(System.String,System.Enum)">
+            <summary>
+            获取字典项
+            </summary>
+            <param name="ownerCode">字典归属编号</param>
+            <param name="enum">字典枚举值(按MapCode映射的编码取值，如未做编码映射时按枚举值取编码值)。</param>
+        </member>
+        <member name="P:Framework.Service.DictionaryManage.Item(System.String)">
+            <summary>
+            获取字典项
+            </summary>
+            <param name="dictId">字典项的唯一内码</param>
+        </member>
+        <member name="P:Framework.Service.DictionaryManage.Item(System.String,System.Boolean)">
+            <summary>
+            根据归属编号获取字典项列表
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="onlyValid">true表示仅未停用字典，false表示全部字典</param>
+        </member>
+        <member name="P:Framework.Service.DictionaryManage.Item(System.Boolean,System.Boolean)">
+            <summary>
+            获取所有字典列表。
+            </summary>
+            <param name="onlyUser">true表示仅用户字典项，false表示全部字典项</param>
+            <param name="onlyValid">true表示仅有效的字典项，false表示全部字典项。</param>
+        </member>
+        <member name="P:Framework.Service.DictionaryManage.Item(System.String[])">
+            <summary>
+            根据字典内码获取字典列表。
+            </summary>
+            <param name="dictIds">字典内码列表</param>
+        </member>
+        <member name="P:Framework.Service.DictionaryManage.Item(System.String,System.String[])">
+            <summary>
+            获取字典列表
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="dictCodes">字典项编号数组</param>
+        </member>
+        <member name="P:Framework.Service.DictionaryManage.Item(System.String,System.Enum[])">
+            <summary>
+            获取字典列表
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="enums">字典枚举(依次按MapCode映射编码值、枚举值、枚举定义名称的顺序进行获取字段项)。</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_DictID(System.String,System.String)">
+            <summary>
+            由字典项的归属编码和字典编码获取字典项内码。
+            </summary>
+            <param name="ownerCode">归属编码</param>
+            <param name="dictCode">字典项编码</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_DictID(System.String,System.Enum)">
+            <summary>
+            由字典项的归属编码和字典项枚举获取字典项内码。
+            </summary>
+            <param name="ownerCode">字典归属编号</param>
+            <param name="enum">字典枚举值(按MapCode映射的编码取值，如未做编码映射时按枚举值取编码值)。</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_DefaultDict(System.String)">
+            <summary>
+            根据字典归属编号获取默认字典项
+            </summary>
+            <param name="ownerCode">字典项归属编号</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_Dict(System.String)">
+            <summary>
+            字典内码获取字典项
+            </summary>
+            <param name="dictId">字典项的唯一内码。</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_Dict(System.String,System.String)">
+            <summary>
+            根据指定归属编号获取字典项
+            </summary>
+            <param name="ownerCode">字典归属编号</param>
+            <param name="dictCode">字典编码</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_Dict(System.String,System.Enum)">
+            <summary>
+            获取字典项
+            </summary>
+            <param name="ownerCode">字典归属编号</param>
+            <param name="enum">字典枚举值(按MapCode映射的编码取值，如未做编码映射时按枚举值取编码值)。</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_RootDict(System.String)">
+            <summary>
+            获取根级字典项
+            </summary>
+            <param name="dictCode">根级字典项编码</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_Dicts(System.String[])">
+            <summary>
+            根据字典内码获取字典列表。
+            </summary>
+            <param name="dictIds">字典内码列表</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_Dicts(System.String,System.Boolean)">
+            <summary>
+            根据归属编号获取字典项列表
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="onlyValid">true表示仅未停用字典，false表示全部字典</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_Dicts_ByOwnerID(System.String,System.Boolean)">
+            <summary>
+            根据归属编号获取字典项列表
+            </summary>
+            <param name="ownerId">父字典項内码</param>
+            <param name="onlyValid">true表示仅未停用字典，false表示全部字典</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_Dicts_ByMark(System.String,System.Boolean)">
+            <summary>
+            根据字典项标签获取字典列表
+            </summary>
+            <param name="markStamp">标签戳</param>
+            <param name="islike">true表示包含匹配模式，false表示标记相等</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_Dicts(System.String,System.Boolean,System.Int32)">
+            <summary>
+            根据归属编号获取字典项列表
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="onlyValid">true表示仅未停用字典，false表示全部字典</param>
+            <param name="generation">获取字典项列表的最大子代数(小于0表示所有子代)</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_Dicts(System.String,System.String[])">
+            <summary>
+            根据归属编号和字典编号获取字典列表。
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="dictCodes">字典编号数组</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_Dicts(System.String,System.Enum[])">
+            <summary>
+            获取字典列表
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="enums">字典枚举(依次按MapCode映射编码值、枚举值、枚举定义名称的顺序进行获取字段项)。</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_Dicts_All(System.Boolean,System.Boolean)">
+            <summary>
+            获取所有字典项列表。
+            </summary>
+            <param name="onlyUser">true表示仅用户字典项，false表示全部字典项</param>
+            <param name="onlyValid">true表示仅未停用字典，false表示全部字典</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_RootDicts(System.Boolean)">
+            <summary>
+            获取顶级字典列表
+            </summary>
+            <param name="onlyUser">true表示仅用户字典项，false表示全部字典项</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_DictPackage(System.String[])">
+            <summary>
+            根据归属编号获取字典项列表包(不包括停用字典)。
+            </summary>
+            <param name="ownerCodes">字典项归属编号参数组</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_DictPackage(System.Boolean,System.String[])">
+            <summary>
+            根据归属编号获取字典项列表包
+            </summary>
+            <param name="onlyValid">true表示仅未停用字典，false表示全部字典</param>
+            <param name="ownerCodes">字典项归属编号参数组</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Get_DictFamily(System.String,System.Boolean)">
+            <summary>
+            根据归属编号获取所有字典家族列表
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="allJunior">true表示家族内的所有晚辈字典,false表示仅当前子代的字典</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Save_Dict(Framework.Entity.DictionaryItem[])">
+            <summary>
+            保存字典信息(只能修改或者添加，不允许删除)
+            </summary>
+            <param name="dicts">需要保存的字典项列表</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Delete_Dict(System.String[])">
+            <summary>
+            删除字典项
+            </summary>
+            <param name="dictIds">字典项内码列表</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Delete_Dict(System.String,System.String)">
+            <summary>
+            删除字典项
+            </summary>
+            <param name="ownerId">字典归属编码</param>
+            <param name="dictCode">字典编号</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Delete_Dict(System.String)">
+            <summary>
+            删除指定字典归属编码的所有字典项
+            </summary>
+            <param name="ownerId">字典归属编码</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Update_Ordinals(App.FunctionLibrary.Pair{System.Int32}[])">
+            <summary>
+            更新字典项顺序号
+            </summary>
+            <param name="ordinals">字典项顺序对儿(Name=字典项内码,Value=字典项同级顺序号)。</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Update_OwnerID(System.String,System.String)">
+            <summary>
+            更新字典项的父分类内码。
+            </summary>
+            <param name="dictId">更新归属分类的字典项内码</param>
+            <param name="ownerId">更新的归属分类字典项内码</param>
+        </member>
+        <member name="M:Framework.Service.DictionaryManage.Update_MarkStamp(System.String,System.String)">
+            <summary>
+            更新标记戳
+            </summary>
+            <param name="dictId">字典项内码</param>
+            <param name="markStamp">标记戳</param>
+        </member>
+        <member name="T:Framework.Service.DistrictManage">
+            <summary>
+            行政区划管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Get_District_ByCode(System.String)">
+            <summary>
+            获取指定区划编号的区划项
+            </summary>
+            <param name="districtsCode">区划编号</param>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Get_Districts_All">
+            <summary>
+            获取所有行政区划列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Get_Districts_ByLevel(Framework.Entity.DivisionsLevel)">
+            <summary>
+            获取指定级别的行政区划列表
+            </summary>
+            <param name="levels">区划级别</param>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Get_Districts_BySpelling(System.String)">
+            <summary>
+            根据助记码获取区划列表
+            </summary>
+            <param name="spelling">助记码</param>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Get_Districts_BySpelling(System.String,System.String)">
+            <summary>
+            根据助记码获取区划列表
+            </summary>
+            <param name="ownerCode">归属区划编号</param>
+            <param name="spelling">助记码</param>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Get_Districts_BySpelling(Framework.Entity.DivisionsLevel,System.String)">
+            <summary>
+            根据助记码获取区划列表
+            </summary>
+            <param name="levels">区划级别</param>
+            <param name="spelling">助记码</param> 
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Get_Districts_ByOwnerCode(System.String)">
+            <summary>
+            获取指定父区划编码的所有子级区划列表(不包括所有区划子族)。
+            </summary>
+            <param name="ownerCode">父区划编码</param>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Get_Districts_ByOwnerCode(System.String,System.Boolean)">
+            <summary>
+            获取指定归属区划的行政区划列表
+            </summary>
+            <param name="ownerCode">归属区划编号</param>
+            <param name="includeSuboardination">是否包括从属的下级区划</param>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Get_Districts_ByOwnerCode(System.String,System.Int32)">
+            <summary>
+            获取指定区划编号的行政区划列表
+            </summary>
+            <param name="ownerCode">行政区划编号</param>
+            <param name="generation">获取字典项列表的最大子代数</param>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Insert_District(Framework.Entity.DistrictItem[])">
+            <summary>
+            插入新的区划数据
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Update_District(Framework.Entity.DistrictItem[])">
+            <summary>
+            修改区划
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Update_Ordinals(App.FunctionLibrary.Pair{System.Int32}[])">
+            <summary>
+            更新区划显示顺序号
+            </summary>
+            <param name="ordinals">Pair.Name表示区划编号，Pair.Value表示区划顺序号</param>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Save_District(Framework.Entity.DistrictItem[])">
+            <summary>
+            保存行政区划信息列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DistrictManage.Delete_District(System.String[])">
+            <summary>
+            删除行政区划
+            </summary>
+            <param name="districtCodes">要删除的去和编码</param>
+        </member>
+        <member name="T:Framework.Service.EmployeeManage">
+            <summary>
+            员工、职员管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.IsExists_Employee_ByDeptCode(System.String)">
+            <summary>
+            判断指定的组织机构是否存在员工
+            </summary>
+            <param name="deptCode">组织机构编号</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.IsExists_Employee_ByUserID(System.String)">
+            <summary>
+            判断指定的登录用户内码是否存在员工
+            </summary>
+            <param name="userId">登录用户内码</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Get_Employees_All">
+            <summary>
+            获取全部员工信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Get_EmployeeList(System.String[])">
+            <summary>
+            由员工类型编码组获取员工列表。
+            </summary>
+            <param name="employeeTypeCodes">员工类型编码(缺省表示全部员工)</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Get_EmployeeList_ByUserID(System.String)">
+            <summary>
+            由操作员内码获取关联员工信息列表。
+            </summary>
+            <param name="userId">操作员内码</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Get_EmployeeList_ByType(System.String[])">
+            <summary>
+            由员工类型内码组获取员工信息列表。
+            </summary>
+            <param name="employeeTypeIds">员工类型内码组(缺省表示全部员工)</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Get_EmployeeList_ByType(System.Enum[])">
+            <summary>
+            由员工类型获取员工信息列表
+            </summary>
+            <param name="employeeTypes">员工类型枚举列表</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Get_Employees_ByEmployeeCodes(System.String[])">
+            <summary>
+            根据指定的员工编号获取一批员工信息
+            </summary>
+            <param name="employeeCodes">需要获取员工信息的员工编号列表</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Get_EmployeeList_ByState(System.String)">
+            <summary>
+            根据状态获取员工信息列表
+            </summary>
+            <param name="employeeStateId">员工状态内码</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Get_Employees_ByDisabled(System.Nullable{System.Boolean})">
+            <summary>
+            根据停用状态获取员工信息列表
+            </summary>
+            <param name="disabled">true表示停用，false表示非停用，null表示全部</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Get_Employee(System.String)">
+            <summary>
+            获取员工信息
+            </summary>
+            <param name="employeeCode">员工编号</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Get_Employees_ByDeptCode(System.String,System.Boolean)">
+            <summary>
+            获取指定组织机构归属下的所有员工列表。
+            </summary>
+            <param name="deptCode">组织机构编号</param>
+            <param name="recursive">是否包含下级子组织机构员工</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Get_Employees_ByDeptCode_ByEmployeeType(System.String[],System.String[])">
+            <summary>
+            获取指定组织机构和员工类别的员工列表
+            </summary>
+            <param name="deptCodes">组织机构编号</param>
+            <param name="employeeTypeIds">员工类别内码</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Query_Employees(System.String,System.String,App.FunctionLibrary.DatePair,System.String,System.String,System.String,System.String,System.String,System.String,App.FunctionLibrary.DatePair,App.FunctionLibrary.DatePair,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            员工信息综合查询
+            </summary>
+            <param name="birthday">出生日期时间段</param>
+            <param name="contact">联系方式(包含)</param>
+            <param name="deptCode">隶属组织机构</param>
+            <param name="disabled">是否停用</param>
+            <param name="dutyId">职位内码</param>
+            <param name="employeeName">员工名称(包含)</param>
+            <param name="employeeStateId">员工状态内码</param>
+            <param name="employeeTypeId">员工类型内码</param>
+            <param name="leaveDate">离职日期时间段</param>
+            <param name="sexId">性别内码</param>
+            <param name="startingDate">就在日期时间段</param>
+            <param name="titleId">职称内码</param>
+            <param name="recursive">是否包含下级子组织机构员工</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Insert_Employee(Framework.Entity.EmployeeItem)">
+            <summary>
+            新增员工信息(如有UserID，同时打开操作权限)
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Update_Employee(Framework.Entity.EmployeeItem)">
+            <summary>
+            修改员工信息(同时更新用户的停用状态)
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Save_Employee(Framework.Entity.EmployeeItem)">
+            <summary>
+            保存员工信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Delete_Employee(System.String)">
+            <summary>
+            删除员工信息(同时停用用户登录权限)
+            </summary>
+            <param name="employeeCode">员工编号</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Update_EmployeeState(System.String,System.String)">
+            <summary>
+            更新员工状态
+            </summary>
+            <param name="employeeCode">员工状态</param>
+            <param name="employeeStateID">员工状态内码</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Update_Disabled(System.String,System.Boolean)">
+            <summary>
+            更新员工的停用状态(同时更新用户登录权限)
+            </summary>
+            <param name="employeeCode">员工编号</param>
+            <param name="disabled">true表示停用，false表示启用</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Update_Ordinal(App.FunctionLibrary.Pair{System.Int32}[])">
+            <summary>
+            更新员工的显示顺序号
+            </summary>
+            <param name="ordinals">Pair.Name表示员工编号,Pair.Value表示顺序号</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Update_EmployeeDept(System.String,System.String)">
+            <summary>
+            更新员工组织机构
+            </summary>
+            <param name="employeeCode">员工编号</param>
+            <param name="deptCode">员工组织机构</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Close_Employee_UserPower(System.String)">
+            <summary>
+            关闭员工的操作员权限。
+            </summary>
+            <param name="employeeCode">员工编号</param>
+        </member>
+        <member name="M:Framework.Service.EmployeeManage.Open_Employee_UserPower(System.String,System.String,System.String)">
+            <summary>
+            打开员工的操作员权限,并且返回操作员内码
+            </summary>
+            <param name="employeeCode">员工编号</param>
+            <param name="userCode">员工登录系统账号</param>
+            <param name="password">员工登录系统的登录密码(明文)</param>
+        </member>
+        <member name="T:Framework.Service.FileManage">
+            <summary>
+            文件管理器
+            </summary>
+        </member>
+        <member name="P:Framework.Service.FileManage.WriteService">
+            <summary>
+            默认写入服务
+            </summary>
+        </member>
+        <member name="M:Framework.Service.FileManage.Get_Files(System.String,System.String,App.FunctionLibrary.DatePair,App.FunctionLibrary.DatePair)">
+            <summary>
+            获取文件列表(仅获取前1000条记录,不包括数据流内容)。
+            </summary>
+            <param name="fileName">按文件名称查询</param>
+            <param name="extension">按文件扩展名查询</param>
+            <param name="createTime">查询的文件创建时间</param>
+            <param name="modifyTime">查询的文件修改时间</param>
+        </member>
+        <member name="M:Framework.Service.FileManage.Get_Files(System.String[],System.Boolean)">
+            <summary>
+            根据文件编号获取文件信息列表(自动迭代路由)。
+            </summary>
+            <param name="fileCodes">文件编号组</param>
+            <param name="includeContent">是否包括文件流数据(默认不包括，流数据量大，影响查询效率，非必须不要获取)。</param>
+        </member>
+        <member name="M:Framework.Service.FileManage.Get_File(System.String,System.Boolean)">
+            <summary>
+            获取文件项(自动迭代路由)。
+            </summary>
+            <param name="fileCode">文件编号</param>
+            <param name="includeContent">是否包括文件流数据(默认不包括，流数据量大，影响查询效率，非必须不要获取)。</param>
+        </member>
+        <member name="M:Framework.Service.FileManage.Get_File_Multiple(System.String,System.Int32,System.Int32)">
+            <summary>
+            分段获取文件数据流(可以有效回避网络一次传输数据量大的问题)。
+            </summary>
+            <param name="fileCode">文件编号</param>
+            <param name="length">分段传输数据长度(单位:字节,小于等于0表示不分段)</param>
+            <param name="times">从0开始的传输次数(根据已经传输次数计算本次开始传输的起始数据,小于0表示重新传输)。</param>
+        </member>
+        <member name="M:Framework.Service.FileManage.Get_File_URL(System.String,System.Boolean)">
+            <summary>
+            根据文件编号获取文件信息并且返回文件的超链接地址
+            </summary>
+            <param name="fileCode">文件编号</param>
+            <param name="useOriginalName">是否使用原始文件名称</param>
+        </member>
+        <member name="M:Framework.Service.FileManage.Get_File_URL(System.Byte[],System.String)">
+            <summary>
+            获取指定文件内容的的超链接地址
+            </summary>
+            <param name="buffer">文件的内容</param>
+            <param name="fileName">文件名称(包括扩展名,不包括路径)</param>
+        </member>
+        <member name="M:Framework.Service.FileManage.Insert_File(Framework.Entity.FileItem)">
+            <summary>
+            新增文件项，新增成功返回文件编号(包括文件内容部分，自动迭代路由)。
+            </summary>
+            <param name="item">新增的文件实体</param>
+        </member>
+        <member name="M:Framework.Service.FileManage.Insert_Files(Framework.Entity.FileItem[])">
+            <summary>
+            批量新增文件数据，并且返回新增成功的文件编号(包括文件内容部分，自动迭代路由)。
+            </summary>
+            <param name="items">文件项数组</param>
+        </member>
+        <member name="M:Framework.Service.FileManage.Insert_File_Multiple(Framework.Entity.FileItem)">
+            <summary>
+            分段新增文件内容，并返回文件编号(自动迭代路由,首次调用必须完善全部文件信息)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.FileManage.Update_File(Framework.Entity.FileItem,System.Boolean)">
+            <summary>
+            修改文件项(自动迭代路由)。
+            </summary>
+            <param name="item">文件项数据</param>
+            <param name="includeContent">是否包括文件流数据(默认不包括，流数据量大，影响查询效率，非必须不要更新)。</param>
+        </member>
+        <member name="M:Framework.Service.FileManage.Update_Files(Framework.Entity.FileItem[],System.Boolean)">
+            <summary>
+            批量修改文件信息(自动迭代路由)。
+            </summary>
+            <param name="files">文件项数据组</param>
+            <param name="includeContent">是否包括文件流数据(默认不包括，流数据量大，影响查询效率，非必须不要更新)。</param>
+        </member>
+        <member name="M:Framework.Service.FileManage.Update_File_Multiple(Framework.Entity.FileItem)">
+            <summary>
+            分段修改文件项(自动迭代路由,首次调用必须完善全部文件信息)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.FileManage.Save_Files(Framework.Entity.FileItem[],System.Boolean)">
+            <summary>
+            保存文件信息(不存在新增，存在的修改；新增文件必须包含文件内容)。
+            </summary>
+            <param name="files">文件信息实体列表</param>
+            <param name="includeContent">是否包括文件内容(新增文件必须包含文件内容)</param>
+        </member>
+        <member name="M:Framework.Service.FileManage.Delete_Files(System.String[])">
+            <summary>
+            删除文件
+            </summary>
+            <param name="fileCodes">文件编号数组</param>
+        </member>
+        <member name="F:Framework.Service.FileManage.MultipleDownloadBuffer">
+            <summary>
+            文件分段传输缓存
+            </summary>
+        </member>
+        <member name="M:Framework.Service.FileManage.getService(System.String,Framework.Service.DataBaser)">
+            <summary>
+            获取服务列表(ServiceCode为空或本地服务的代理返回 null)。
+            </summary>
+        </member>
+        <member name="T:Framework.Service.MenuManage">
+            <summary>
+            菜单管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.MenuManage.Get_Menus_ByRole(System.String[])">
+            <summary>
+            获取指定角色的菜单列表
+            </summary>
+            <param name="roleCodes">角色编号</param>
+        </member>
+        <member name="M:Framework.Service.MenuManage.Get_Menus_All">
+            <summary>
+            获取所有角色已经配置的菜单项列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.MenuManage.Get_Menu_ByCode(System.String)">
+            <summary>
+            获取指明菜单编号的窗口项
+            </summary>
+        </member>
+        <member name="M:Framework.Service.MenuManage.Insert_Menus_ByRoleCode(System.String,Framework.Entity.MenuItem[])">
+            <summary>
+            新增菜单
+            </summary>
+            <param name="roleCode">新增菜单的角色编号</param>
+            <param name="menus">新增的菜单列表</param>
+        </member>
+        <member name="M:Framework.Service.MenuManage.Delete_Menus_ByRoleCode(System.String)">
+            <summary>
+            根据角色删除菜单
+            </summary>
+            <param name="roleCode">角色编号</param>
+        </member>
+        <member name="T:Framework.Service.ServiceHosts">
+            <summary>
+            代理服务器集群
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceHosts.Get_ServiceHosts">
+            <summary>
+            获取代理服务器列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceHosts.Get_ServiceHosts(System.String[])">
+            <summary>
+            根据条件获取代理服务器列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceHosts.Get_ServiceHost(System.String)">
+            <summary>
+            获取指定编号的代理服务器项目
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceHosts.Get_ServiceHost_ByDbCode(System.String)">
+            <summary>
+            获取连接到指定数据库编号的使用的代理项(高速缓存10分钟)。
+            </summary>
+            <param name="dbCode">连接的数据库编号</param>
+        </member>
+        <member name="M:Framework.Service.ServiceHosts.Delete_ServiceHost(System.String)">
+            <summary>
+            获取指定编号的代理服务器项目
+            </summary>
+            <param name="serviceCode">代理服务器编号</param>
+        </member>
+        <member name="M:Framework.Service.ServiceHosts.Insert_ServiceHost(Framework.Entity.ServiceHostItem)">
+            <summary>
+            新增代理服务器设置
+            </summary>
+            <param name="item">代理服务器设置数据实体</param>
+        </member>
+        <member name="M:Framework.Service.ServiceHosts.Update_ServiceHost(Framework.Entity.ServiceHostItem)">
+            <summary>
+            修改代理服务器设置
+            </summary>
+            <param name="item">代理服务器设置数据实体</param>
+        </member>
+        <member name="T:Framework.Service.PurviewManage">
+            <summary>
+            权限点管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.PurviewManage.HasPurview_ByFormCode(System.String,System.String,System.String)">
+            <summary>
+            获取指明的窗口编号及权限点名称的角色是否具有权限
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="purviewName">权限名称</param>
+            <param name="formCode">窗口编号</param>
+        </member>
+        <member name="M:Framework.Service.PurviewManage.HasPurview_ByFormName(System.String,System.String,System.String)">
+            <summary>
+            获取指明的窗口是否具有权限(非权限点的，是指窗口的权限)。
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="assemblyName">程序集名称</param>
+            <param name="formName">窗口名称</param>
+        </member>
+        <member name="M:Framework.Service.PurviewManage.HasPurview_ByPurviewName(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取指明的窗口和权限点是否具有权限。
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="assemblyName">程序集名称</param>
+            <param name="formName">窗口名称</param>
+            <param name="purviewName">权限名称</param>
+        </member>
+        <member name="M:Framework.Service.PurviewManage.Get_Purviews_ByRole(System.String)">
+            <summary>
+            根据角色编号获取权限点列表
+            </summary>
+            <param name="roleCode">角色编号</param>
+        </member>
+        <member name="M:Framework.Service.PurviewManage.Get_Purviews_ByForm(System.String)">
+            <summary>
+            根据窗口编号获取权限点列表
+            </summary>
+            <param name="formCode">窗口编号</param>
+        </member>
+        <member name="M:Framework.Service.PurviewManage.Get_Purviews_ByAssembly(System.String,System.String)">
+            <summary>
+            通过程序集名称和窗口名称获取权限点列表。
+            </summary>
+            <param name="assemblyName">程序集名称</param>
+            <param name="formName">窗口名称</param>
+        </member>
+        <member name="M:Framework.Service.PurviewManage.Get_Purviews_All">
+            <summary>
+            获取所有权限点列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.PurviewManage.Save_Purviews(Framework.Entity.PurviewItem[])">
+            <summary>
+            保存权限点
+            </summary>
+            <param name="purviews">权限点列表</param>
+        </member>
+        <member name="M:Framework.Service.PurviewManage.Delete_Purviews(System.String[])">
+            <summary>
+            删除权限点
+            </summary>
+            <param name="purviewCodes">权限点编号</param>
+        </member>
+        <member name="T:Framework.Service.ReportManage">
+            <summary>
+            报表文件管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ReportManage.GetReportName(System.String)">
+            <summary>
+            获取报表名称(包括时间戳，但不包括报表XML模板文件)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ReportManage.Get_Reports(System.String)">
+            <summary>
+            根据报表名称获取报表列表(不包括报表XML模板文档)。
+            </summary>
+            <param name="reportName">报表名称(缺省表示所有报表)</param>
+        </member>
+        <member name="M:Framework.Service.ReportManage.GetReportXML(System.String)">
+            <summary>
+            获取报表XML文档(带时间戳)
+            </summary>
+            <param name="reportCode">报表编号</param>
+        </member>
+        <member name="M:Framework.Service.ReportManage.SaveReport(Framework.Entity.ReportItem,System.Boolean)">
+            <summary>
+            保存报表(如果报表使用状态为true，则自动停用其他所有同名的报表)。
+            </summary>
+            <param name="report">报表对象</param>
+            <param name="withXML">保存报表时是否包括XML文档一起保存</param>
+        </member>
+        <member name="M:Framework.Service.ReportManage.SaveReport(System.String,System.String,System.String)">
+            <summary>
+            根据报表文件保存报表到数据库中(仅保存报表XML文档)
+            </summary>
+            <param name="reportCode">报表编号</param>
+            <param name="xml">报表文档</param>
+            <param name="timestamp">时间戳，如果不提供时间戳自动生成</param>
+        </member>
+        <member name="M:Framework.Service.ReportManage.GetViewQueryData(System.String,Framework.Entity.ReportParameter[])">
+            <summary>
+            获取单个数据源预览数据(只查询1000条数据)。
+            </summary>
+            <param name="script">查询脚本</param>
+            <param name="params">参数组</param>
+        </member>
+        <member name="M:Framework.Service.ReportManage.GetReportData(System.String,Framework.Entity.ReportParameter[])">
+            <summary>
+            获取报表项的数据(不包括报表XML模板文件)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="parameters">报表的查询参数组</param>
+        </member>
+        <member name="M:Framework.Service.ReportManage.DeleteReport(System.String)">
+            <summary>
+            删除报表
+            </summary>
+            <param name="reportCode">报表编号</param>
+        </member>
+        <member name="T:Framework.Service.RoleManage">
+            <summary>
+            角色管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.RoleManage.Get_Roles(System.Nullable{Framework.Entity.Platform})">
+            <summary>
+            获取所有角色列表
+            </summary>
+            <param name="platform">平台类别(缺省表示所有平台)</param>
+        </member>
+        <member name="M:Framework.Service.RoleManage.Get_GroupName(System.Nullable{Framework.Entity.Platform})">
+            <summary>
+            获取分组名称
+            </summary>
+            <param name="platform">平台类别(缺省表示所有平台)</param>
+        </member>
+        <member name="M:Framework.Service.RoleManage.Insert_Role(Framework.Entity.RoleItem)">
+            <summary>
+            新增角色信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.RoleManage.Update_Role(Framework.Entity.RoleItem)">
+            <summary>
+            修改角色信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.RoleManage.Update_GroupName(System.String,System.String)">
+            <summary>
+            更新分组名称
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="groupName">分组名称</param>
+        </member>
+        <member name="M:Framework.Service.RoleManage.Delete_Role(System.String)">
+            <summary>
+            删除角色
+            </summary>
+        </member>
+        <member name="M:Framework.Service.RoleManage.Save_RoleUsers(Framework.Entity.UserDeptsItem[])">
+            <summary>
+            保存使用角色的所有操作员
+            </summary>
+        </member>
+        <member name="M:Framework.Service.RoleManage.Save_MenuPurview(System.String,Framework.Entity.MenuItem[],Framework.Entity.PurviewItem[])">
+            <summary>
+            保存角色的菜单和权限点
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="menus">菜单列表</param>
+            <param name="purviews">权限点列表</param>
+        </member>
+        <member name="M:Framework.Service.RoleManage.Save_Toolbar(System.String,Framework.Entity.ToolbarItem[])">
+            <summary>
+            保存角色的工具栏配置
+            </summary>
+            <param name="roleCode">角色变换</param>
+            <param name="toolbars">工具栏列表</param>
+        </member>
+        <member name="T:Framework.Service.SeriesConfigManage">
+            <summary>
+            序列号配置管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SeriesConfigManage.Get_SerialConfigs">
+            <summary>
+            获取序列号配置列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SeriesConfigManage.Get_SerialConfig(System.String)">
+            <summary>
+            获取序列号配置项
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SeriesConfigManage.Save_SerialConfig(Framework.Entity.SeriesConfigItem[])">
+            <summary>
+            保存序列号配置(全量配置列表，先增后删模式)
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SeriesConfigManage.Insert_SerialConfig(Framework.Entity.SeriesConfigItem[])">
+            <summary>
+            新增序列号配置项
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SeriesConfigManage.Update_SerialConfig(Framework.Entity.SeriesConfigItem[])">
+            <summary>
+            修改序列号配置项
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SeriesConfigManage.Delete_SerialConfig(System.String[])">
+            <summary>
+            删除序列号配置项
+            </summary>
+            <param name="serialNames">删除的序列号名称</param>
+        </member>
+        <member name="M:Framework.Service.SeriesConfigManage.Get_SerialNames">
+            <summary>
+            获取序列号表中的序列号名称
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SeriesConfigManage.Get_SerialValues(System.String)">
+            <summary>
+            获取指定序列号名称的所有序列号值
+            </summary>
+        </member>
+        <member name="T:Framework.Service.SeriesManage">
+            <summary>
+            序列号管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.GetFormatString(System.String)">
+            <summary>
+            获取序列号的格式化字符串
+            </summary>
+            <param name="seriesName">序列号名称</param>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.GetSeriesTotalLength(System.String)">
+            <summary>
+            获取序列号表达式的总长度。
+            </summary>
+            <param name="seriesName">序列号名称</param>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.GetSeriesType(System.String)">
+            <summary>
+            获取序列号类型
+            </summary>
+            <param name="seriesName">序列号名称</param>
+        </member>
+        <member name="P:Framework.Service.SeriesManage.Item(System.String)">
+            <summary>
+            获取序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+        </member>
+        <member name="P:Framework.Service.SeriesManage.Item(System.String,System.Int32)">
+            <summary>
+            获取序列号组
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="count">获取的种子数目</param>
+        </member>
+        <member name="P:Framework.Service.SeriesManage.Item(System.String,System.String)">
+            <summary>
+            获取序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="subName">序列号子名称</param>
+        </member>
+        <member name="P:Framework.Service.SeriesManage.Item(System.String,System.String,System.Int32)">
+            <summary>
+            获取序列号组
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="count">获取的种子数目</param>
+            <param name="subName">序列号子名称</param>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.GetSeries(System.String)">
+            <summary>
+            获取序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.GetSeries(System.String,System.Int32)">
+            <summary>
+            获取序列号组
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="count">获取的序列号数目</param>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.GetSeries(System.String,System.String)">
+            <summary>
+            获取序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="subName">序列号子名称</param>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.GetSeries(System.String,System.String,System.Int32)">
+            <summary>
+            获取序列号组
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="count">获取的序列号数目</param>
+            <param name="subName">序列号子名称</param>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.GetUniqueSeries(System.Int32)">
+            <summary>
+            获取全系统绝对唯一的序列号(类似于GUID，但不同于GUID)。
+            </summary>
+            <param name="count">生成序列号的数目</param>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.GetUniqueSeries">
+            <summary>
+            获取全系统绝对唯一的序列号(类似于GUID，但不同于GUID)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.ResetSeries(System.String,System.String)">
+            <summary>
+            回退序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="serialValue">回退的序列号值</param>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.ResetSeries(System.String,System.String[])">
+            <summary>
+            回退序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="serialValues">回退的序列号值</param>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.ResetSeries(System.String,System.String,System.String)">
+            <summary>
+            回退子序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="subName">序列号子名称</param>
+            <param name="serialValue">回退的序列号值</param>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.ResetSeries(System.String,System.String,System.String[])">
+            <summary>
+            回退子序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="subName">序列号子名称</param>
+            <param name="serialValues">回退的序列号值</param>
+        </member>
+        <member name="F:Framework.Service.SeriesManage.TransPool">
+            <summary>
+            Pair.Name=Pair&lt;序列号名,序列号子名&gt;
+            Pair.Value=序列号值
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.Beginning">
+            <summary>
+            开始序列号获取事务，并记录获取的所有序列号值，为回退 Rollback 序列值做准备工作。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.Commit">
+            <summary>
+            提交序列号获取事务(提交后回滚无效)
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SeriesManage.Rollback">
+            <summary>
+            回退 Beginning 之后获取的所有序列号值
+            </summary>
+        </member>
+        <member name="T:Framework.Service.SynchroManage">
+            <summary>
+            数据同步管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Query_Logs(App.FunctionLibrary.DatePair,System.String,System.String,System.String)">
+            <summary>
+            查询同步日志(不带日志明细)
+            </summary>
+            <param name="dbCode">数据库编号(缺省表示全部数据库)</param>
+            <param name="serviceCode">同步时候的代理服务编号(缺省表示全部代理服务)</param>
+            <param name="userId">同步的操作员(全省表示全部操作员)</param>
+            <param name="syncTime">查询同步时间</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Query_Logs_WithDetails(App.FunctionLibrary.DatePair,System.String,System.String,System.String)">
+            <summary>
+            查询同步日志(带日志明细)
+            </summary>
+            <param name="dbCode">数据库编号(缺省表示全部数据库)</param>
+            <param name="serviceCode">同步时候的代理服务编号(缺省表示全部代理服务)</param>
+            <param name="userId">同步的操作员(全省表示全部操作员)</param>
+            <param name="syncTime">查询同步时间</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Get_Log(System.String)">
+            <summary>
+            根据日志编号获取日志信息(包括日志明细信息)
+            </summary>
+            <param name="logId">日志编号</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Save_Logs(Framework.Entity.SynchroLogItem,Framework.Entity.SynchroLogDetailItem[])">
+            <summary>
+            保存日志信息
+            </summary>
+            <param name="item">日志信息</param>
+            <param name="details">日志明细信息</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Get_ConfigList_All">
+            <summary>
+            获取所有同步配置列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Get_ConfigList(System.String,System.String)">
+            <summary>
+            获取同步配置列表
+            </summary>
+            <param name="dbCode">同步的数据编号</param>
+            <param name="serviceCode">同时使用的代理服务编码</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Save_Configs(System.String,System.String,Framework.Entity.SynchroConfigItem[])">
+            <summary>
+            保存同步配置列表
+            </summary>
+            <param name="dbcode">同步的目标数据编号</param>
+            <param name="serviceCode">同步时候的代理服务编号</param>
+            <param name="items">同步配置项</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Get_StatusList">
+            <summary>
+            获取当前调用方数据库编号的同步状态列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Get_StatusList(System.String,System.String,System.String)">
+            <summary>
+            获取同步的状态列表
+            </summary>
+            <param name="dbCode">数据库编号</param>
+            <param name="tableName">同步的表名称</param>
+            <param name="serviceCode">同步时候的代理服务编号</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Save_Status(System.String,System.String,Framework.Entity.SynchroStatusItem[])">
+            <summary>
+            保存同步状态
+            </summary>
+            <param name="dbCode">数据库编号</param>
+            <param name="serviceCode">同步时候的代理服务编号</param>
+            <param name="items">状态明细列表(表名称和时间戳)</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Synchronize(System.String,System.String)">
+            <summary>
+            数据进行同步
+            </summary>
+            <param name="dbCode">同步的目标数据服务</param>
+            <param name="serviceCode">服务代理编号</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.VerifyTableEquals(Framework.Entity.SynchroConfigItem,Framework.Entity.IService,Framework.Service.IEnvironment,Framework.Service.DataBaser)">
+            <summary>
+            验证表数据是否相同(检查源数据和目标数据的记录数与最大时间戳)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.VerifyTableEquals(Framework.Entity.SynchroConfigItem,Framework.Entity.IService,Framework.Service.IEnvironment,Framework.Service.DataBaser,Framework.Entity.TimeStamp@)">
+            <summary>
+            验证表数据是否相同(检查源数据和目标数据的记录数与最大时间戳)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.VerifyDataRowEquals(System.Data.DataRow,System.Data.DataRow,System.String[])">
+            <summary>
+            验证数据行字段值相同
+            </summary>
+            <param name="row1">比较的数据行</param>
+            <param name="row2">被比较的数据行</param>
+            <param name="names">参考的字段名称组</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.VerifyDataRowEquals(System.Data.DataRow,System.Data.DataRow)">
+            <summary>
+            验证数据行字段值相同
+            </summary>
+            <param name="row1">比较的数据行</param>
+            <param name="row2">被比较的数据行</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Get_RowsCount_MaxTimestamp(Framework.Entity.SynchroConfigItem)">
+            <summary>
+            获取字段表名称的记录数和最大时间戳(Pair.Name表示记录数，Pair.Value表示最大时间戳)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Get_Table_All(Framework.Entity.SynchroConfigItem)">
+            <summary>
+            获取表数据
+            </summary>
+            <param name="table">同步表配置</param> 
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Get_Table_100(Framework.Entity.SynchroConfigItem,Framework.Entity.TimeStamp,Framework.Entity.TimeStamp)">
+            <summary>
+            获取表数据
+            </summary>
+            <param name="item">同步表配置</param>
+            <param name="begin">开始时间戳</param>
+            <param name="end">结束时间戳</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Get_Table_Subs(System.String,System.Data.DataTable)">
+            <summary>
+            获取子表数据
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Insert(System.String,System.Data.DataTable)">
+            <summary>
+            表插入记录
+            </summary>
+            <param name="table">插入记录列表</param>
+            <param name="tableName">表名</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Update(System.String,App.FunctionLibrary.Pair{System.Object[],System.Object[]}[],System.Data.DataTable)">
+            <summary>
+            更新表记录
+            </summary>
+            <param name="mdys">更新记录列表(Pair.Name表示原数据，Pair.Value表示修改的新数据)</param>
+            <param name="schema">架构表</param>
+            <param name="tableName">表名</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Delete(System.String,System.Data.DataTable)">
+            <summary>
+            删除表记录
+            </summary>
+            <param name="table">删除的记录列表</param>
+            <param name="tableName">表名</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Delete(System.String,System.Data.DataTable,System.String[])">
+            <summary>
+            删除表记录
+            </summary>
+            <param name="tableName">表名称</param>
+            <param name="table">表记录</param>
+            <param name="keys">表关键字列表</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Save(Framework.Entity.SynchroConfigItem,System.Data.DataTable)">
+            <summary>
+            保存同步数据(存在修改，不存在新增)。
+            </summary>
+            <param name="table">同步数据</param>
+            <param name="config">同步配置</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.Save_Subs(System.String,System.Data.DataTable,System.String[])">
+            <summary>
+            插入子表列表
+            </summary>
+            <param name="tableName">子表名称</param>
+            <param name="table">插入的子表数据</param>
+            <param name="keys">主表主键列表</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.MsgNotify(System.String)">
+            <summary>
+            消息通知
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.MsgNotify(System.Int32,Framework.Entity.SynchroConfigItem)">
+            <summary>
+            消息通知
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.SyncSubTables(Framework.Entity.SynchroConfigItem[],System.Data.DataTable,System.Boolean,Framework.Entity.IService,Framework.Service.IEnvironment,Framework.Service.DataBaser)">
+            <summary>
+            同步子表
+            </summary>
+            <param name="configs">子表配置列表</param>
+            <param name="majorKeys">主表主键表</param>
+            <param name="download">false上传数据，true下载数据</param>
+            <param name="proxy">远程代理对象</param>
+            <param name="env">远程代理环境变量</param>
+            <param name="db">本地数据对象</param>
+        </member>
+        <member name="M:Framework.Service.SynchroManage.TimingArrived(Framework.Service.Timing.TimingTaskArgs)">
+            <summary>
+            定時任務到達
+            </summary>
+        </member>
+        <member name="T:Framework.Service.SystemConfigManage">
+            <summary>
+            系统配置管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemConfigManage.GetValue``1(System.String)">
+            <summary>
+            获取系统配置值
+            </summary>
+            <typeparam name="T">参数值的泛型类型</typeparam>
+            <param name="name">配置名</param>
+        </member>
+        <member name="M:Framework.Service.SystemConfigManage.GetValue``1(System.String,``0)">
+            <summary>
+            获取系统配置值
+            </summary>
+            <param name="name">配置名</param>
+            <param name="default">缺省值</param>
+        </member>
+        <member name="M:Framework.Service.SystemConfigManage.GetValue(System.String)">
+            <summary>
+            获取系统配置值
+            </summary>
+            <param name="name">配置名</param>
+            <returns>成功返回获取的系统配置值，失败返回空字符串。</returns> 
+        </member>
+        <member name="M:Framework.Service.SystemConfigManage.GetValue(System.String,System.String)">
+            <summary>
+            获取系统配置值
+            </summary>
+            <param name="name">配置名</param>
+            <param name="default">缺省值</param>
+            <returns>成功返回获取的系统配置值，失败返回空字符串。</returns>
+        </member>
+        <member name="M:Framework.Service.SystemConfigManage.SetValue(System.String,System.String)">
+            <summary>
+            设置系统配置值
+            </summary>
+            <param name="name">配置名</param> 
+            <param name="value">系统配置值</param>
+        </member>
+        <member name="M:Framework.Service.SystemConfigManage.Get_SystemConfig_All">
+            <summary>
+            获取所有系统配置项
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemConfigManage.Save_SystemConfig(Framework.Entity.SystemConfigItem[])">
+            <summary>
+            保存系统配置项
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemConfigManage.Delete_SystemConfig(System.String[])">
+            <summary>
+            删除系统配置项
+            </summary>
+            <param name="codes">配置名</param>
+        </member>
+        <member name="M:Framework.Service.SystemConfigManage.Update_Ordinal(App.FunctionLibrary.Pair{System.Int32}[])">
+            <summary>
+            更新配置项顺序号(Pair.Name表示配置名,Pair.Value表示顺序号)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemConfigManage.Update_OwnerCode(System.String,System.String[])">
+            <summary>
+            更新父配置名
+            </summary>
+            <param name="names">配置名</param>
+            <param name="ownerName">父配置名</param>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.Item(System.String)">
+            <summary>
+            获取或者设置系统配置项的值
+            </summary>
+            <param name="name">配置名</param>
+            <returns>成功返回获取的系统配置值，失败返回空字符串。</returns> 
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.Item(System.String,System.String)">
+            <summary>
+            获取系统配置项的值
+            </summary>
+            <param name="name">配置名</param>
+            <param name="default">缺省配置值</param>
+            <returns>成功返回获取的系统配置值，失败返回空字符串。</returns> 
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.DbCode">
+            <summary>
+            系统数据编号。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.DefaultLanguage">
+            <summary>
+            默认语言编号。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.Version">
+            <summary>
+            系统版本号。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.ProductName">
+            <summary>
+            产品名称。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.ProductAlias">
+            <summary>
+            产品简称
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.CompanyName">
+            <summary>
+            开发商名称。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.CompanyAlias">
+            <summary>
+            开发商简称。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.CompanyAddress">
+            <summary>
+            开发商通讯地址。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.CompanyHttp">
+            <summary>
+            开发商网站地址。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.CompanyContact">
+            <summary>
+            开发商联系方式。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.CompanyEmail">
+            <summary>
+            开发商电子邮件。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.ClientName">
+            <summary>
+            授权使用客户名称
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.ClientAlias">
+            <summary>
+            授权使用客户简称。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemConfigManage.ClientAddress">
+            <summary>
+            授权使用客户通讯地址。
+            </summary>
+        </member>
+        <member name="T:Framework.Service.TerminalManage">
+            <summary>
+            终端机操作
+            </summary>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Get_Terminals_All">
+            <summary>
+            获取终端机列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Get_Terminal(System.String)">
+            <summary>
+            获取终端机信息
+            </summary>
+            <param name="terminalCode">终端机编号</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Get_Terminals_ByDeptCode(System.String[])">
+            <summary>
+            获取指定登录组织机构的所以终端列表。
+            </summary>
+            <param name="deptCodes">登录的组织机构编号</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Get_Terminals_ByUserID(System.String)">
+            <summary>
+            获取指定操作员登录的终端列表。
+            </summary>
+            <param name="loginUserID">登录的操作员内码</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Get_Terminals_Login(System.String)">
+            <summary>
+            获取登录的工作站设备列表
+            </summary>
+            <param name="dbCode">数据编号</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Get_TerminalsCount_Login(System.String)">
+            <summary>
+            获取登录的工作站设备数
+            </summary>
+            <param name="dbCode">数据编号</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Get_TerminalsCount(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            获取终端数
+            </summary>
+            <param name="dbcode">数据编号</param>
+            <param name="accredit">是否授权</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Get_GroupNames">
+            <summary>
+            获取工作站分组名称
+            </summary>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Delete_Terminal(System.String[])">
+            <summary>
+            删除终端机
+            </summary>
+            <param name="terminalCode">终端机编码</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Insert_Terminal(Framework.Entity.TerminalItem)">
+            <summary>
+            新增终端机信息
+            </summary>
+            <param name="item">终端机信息</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Update_Terminal(Framework.Entity.TerminalItem)">
+            <summary>
+            修改终端机信息
+            </summary>
+            <param name="item">终端机信息</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Registing(Framework.Entity.TerminalItem)">
+            <summary>
+            注册客户终端机
+            <para>
+            (如果终端机存在则修改，如果不存在则新注册一个未授权的终端机，并且返回该终端机相关信息)。
+            </para>
+            </summary>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Accrediting(System.String,System.Boolean)">
+            <summary>
+            终端机授权
+            </summary>
+            <param name="terminalCode">终端机编号</param>
+            <param name="value">授权状态，true授权，false取消授权</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Login(System.String,System.String)">
+            <summary>
+            设置工作站客户端的登录状态
+            </summary>
+            <param name="terminalCode">工作站编号</param>
+            <param name="loginToken">登录的访问令牌</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Logout(System.String)">
+            <summary>
+            取消工作站客户端的登录状态
+            </summary>
+            <param name="terminalCode">工作站编号</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Update_OwnerGroupName(System.String,System.String[])">
+            <summary>
+            更新父分组
+            </summary>
+            <param name="ownerGroupName">父分组名称</param>
+            <param name="terminalCode">工作站编号</param>
+        </member>
+        <member name="M:Framework.Service.TerminalManage.Update_Ordinal(App.FunctionLibrary.Pair{System.Int32}[])">
+            <summary>
+            更新分组顺序号
+            </summary>
+            <param name="values">Name表示工作站编号,Value表示顺序号</param>
+        </member>
+        <member name="T:Framework.Service.TimingTaskConfig">
+            <summary>
+            定时任务配置
+            </summary>
+        </member>
+        <member name="M:Framework.Service.TimingTaskConfig.Get_TimingTask_Declares">
+            <summary>
+            获取所有声明的定时任务列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.TimingTaskConfig.Get_TimingTaskTypes">
+            <summary>
+            获取定时任务类型(Pair.Name表示任务类型值,Pair.Value表示任务类型名称)
+            </summary>
+        </member>
+        <member name="M:Framework.Service.TimingTaskConfig.Get_TimingStatusTypes">
+            <summary>
+            获取定时任务状态字典(Pair.Name表示状态值,Pair.Value表示状态名称)
+            </summary>
+        </member>
+        <member name="M:Framework.Service.TimingTaskConfig.Get_TimingSchedules">
+            <summary>
+            获取所有定时任务规则列表
+            </summary>
+        </member>
+        <member name="M:Framework.Service.TimingTaskConfig.Save_TimingSchedules(Framework.Entity.TimingTaskItem[])">
+            <summary>
+            保存定时任务规则
+            </summary>
+        </member>
+        <member name="T:Framework.Service.ToolbarManage">
+            <summary>
+            工具栏管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ToolbarManage.Get_Toolbars_ByRole(System.String)">
+            <summary>
+            获取指定角色的工具栏列表
+            </summary>
+            <param name="rolecode">角色编号</param>
+        </member>
+        <member name="M:Framework.Service.ToolbarManage.Save_Toolbars_ByRole(System.String,Framework.Entity.ToolbarItem[])">
+            <summary>
+            保存角色的工具栏配置
+            </summary>
+            <param name="roleCode">角色变换</param>
+            <param name="toolbars">工具栏列表</param>
+        </member>
+        <member name="M:Framework.Service.ToolbarManage.Delete_Toolbars_ByRoleCode(System.String[])">
+            <summary>
+            删除指定角色的工具栏
+            </summary>
+            <param name="roleCodes">角色编号</param>
+        </member>
+        <member name="M:Framework.Service.ToolbarManage.Delete_Toolbars_ByMenuCode(System.String[])">
+            <summary>
+            删除指定菜单的工具栏
+            </summary>
+            <param name="menuCodes">菜单编号</param>
+        </member>
+        <member name="M:Framework.Service.ToolbarManage.Delete_Toolbars_Remainder_ByMenuCode(System.String,System.String[])">
+            <summary>
+            删除多余的工具栏项(除指定菜单编号之外的工具栏部分)。
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="menuCodes">排除的菜单编号</param>
+        </member>
+        <member name="T:Framework.Service.UsersManage">
+            <summary>
+            操作员信息管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.UsersManage.UserLogin(System.String,System.String)">
+            <summary>
+            当前数据库的操作员登录
+            </summary>
+            <param name="userCode">操作员登录的用户编号</param>
+            <param name="password">登录密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.IsExists_User_ByUserCode(System.String,System.String)">
+            <summary>
+            是否存在指定的用户
+            </summary>
+            <param name="dbCode">数据编号</param>
+            <param name="userCode">用户登录名</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.IsExists_UserDepts_ByUserID(System.String)">
+            <summary>
+            是否存在操作员授权登录的机构
+            </summary>
+            <param name="userId">操作员编号</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_UsersCount(System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            获取用户数。
+            </summary>
+            <param name="dbCode">数据编号(null 表示全部数据编号)</param>
+            <param name="systemic">是否为系统用户(null 表示全部用户)</param>
+            <param name="disable">是否为停用用户(null 表示全部用户)</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_UsersCount_Login(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            获取登录的用户数(不包括失效的登录令牌用户)
+            </summary>
+            <param name="dbCode">数据编号(null 表示全部数据编号)</param>
+            <param name="systemic">是否为系统用户(null 表示全部用户)</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_User(System.String,System.String)">
+            <summary>
+            获取当前数据库的操作员(如果不存在返回 null)。
+            </summary>
+            <param name="userCode">用户登录名</param>
+            <param name="password">用户登录密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_User_UserCode(System.String,System.String)">
+            <summary>
+            获取当前数据库的操作员(如果不存在返回 null)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_User(System.String)">
+            <summary>
+            根据操作员内码获取操作员信息
+            </summary>
+            <param name="userId">操作员内码</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_User_ByToken(System.String)">
+            <summary>
+            根据证书令牌获取用户信息
+            </summary>
+            <param name="token">证书令牌</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_UserID(System.String,System.String)">
+            <summary>
+            根据操作员登录名(编号)获取操作员内码。
+            </summary>
+            <param name="userCode">操作员登录名称、操作员编号。</param>
+            <param name="dbCode">数据编号，默认表示当前数据编号。</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_UserDepts_ByUserID(System.String,System.Nullable{Framework.Entity.Platform})">
+            <summary>
+            获取操作员管理的组织机构列表(包含停用的组织机构)。
+            </summary>
+            <param name="userId">操作员登录ID号</param>
+            <param name="platform">平台类别(缺省表示所有平台)</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_Users_All">
+            <summary>
+            获取所有操作员
+            </summary>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_Users_ByDbCode(System.String)">
+            <summary>
+            获取所有指定数据库编号的操作员列表
+            </summary>
+            <param name="dbCode">指定的数据库编号(空表示所有操作员)</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_Users_ByUserID(System.String[])">
+            <summary>
+            根据用户内码获取一批用户信息列表。
+            </summary>
+            <param name="userIds">获取用户信息的用户内码列表。</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_Users_ByDeptCode(System.String[])">
+            <summary>
+            获取具有指明组织机构操作权限的操作员列表。
+            </summary>
+            <param name="deptCodes">组织机构编号列表(缺省表示所有组织机构)</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_Users_ByRoleCode(System.String)">
+            <summary>
+            获取分配了登录角色的所有操作员列表
+            </summary>
+            <param name="roleCode">角色编号</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_Users_Employee_ByDeptCode(System.String[])">
+            <summary>
+            根据组织机构编号查询组织机构下操作员(根据操作员对应员工)，组织机构传空，带出所有操作员
+            </summary>
+            <param name="deptCodes">组织机构数组（可为多个组织机构）</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_Users_UnbindingEmployee(System.String)">
+            <summary>
+            查询所有未绑定员工的操作员
+            </summary>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_Users_ByDeptType(System.String[])">
+            <summary>
+            获取具有指明组织机构类型操作权限的操作员列表。
+            </summary>
+            <param name="deptTypeCodes">组织机构类型编号列表</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_Users_ByFormName_ByPurview_ByDeptCode(System.String,System.String,System.String)">
+            <summary>
+            查询所有具有页面和权限点访问权限的操作员列表
+            </summary>
+            <param name="formName">获取操作员列表的指定页面名称</param>
+            <param name="deptCode">获取指定页面名称登录于指定组织机构的操作员列表</param>
+            <param name="purviewName">获取具有指定权限名称的操作员列表</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Insert_User(Framework.Entity.UserItem)">
+            <summary>
+            新增操作员信息，并且返回新分配UserID的操作员信息(自动产生UserID)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Update_User(Framework.Entity.UserItem)">
+            <summary>
+            修改操作员信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Update_User(System.String,System.String,System.String)">
+            <summary>
+            更新操作员基本信息
+            </summary>
+            <param name="userId">操作员内码</param>
+            <param name="userCode">操作员登录编号</param>
+            <param name="userName">操作员名称</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Delete_User(System.String)">
+            <summary>
+            删除操作员
+            </summary>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Delete_User(System.String,System.String,System.String)">
+            <summary>
+            删除指定登录名称和登录密码的用户。
+            </summary>
+            <param name="userCode">登录名称</param>
+            <param name="dbCode">数据编号，缺省表示当前登录的数据。</param>
+            <param name="password">登录密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Save_UserDepts(System.String,Framework.Entity.Platform,Framework.Entity.UserDeptsItem[])">
+            <summary>
+            保存操作员管理的组织机构设置(将清理所有未在组织机构列表中存在的组织机构登录权限)。
+            </summary>
+            <param name="userId">操作员编号</param>
+            <param name="depts">组织机构列表</param>
+            <param name="platform">平台类别</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Open_UserDepartRole(System.String,System.String,System.String)">
+            <summary>
+            开通操作员登录系统的组织机构和角色(不处理操作员关联的其他角色)。
+            </summary>
+            <param name="userId">操作员内码</param>
+            <param name="deptCode">组织机构编号</param>
+            <param name="roleCode">角色编号</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Update_HeaderPhoto(System.String,System.Byte[])">
+            <summary>
+            更新操作员头像
+            </summary>
+            <param name="userId">操作员内码</param>
+            <param name="headerPhoto">头像数据流</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_HeaderPhoto(System.String)">
+            <summary>
+            获取操作员头像数据流
+            </summary>
+            <param name="userId">操作员内码</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Get_HeaderPhoto_URL(System.String)">
+            <summary>
+            获取操作员头像文件超链接地址。
+            </summary>
+            <param name="userId">操作员内码</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.ChangePassword(System.String,System.String,System.String,System.String)">
+            <summary>
+            变更密码,并返回新密文密码
+            </summary>
+            <param name="userId">用户内码</param>
+            <param name="newUserCode">新用户登录名(null 表示不修改登录名)</param>
+            <param name="newUserName">新用户姓名(null 表示不修改用户姓名)</param>
+            <param name="newPassword">新密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.ChangePassword(System.String,System.String,System.String)">
+            <summary>
+            变更密码
+            </summary>
+            <param name="userId">操作员ID号</param>
+            <param name="oldPassword">原密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+            <param name="newPassword">新密码(密码算法由系统配置 PasswordCrypto 指定)</param> 
+        </member>
+        <member name="M:Framework.Service.UsersManage.ChangePassword(System.String,System.String)">
+            <summary>
+            重置密码
+            </summary>
+            <param name="userId">用户内码</param>
+            <param name="newPassword">新密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.DisablingUser(System.String,System.Boolean)">
+            <summary>
+            变更操作员的停用状态。
+            </summary>
+            <param name="userId">操作员ID号</param>
+            <param name="disabled">停用状态</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.DisablingUser(System.String,System.String,System.Boolean)">
+            <summary>
+            变更操作员的停用状态,并且返回操作员UserID号。
+            </summary>
+            <param name="dbCode">数据库编号</param>
+            <param name="userCode">操作员登录编号</param>
+            <param name="disabled">停用状态</param>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Authenticate(System.String,System.String,System.String,System.String)">
+            <summary>
+            认证用户是否被授权(认证成功返回用户内码 UserID)。
+            </summary>
+            <param name="dbcode">数据编号</param>
+            <param name="usbkey">数字证书</param>
+            <param name="usercode">用户编号(登录名)</param>
+            <param name="password">登录密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+            <remarks>认证失败抛出 AuthenticateException 异常。</remarks>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Authenticate(System.String,System.String,System.String)">
+            <summary>
+            认证用户是否被授权。
+            </summary>
+            <param name="userId">登录的用户内码</param>
+            <param name="usbkey">数字证书</param>
+            <param name="password">登录密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+            <remarks>认证失败抛出 AuthenticateException 异常。</remarks>
+        </member>
+        <member name="M:Framework.Service.UsersManage.Authenticate(Framework.Security.Certificate)">
+            <summary>
+            认证数字证书是否被授信
+            </summary>
+            <param name="cer">被验证的数字证书</param>
+        </member>
+        <member name="T:Framework.Service.LanguageManage">
+            <summary>
+            多语言文本管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.LanguageManage.Get_Languages(System.String,System.String,System.String[])">
+            <summary>
+            获取语言文本列表
+            </summary>
+            <param name="languageCode">语种编号</param>
+            <param name="majorCode">主编码(缺省表示所有主编码)</param>
+            <param name="minorCodes">次码参数组(缺省表示所有次编码)</param>
+        </member>
+        <member name="M:Framework.Service.LanguageManage.Get_Languages(System.String,System.String)">
+            <summary>
+            获取同一个文本项的所有语言文本列表
+            </summary>
+            <param name="majorCode">主编码</param> 
+            <param name="minorCode">次编码</param>
+        </member>
+        <member name="M:Framework.Service.LanguageManage.Get_Language(System.String,System.String,System.String)">
+            <summary>
+            获取语言文本项
+            </summary>
+            <param name="languageCode">语种编号</param>
+            <param name="majorCode">主编码</param>
+            <param name="minorCode">次编码</param>
+        </member>
+        <member name="M:Framework.Service.LanguageManage.Save_Languages(Framework.Entity.LanguageItem[])">
+            <summary>
+            保存语言文本设置
+            </summary>
+            <param name="langs">需要保存的语言文本数组</param>
+        </member>
+        <member name="M:Framework.Service.LanguageManage.Delete_Language(System.String,System.String,System.String)">
+            <summary>
+            删除语言项
+            </summary>
+            <param name="languageCode">语种编号</param>
+            <param name="majorCode">主编码</param>
+            <param name="minorCode">次编码</param>
+        </member>
+        <member name="M:Framework.Service.LanguageManage.Delete_Language(System.String,System.String)">
+            <summary>
+            删除指定主码和次码的所有语言项
+            </summary>
+            <param name="majorCode">主编码</param>
+            <param name="minorCode">次编码</param>
+        </member>
+        <member name="M:Framework.Service.LanguageManage.Translate``1(``0,System.String,System.String)">
+            <summary>
+            语言翻译
+            </summary>
+            <typeparam name="T">需要转换的实体列表类型</typeparam>
+            <param name="sources">需要翻译的源实体列表</param>
+            <param name="languageCode">语种编码</param>
+            <param name="majorCode">主编码(缺省表示使用数据实体映射的主码值)</param>
+        </member>
+        <member name="F:Framework.Service.LanguageManage.ObjectMapping.Object">
+            <summary>
+            实体实例
+            </summary>
+        </member>
+        <member name="F:Framework.Service.LanguageManage.ObjectMapping.Major">
+            <summary>
+            主编码
+            </summary>
+        </member>
+        <member name="F:Framework.Service.LanguageManage.ObjectMapping.Minor">
+            <summary>
+            次编码
+            </summary>
+        </member>
+        <member name="F:Framework.Service.LanguageManage.ObjectMapping.Map">
+            <summary>
+            映射关系
+            </summary>
+        </member>
+        <member name="F:Framework.Service.LanguageManage.MapItem.Major">
+            <summary>
+            主码
+            </summary>
+        </member>
+        <member name="F:Framework.Service.LanguageManage.MapItem.Minor">
+            <summary>
+            次码
+            </summary>
+        </member>
+        <member name="F:Framework.Service.LanguageManage.MapItem.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="F:Framework.Service.LanguageManage.MapItem.Spelling">
+            <summary>
+            助记码
+            </summary>
+        </member>
+        <member name="F:Framework.Service.LanguageManage.MapItem.Group">
+            <summary>
+            分组号
+            </summary>
+        </member>
+        <member name="T:Framework.Service.VersionsController">
+            <summary>
+            版本控制器
+            </summary>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Get_Versions">
+            <summary>
+            获取版本列表(不包括数据结构二进制流),只查询最近1000个版本列表。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Get_Versions(Framework.Entity.Versions,Framework.Entity.Versions)">
+            <summary>
+            获取开始版本和终止版本之间的所有关联版本(不包括数据结构二进制流)。
+            </summary>
+            <param name="begin">开始版本(null表示忽略开始版本)</param>
+            <param name="final">终止版本(null表示忽略终止版本)</param>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Get_VersionInfo(Framework.Entity.Versions)">
+            <summary>
+            获取版本信息(不包括数据结构二进制流)。
+            </summary>
+            <param name="version">版本号(不存在的版本号返回null)</param>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Get_LatestVersion">
+            <summary>
+            获取最新的版本信息(不包括数据结构二进制流)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Get_DbSchema(Framework.Entity.Versions)">
+            <summary>
+            获取版本的数据结构的二进制流数据。
+            </summary>
+            <param name="version">版本号</param>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Get_CurrentDbSchema">
+            <summary>
+            获取当前数据库的数据结构的二进制流数据。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Update_DbSchema(Framework.Entity.Versions,System.Byte[])">
+            <summary>
+            更新版本的数据结构二进制流。
+            </summary> 
+            <param name="version">版本号</param>
+            <param name="data">数据结构二进制流</param>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Get_Assemblies(Framework.Entity.Versions)">
+            <summary>
+            获取程序集列表(不包括程序集内容二进制流)。
+            </summary>
+            <param name="version">版本号</param>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Get_Assembly(Framework.Entity.Versions,System.String)">
+            <summary>
+            获取指定版本号及程序集名称的程序集(包括程序集内容，截止到指定版本的可用程序集)。
+            </summary>
+            <param name="version">版本号</param>
+            <param name="assemblyName">程序集名称(包括扩展名)</param>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Validate_Assemblies(Framework.Entity.AssemblyItem[])">
+            <summary>
+            验证当前版本的程序集是否正常，并且返回异常的程序集。
+            </summary>
+            <param name="assemblies">需要验证的程序集列表</param>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Get_Contents(Framework.Entity.Versions,System.String,System.String)">
+            <summary>
+            获取程序集二进制流数据。
+            </summary>
+            <param name="version">版本号</param>
+            <param name="assemblyName">程序集名称(包括扩展名)</param>
+            <param name="hashValue">程序集哈希值</param>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Create_Assembly_x86(System.String,System.String,System.String)">
+            <summary>
+            创建 x86 架构的 32bit 程序集,并返回程序集信息(不包括程序集内容，仅对脱机版本管理程序集有效)。
+            </summary>
+            <param name="assemblyName">原程序集名称(包括扩展名)</param>
+            <param name="x86AssemblyName">x86程序集名称(包括扩展名)</param>
+            <param name="hashValue">x86程序集哈希值</param>
+        </member>
+        <member name="P:Framework.Service.VersionsController.OfflineVersion">
+            <summary>
+            更新程序集版本管理模式(true表示离线版本管理模式，false表示联机版本管理模式)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Get_ServiceDir_Assemblies(Framework.Entity.Versions,System.String[])">
+            <summary>
+            获取服务端目录程序集
+            </summary>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Get_VersionPackage(Framework.Entity.Versions,System.String,System.Boolean)">
+            <summary>
+            获取版本升级包(加密压缩的数据流)。
+            </summary>
+            <param name="version">版本号</param>
+            <param name="dbCode">客户系统数据编号</param>
+            <param name="isIncrement">true表示增量程序集，false表示全量程序集。</param>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Insert_VersionPackage(System.Byte[])">
+            <summary>
+            保存版本包
+            </summary>
+            <param name="packageData">包流数据(加密压缩的数据流)。</param>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Insert_VersionPackage(Framework.Entity.VersionItem,Framework.Entity.AssemblyItem[])">
+            <summary>
+            保存版本包
+            </summary>
+            <param name="version">版本信息</param>
+            <param name="assems">程序集信息</param>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Delete_VersionPackage(Framework.Entity.Versions)">
+            <summary>
+            删除版本包,并且返回被关联删除的版本列表(将删除所有小于等于版本号的版本信息和关联程序集信息)。
+            </summary>
+            <param name="version">版本号</param>
+        </member>
+        <member name="M:Framework.Service.VersionsController.Update_VersionPackage(Framework.Entity.Versions)">
+            <summary>
+            执行版本更新(升级系统为指定的版本号，系统内必须存在指定的版本号)
+            </summary>
+            <param name="vers">升级或降级的目标版本号</param>
+        </member>
+        <member name="T:Framework.Service.Timing.Duration">
+            <summary>
+            定时时长或定时时刻
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Duration.Year">
+            <summary>
+            定时的年份
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Duration.Month">
+            <summary>
+            定时的月份
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Duration.Day">
+            <summary>
+            定时的天数或某一天
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Duration.Hour">
+            <summary>
+            定时的小时数或某时
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Duration.Minute">
+            <summary>
+            定时的分钟数或某分
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Duration.Second">
+            <summary>
+            定时的秒钟数或某秒
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.Duration.Clone(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            复制一个副本(参数表示替换复制的内容)。
+            </summary> 
+        </member>
+        <member name="P:Framework.Service.Timing.Duration.IsEmpty">
+            <summary>
+            是否为空
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.Duration.ToString">
+            <summary>
+            输出对象的浅表字符串表达式
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.Duration.Parse(System.String)">
+            <summary>
+            由定时时长或时刻字符串解析为对象
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.Duration.op_Implicit(Framework.Service.Timing.Duration)~System.DateTime">
+            <summary>
+            输出为日期时间)
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.Duration.op_Implicit(Framework.Service.Timing.Duration)~System.TimeSpan">
+            <summary>
+            输出为时间片
+            </summary>
+        </member>
+        <member name="T:Framework.Service.Timing.ITimingTask">
+            <summary>
+            定时任务接口
+            </summary>
+            <remarks>
+            <para>任务名称用 NiceAttribute 进行标注</para>
+            <para>任务参数用 ParamAttribute 进行标注</para>
+            </remarks>
+        </member>
+        <member name="M:Framework.Service.Timing.ITimingTask.TimingArrive(Framework.Service.Timing.TimingTaskArgs)">
+            <summary>
+            定时任务到达时的回调函数。
+            </summary>
+            <param name="e">定时任务事件数据</param>
+        </member>
+        <member name="M:Framework.Service.Timing.ITimingTask.TimingAbort">
+            <summary>
+            定时任务终止时的回调函数。
+            </summary>
+        </member>
+        <member name="T:Framework.Service.Timing.ParamNameAttribute">
+            <summary>
+            定时参数名称定义
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.ParamNameAttribute.Names">
+            <summary>
+            定时任务参数名称
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.ParamNameAttribute.#ctor(System.String[])">
+            <summary>
+            定时参数属性配置
+            </summary>
+            <param name="name">参数名称</param>
+        </member>
+        <member name="T:Framework.Service.Timing.Schedule">
+            <summary>
+            规则策略
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.Schedule.#ctor(App.FunctionLibrary.XmlNode)">
+            <summary>
+            通过定时规则配置实例化
+            </summary>
+            <param name="node">定时任务规则配置节点</param>
+        </member>
+        <member name="M:Framework.Service.Timing.Schedule.#ctor(System.String,Framework.Service.Timing.TaskType,Framework.Service.Timing.Duration,System.String,System.String)">
+            <summary>
+            实例化定时任务规则
+            </summary>
+            <param name="name">定时任务规则名称</param>
+            <param name="periods">定时周期(规则类型)</param>
+            <param name="duration">定时时长或定时时刻</param>
+            <param name="callName">定时回调接口函数名称</param>
+            <param name="workdir">定时任务的工作目录(缺省表示当前目录)</param>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.ID">
+            <summary>
+            规则编号
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.Name">
+            <summary>
+            规则名称
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.Periods">
+            <summary>
+            定时周期
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.EffectTime">
+            <summary>
+            生效时间
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.ExpiryTime">
+            <summary>
+            失效时间
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.InitializeTime">
+            <summary>
+            初始时间
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.WorkDir">
+            <summary>
+            工作目录(缺省表示当前目录)
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.CallName">
+            <summary>
+            调用接口名称(程序集名.类名)
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.Duration">
+            <summary>
+            定时时长或时刻
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.Disabled">
+            <summary>
+            定时任务已停用
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.Params">
+            <summary>
+            定时任务参数
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.Task">
+            <summary>
+            定时任务
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.Schedule.IsStarted">
+            <summary>
+            定时任务是否已经启动
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.Schedule.Run">
+            <summary>
+            运行定时任务
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.Schedule.Stop">
+            <summary>
+            停止定时任务
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.Schedule.GetNextTime">
+            <summary>
+            获取规则下次运行时刻
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.Schedule.ToString">
+            <summary>
+            输出规则策略的浅表字符串表达式
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.Schedule.ToXml">
+            <summary>
+            输出规则策略的Xml文档表达式(以Schedule为名称的节点)。
+            </summary>
+        </member>
+        <member name="T:Framework.Service.Timing.SchedulePool">
+            <summary>
+            定时任务规则集合池
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.SchedulePool.AllocateSchedules(App.FunctionLibrary.XmlDocument)">
+            <summary>
+            从配置文件文件分配规则池
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.SchedulePool.IsRunning">
+            <summary>
+            定时任务规则池是否已经启动
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.SchedulePool.Run">
+            <summary>
+            运行所有规则定时任务。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.SchedulePool.Stop">
+            <summary>
+            停止所有规则定时任务。
+            </summary>
+        </member>
+        <member name="T:Framework.Service.Timing.TaskStatus">
+            <summary>
+            定时任务状态
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskStatus.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskStatus.Unstart">
+            <summary>
+            未启动
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskStatus.Ready">
+            <summary>
+            准备就绪(进入低频等待队列)
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskStatus.Waitting">
+            <summary>
+            等待执行(进入高频等待队列)
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskStatus.Running">
+            <summary>
+            任务运行中(开始执行)
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskStatus.Completed">
+            <summary>
+            任务完成
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskStatus.Error">
+            <summary>
+            发生异常
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskStatus.Cancel">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskStatus.Disabled">
+            <summary>
+            任务被停用
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskStatus.Stoped">
+            <summary>
+            任务停止
+            </summary>
+        </member>
+        <member name="T:Framework.Service.Timing.TaskType">
+            <summary>
+            定时周期类型
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskType.Unknown">
+            <summary>
+            未知(不作为定时参数)
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskType.OnlyOne">
+            <summary>
+            仅一次
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskType.Timing">
+            <summary>
+            计时(每过一个定时时长,每隔一个定时时长)。
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskType.Delay">
+            <summary>
+            延迟(延迟一个定时时长，仅执行一次)。
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskType.EveryMinute">
+            <summary>
+            每分钟
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskType.EveryHour">
+            <summary>
+            每小时
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskType.EveryDay">
+            <summary>
+            每天
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskType.EveryWeek">
+            <summary>
+            每周
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskType.EveryMonth">
+            <summary>
+            每月
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TaskType.EveryYear">
+            <summary>
+            每年
+            </summary>
+        </member>
+        <member name="T:Framework.Service.Timing.TimingLogger">
+            <summary>
+            定时服务日志
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingLogger.Write(System.String,Framework.Service.Timing.Schedule)">
+            <summary>
+            写入日志信息
+            </summary>
+            <param name="message">日志信息</param>
+            <param name="schedule">定时任务规则</param>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingLogger.Write(System.String,System.Object[])">
+            <summary>
+            写入日志信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingLogger.Write(System.Exception,Framework.Service.Timing.Schedule)">
+            <summary>
+            日志写入异常信息
+            </summary>
+            <param name="ex">异常对象</param>
+            <param name="schedule">定时任务规则</param>
+        </member>
+        <member name="T:Framework.Service.Timing.TimingService">
+            <summary>
+            定时服务(使用之前必须 Initialize 初始化定时任务规则)。
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TimingService.locker_low">
+            <summary>同步锁</summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TimingService.queue_low">
+            <summary>队列</summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TimingService.timer_low">
+            <summary>计时器</summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.Initialize">
+            <summary>
+            使用当前工作目录配置文档 Config.xml 初始化定时任务规则。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.Initialize(App.FunctionLibrary.XmlDocument)">
+            <summary>
+            使用指定的配置文档初始化定时任务规则。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.Exclude_RemotingStartup(App.FunctionLibrary.XmlDocument)">
+            <summary>
+            排除 Framework.WCF 服务启动定时任务
+            </summary>
+        </member>
+        <member name="E:Framework.Service.Timing.TimingService.Initialized">
+            <summary>
+            定时服务初始化事件。
+            </summary>
+        </member>
+        <member name="E:Framework.Service.Timing.TimingService.StatusChanged">
+            <summary>
+            定时任务状态改变事件
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TimingService.TaskPool">
+            <summary>定时任务规则池</summary>
+        </member>
+        <member name="P:Framework.Service.Timing.TimingService.TaskCount">
+            <summary>
+            定时任务数。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.TimingService.IsRunning">
+            <summary>
+            定时服务是否已运行。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.TimingService.Logger">
+            <summary>
+            定时服务日志
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.Push(Framework.Service.Timing.TimingTask)">
+            <summary>
+            定时任务压栈到定时服务队列中(新增)。
+            </summary>
+            <param name="task">定时任务</param>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.Popup(Framework.Service.Timing.TimingTask)">
+            <summary>
+            定时任务从定时服务队列中弹出(移除)。
+            </summary>
+            <param name="task">被移除的定时任务</param>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.Clear">
+            <summary>
+            清理定时任务服务队列中的所有任务。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.Start">
+            <summary>
+            启动定时服务(已配置的全部定时任务)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.Start(System.String)">
+            <summary>
+            启动指明的定时任务。
+            </summary>
+            <param name="callName">定时任务调用接口名称(程序集名.类名)</param>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.Stop">
+            <summary>
+            停止定时服务(已启动的全部定时任务)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.Stop(System.String)">
+            <summary>
+            停止指明的定时任务。
+            </summary>
+            <param name="callName">定时任务调用接口名称(程序集名.类名)</param>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.PushHight(Framework.Service.Timing.TimingTask[])">
+            <summary>
+            低频率任务推入高频率任务队列
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.StartupDomainInvoke(App.FunctionLibrary.DynamicDomain,System.Boolean,App.FunctionLibrary.XmlDocument)">
+            <summary>
+            启动定时任务动态域委托函数，不对外公开
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingService.ShutdownDomainInvoke(App.FunctionLibrary.DynamicDomain)">
+            <summary>
+            关闭定时任务动态域委托函数，不对外公开
+            </summary>
+        </member>
+        <member name="T:Framework.Service.Timing.TimingTask">
+            <summary>
+            定时任务
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingTask.#ctor">
+            <summary>
+            定时任务
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Timing.TimingTask.#ctor(App.FunctionLibrary.PairList)">
+            <summary>
+            定时任务
+            </summary>
+            <param name="params">定时任务参数值数组</param>
+        </member>
+        <member name="P:Framework.Service.Timing.TimingTask.Params">
+            <summary>
+            定时任务参数值数组。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.TimingTask.TaskName">
+            <summary>
+            定时任务名称
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.TimingTask.TaskTime">
+            <summary>
+            定时任务时间
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.TimingTask.Status">
+            <summary>
+            定时任务状态
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TimingTask.Arrive">
+            <summary>
+            定时任务到达事件(回调委托)。
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Timing.TimingTask.ExecuteTask">
+            <summary>
+            执行任务的实例
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.TimingTask.ExecuteThread">
+            <summary>
+            执行线程
+            </summary>
+        </member>
+        <member name="T:Framework.Service.Timing.TimingTaskArgs">
+            <summary>
+            定时任务事件数据
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.TimingTaskArgs.Cancel">
+            <summary>
+            取消或中断定时任务的自动定时执行事件。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.TimingTaskArgs.Delay">
+            <summary>
+            推迟定时任务,在间隔指定时间长度后再次被执行(秒钟)。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Timing.TimingTaskArgs.Params">
+            <summary>
+            定时任务的参数值数组。
+            </summary>
+        </member>
+        <member name="T:Framework.Service.Vars">
+            <summary>
+            服务端公共函数
+            </summary>
+        </member>
+        <member name="P:Framework.Service.Vars.ExpirtyDays">
+            <summary>
+            系统已经失效的天数。
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Vars.ExpirtyCallDelayLength">
+            <summary>
+            系统失效时调用的延迟长度(毫秒)
+            </summary>
+        </member>
+        <member name="F:Framework.Service.Vars.ExpirtyLastCallTick">
+            <summary>
+            最后一次失效调用的时刻(毫秒)
+            </summary>
+        </member>
+        <member name="M:Framework.Service.Vars.CreateProxy(Framework.Entity.DbCode,Framework.Service.IEnvironment)">
+            <summary>
+            创建代理服务对象
+            </summary>
+            <param name="dbCode">数据编号</param>
+            <param name="env">环境变量</param>
+        </member>
+        <member name="M:Framework.Service.Vars.CreateProxy(System.String,Framework.Service.IEnvironment)">
+            <summary>
+            创建代理服务对象
+            </summary>
+            <param name="serviceCode">代理服务编号</param>
+            <param name="env">环境变量</param>
+        </member>
+        <member name="T:Framework.Service.DataBaser">
+            <summary>
+            数据库操作对象
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DataBaser.#ctor">
+            <summary>
+            实例化数据库操作对象
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DataBaser.#ctor(System.Boolean)">
+            <summary>
+            实例化数据库操作对象
+            </summary>
+            <param name="openConnect">实例化对象时直接打开数据库连接(销毁对象时自动关闭连接)。</param>
+        </member>
+        <member name="M:Framework.Service.DataBaser.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            实例化数据库操作对象
+            </summary>
+            <param name="openConnect">实例化对象时直接打开数据库连接(销毁对象时自动关闭连接)。</param>
+            <param name="timeout">数据库连接超时时间(默认表示使用系统配置的超时时间)</param>
+        </member>
+        <member name="M:Framework.Service.DataBaser.#ctor(System.Boolean,System.Int32)">
+            <summary>
+            实例化数据库操作对象
+            </summary>
+            <param name="requireOpenConnect">实例化对象时直接打开数据库连接(销毁对象时自动关闭连接)。</param>
+            <param name="timeout">数据库连接超时时间(默认表示使用系统配置的超时时间)</param>
+        </member>
+        <member name="M:Framework.Service.DataBaser.#ctor(System.Data.Common.DbConnection,System.Boolean)">
+            <summary>
+            实例化数据库操作对象
+            </summary>
+            <param name="connection">数据库操作连接对象</param>
+            <param name="requireOpenConnect">实例化对象时直接打开数据库连接(销毁对象时自动关闭连接)。</param>
+        </member>
+        <member name="M:Framework.Service.DataBaser.#ctor(System.Data.Common.DbTransaction)">
+            <summary>
+            实例化数据库操作对象
+            </summary>
+            <param name="transaction">设置数据事务控制对象</param>
+        </member>
+        <member name="M:Framework.Service.DataBaser.#ctor(App.FunctionLibrary.DBFactory,System.Data.DataTable)">
+            <summary>
+            由数据工厂的连接和事务初始化为一个新的数据操作对象。
+            </summary>
+            <param name="factory">用于初始化的数据工厂(仅包括连接和事务)。</param>
+            <param name="table">用于初始化数据工厂的数据表。</param>
+        </member>
+        <member name="M:Framework.Service.DataBaser.Clone">
+            <summary>
+            创建一个仅包含连接和事务的副本。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.DataBaser.op_Implicit(Framework.Service.DataBaser)~Framework.ORM.DataBaser">
+            <summary>
+            隐形转换为ORM成的数据库操作对象。
+            </summary>
+        </member>
+        <member name="T:Framework.Service.EnvironService">
+            <summary>
+            服务端系统环境变量
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EnvironService.#ctor(Framework.Entity.TerminalItem,Framework.Entity.UserItem)">
+            <summary>
+            初始化
+            </summary>
+            <param name="terminal">调用方的终端机信息</param>
+            <param name="user">调用方的登录操作员信息</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.#ctor(Framework.Entity.ServiceRegisterRequest,Framework.Entity.ServiceRegisterResponse)">
+            <summary>
+            初始化
+            </summary>
+            <param name="request">调用方注册服务的参数信息</param>
+            <param name="response">调用方注册服务时的响应信息</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.#ctor(System.String)">
+            <summary>
+            以调用的目标数据编号作为调用方的数据编号进行初始化。
+            </summary>
+            <param name="dbCode">调用方的数据编号(新实例化环境变量的登录操作员数据编号为该编号)。</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.#ctor(Framework.Entity.IFrameworkEnviron,System.String)">
+            <summary>
+            以调用的目标数据编号作为调用方的数据编号进行初始化。
+            </summary>
+            <param name="dbCode">调用方的数据编号(新实例化环境变量的登录操作员数据编号为该编号)。</param>
+            <param name="environ">调用方的环境变量</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.#ctor(System.Boolean)">
+            <summary>
+            基础环境变量初始化。
+            </summary>
+            <param name="ignoreDbCode">忽略数据编号，否则使用当前默认的数据编号初始化环境变量。</param>
+        </member>
+        <member name="P:Framework.Service.EnvironService.WorkDir">
+            <summary>
+            当前系统的工作路径
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.TempDir">
+            <summary>
+            当前系统的临时路径
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.TempFile">
+            <summary>
+            创建临时目录下唯一命名的零字节临时文件。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.IsDebugging">
+            <summary>
+            当前环境是否处于调试运行状态
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.SlowTime">
+            <summary>
+            标准时间
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.TimeStamp">
+            <summary>
+            时间戳(精度到微秒的20位时间序列字符串，理论上该值非唯一)。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.Config">
+            <summary>
+            系统基础配置信息
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.Dictionary">
+            <summary>
+            字典管理器
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.Serials">
+            <summary>
+            序列号管理器
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.Cookies">
+            <summary>
+            系统临存信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EnvironService.GetDictionary(Framework.Service.DataBaser)">
+            <summary>
+            字典管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EnvironService.GetSerials(Framework.Service.DataBaser)">
+            <summary>
+            序列号管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EnvironService.GetCookies(Framework.Service.DataBaser)">
+            <summary>
+            系统临存信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EnvironService.GetConfig(Framework.Service.DataBaser)">
+            <summary>
+            系统配置信息
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.Token">
+            <summary>
+            登录令牌
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.UsbKey">
+            <summary>
+            数字证书
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.Platform">
+            <summary>
+            登录的客户端平台类别
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.Version">
+            <summary>
+            登录的系统版本号
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.TerminalCode">
+            <summary>
+            注册的终端编号
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.TerminalName">
+            <summary>
+            注册的终端名称
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.MacAddress">
+            <summary>
+            注册的终端网卡MAC地址
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.IpAddress">
+            <summary>
+            注册的终端网络通讯IP地址
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.DriveSerials">
+            <summary>
+            注册的终端硬盘序列号
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.CPUSerials">
+            <summary>
+            注册的终端CPU序列号
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.OperationSystem">
+            <summary>
+            注册的终端操作系统及版本
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.DbCode">
+            <summary>
+            登录的数据编号(调用方数据编号)。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.UserID">
+            <summary>
+            登录操作员的唯一ID号
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.UserCode">
+            <summary>
+            操作员登录名
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.UserName">
+            <summary>
+            操作员登录的用户姓名
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.Password">
+            <summary>
+            操作员登录的密码(密码算法由系统配置 PasswordCrypto 指定)。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.EmployeeCode">
+            <summary>
+            与操作员关联的员工编号(如存在关联只取第一个员工编号,如无关联返回"空字符串")。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.EmployeeName">
+            <summary>
+            与操作员关联的员工姓名(如存在关联只取第一个员工编号,如无关联返回"空字符串")。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.EmployeeType">
+            <summary>
+            与操作员关联的员工类别(如存在关联只取第一个员工类别,如无关联返回"空字符串")。
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.Language">
+            <summary>
+            操作员使用的语种
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.RoleCode">
+            <summary>
+            登录操作员的角色编号
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.RoleText">
+            <summary>
+            操作员登录的角色名称
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.DeptCode">
+            <summary>
+            操作员登录的组织机构编号
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.DeptText">
+            <summary>
+            操作员登录的组织机构名称
+            </summary>
+        </member>
+        <member name="P:Framework.Service.EnvironService.DeptType">
+            <summary>
+            操作员登录的组织机构类别
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EnvironService.RegisterServiceBus(Framework.Entity.IService,System.String,System.String)">
+            <summary>
+            注册、登录服务总线,并且创建总线环境凭证。
+            </summary>
+            <param name="service">注册的总线服务(本地服务为 null)</param>
+            <param name="userName">登录总线的用户名称</param>
+            <param name="password">登录总线的用户密码(明文密码)</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.UnregisterServiceBus(Framework.Entity.IService,Framework.Service.IEnvironment)">
+            <summary>
+            注销服务总线。
+            </summary>
+            <param name="service">注册的总线服务(本地服务为 null)</param>
+            <param name="env">注册的总线环境变量</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.ProxyService.Registing(Framework.Entity.TerminalItem)">
+            <summary>
+            注册本地终端机(如果终端机不存在，则新增终端机)
+            <para>
+            (如果终端机存在则修改，如果不存在则新注册一个未授权的终端机，并且返回该终端机相关信息)。
+            </para>
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EnvironService.ProxyService.ReLogin(System.String,System.String)">
+            <summary>
+            当前数据库的操作员登录(明文密码)。
+            </summary>
+            <param name="userCode">操作员登录的用户编号</param>
+            <param name="password">登录的明文密码</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.ProxyService.GetConfig(System.String,System.Boolean)">
+            <summary>
+            获取变量值
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EnvironService.ProxyService.LogOut">
+            <summary>
+            注销登录
+            </summary>
+        </member>
+        <member name="M:Framework.Service.EnvironService.Translate``1(``0,System.String,System.String)">
+            <summary>
+            语言翻译
+            </summary>
+            <typeparam name="T">需要转换的实体列表类型</typeparam>
+            <param name="sources">需要翻译的源实体列表</param>
+            <param name="languageCode">语言编码(默认使用环境的语言编码)</param>
+            <param name="majorCode">主编码(默认使用数据实体映射的主码值)</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.Translate(System.String,System.String,System.String)">
+            <summary>
+            获取语言文本项
+            </summary>
+            <param name="languageCode">语种编号</param>
+            <param name="majorCode">主编码</param>
+            <param name="minorCode">次编码</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.Translate(System.String,System.String,System.String[])">
+            <summary>
+            获取语言文本列表
+            </summary>
+            <param name="languageCode">语种编号</param>
+            <param name="majorCode">主编码</param>
+            <param name="minorCodes">次码参数组</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.NotifyPush(Framework.Entity.NotifyItem,System.String[])">
+            <summary>
+            通知推送给指定的接收者。
+            </summary>
+            <param name="msg">通知</param>
+            <param name="receivers">通知接收者列表</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.NotifyPush(System.String,Framework.Entity.NotifyItem[])">
+            <summary>
+            通知推送给指定组织机构的所有操作员。
+            </summary>
+            <param name="deptCode">推送给指定的组织机构编号(包括所有下级组织机构)。</param>
+            <param name="msgs">推送的通知列表</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.NotifyPush(Framework.Entity.NotifyKind,System.String,System.String,System.String[])">
+            <summary>
+            通知推送给指定的接收者。
+            </summary>
+            <param name="kind">通知类型</param>
+            <param name="header">通知主题</param>
+            <param name="body">通知正文</param>
+            <param name="receivers">通知接收者列表</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.BroadcasePush(System.String,System.String)">
+            <summary>
+            消息广播(通知所有在线用户)
+            </summary>
+            <param name="header">消息主题</param>
+            <param name="body">消息正文</param>
+        </member>
+        <member name="M:Framework.Service.EnvironService.MessageBroadcase(System.String,System.String)">
+            <summary>
+            消息广播(通知所有在线用户)
+            </summary>
+            <param name="header">消息主题</param>
+            <param name="body">消息正文</param>
+        </member>
+        <member name="T:Framework.Service.IEnvironment">
+            <summary>
+            服务端环境接口
+            </summary>
+        </member>
+        <member name="M:Framework.Service.IEnvironment.GetConfig(Framework.Service.DataBaser)">
+            <summary>
+            系统配置信息
+            </summary>
+            <param name="db">访问系统变量使用的数据操作对象(缺省表示自动生成事务和连接)。</param>
+        </member>
+        <member name="M:Framework.Service.IEnvironment.GetDictionary(Framework.Service.DataBaser)">
+            <summary>
+            字典管理器
+            </summary>
+            <param name="db">访问系统变量使用的数据操作对象(缺省表示自动生成事务和连接)。</param>
+        </member>
+        <member name="M:Framework.Service.IEnvironment.GetSerials(Framework.Service.DataBaser)">
+            <summary>
+            序列号管理器
+            </summary>
+            <param name="db">访问系统变量使用的数据操作对象(缺省表示自动生成事务和连接)。</param>
+        </member>
+        <member name="M:Framework.Service.IEnvironment.GetCookies(Framework.Service.DataBaser)">
+            <summary>
+            系统临存信息
+            </summary>
+            <param name="db">访问系统变量使用的数据操作对象(缺省表示自动生成事务和连接)。</param>
+        </member>
+        <member name="M:Framework.Service.IEnvironment.Translate``1(``0,System.String,System.String)">
+            <summary>
+            语言翻译
+            </summary>
+            <typeparam name="T">需要转换的实体列表类型</typeparam>
+            <param name="sources">需要翻译的源实体列表</param>
+            <param name="languageCode">语言编码(默认使用环境的语言编码)</param>
+            <param name="majorCode">主编码(默认使用数据实体映射的主码值)</param>
+        </member>
+        <member name="M:Framework.Service.IEnvironment.Translate(System.String,System.String,System.String)">
+            <summary>
+            获取语言文本项
+            </summary>
+            <param name="languageCode">语种编号</param>
+            <param name="majorCode">主编码</param>
+            <param name="minorCode">次编码</param>
+        </member>
+        <member name="M:Framework.Service.IEnvironment.Translate(System.String,System.String,System.String[])">
+            <summary>
+            获取语言文本列表
+            </summary>
+            <param name="languageCode">语种编号</param>
+            <param name="majorCode">主编码</param>
+            <param name="minorCodes">次码参数组</param>
+        </member>
+        <member name="M:Framework.Service.IEnvironment.NotifyPush(Framework.Entity.NotifyItem,System.String[])">
+            <summary>
+            通知推送
+            </summary>
+            <param name="notify">通知信息</param>
+            <param name="receivers">通知接收者列表</param>
+        </member>
+        <member name="M:Framework.Service.IEnvironment.NotifyPush(System.String,Framework.Entity.NotifyItem[])">
+            <summary>
+            通知推送给指定组织机构的所有操作员。
+            </summary>
+            <param name="deptCode">推送给指定的组织机构编号(包括所有下级组织机构)。</param>
+            <param name="notifys">推送的通知列表</param>
+        </member>
+        <member name="M:Framework.Service.IEnvironment.NotifyPush(Framework.Entity.NotifyKind,System.String,System.String,System.String[])">
+            <summary>
+            通知推送
+            </summary>
+            <param name="kind">通知类型</param>
+            <param name="header">通知主题</param>
+            <param name="body">通知正文</param>
+            <param name="receivers">通知接收者列表</param>
+        </member>
+        <member name="M:Framework.Service.IEnvironment.BroadcasePush(System.String,System.String)">
+            <summary>
+            消息广播(通知所有在线用户)
+            </summary>
+            <param name="header">消息主题</param>
+            <param name="body">消息正文</param>
+        </member>
+        <member name="T:Framework.Service.ServiceBase">
+            <summary>
+            服务端业务服务基类
+            </summary>
+        </member>
+        <member name="P:Framework.Service.ServiceBase.Environ">
+            <summary>
+            环境变量接口
+            </summary>
+        </member>
+        <member name="P:Framework.Service.ServiceBase.RoutingRequired">
+            <summary>
+            服务是否要求路由转发到 RoutingService 。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.IsRoutingRequired(Framework.Entity.IService)">
+            <summary>
+            判断指定的代理服务是否需要路由转发。
+            </summary>
+            <param name="service">需要判断的代理服务</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.IsRoutingRequired(System.Uri)">
+            <summary>
+            判断指定的代理服务是否需要路由转发。
+            </summary>
+            <param name="serviceHost">需要判断的代理服务地址</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.CallProxy(System.String,System.Object[])">
+            <summary>
+            委托调用代理的服务方法。
+            </summary>
+            <param name="params">调用参数数组</param>
+            <param name="callName">服务函数接口的调用名称(格式:程序集名称.类名称.函数名称)</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.CallProxy``1(System.String,System.Object[])">
+            <summary>
+            委托调用代理的服务方法。
+            </summary>
+            <typeparam name="T">返回值的泛型类型。</typeparam>
+            <param name="params">调用参数数组</param>
+            <param name="callName">服务函数接口的调用名称(格式:程序集名称.类名称.函数名称)</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.CallProxy(Framework.Entity.IService,System.Object[])">
+            <summary>
+            调用服务代理。
+            </summary>
+            <param name="params">输入参数数组。</param>
+            <param name="proxy">代理服务对象(调用的接口函数在此代理服务中执行)。</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.CallProxy``1(Framework.Entity.IService,System.Object[])">
+            <summary>
+            调用服务代理。
+            </summary>
+            <typeparam name="T">返回值的泛型类型。</typeparam>
+            <param name="params">输入参数数组</param>
+            <param name="proxy">代理服务对象(调用的接口函数在此代理服务中执行)。</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.CallProxy(Framework.Entity.IService,System.String,System.Object[])">
+            <summary>
+            委托调用代理的服务方法。
+            </summary>
+            <param name="params">调用参数数组</param>
+            <param name="proxy">代理服务对象(调用的接口函数在此代理服务中执行)。</param>
+            <param name="callName">服务函数接口的调用名称(格式:程序集名称.类名称.函数名称)</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.CallProxy``1(Framework.Entity.IService,System.String,System.Object[])">
+            <summary>
+            委托调用代理的服务方法。
+            </summary>
+            <typeparam name="T">返回值的泛型类型。</typeparam>
+            <param name="params">调用参数数组</param>
+            <param name="proxy">代理服务对象(调用的接口函数在此代理服务中执行)。</param>
+            <param name="callName">服务函数接口的调用名称(格式:程序集名称.类名称.函数名称)</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.CallProxyCore``1(Framework.Entity.IService,Framework.Entity.DbCode,System.Reflection.MethodBase,System.Object[])">
+            <summary>
+            调用服务代理的基础方法
+            </summary>
+            <typeparam name="T">返回值的泛型类型。</typeparam>
+            <param name="caller">服务函数接口的调用方方法</param>
+            <param name="params">输入参数数组</param>
+            <param name="dbcode">结构化的数据编号</param>
+            <param name="proxy">代理服务对象(调用的接口函数在此代理服务中执行，不使用默认前端服务 RoutingService)。</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.CallProxyCore``1(Framework.Entity.IService,Framework.Entity.RequestParameter,Framework.Entity.SerializeType,Framework.Entity.ControlParameter)">
+            <summary>
+            调用服务代理的基础方法
+            </summary>
+            <param name="inputs">输入参数</param>
+            <param name="controls">控制参数</param>
+            <param name="proxy">代理服务对象</param>
+            <param name="serialize">参数序列化方式(0-二进制格式,1-Xml格式,2-Soap格式)。</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.QueryBackup``1(Framework.Entity.RequestParameter,Framework.Entity.SerializeType,Framework.Entity.ControlParameter)">
+            <summary>
+            备份查询
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.Create``1">
+            <summary>
+            生成新的服务对象实例(自动传递调用方环境信息)。
+            </summary>
+            <typeparam name="T">新生成服务对象的泛型类型</typeparam>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.Create``1(Framework.Entity.IService)">
+            <summary>
+            生成新的服务对象实例(自动传递调用方环境信息)。
+            </summary>
+            <typeparam name="T">新生成服务对象的泛型类型</typeparam>
+            <param name="proxy">传递到新生成服务对象的前端代理服务对象实例(缺省表示当前服务)。</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.Create``1(Framework.Service.IEnvironment)">
+            <summary>
+            生成新的服务对象实例(由指明的环境变量和当前服务创建)。
+            </summary>
+            <typeparam name="T">新生成服务对象的泛型类型</typeparam>
+            <param name="environ">代理对象调用服务使用的环境变量。</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.Create``1(Framework.Entity.IService,Framework.Service.IEnvironment)">
+            <summary>
+            生成新的服务对象实例(由指明的代理对象和环境变量创建)。
+            </summary>
+            <typeparam name="T">新生成服务对象的泛型类型</typeparam>
+            <param name="service">传递到新生成服务对象的前端代理服务对象实例(缺省表示当前服务)。</param>
+            <param name="environ">代理对象调用服务使用的环境变量。</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.Create``1(App.FunctionLibrary.DBFactory)">
+            <summary>
+            生成关系映射对象实例(自动传递调用方环境信息)。
+            </summary>
+            <typeparam name="T">关系映射对象的泛型类型。</typeparam>
+            <param name="db">传递到关系映射对象的数据操作对象实例副本(仅包括连接和事务)。</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.Create``1(App.FunctionLibrary.DBFactory,Framework.Entity.DbCode)">
+            <summary>
+            生成关系映射对象实例(自动传递调用方环境信息)。
+            </summary>
+            <typeparam name="T">关系映射对象的泛型类型。</typeparam>
+            <param name="dbCode">传输数据编号，缺省表示当前客户端调用的数据编号。</param>
+            <param name="db">传递到关系映射对象的数据操作对象实例副本(仅包括连接和事务)。</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.Create``1(App.FunctionLibrary.DBFactory,Framework.Service.IEnvironment)">
+            <summary>
+            生成新的服务对象实例(由指明的环境变量和当前服务创建)。
+            </summary>
+            <typeparam name="T">关系映射对象的泛型类型。</typeparam>
+            <param name="environ">代理对象调用服务使用的环境变量。</param>
+            <param name="db">传递到关系映射对象的数据操作对象实例副本(仅包括连接和事务)。</param>
+        </member>
+        <member name="M:Framework.Service.ServiceBase.Create``1(App.FunctionLibrary.DBFactory,Framework.Service.IEnvironment,Framework.Entity.DbCode)">
+            <summary>
+            生成新的服务对象实例(由指明的环境变量和当前服务创建)。
+            </summary>
+            <typeparam name="T">关系映射对象的泛型类型。</typeparam>
+            <param name="environ">代理对象调用服务使用的环境变量。</param>
+            <param name="dbCode">传输数据编号，缺省表示当前客户端调用的数据编号。</param>
+            <param name="db">传递到关系映射对象的数据操作对象实例副本(仅包括连接和事务)。</param>
+        </member>
+        <member name="T:Framework.Service.ServiceBase.SkipSafeCheckAttribute">
+            <summary>
+            忽略安全检查
+            </summary>
+        </member>
+        <member name="T:Framework.Service.ServiceCalling">
+            <summary>
+            代理服务函数调用
+            </summary>
+        </member>
+        <member name="E:Framework.Service.ServiceCalling.ServiceCallBegin">
+            <summary>
+            服务调用开始事件
+            </summary>
+        </member>
+        <member name="E:Framework.Service.ServiceCalling.ServiceCallFinally">
+            <summary>
+            服务调用结束事件
+            </summary>
+        </member>
+        <member name="F:Framework.Service.ServiceCalling.BacklogCounter">
+            <summary>
+            服务积压计算器
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.CallService(System.String,System.String@,Framework.Entity.SerializeType,System.String)">
+            <summary>
+            调用服务函数的接口。
+            </summary>
+            <param name="inputs">输入参数(序列化的字符串)。</param>
+            <param name="outputs">返回值(序列化的字符串)。</param>
+            <param name="controls">控制参数(序列化的字符串)。</param>
+            <param name="serializeType">参数序列化方式(1-Binary,2-Xml,4-Json,8-Soap,16-Simple,128-Anonymous)。</param>
+            <returns>代理调用成功返回True，否则返回False(返回值为异常信息)。</returns>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.CallServiceCore(Framework.Entity.ServiceStream)">
+            <summary>
+            /// 调用服务函数的接口。
+            </summary>
+            <param name="inputs">输入参数(序列化的字节序列)。</param>
+        </member>
+        <member name="F:Framework.Service.ServiceCalling.CallCacher">
+            <summary>
+            调用方法缓存
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.GetCallMethod(System.String,System.Object[]@)">
+            <summary>
+            获取调用方法
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ParseInputs(System.String,Framework.Entity.SerializeType,Framework.Entity.ControlParameter)">
+            <summary>
+            解析输入参数
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.QueryBackup(System.String,Framework.Entity.SerializeType,System.String)">
+            <summary>
+            查询备份服务器
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.QueryBackup(Framework.Entity.ServiceStream)">
+            <summary>
+            查询备份服务器
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.MergeData(System.Object,System.Object)">
+            <summary>
+            数据合并
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.GetQueryMode(Framework.Entity.QueryMode)">
+            <summary>
+            根据调用查询模式，结合服务配置查询模式，获取备份数据查询模式(不返回 Default 模式)。
+            </summary>
+            <param name="callMode">调用查询模式</param>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.UserAuditing(Framework.Service.IEnvironment)">
+            <summary>
+            登录用户鉴证
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ExceptProcess(System.Exception,System.String@,Framework.Entity.SerializeType)">
+            <summary>
+            异常处理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.CreateInstance(System.Reflection.MethodInfo,System.String,Framework.Service.IEnvironment)">
+            <summary>
+            获取类对象实例(静态方法或者抽象类返回 null)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ResultsEmpty(System.Object)">
+            <summary>
+            判断返回值是否为空
+            </summary>
+        </member>
+        <member name="F:Framework.Service.ServiceCalling.LoggesQueue">
+            <summary>
+            控制台等待写入的消息队列
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ConsoleWrite(System.Exception)">
+            <summary>
+            控制台写入"异常"显示信息
+            </summary>
+            <param name="ex">异常对象</param>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ConsoleWrite(System.String,System.String[])">
+            <summary>
+            控制台写入消息。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ConsoleWrite(System.String,System.Boolean)">
+            <summary>
+            控制台写入消息。
+            </summary>
+            <param name="message">写入的消息内容</param>
+            <param name="newline">是否换行</param>
+        </member>
+        <member name="F:Framework.Service.ServiceCalling.logger">
+            <summary>
+            日志管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ConsoleWriteBegin">
+            <summary>
+            控制台写入"计时开始"消息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ConsoleWriteInputs(Framework.Entity.RequestParameter,Framework.Service.IEnvironment,Framework.Entity.SerializeType,Framework.Entity.ControlParameter)">
+            <summary>
+            控制台写入"输入参数"消息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ConsoleWriteInputs_Header(Framework.Entity.ServiceStream,Framework.Service.IEnvironment)">
+            <summary>
+            控制台写入"输入参数"消息头
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ConsoleWriteInputs_Params(System.Object[])">
+            <summary>
+            控制台写入"输入参数"消息参数
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ConsoleWriteReturns(System.Object)">
+            <summary>
+            控制台写入"返回值"消息
+            </summary>
+            <param name="value">返回值</param>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ConsoleWriteException(System.Exception)">
+            <summary>
+            控制台写异常日志
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.ConsoleWriteFinish(System.Int64)">
+            <summary>
+            控制台写入"计时结果"消息
+            </summary>
+            <param name="starttick">开始时刻</param>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.WriteSystemInfoLogs">
+            <summary>
+            写系统信息日志
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.AliveTest(System.Int32,System.String@)">
+            <summary>
+            测试前往目标地址的链路是否畅通(包括代理链路、数据库等)。
+            </summary>
+            <param name="timeout">超时时间(秒钟)。</param>
+            <param name="message">发生异常时的错误信息。</param>
+        </member>
+        <member name="F:Framework.Service.ServiceCalling.NOTIFYS">
+            <summary>
+            TerminalCode/UserID/Message[]
+            </summary>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.MessageNotifyPush(Framework.Entity.NotifyItem,System.String[])">
+            <summary>
+            消息推送
+            </summary>
+            <param name="msg">消息编号</param>
+            <param name="userIds">消息接收者列表</param>
+        </member>
+        <member name="M:Framework.Service.ServiceCalling.MessageCallBack(System.String)">
+            <summary>
+            消息通知阻塞式后台调用等待函数(只有接收到通知时才返回消息)。
+            </summary>
+            <param name="receiver">接收方终端编号</param>
+        </member>
+        <member name="T:Framework.Service.SystemService">
+            <summary>
+            系统框架服务
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.SlowTime">
+            <summary>
+            标准时间
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.TimeStamp">
+            <summary>
+            时间戳
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.Version">
+            <summary>
+            获取字段数据库操作对象的目标数据库版本号(包括数据编号)。
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.Get_FilesCopier">
+            <summary>
+            获取文件复制工具
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.GetLocalTerminal">
+            <summary>
+            获取本地终端信息
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.SystemMaintaining">
+            <summary>
+            挂起系统并进入维护状态(暂停所有客户端对服务的访问)。
+            </summary>
+            <returns>false表示已在维护进程中，系统被挂起。</returns>
+            <remarks>维护结束必须调用 RestoreMaintaining 恢复维护，否则将对服务进行死锁。</remarks>
+        </member>
+        <member name="M:Framework.Service.SystemService.RestoreMaintaining(System.Boolean)">
+            <summary>
+            恢复系统维护状态(允许所有客户端对服务的访问)。
+            </summary>
+            <param name="immediately">是否立即回复系统维护状态，不进行设置维护操作的线程锁定判断。</param>
+        </member>
+        <member name="P:Framework.Service.SystemService.IsSystemMaintaining">
+            <summary>
+            系统是否正处于维护状态。
+            </summary>
+        </member>
+        <member name="F:Framework.Service.SystemService.MaxTimes">
+            <summary>
+            极限登录次数
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.RegisterServiceBus(Framework.Entity.ServiceRegisterRequest)">
+            <summary>
+            注册、登录服务总线。
+            </summary>
+            <param name="request">总线服务注册请求信息</param>
+        </member>
+        <member name="M:Framework.Service.SystemService.LoginServiceBus(System.String)">
+            <summary>
+            登入服务总线,并返回登录的角色和机构信息。
+            </summary>
+            <param name="deptCode">登入的工作机构编号</param>
+        </member>
+        <member name="M:Framework.Service.SystemService.UpdateServiceToken(System.String)">
+            <summary>
+            更新总线服务令牌(被更新的令牌将失效，并重新生成新令牌)。
+            </summary>
+            <param name="token">被更新的服务令牌</param>
+        </member>
+        <member name="M:Framework.Service.SystemService.UnregisterServiceBus(System.String)">
+            <summary>
+            注销总线服务。
+            </summary>
+            <param name="token">将要注销注册时获取的登录令牌</param>
+        </member>
+        <member name="M:Framework.Service.SystemService.Get_Environ_ByToken(Framework.Entity.ServiceStream,System.Reflection.MethodInfo)">
+            <summary>
+            /// 根据登录令牌获取注册的环境信息
+            </summary>
+        </member>
+        <member name="P:Framework.Service.SystemService.IsEipDB">
+            <summary>
+            是否为企业总线数据架构(true:企业总线数据架构，false:非企业总线数据架构,null:无数据库)
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.HasEipDB">
+            <summary>
+            是否为企业总线数据架构(true:企业总线数据架构，false:非企业总线数据架构,null:无数据库)
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.Query(System.String,App.FunctionLibrary.WhereBuilder)">
+            <summary>
+            </summary>
+            数据库查询操作，并且返回结果集 DataTable.
+            <param name="script">不包含 Where 关键字的查询脚本字符串表达式(条件表达式用 {0} 占位标识，缺省{0}时表示自动追加到查询脚本的末尾行)</param>
+            <param name="wb">查询条件表达式</param>
+        </member>
+        <member name="M:Framework.Service.SystemService.Query(System.String,System.Object[])">
+            <summary>
+            数据库查询操作，并且返回结果集 DataTable.
+            </summary>
+            <param name="script">复合格式查询字符串。</param>
+            <param name="args">一个对象数组，其中包含零个或多个要设置格式的对象。</param>
+            <remarks>如果查询字符串以 Select 开始被认定为"SQL文本命令"，否则视为"存储过程"，不支持"表名称"的形式。</remarks>
+        </member>
+        <member name="M:Framework.Service.SystemService.Execute(System.String,App.FunctionLibrary.WhereBuilder)">
+            <summary>
+            执行Transact-SQL脚本语句，并且返回受影响的行数。
+            </summary>
+            <param name="commandText">不包含 Where 关键字的SQL脚本语句字符串(条件表达式用 {0} 占位标识，缺省{0}时表示自动追加到查询脚本的末尾行)</param>
+            <param name="wb">条件表达式</param>
+        </member>
+        <member name="M:Framework.Service.SystemService.Execute(System.String,System.Object[])">
+            <summary>
+            执行Transact-SQL脚本语句，并且返回受影响的行数。
+            </summary>
+            <param name="commandText">需要执行的SQL脚本语句字符串</param> 
+            <param name="args">一个对象数组，其中包含零个或多个要设置格式的对象。</param>
+        </member>
+        <member name="M:Framework.Service.SystemService.Setup_AccessToken">
+            <summary>
+            初始化安装访问令牌
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.InitializeService">
+            <summary>
+            初始化服务
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.DestroyService">
+            <summary>
+            销毁并清理服务资源
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.AliveTest">
+            <summary>
+            链路测试，并返回服务器资源
+            </summary>
+        </member>
+        <member name="M:Framework.Service.SystemService.BacklogCounter">
+            <summary>
+            服务队列积压数
+            </summary>
+        </member>
+        <member name="T:Framework.Service.NotifyManage">
+            <summary>
+            消息会话管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.NotifyManage.Query_Notifys(Framework.Entity.NotifyKind,System.String,System.Nullable{System.Boolean},System.String,System.String,App.FunctionLibrary.DatePair)">
+            <summary>
+            查询通知列表(不包括通知正文)。
+            </summary>
+            <param name="kind">通知类型</param>
+            <param name="header">通知标题(包含)</param>
+            <param name="istop">是否置顶</param>
+            <param name="publisher">发布操作员内码</param>
+            <param name="publishDept">发布部门</param>
+            <param name="publishDate">发布时间</param>
+        </member>
+        <member name="M:Framework.Service.NotifyManage.Get_Notifys_ByPublisher(System.String,System.Boolean)">
+            <summary>
+            获取已发送的通知列表
+            </summary>
+            <param name="publisher">发送者</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Service.NotifyManage.Get_Notifys_ByPublishDept(System.String,System.Boolean)">
+            <summary>
+            获取已发送的通知列表
+            </summary>
+            <param name="publishDept">发布部门</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Service.NotifyManage.Get_Notify_ByNotifyID(System.String)">
+            <summary>
+            根据通知编号获取通知实体(包括通知正文)。
+            </summary>
+            <param name="notifyId">通知编号</param>
+        </member>
+        <member name="M:Framework.Service.NotifyManage.Insert_Notify(Framework.Entity.NotifyItem,System.String[])">
+            <summary>
+            新增通知
+            </summary>
+            <param name="item">通知</param>
+            <param name="receivers">通知接收者</param>
+        </member>
+        <member name="M:Framework.Service.NotifyManage.Delete_Notifys_ByNotifyID(System.String[])">
+            <summary>
+            删除通知
+            </summary>
+            <param name="notifyIds">通知编码列表</param>
+        </member>
+        <member name="M:Framework.Service.NotifyManage.Update_Notifys_Istop(System.String[],System.Boolean)">
+            <summary>
+            通知置顶
+            </summary>
+            <param name="notifyIds">通知编号列表</param>
+            <param name="istop">true表示置顶，false表示取消置顶</param>
+        </member>
+        <member name="T:Framework.Service.NotifyStatusManage">
+            <summary>
+            通知通知状态管理
+            </summary>
+        </member>
+        <member name="M:Framework.Service.NotifyStatusManage.Query_NotifyStatus(System.String,System.String,System.String,App.FunctionLibrary.DatePair,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            查询通知状态。
+            </summary>
+            <param name="receiver">接收者</param>
+            <param name="receiveDept">接收部门</param>
+            <param name="readDate">阅读时间</param>
+            <param name="readed">是否已读</param>
+            <param name="disabled">是否已删除</param>
+            <param name="header">通知标题(包含)</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Service.NotifyStatusManage.Get_NotifyStatus_ByNotifyID_ByReceiveUserID(System.String,System.String,System.Boolean)">
+            <summary>
+            获取通知状态
+            </summary>
+            <param name="notifyId">通知编号</param>
+            <param name="receiver">通知接受者</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Service.NotifyStatusManage.Get_NotifyStatus_ByNotifyID(System.String,System.Boolean)">
+            <summary>
+            获取指定通知编号的通知接收状态。
+            </summary>
+            <param name="notifyId">通知编号</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Service.NotifyStatusManage.Get_NotifyStatus_Unreaded(System.String,System.Boolean)">
+            <summary>
+            获取未读的通知列表。
+            </summary>
+            <param name="receiver">接受者</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Service.NotifyStatusManage.Get_NotifyStatus_Readed(System.String,System.Boolean)">
+            <summary>
+            获取已读的通知列表
+            </summary>
+            <param name="receiver">接收者</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Service.NotifyStatusManage.Get_NotifyStatus_Deleted(System.String,System.Boolean)">
+            <summary>
+            获取已删除的通知列表
+            </summary>
+            <param name="receiver">接收者</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Service.NotifyStatusManage.Get_UnreadCount_ByReceiver(System.String)">
+            <summary>
+            获取操作员未读的通知数量
+            </summary>
+            <param name="receiver">指定的通知接收者</param>
+        </member>
+        <member name="M:Framework.Service.NotifyStatusManage.Insert_NotifyStatus(Framework.Entity.NotifyStatusItem[])">
+            <summary>
+            新增通知状态
+            </summary>
+            <param name="items">通知状态列表</param>
+        </member>
+        <member name="M:Framework.Service.NotifyStatusManage.Delete_NotifyStatus_ByNotifyID(System.String,System.String[])">
+            <summary>
+            删除指定通知编号的通知状态
+            </summary>
+            <param name="notifyId">通知编号</param>
+            <param name="receivers">通知接收者列表(缺省表示所有接收者)</param>
+        </member>
+        <member name="M:Framework.Service.NotifyStatusManage.Delete_NotifyStatus_ByReceiveUserID(System.String,System.String[])">
+            <summary>
+            删除指定接收者的消息状态。
+            </summary>
+            <param name="receiver">会话接收者</param>
+            <param name="notifyIds">会话编号列表(缺省表示所有会话)。</param>
+        </member>
+        <member name="M:Framework.Service.NotifyStatusManage.Update_NotifyStatus_Readed(System.Boolean,App.FunctionLibrary.Pair[])">
+            <summary>
+            更新消息状态是否已阅读
+            </summary>
+            <param name="readed">true表示已阅读，false表示取消阅读</param>
+            <param name="values">更新状态的会话列表(Name=会话编号,Value=接收者)。</param>
+        </member>
+        <member name="M:Framework.Service.NotifyStatusManage.Update_NotifyStatus_Disabled(System.Boolean,App.FunctionLibrary.Pair[])">
+            <summary>
+            更新通知状态是否已作废
+            </summary>
+            <param name="disabled">true表示已作废，false表示取消作废</param>
+            <param name="values">更新状态的通知列表(Name=通知编号,Value=接收者)。</param>
+        </member>
+    </members>
+</doc>

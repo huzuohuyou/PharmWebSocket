@@ -153,3 +153,81 @@ D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Pharmacy Reporter.
 D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Pharmacy Reporter.ORM.pdb
 D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Pharmacy Reporter.ORM.xml
 D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Functions Library.xml
+D:\GitHub\PharmWebSocket\Elight.Web\obj\Debug\Touch Screen Query.Web.csprojAssemblyReference.cache
+D:\GitHub\PharmWebSocket\Elight.Web\obj\Debug\Elight.Web.dll
+D:\GitHub\PharmWebSocket\Elight.Web\obj\Debug\Elight.Web.pdb
+D:\GitHub\PharmWebSocket\Elight.Web\bin\x86\CefSharp.WinForms.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\x86\CefSharp.WinForms.pdb
+D:\GitHub\PharmWebSocket\Elight.Web\bin\x86\CefSharp.WinForms.XML
+D:\GitHub\PharmWebSocket\Elight.Web\bin\x64\CefSharp.WinForms.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\x64\CefSharp.WinForms.pdb
+D:\GitHub\PharmWebSocket\Elight.Web\bin\x64\CefSharp.WinForms.XML
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Reference\Elight.Entity.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Reference\Elight.Infrastructure.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Reference\Elight.IRepository.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Reference\Elight.IService.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Reference\Elight.Repository.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Reference\Elight.Service.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Reference\Framework.Entity.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Reference\Framework.ORM.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Reference\Framework.Proxy.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Reference\Framework.Service.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Reference\Functions Library.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Elight.Web.dll.config
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Elight.Web.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Elight.Web.pdb
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Autofac.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Autofac.Integration.Mvc.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Elight.Entity.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Elight.Infrastructure.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Elight.IRepository.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Elight.IService.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Elight.Repository.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Elight.Service.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Exceptionless.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Exceptionless.Mvc.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Framework.Entity.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Framework.ORM.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Framework.Service.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\MySql.Data.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Newtonsoft.Json.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\NLog.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Oracle.ManagedDataAccess.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Pharmacy Reporter.Entity.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Pharmacy Reporter.Service.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Net.Http.Formatting.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.Helpers.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.Http.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.Http.WebHost.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.Mvc.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.Razor.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.WebPages.Deployment.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.WebPages.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.WebPages.Razor.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Pharmacy Reporter.ORM.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Functions Library.dll
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Pharmacy Reporter.Entity.pdb
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Pharmacy Reporter.Entity.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Pharmacy Reporter.Service.pdb
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Pharmacy Reporter.Service.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Autofac.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Autofac.Integration.Mvc.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Exceptionless.pdb
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Exceptionless.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Exceptionless.Mvc.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Newtonsoft.Json.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\NLog.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Net.Http.Formatting.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.Helpers.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.Http.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.Http.WebHost.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.Mvc.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.Razor.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.WebPages.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.WebPages.Deployment.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\System.Web.WebPages.Razor.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Pharmacy Reporter.ORM.pdb
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Pharmacy Reporter.ORM.xml
+D:\GitHub\PharmWebSocket\Elight.Web\bin\Functions Library.xml
+D:\GitHub\PharmWebSocket\Elight.Web\obj\Debug\Touch Screen Query.Web.csproj.CopyComplete

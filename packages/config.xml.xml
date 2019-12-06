@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config product="朝阳医院管理信息系统" alias="朝阳HIS" version="2.0.0" debug="Normal">
+    <client>
+    <serviceAddress default="debug">
+      <localhost>http://localhost:8000/wcfservice.svc</localhost>
+      <release>http://192.168.5.90:161/wcfservice.svc</release>
+      <debug>http://192.168.5.210:48000/wcfservice.svc</debug>
+      <sunleahoo>http://www.sunleahoo.com:8000/wcfservice.svc</sunleahoo>
+    </serviceAddress>
+    </client>
+
+    <service>
+        <offlineVersion>true</offlineVersion>
+
+        <baseAddresses>
+            <http>http://localhost:8000</http>
+            <net.tcp>net.tcp://localhost:8800</net.tcp>
+        </baseAddresses>
+
+        <dataBase provider="Oracle.ManagedDataAccess.OracleConnection"
+                  connection="Data Source={source}/{base};User ID={userId};Password={password};"
+                  paramChar=":"
+                  schema="tw_hsp_pmpa">
+            <source>172.30.102.48</source>
+            <base>scdb1</base>
+            <userId>TW_HSP_PMPA</userId>
+            <password>YGd7eGF8aWQ=</password>
+        </dataBase>
+    </service>
+
+    <cookies shadowFile="true" />
+
+    <logger>
+        <DbQuery />
+        <DbModify />
+        <ServiceBus />
+        <ServiceRAW />
+    </logger>
+</config>

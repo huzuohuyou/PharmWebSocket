@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Framework.WCF</name>
+    </assembly>
+    <members>
+        <member name="T:Framework.WCF.Global">
+            <summary>
+            全局应用程序
+            </summary>
+        </member>
+        <member name="M:Framework.WCF.Global.Application_Start(System.Object,System.EventArgs)">
+            <summary>
+            应用程序启动事件
+            </summary>
+        </member>
+        <member name="M:Framework.WCF.Global.Session_Start(System.Object,System.EventArgs)">
+            <summary>
+            会话启动事件
+            </summary>
+        </member>
+        <member name="M:Framework.WCF.Global.Session_End(System.Object,System.EventArgs)">
+            <summary>
+            会话终止事件
+            </summary>
+        </member>
+        <member name="M:Framework.WCF.Global.Application_End(System.Object,System.EventArgs)">
+            <summary>
+            应用程序终止事件
+            </summary>
+        </member>
+        <member name="T:Framework.WCF.HttpHandler">
+            <summary>
+            WebAPI处理程序
+            </summary>
+        </member>
+        <member name="M:Framework.WCF.HttpHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            WebApi默认处理函数
+            </summary>
+        </member>
+        <member name="T:Framework.WCF.WcfFactory">
+            <summary>
+            WCF服务工厂，用于在IIS承载时生成可读取自定义配置文件的ServiceHost
+            </summary>
+        </member>
+        <member name="M:Framework.WCF.WcfFactory.CreateServiceHost(System.Type,System.Uri[])">
+            <summary>
+            为具有特定基址的指定类型的服务创建 <see cref="T:System.ServiceModel.ServiceHost"/>。
+            </summary>
+            <param name="serviceType">指定要承载的服务的类型。</param>
+            <param name="baseAddresses">类型为 <see cref="T:System.Uri"/> 且包含所承载服务的基址的 <see cref="T:System.Array"/>。</param>
+            <returns>
+            使用特定基址指定的该类型服务的 <see cref="T:System.ServiceModel.ServiceHost"/>。
+            </returns>
+        </member>
+        <member name="M:Framework.WCF.WcfFactory.CreateServiceHost(System.Uri[])">
+            <summary>
+            为具有特定基址的指定类型的服务创建 <see cref="T:System.ServiceModel.ServiceHost"/>。
+            </summary>
+            <param name="baseAddresses">类型为 <see cref="T:System.Uri"/> 且包含所承载服务的基址的 <see cref="T:System.Array"/>，如缺省将使用配置文件 Configer.xml 的服务基地址配置节点 /service/baseAddresses。</param>
+            <returns>
+            使用特定基址指定的该类型服务的 <see cref="T:System.ServiceModel.ServiceHost"/>。
+            </returns>
+        </member>
+        <member name="T:Framework.WCF.WcfHost">
+            <summary>
+            WCF服务宿主程序
+            </summary>
+        </member>
+        <member name="M:Framework.WCF.WcfHost.#ctor(System.Object,System.Uri[])">
+            <summary />
+        </member>
+        <member name="M:Framework.WCF.WcfHost.#ctor(System.Type,System.Uri[])">
+            <summary />
+        </member>
+        <member name="M:Framework.WCF.WcfHost.OnOpened">
+            <summary>
+            服务启动事件
+            </summary>
+        </member>
+        <member name="M:Framework.WCF.WcfHost.OnClosed">
+            <summary>
+            服务停止事件
+            </summary>
+        </member>
+        <member name="T:Framework.WCF.WcfService">
+            <summary>
+            WCF服务
+            </summary>
+        </member>
+        <member name="M:Framework.WCF.WcfService.CallService(System.String,System.String@,Framework.Entity.SerializeType,System.String)">
+            <summary>
+            调用服务函数的接口。
+            </summary>
+            <param name="inputs">输入参数(序列化的字符串)。</param>
+            <param name="outputs">返回值(序列化的字符串)。</param>
+            <param name="controls">控制参数(序列化的字符串)。</param>
+            <param name="serializeType">参数序列化方式(1-Binary,2-Xml,4-Json,8-Soap,16-Simple,128-Anonymous)。</param>
+            <returns>代理调用成功返回True，否则返回False(返回值为异常信息)。</returns>
+        </member>
+        <member name="M:Framework.WCF.WcfService.CallServiceCore(Framework.Entity.ServiceStream)">
+            <summary>
+            调用服务函数的接口。
+            </summary>
+            <param name="inputs">输入参数(序列化的字节序列)。</param>
+        </member>
+        <member name="M:Framework.WCF.WcfService.AliveTest(System.Int32,System.String@)">
+            <summary>
+            服务链接测试(包括代理链路、数据库等)。
+            </summary>
+            <param name="timeout">超时时间(秒钟)</param>
+            <param name="message">发生异常时的错误信息</param>
+        </member>
+        <member name="M:Framework.WCF.WcfService.MessageCallBack(System.String)">
+            <summary>
+            消息通知阻塞式后台调用等待函数(只有接收到通知时才返回消息编号)。
+            </summary>
+            <param name="receiver">接收方终端编号</param>
+        </member>
+    </members>
+</doc>

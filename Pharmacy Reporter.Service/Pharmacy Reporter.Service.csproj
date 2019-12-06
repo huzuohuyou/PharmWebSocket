@@ -38,18 +38,20 @@
     <DocumentationFile>..\..\..\bin\Pharmacy Reporter.Service.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Framework.Entity">
-      <HintPath>..\..\..\packages\Framework.Entity.dll</HintPath>
+    <Reference Include="Framework.Entity, Version=3.0.0.16896, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Framework.Entity.dll</HintPath>
     </Reference>
-    <Reference Include="Framework.ORM">
-      <HintPath>..\..\..\packages\Framework.ORM.dll</HintPath>
+    <Reference Include="Framework.ORM, Version=3.0.0.16897, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Framework.ORM.dll</HintPath>
     </Reference>
     <Reference Include="Framework.Service">
-      <HintPath>..\..\..\packages\Framework.Service.dll</HintPath>
+      <HintPath>..\packages\Framework.Service.dll</HintPath>
     </Reference>
     <Reference Include="Functions Library, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\packages\Functions Library.dll</HintPath>
+      <HintPath>..\packages\Functions Library.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

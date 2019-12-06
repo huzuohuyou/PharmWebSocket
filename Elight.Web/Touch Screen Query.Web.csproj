@@ -707,18 +707,6 @@
       <Project>{3d93793e-92dd-402f-9c74-3c44d5987b1e}</Project>
       <Name>Pharmacy Reporter.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Touch Screen Query.Entity\Touch Screen Query.Entity.csproj">
-      <Project>{5c8ed3fa-9712-4bef-9dcb-8830ecc82173}</Project>
-      <Name>Touch Screen Query.Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Touch Screen Query.ORM\Touch Screen Query.ORM.csproj">
-      <Project>{d8a3b592-3eaa-4671-94b4-84934f4940a6}</Project>
-      <Name>Touch Screen Query.ORM</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Touch Screen Query.Service\Touch Screen Query.Service.csproj">
-      <Project>{60a74832-3689-4267-b906-7ab0b50e68b9}</Project>
-      <Name>Touch Screen Query.Service</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

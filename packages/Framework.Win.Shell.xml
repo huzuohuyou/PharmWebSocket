@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Framework.Win.Shell</name>
+    </assembly>
+    <members>
+        <member name="T:Framework.Win.Shell.ExeShell">
+            <summary>
+            可执行程序的壳窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.#ctor">
+            <summary>
+            可执行程序的壳窗口
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Shell.ExeShell.IsExited">
+            <summary>
+            进程是否已退出
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Shell.ExeShell.Timeout">
+            <summary>
+            等待超时时间(毫秒,默认10秒钟)
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.OnUnpackage(System.Windows.Forms.Form,System.String,System.String[],System.String)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.OnCreateInstance(System.Windows.Forms.Form,App.FunctionLibrary.Filer,System.String,System.String)">
+            <summary>
+            创建调用实例
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.OnEnter(System.EventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.OnSizeChanged(System.EventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.OnFormClosed(System.Windows.Forms.FormClosedEventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.Dispose(System.Boolean)">
+            <summary>
+            销毁
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.OnStartProcess(App.FunctionLibrary.Filer,System.Action{System.Diagnostics.Process})">
+            <summary>
+            创建并启动可执行程序进程
+            </summary>
+            <param name="exe">创建进程的可执行程序</param>
+            <param name="action">对创建的进程在启动之前进行的处理操作</param>
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.OnSimulatedLogin(System.Diagnostics.Process)">
+            <summary>
+            模拟登录
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.OnDiscoverMainform(System.Diagnostics.Process,System.String[])">
+            <summary>
+            侦测进程工作窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.CheckExe(System.String)">
+            <summary>
+            验证调用名并返回该可执行程序(进行版本的管理)。
+            </summary>
+            <param name="callName">可执行程序名称</param>
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.KillProcess(App.FunctionLibrary.Filer)">
+            <summary>
+            销毁已经运行的可执行程序进程
+            </summary>
+            <param name="exe">可执行程序</param>
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.WaitforProcess(System.Diagnostics.Process)">
+            <summary>
+            等待进程空闲状态
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.ExeShell.AdaptationMainform(System.Diagnostics.Process,App.FunctionLibrary.Windowser)">
+            <summary>
+            适配工作窗口
+            </summary>
+            <param name="process">工作进程</param>
+            <param name="win">工作窗口</param>
+        </member>
+        <member name="T:Framework.Win.Shell.IEBrowserVersion">
+            <summary>
+            Internet Explorer 版本
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Shell.IEBrowserVersion.IE7">
+            <summary>
+            Internet Explorer 7
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Shell.IEBrowserVersion.IE8">
+            <summary>
+            Internet Explorer 8
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Shell.IEBrowserVersion.IE9">
+            <summary>
+            Internet Explorer 9
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Shell.IEBrowserVersion.IE10">
+            <summary>
+            Internet Explorer 10
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Shell.IEBrowserVersion.IE11">
+            <summary>
+            Internet Explorer 11
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Shell.IEShell">
+            <summary>
+            Web 网站页面壳(Internet Explorer 内核)
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.IEShell.#ctor">
+            <summary>
+            Web 网站页面壳(Internet Explorer 内核)
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Shell.IEShell.BrowserVersion">
+            <summary>
+            浏览器版本(默认:Internet Explorer 11)
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.IEShell.OnUnpackage(System.Windows.Forms.Form,System.String,System.String[],System.String)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Shell.IEShell.OnCreateInstance(System.Windows.Forms.Form,App.FunctionLibrary.Filer,System.String,System.String)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Shell.IEShell.Navigate(System.String)">
+            <summary>
+            网页导航(已经处理了UserID、UserCode、UserName、DbCode、DeptCode、RoleCode、Password等参数)
+            </summary>
+            <param name="address">导航的页面地址</param>
+            <remarks>处理的密码为密文(密码算法由系统配置 PasswordCrypto 指定)</remarks>
+        </member>
+        <member name="M:Framework.Win.Shell.IEShell.QueryParameter(App.FunctionLibrary.PairList@)">
+            <summary>
+            查询参数(名值对儿)
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Shell.RunShell">
+            <summary>
+            直接运行可执行程序可窗口(非嵌入模式)
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.RunShell.#ctor">
+            <summary>
+            直接运行可执行程序可窗口(非嵌入模式)
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Shell.RunShell.Timeout">
+            <summary>
+            等待超时时间(毫秒,默认10秒钟)
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.RunShell.OnUnpackage(System.Windows.Forms.Form,System.String,System.String[],System.String)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Shell.RunShell.OnCreateInstance(System.Windows.Forms.Form,App.FunctionLibrary.Filer,System.String,System.String)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Shell.RunShell.OnStartProcess(App.FunctionLibrary.Filer,System.Action{System.Diagnostics.Process})">
+            <summary>
+            创建并启动可执行程序进程
+            </summary>
+            <param name="exe">创建进程的可执行程序</param>
+            <param name="action">对创建的进程在启动之前进行的处理操作</param>
+        </member>
+        <member name="M:Framework.Win.Shell.RunShell.CheckExe(System.String)">
+            <summary>
+            验证调用名并返回该可执行程序(进行版本的管理)。
+            </summary>
+            <param name="callName">可执行程序名称</param>
+        </member>
+        <member name="M:Framework.Win.Shell.RunShell.OnSimulatedLogin(System.Diagnostics.Process)">
+            <summary>
+            模拟登录
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.RunShell.WaitforProcess(System.Diagnostics.Process)">
+            <summary>
+            等待进程空闲状态
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.RunShell.ActivateProcess(App.FunctionLibrary.Filer)">
+            <summary>
+            激活已经运行的可执行程序进程
+            </summary>
+            <param name="exe">可执行程序</param>
+        </member>
+        <member name="T:Framework.Win.Shell.WebShell">
+            <summary>
+            Web 网站页面壳
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.WebShell.#ctor">
+            <summary>
+            Web 网站页面壳
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.WebShell.Dispose(System.Boolean)">
+            <summary>
+            销毁
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.WebShell.OnFormClosed(System.Windows.Forms.FormClosedEventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Shell.WebShell.Navigate(System.String)">
+            <summary>
+            网页导航
+            </summary>
+            <param name="address">导航的页面地址</param>
+        </member>
+        <member name="M:Framework.Win.Shell.WebShell.QueryParameter(App.FunctionLibrary.PairList@)">
+            <summary>
+            查询参数(名值对儿)
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.WebShell.OnUnpackage(System.Windows.Forms.Form,System.String,System.String[],System.String)">
+            <summary>
+            解包
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.WebShell.OnCreateInstance(System.Windows.Forms.Form,App.FunctionLibrary.Filer,System.String,System.String)">
+            <summary>
+            创建实例
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Shell.ZipArchive">
+            <summary>
+            压缩包操作
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.ZipArchive.UnZip(System.String,System.String)">
+            <summary>
+            Zip解压并更新目标文件
+            </summary>
+            <param name="zipFile">Zip压缩包路径</param>
+            <param name="unZipDir">解压目标路径</param>
+        </member>
+        <member name="T:Framework.Win.Shell.ZipShell">
+            <summary>
+            程序集压缩包的壳窗口
+            </summary>
+            <remarks>
+            <para>AttachData Json格式表达式</para>
+            <para>{</para>
+            <para>  "CallName":"程序集简单名.类名称",</para>
+            <para>  "Packages":["压缩包文件名称 1","压缩包文件名称 2","压缩包文件名称 N"]</para>
+            <para>  "Configuration":"配置文件名称"</para>
+            <para>}</para>
+            </remarks>
+        </member>
+        <member name="M:Framework.Win.Shell.ZipShell.#ctor">
+            <summary>
+            程序集压缩包壳窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.ZipShell.Dispose(System.Boolean)">
+            <summary>
+            销毁
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Shell.ZipShell.OnLoad(System.EventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Shell.ZipShell.OnFormClosed(System.Windows.Forms.FormClosedEventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Shell.ZipShell.OnSizeChanged(System.EventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Shell.ZipShell.OnUnpackage(System.Windows.Forms.Form,System.String,System.String[],System.String)">
+            <summary>
+            解压程序包，并返回包目录
+            </summary>
+            <param name="parent">父容器窗口</param>
+            <param name="packages"></param>
+            <param name="callName">被执行程序集代码的调用名称/调用标识</param>
+            <param name="configuration">被执行程序集代码的配置文件名称</param>
+        </member>
+        <member name="M:Framework.Win.Shell.ZipShell.OnCreateInstance(System.Windows.Forms.Form,App.FunctionLibrary.Filer,System.String,System.String)">
+            <summary>
+            创建调用实例
+            </summary>
+            <param name="parent">父容器窗口</param>
+            <param name="workDir">被执行程序集代码的工作目录</param>
+            <param name="callName">被执行程序集代码的调用名称/调用标识</param>
+            <param name="configuration">被执行程序集代码的配置文件名称</param>
+        </member>
+        <member name="M:Framework.Win.Shell.ZipShell.OnAssemblyResolve(App.FunctionLibrary.Filer)">
+            <summary>
+            程序集解析失败事件
+            </summary>
+            <param name="workDir">程序集的工作目录</param>
+        </member>
+    </members>
+</doc>

@@ -8,3 +8,10 @@ D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Service\obj\Deb
 D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Service\obj\Debug\Pharmacy Reporter.Service.csproj.CopyComplete
 D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Service\obj\Debug\Pharmacy Reporter.Service.dll
 D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Service\obj\Debug\Pharmacy Reporter.Service.pdb
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Service\obj\Debug\Pharmacy Reporter.Service.csprojAssemblyReference.cache
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Service\obj\Debug\Pharmacy Reporter.Service.dll
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Service\obj\Debug\Pharmacy Reporter.Service.pdb
+D:\bin\Pharmacy Reporter.Service.xml
+D:\bin\Pharmacy Reporter.Service.dll
+D:\bin\Pharmacy Reporter.Service.pdb
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Service\obj\Debug\Pharmacy Reporter.Service.csproj.CopyComplete

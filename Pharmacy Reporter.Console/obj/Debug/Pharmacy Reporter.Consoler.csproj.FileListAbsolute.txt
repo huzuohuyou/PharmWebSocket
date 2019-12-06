@@ -18,3 +18,19 @@ D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\obj\Deb
 D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Resources\ThLPrinterDLL.dll
 D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\obj\Debug\Pharmacy_Reporter.Consoler.Properties.Resources.resources
 D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\obj\Debug\Pharmacy Reporter.Consoler.csproj.GenerateResource.cache
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\bin\Debug\Resources\ThLPrinterDLL.dll
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\bin\Debug\Pharmacy ReporterConsoler.exe
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\bin\Debug\Pharmacy ReporterConsoler.pdb
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\bin\Debug\Newtonsoft.Json.dll
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\bin\Debug\Pharmacy Reporter.Entity.dll
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\bin\Debug\websocket-sharp.dll
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\bin\Debug\Pharmacy Reporter.Entity.pdb
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\bin\Debug\Pharmacy Reporter.Entity.xml
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\bin\Debug\Newtonsoft.Json.xml
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\bin\Debug\websocket-sharp.xml
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\obj\Debug\Pharmacy Reporter.Consoler.csprojAssemblyReference.cache
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\obj\Debug\Pharmacy_Reporter.Consoler.Properties.Resources.resources
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\obj\Debug\Pharmacy Reporter.Consoler.csproj.GenerateResource.cache
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\obj\Debug\Pharmacy Reporter.Consoler.csproj.CopyComplete
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\obj\Debug\Pharmacy ReporterConsoler.exe
+D:\GitHub\PharmWebSocket\Pharmacy Reporter.Console\obj\Debug\Pharmacy ReporterConsoler.pdb

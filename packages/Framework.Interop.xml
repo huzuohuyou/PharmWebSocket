@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Framework.Interop</name>
+    </assembly>
+    <members>
+        <member name="T:Framework.Interop.IServiceCall">
+            <summary>
+            服务总线调用接口
+            </summary>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.RegisterServiceBus(System.String,System.String,System.String,System.Int32,System.String@)">
+            <summary>
+            注册服务总线(注册失败返回false，同时输出参数表示失败原因)。
+            </summary>
+            <param name="userName">登录总线的用户名称</param>
+            <param name="password">登录总线的用户密码(明文密码)</param>
+            <param name="serviceHost">总线服务地址</param>
+            <param name="message">注册成功返回服务总线响应Xml格式信息，注册失败返回的异常信息</param>
+            <param name="platform">注册的客户端平台类别(0-Unknown,1-Winform,2-Webform,3-Appform,4-Wechat)</param>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.LoginServiceBus(System.String,System.String@)">
+            <summary>
+            登入服务总线，并返回菜单信息列表(登入失败返回false，同时输出参数表示失败原因)。
+            </summary>
+            <param name="deptCode">登入的工作组织机构编号</param>
+            <param name="message">登入成功返回角色菜单和工具栏Xml格式列表，注册失败返回的异常信息</param>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.UnregisterServiceBus(System.String@)">
+            <summary>
+            注销服务总线(注销失败返回false，同时输出参数表示失败原因)。
+            </summary>
+            <param name="message">如果发生异常，返回的异常表达式</param>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.Invoke(System.String,System.Object[])">
+            <summary>
+            总线服务调用函数(注意捕获异常)。
+            </summary>
+            <param name="callName">总线服务接口调用名称</param>
+            <param name="values">输入参数值组</param>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.Invoke``1(System.String,System.Object[])">
+            <summary>
+            总线服务调用函数(注意捕获异常)。
+            </summary>
+            <typeparam name="T">调用结果实体类型</typeparam>
+            <param name="callName">总线服务接口调用名称</param>
+            <param name="values">输入参数值组</param>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.Invoke(System.String,System.String@)">
+            <summary>
+            总线服务调用(Xml字符集格式，调用失败返回false,同时输出参数表示异常信息)。
+            </summary>
+            <param name="ins">输入参数(Xml格式)</param>
+            <param name="outs">输出参数(Xml格式，失败时返回异常信息)</param>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.Invoke(System.String,System.String[]@,System.String@)">
+            <summary>
+            总线服务调用(Xml字符集格式，调用失败返回false,同时输出参数表示异常信息)。
+            </summary>
+            <param name="callName">总线服务接口调用名称</param>
+            <param name="values">输入参数值组(Xml字符集格式，节点的Type属性表示参数类型，例如:&lt;Item Type="String"&gt;参数值&lt;/Item&gt;)</param>
+            <param name="outs">输出参数(Xml格式，失败时返回异常信息)</param>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.Invoke(System.String,System.Object[]@,System.String@)">
+            <summary>
+            总线服务调用(Xml字符集格式，调用失败返回false,同时输出参数表示异常信息)。
+            </summary>
+            <param name="callName">总线服务接口调用名称</param>
+            <param name="values">输入参数值组</param>
+            <param name="outs">输出参数(Xml格式，失败时返回异常信息)</param>
+        </member>
+        <member name="P:Framework.Interop.IServiceCall.Version">
+            <summary>
+            获取总线服务版本号(格式:主版本.次版本.修订版本.数据编号)
+            </summary>
+        </member>
+        <member name="P:Framework.Interop.IServiceCall.SlowTime">
+            <summary>
+            获取服务总线时间(格式:年年年年-月月-日日 时时:分分:秒秒.毫毫毫)。
+            </summary>
+        </member>
+        <member name="P:Framework.Interop.IServiceCall.TimeStamp">
+            <summary>
+            时间戳(精度到微秒的20位时间序列字符串，理论上该值非唯一)。
+            </summary>        
+        </member>
+        <member name="P:Framework.Interop.IServiceCall.WorkDir">
+            <summary>
+            工作目录
+            </summary>
+        </member>
+        <member name="P:Framework.Interop.IServiceCall.TempDir">
+            <summary>
+            临时目录
+            </summary>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.GetSeriesValue(System.String)">
+            <summary>
+            获取序列号值
+            </summary>
+            <param name="seriesName">序列号名称</param>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.GetUniqueSeries">
+            <summary>
+            获取全系统绝对唯一的序列号(20位字符集序列)。
+            </summary>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.ResetSeriesValue(System.String,System.String)">
+            <summary>
+            回退序列号值
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="seriesValue">序列号值</param>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.GetConfigValue(System.String)">
+            <summary>
+            获取系统配置值
+            </summary>
+            <param name="name">配置名称</param>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.ReportPrint(System.String,System.String,System.String,System.String@)">
+            <summary>
+            报表打印(1:成功,0:取消,-1:失败)
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="parameters">报表参数集(参照报表参数模板 ReportParameterTemplate)</param>
+            <param name="sources">报表数据源(报表数据源模板 ReportSourceTemplate)</param>
+            <param name="message">打印失败时返回异常信息</param>
+        </member>
+        <member name="M:Framework.Interop.IServiceCall.ShowDialog(System.String)">
+            <summary>
+            加载模式子窗体
+            </summary>
+            <param name="callName">需要加载的模式子窗体调用名:程序集名.窗口名</param>
+        </member>
+        <member name="T:Framework.Interop.MessageForm">
+            <summary>
+            消息窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Interop.MessageForm.#ctor">
+            <summary>
+            消息窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Interop.MessageForm.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Interop.MessageForm.OnTextChanged(System.EventArgs)">
+            <summary />
+        </member>
+        <member name="F:Framework.Interop.MessageForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Framework.Interop.MessageForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Framework.Interop.MessageForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Framework.Interop.ServiceCall">
+            <summary>
+            服务总线接口调用实例
+            </summary>
+        </member>
+        <member name="M:Framework.Interop.ServiceCall.Framework#Interop#IServiceCall#ShowDialog(System.String)">
+            <summary>
+            加载模式窗体
+            </summary>
+            <param name="callName">需要加载的模式窗体调用名:程序集名.窗口名</param>
+        </member>
+    </members>
+</doc>

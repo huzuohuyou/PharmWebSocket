@@ -39,14 +39,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Framework.Entity">
-      <HintPath>..\..\..\packages\Framework.Entity.dll</HintPath>
+      <HintPath>..\packages\Framework.Entity.dll</HintPath>
     </Reference>
     <Reference Include="Framework.ORM">
-      <HintPath>..\..\..\packages\Framework.ORM.dll</HintPath>
+      <HintPath>..\packages\Framework.ORM.dll</HintPath>
     </Reference>
-    <Reference Include="Functions Library, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\packages\Functions Library.dll</HintPath>
+    <Reference Include="Functions Library">
+      <HintPath>..\packages\Functions Library.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

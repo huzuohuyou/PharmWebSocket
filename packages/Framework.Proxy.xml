@@ -1,0 +1,3702 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Framework.Proxy</name>
+    </assembly>
+    <members>
+        <member name="T:Framework.Proxy.BarCode">
+            <summary>
+            标准39式条形码操作对象
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.BarCode.#ctor">
+            <summary>
+            标准39式条形码操作对象
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.BarCode.Weight">
+            <summary>
+            条码线条宽度(默认1像素)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.BarCode.CodeValue">
+            <summary>
+            条码值
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.BarCode.ShowCode">
+            <summary>
+            是否在条码绘图区域下方显示条码值
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.BarCode.CodeFont">
+            <summary>
+            条码值文本字体(默认：宋体9号)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.BarCode.CodeColor">
+            <summary>
+            条码值文本颜色(默认：黑色)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.BarCode.BarColor">
+            <summary>
+            条码线条颜色(默认：黑色)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.BarCode.BackColor">
+            <summary>
+            条码绘图区域的背景色(默认：白色)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.BarCode.Title">
+            <summary>
+            条码绘图区域的标题文本
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.BarCode.TitleColor">
+            <summary>
+            条码绘图区域的标题文本的颜色(默认：黑色)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.BarCode.TitleFont">
+            <summary>
+            条码绘图区域的标题文本的颜色(默认：宋体9号)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.BarCode.TitleAlign">
+            <summary>
+            条码绘图区域的标题文本的对齐方式(默认：居中对齐)。
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.BarCode.TextAligns">
+            <summary>
+            文本对齐样式
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.BarCode.TextAligns.Left">
+            <summary>
+            左对齐
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.BarCode.TextAligns.Rigth">
+            <summary>
+            右对齐
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.BarCode.TextAligns.Center">
+            <summary>
+            居中对齐
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.BarCode.ToImage(System.Int32)">
+            <summary>
+            按指定高度生成条码图像
+            </summary>
+            <param name="height">绘制条码图像的高度</param>
+        </member>
+        <member name="M:Framework.Proxy.BarCode.ToImage(System.Drawing.Size)">
+            <summary>
+            按指定大小生成条码图像
+            </summary>
+            <param name="size">绘制条码图像的尺寸</param>
+        </member>
+        <member name="P:Framework.Proxy.BarCode.CodeEncode">
+            <summary>
+            39码编码值哈希表定义
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.BarCode.BarDrawWidth">
+            <summary>
+            计算条码绘画宽度
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.BarCode.DrawBar(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            绘制条码线条
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.BarCode.DrawTitle(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            绘制标题
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.BarCode.DrawCode(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            绘制条码值
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.Caches">
+            <summary>
+            Proxy层高速缓存器集
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.Caches.SystemConfig">
+            <summary>
+            系统配置高速缓存器
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.Caches.Cookies">
+            <summary>
+            系统缓存高速缓存器
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.Caches.Dictionary">
+            <summary>
+            系统字典高速缓存器
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.Caches.Purviews">
+            <summary>
+            权限点高速缓存器
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.Caches.Menus">
+            <summary>
+            菜单高速缓存器
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.Caches.Departments">
+            <summary>
+            机构高速缓存器
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.Caches.Divisions">
+            <summary>
+            行政区划高速缓存
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.Caches.Employees">
+            <summary>
+            员工列表高速缓存
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.Caches.Initialization(System.Action{System.String})">
+            <summary>
+            初始化高速缓存器
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.ServiceBusRegisterParameter">
+            <summary>
+            服务总线注册参数
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.Token">
+            <summary>
+            登录令牌
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.UsbKey">
+            <summary>
+            数字证书
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.Platform">
+            <summary>
+            登录的客户端平台类别
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.Version">
+            <summary>
+            登录的系统版本号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.DbCode">
+            <summary>
+            登录的数据编号(调用方数据编号)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.UserID">
+            <summary>
+            登录操作员的唯一ID号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.UserCode">
+            <summary>
+            操作员登录名
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.UserName">
+            <summary>
+            操作员登录的用户姓名
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.Password">
+            <summary>
+            操作员登录的密码(密码算法由系统配置 PasswordCrypto 指定)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.Password2">
+            <summary>
+            操作员登录的密码(经过Xor计算的密文密码)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.EmployeeCode">
+            <summary>
+            与操作员关联的员工编号(如存在关联只取第一个员工编号,如无关联返回"空字符串")。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.EmployeeName">
+            <summary>
+            与操作员关联的员工姓名(如存在关联只取第一个员工姓名,如无关联返回"空字符串")。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.EmployeeType">
+            <summary>
+            与操作员关联的员工类别编号(如存在关联只取第一个员工的类别)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.Language">
+            <summary>
+            操作员使用的语种
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.RoleCode">
+            <summary>
+            登录操作员的角色编号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.RoleText">
+            <summary>
+            操作员登录的角色名称
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.DeptCode">
+            <summary>
+            操作员登录的组织机构编号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.DeptText">
+            <summary>
+            操作员登录的组织机构名称
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.DeptType">
+            <summary>
+            操作员登录的组织机构类别
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.TerminalCode">
+            <summary>
+            登录的终端机编号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.TerminalName">
+            <summary>
+            终端机名称
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.MacAddress">
+            <summary>
+            终端机网卡MAC地址
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.IpAddress">
+            <summary>
+            终端机网络通讯IP地址
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.DriveSerials">
+            <summary>
+            硬盘序列号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.CPUSerials">
+            <summary>
+            CPU序列号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ServiceBusRegisterParameter.OperationSystem">
+            <summary>
+            操作系统及版本
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.UserCertificatesManage">
+            <summary>
+            操作员绑定数字证书
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.UserCertificatesManage.Get_UserCertificates_ByUserID(System.String)">
+            <summary>
+            由用户内码获取绑定证书。
+            </summary>
+            <param name="userId">用户内码</param>
+        </member>
+        <member name="M:Framework.Proxy.UserCertificatesManage.Get_UserCertificates_ByUserCode(System.String,System.String)">
+            <summary>
+            由用户编号获取绑定证书。
+            </summary>
+            <param name="userCode">用户编号</param>
+            <param name="dbCode">数据编号</param>
+        </member>
+        <member name="M:Framework.Proxy.UserCertificatesManage.Get_UserCertificates_ByToken(System.String)">
+            <summary>
+            由证书令牌获取数字证书关联的用户信息
+            </summary>
+            <param name="token">证书令牌</param> 
+        </member>
+        <member name="M:Framework.Proxy.UserCertificatesManage.Get_UserCertificate_ByCertificateID(System.String)">
+            <summary>
+            由证书编号获取证书关联用户信息
+            </summary>
+            <param name="certificateId">证书编号</param>
+        </member>
+        <member name="M:Framework.Proxy.UserCertificatesManage.Insert_UserCertificate(Framework.Entity.UserCertificateItem)">
+            <summary>
+            新增用户绑定正式
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.UserCertificatesManage.Update_UserCertificate(Framework.Entity.UserCertificateItem)">
+            <summary>
+            新增用户绑定正式
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.UserCertificatesManage.Update_UserCertificate_Enabled(System.String,System.Boolean)">
+            <summary>
+            更新用户绑定证书的启用状态
+            </summary>
+            <param name="certificateId">证书编号</param>
+            <param name="enabled">true表示启用，false表示停用</param>
+        </member>
+        <member name="M:Framework.Proxy.UserCertificatesManage.Delete_UserCertificates(System.String[])">
+            <summary>
+            删除用户绑定证书
+            </summary>
+            <param name="certifacateIds">证书编号</param>
+        </member>
+        <member name="T:Framework.Proxy.FormManage">
+            <summary>
+            窗口管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.FormManage.Get_Forms_ByAssembly(System.String)">
+            <summary>
+            指定的程序集文件中包括的窗口列表
+            </summary>
+            <param name="assemblyName">程序集名称</param>
+        </member>
+        <member name="M:Framework.Proxy.FormManage.Get_Forms(System.Nullable{Framework.Entity.Platform})">
+            <summary>
+            获取所有窗口
+            </summary>
+            <param name="platform">平台类别(缺省表示所有平台)</param>
+        </member>
+        <member name="M:Framework.Proxy.FormManage.Get_Forms_ByGroupName(System.String,System.Nullable{Framework.Entity.Platform})">
+            <summary>
+            根据分组名称获取窗口列表
+            </summary>
+            <param name="platform">平台类别(缺省表示所有平台)</param>
+            <param name="groupName">获取窗口列表的分组名称</param>
+        </member>
+        <member name="M:Framework.Proxy.FormManage.Get_GroupNames(System.Nullable{Framework.Entity.Platform})">
+            <summary>
+            获取窗口分组名
+            </summary>
+            <param name="platform">平台类别</param>
+        </member>
+        <member name="M:Framework.Proxy.FormManage.Delete_Forms(Framework.Entity.FormItem[])">
+            <summary>
+            删除指定的窗口列表
+            </summary>
+            <param name="forms">窗口信息列表</param>
+        </member>
+        <member name="M:Framework.Proxy.FormManage.Delete_Forms_ByFormCode(System.String,System.String[])">
+            <summary>
+            删除指定编号的窗口
+            </summary>
+            <param name="dbCode">数据编号</param>
+            <param name="formCodes">窗口编号</param>
+        </member>
+        <member name="M:Framework.Proxy.FormManage.Save_Forms(Framework.Entity.FormItem[])">
+            <summary>
+            保存窗口列表
+            </summary>
+            <param name="forms">窗口列表</param>
+        </member>
+        <member name="M:Framework.Proxy.FormManage.Insert_Forms(Framework.Entity.FormItem[])">
+            <summary>
+            新增窗口信息
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.FormManage.Update_Forms(Framework.Entity.FormItem[])">
+            <summary>
+            更新窗口信息
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.FormManage.Update_Forms(Framework.Entity.FormItem[],Framework.Entity.FormItem[])">
+            <summary>
+            更新窗口数据
+            </summary>
+            <param name="modifies">新增和修改的窗口列表</param>
+            <param name="deletes">删除的窗口列表</param>
+        </member>
+        <member name="T:Framework.Proxy.ServiceHosts">
+            <summary>
+            代理服务器集群
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.ServiceHosts.Get_ServiceHosts">
+            <summary>
+            获取代理服务器列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.ServiceHosts.Get_ServiceHosts(System.String[])">
+            <summary>
+            根据条件获取代理服务器列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.ServiceHosts.Get_ServiceHost(System.String)">
+            <summary>
+            获取指定编号的代理服务器项目
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.ServiceHosts.Get_ServiceHost_ByDbCode(System.String)">
+            <summary>
+            获取连接到指定数据库编号的使用的代理项(高速缓存10分钟)。
+            </summary>
+            <param name="dbCode">连接的数据库编号</param>
+        </member>
+        <member name="M:Framework.Proxy.ServiceHosts.Delete_ServiceHost(System.String)">
+            <summary>
+            获取指定编号的代理服务器项目
+            </summary>
+            <param name="serviceCode">代理服务器编号</param>
+        </member>
+        <member name="M:Framework.Proxy.ServiceHosts.Insert_ServiceHost(Framework.Entity.ServiceHostItem)">
+            <summary>
+            新增代理服务器设置
+            </summary>
+            <param name="item">代理服务器设置数据实体</param>
+        </member>
+        <member name="M:Framework.Proxy.ServiceHosts.Update_ServiceHost(Framework.Entity.ServiceHostItem)">
+            <summary>
+            修改代理服务器设置
+            </summary>
+            <param name="item">代理服务器设置数据实体</param>
+        </member>
+        <member name="T:Framework.Proxy.SynchroManage">
+            <summary>
+            数据同步管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SynchroManage.Query_Logs(App.FunctionLibrary.DatePair,System.String,System.String,System.String)">
+            <summary>
+            查询同步日志(不带日志明细)
+            </summary>
+            <param name="dbCode">数据库编号(缺省表示全部数据库)</param>
+            <param name="serviceCode">同步时候的代理服务编号(缺省表示全部代理服务)</param>
+            <param name="userId">同步的操作员(全省表示全部操作员)</param>
+            <param name="syncTime">查询同步时间</param>
+        </member>
+        <member name="M:Framework.Proxy.SynchroManage.Query_Logs_WithDetails(App.FunctionLibrary.DatePair,System.String,System.String,System.String)">
+            <summary>
+            查询同步日志(带日志明细)
+            </summary>
+            <param name="dbCode">数据库编号(缺省表示全部数据库)</param>
+            <param name="serviceCode">同步时候的代理服务编号(缺省表示全部代理服务)</param>
+            <param name="userId">同步的操作员(全省表示全部操作员)</param>
+            <param name="syncTime">查询同步时间</param>
+        </member>
+        <member name="M:Framework.Proxy.SynchroManage.Get_Log(System.String)">
+            <summary>
+            根据日志编号获取日志信息(包括日志明细信息)
+            </summary>
+            <param name="logId">日志编号</param>
+        </member>
+        <member name="M:Framework.Proxy.SynchroManage.Save_Logs(Framework.Entity.SynchroLogItem,Framework.Entity.SynchroLogDetailItem[])">
+            <summary>
+            保存日志信息
+            </summary>
+            <param name="item">日志信息</param>
+            <param name="details">日志明细信息</param>
+        </member>
+        <member name="M:Framework.Proxy.SynchroManage.Get_ConfigList_All">
+            <summary>
+            获取所有同步配置列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SynchroManage.Get_ConfigList(System.String,System.String)">
+            <summary>
+            获取同步配置列表
+            </summary>
+            <param name="dbCode">同步的数据编号</param>
+            <param name="serviceCode">同时使用的代理服务编码</param>
+        </member>
+        <member name="M:Framework.Proxy.SynchroManage.Save_Configs(System.String,System.String,Framework.Entity.SynchroConfigItem[])">
+            <summary>
+            保存同步配置列表
+            </summary>
+            <param name="dbcode">同步的目标数据编号</param>
+            <param name="serviceCode">同步时候的代理服务编号</param>
+            <param name="items">同步配置项</param>
+        </member>
+        <member name="M:Framework.Proxy.SynchroManage.Get_StatusList">
+            <summary>
+            获取当前调用方数据库编号的同步状态列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SynchroManage.Get_StatusList(System.String,System.String,System.String)">
+            <summary>
+            获取同步的状态列表
+            </summary>
+            <param name="dbCode">数据库编号</param>
+            <param name="tableName">同步的表名称</param>
+            <param name="serviceCode">同步时候的代理服务编号</param>
+        </member>
+        <member name="M:Framework.Proxy.SynchroManage.Save_Status(System.String,System.String,Framework.Entity.SynchroStatusItem[])">
+            <summary>
+            保存同步状态
+            </summary>
+            <param name="dbCode">数据库编号</param>
+            <param name="serviceCode">同步时候的代理服务编号</param>
+            <param name="items">状态明细列表(表名称和时间戳)</param>
+        </member>
+        <member name="M:Framework.Proxy.SynchroManage.Synchronize(System.String,System.String)">
+            <summary>
+            数据进行同步
+            </summary>
+            <param name="dbCode">同步的目标数据服务</param>
+            <param name="serviceCode">服务代理编号</param>
+        </member>
+        <member name="T:Framework.Proxy.SystemConfigManage">
+            <summary>
+            系统配置管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SystemConfigManage.GetValue``1(System.String)">
+            <summary>
+            获取系统配置值
+            </summary>
+            <typeparam name="T">参数值的泛型类型</typeparam>
+            <param name="name">配置名</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemConfigManage.GetValue``1(System.String,``0)">
+            <summary>
+            获取系统配置值
+            </summary>
+            <param name="name">配置编号</param>
+            <param name="default">缺省值</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemConfigManage.GetValue(System.String)">
+            <summary>
+            获取系统配置值
+            </summary>
+            <param name="name">配置编号</param>
+            <returns>成功返回获取的系统配置值，失败返回空字符串。</returns> 
+        </member>
+        <member name="M:Framework.Proxy.SystemConfigManage.GetValue(System.String,System.String)">
+            <summary>
+            获取系统配置值
+            </summary>
+            <param name="name">配置名</param>
+            <param name="default">缺省值</param>
+            <returns>成功返回获取的系统配置值，失败返回空字符串。</returns>
+        </member>
+        <member name="M:Framework.Proxy.SystemConfigManage.SetValue(System.String,System.String)">
+            <summary>
+            设置系统配置值
+            </summary>
+            <param name="name">配置名</param> 
+            <param name="value">系统配置值</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemConfigManage.Get_SystemConfig_ByCode(System.String)">
+            <summary>
+            获取系统配置项
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SystemConfigManage.Get_SystemConfig_All">
+            <summary>
+            获取所有系统配置项
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SystemConfigManage.Save_SystemConfig(Framework.Entity.SystemConfigItem[])">
+            <summary>
+            保存系统配置项
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SystemConfigManage.Delete_SystemConfig(System.String[])">
+            <summary>
+            删除系统配置项
+            </summary>
+            <param name="codes">配置名</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemConfigManage.Update_Ordinal(App.FunctionLibrary.Pair{System.Int32}[])">
+            <summary>
+            更新配置项顺序号(Pair.Name表示配置名,Pair.Value表示顺序号)。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SystemConfigManage.Update_OwnerCode(System.String,System.String[])">
+            <summary>
+            更新父配置名
+            </summary>
+            <param name="names">配置名</param>
+            <param name="ownerName">父配置名</param>
+        </member>
+        <member name="P:Framework.Proxy.SystemConfigManage.Framework#Entity#IFrameworkConfig#Item(System.String)">
+            <summary>
+            获取或者设置系统配置项的值
+            </summary>
+            <param name="name">配置名</param>
+            <returns>成功返回获取的系统配置值，失败返回空字符串。</returns> 
+        </member>
+        <member name="P:Framework.Proxy.SystemConfigManage.Framework#Entity#IFrameworkConfig#Item(System.String,System.String)">
+            <summary>
+            获取系统配置项的值
+            </summary>
+            <param name="name">配置名</param>
+            <param name="default">缺省配置值</param>
+            <returns>成功返回获取的系统配置值，失败返回空字符串。</returns> 
+        </member>
+        <member name="T:Framework.Proxy.ToolbarManage">
+            <summary>
+            工具栏管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.ToolbarManage.Get_Toolbars_ByRole(System.String)">
+            <summary>
+            获取指定角色的工具栏列表
+            </summary>
+            <param name="rolecode">角色编号</param>
+        </member>
+        <member name="M:Framework.Proxy.ToolbarManage.Save_Toolbars_ByRole(System.String,Framework.Entity.ToolbarItem[])">
+            <summary>
+            保存角色的工具栏配置
+            </summary>
+            <param name="roleCode">角色变换</param>
+            <param name="toolbars">工具栏列表</param>
+        </member>
+        <member name="M:Framework.Proxy.ToolbarManage.Delete_Toolbars_ByRoleCode(System.String[])">
+            <summary>
+            删除指定角色的工具栏
+            </summary>
+            <param name="roleCodes">角色编号</param>
+        </member>
+        <member name="M:Framework.Proxy.ToolbarManage.Delete_Toolbars_ByMenuCode(System.String[])">
+            <summary>
+            删除指定菜单的工具栏
+            </summary>
+            <param name="menuCodes">菜单编号</param>
+        </member>
+        <member name="M:Framework.Proxy.ToolbarManage.Delete_Toolbars_Remainder_ByMenuCode(System.String,System.String[])">
+            <summary>
+            删除多余的工具栏项(非指定菜单编号之外的工具栏部分)。
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="menuCodes">排除的菜单编号</param>
+        </member>
+        <member name="T:Framework.Proxy.IEarlyStartup">
+            <summary>
+            先于客户端启动的程序接口
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.IEarlyStartup.Startup">
+            <summary>
+            启动接口程序
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.IMessageNotify">
+            <summary>
+            消息通知接口
+            </summary>
+        </member>
+        <member name="E:Framework.Proxy.IMessageNotify.MessageStatueChanged">
+            <summary>
+            消息状态改变事件
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.IMessageNotify.PushShow(Framework.Entity.NotifyItem,Framework.Proxy.IEnvironment)">
+            <summary>
+            消息推送展示接口
+            </summary>
+            <param name="msg">需要推送展示的消息</param>
+            <param name="env">客户端环境变量</param>
+        </member>
+        <member name="M:Framework.Proxy.IMessageNotify.ShowDetails(Framework.Entity.NotifyItem)">
+            <summary>
+            查看消息详情
+            </summary>
+            <param name="msg">查看的消息</param>
+        </member>
+        <member name="M:Framework.Proxy.IMessageNotify.ShowBox(Framework.Proxy.IEnvironment)">
+            <summary>
+            查看消息盒子
+            </summary>
+            <param name="env">客户端环境变量</param>
+        </member>
+        <member name="M:Framework.Proxy.IMessageNotify.WriteMessage(Framework.Proxy.IEnvironment)">
+            <summary>
+            新建消息
+            </summary>
+            <param name="env">客户端环境变量</param>
+        </member>
+        <member name="M:Framework.Proxy.IMessageNotify.ReplayMessage(Framework.Entity.NotifyItem,Framework.Proxy.IEnvironment)">
+            <summary>
+            回复消息
+            </summary>
+            <param name="msg">回复的消息</param>
+            <param name="env">客户端环境变量</param>
+        </member>
+        <member name="T:Framework.Proxy.CookiesManage">
+            <summary>
+            系统缓存信息操作
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.CookiesManage.Item(System.String,System.String,System.String)">
+            <summary>
+            获取或者设置系统缓存信息(当UserID和TerminalCode同时缺省时表示全局缓存)。
+            </summary>
+            <param name="name">缓存信息名称</param>
+            <param name="userId">与操作员绑定的缓存信息赋值</param>
+            <param name="terminalCode">与终端机绑定的缓存信息赋值</param>
+        </member>
+        <member name="P:Framework.Proxy.CookiesManage.User">
+            <summary>
+            与操作员绑定的缓存信息
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.CookiesManage.Terminal">
+            <summary>
+            与计算机绑定的缓存信息
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.CookiesManage.Item(System.String,System.String)">
+            <summary>
+            获取系统全局缓存信息。
+            </summary>
+            <param name="name">缓存名称</param>
+            <param name="defaultValue">缓存默认值</param>
+        </member>
+        <member name="P:Framework.Proxy.CookiesManage.Item(System.String)">
+            <summary>
+            获取或者设置系统全局缓存信息。
+            </summary>
+            <param name="name">缓存名称</param>
+        </member>
+        <member name="M:Framework.Proxy.CookiesManage.Remove_ValueCore(System.String,System.String,System.String)">
+            <summary>
+            删除系统缓存信息(当UserID和TerminalCode同时缺省时表示全局缓存)。
+            </summary>
+            <param name="name">缓存信息名称</param>
+            <param name="userId">与操作员绑定的缓存信息赋值</param>
+            <param name="terminalCode">与终端机绑定的缓存信息赋值</param>
+        </member>
+        <member name="M:Framework.Proxy.CookiesManage.InitializeCacher">
+            <summary>
+            获取系统缓存值表。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.CookiesManage.GetValue``1(System.String)">
+            <summary>
+            获取系统全局缓存值。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.CookiesManage.GetValue``1(System.String,``0)">
+            <summary>
+            获取系统全局缓存值。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.CookiesManage.CookiesIndexer.Item(System.String)">
+            <summary>
+            获取或者设置缓存信息。
+            </summary>
+            <param name="name">缓存名称</param>
+        </member>
+        <member name="P:Framework.Proxy.CookiesManage.CookiesIndexer.Item(System.String,System.String)">
+            <summary>
+            获取缓存信息。
+            </summary>
+            <param name="name">缓存名称</param>
+            <param name="defaultValue">缓存默认值</param>
+        </member>
+        <member name="M:Framework.Proxy.CookiesManage.CookiesIndexer.GetValue``1(System.String)">
+            <summary>
+            获取系统全局缓存值。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.CookiesManage.CookiesIndexer.GetValue``1(System.String,``0)">
+            <summary>
+            获取系统全局缓存值。
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.DatabaseManage">
+            <summary>
+            数据库集群管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Get_DataBaseList">
+            <summary>
+            获取所有集群数据库列表(不包括当前数据库)。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Get_DataBaseList_WithCurrent">
+            <summary>
+            获取所有集群数据库列表(包括当前数据库)。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Get_DataBase_ByDbCode(System.String)">
+            <summary>
+            获取指定数据编号的分布式数据服务配置。
+            </summary>
+            <param name="dbcode">数据编号</param>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Insert_DataBase(Framework.Entity.DatabaseItem)">
+            <summary>
+            数据库集群新增数据配置
+            </summary>
+            <param name="item">数据配置项</param>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Update_DataBase(Framework.Entity.DatabaseItem)">
+            <summary>
+            数据库集群更新数据配置
+            </summary>
+            <param name="item">数据配置项</param>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Delete_DataBase(System.String)">
+            <summary>
+            删除数据编号的集群数据库配置
+            </summary>
+            <param name="dbCode">数据编号</param>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Save_DataBases(System.Collections.Generic.List{Framework.Entity.DatabaseItem})">
+            <summary>
+            保存数据库集群列表
+            </summary>
+            <param name="dbs">数据库集群列表</param>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Get_Tables">
+            <summary>
+            获取所有数据库用户自定义表(name表示表名称，value表示架构名称)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Get_Views">
+            <summary>
+            获取视图列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Get_Functions">
+            <summary>
+            获取函数列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Get_Procedures">
+            <summary>
+            获取存储过程列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Get_Columns(System.String)">
+            <summary>
+            获取表的所有字段列表
+            </summary>
+            <param name="tableName">表名称(包括架构名)</param>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Get_CreateScripts(System.String[])">
+            <summary>
+            获取元素的创建脚本列表(Name表示元素名称,Value表示创建脚本)。
+            </summary> 
+            <param name="names">元素名称列表(不包括架构名)</param>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Query_Table(System.String)">
+            <summary>
+            根据查询脚本获取查询结果数据表。
+            </summary>
+            <param name="queryScript">查询脚本(错误的查询脚本返回空表null)。</param>
+            <remarks>如果查询字符串以 Select 开始被认定为"SQL文本命令"，否则视为"存储过程"，不支持"表名称"的形式。</remarks>
+        </member>
+        <member name="M:Framework.Proxy.DatabaseManage.Execute(System.String)">
+            <summary>
+            执行Transact-SQL脚本语句，并且返回受影响的行数。
+            </summary>
+            <param name="commandText">需要执行的SQL脚本语句字符串(错误的执行脚本返回0)。</param>
+        </member>
+        <member name="T:Framework.Proxy.DepartmentManage">
+            <summary>
+            组织机构管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Get_Depts_All">
+            <summary>
+            获取全部组织机构列表(包括停用的组织机构)(10分钟缓存)。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.IsExists_ChildrenDepartment_ByDeptCode(System.String)">
+            <summary>
+            判断指定的机构编号是否存在子代机构
+            </summary>
+            <param name="deptCode">机构编号</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Get_Department(System.String)">
+            <summary>
+            获取组织机构信息
+            </summary>
+            <param name="deptCode">组织机构编号</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Get_RootDept(System.String)">
+            <summary>
+            获取指定部门的根部门
+            </summary>
+            <param name="deptCode">指定的部门编号</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Get_Depts_ByDeptType(System.String[])">
+            <summary>
+            根据组织机构类型获取组织机构列表。
+            </summary>
+            <param name="deptTypeCodes">组织机构类型编码数组</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Get_Depts_ByDeptType(System.Enum[])">
+            <summary>
+            根据组织机构类型获取组织机构列表。
+            </summary>
+            <param name="deptTypes">组织机构类型数组</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Get_Depts_ByDeptCode(System.String[])">
+            <summary>
+            获取全部组织机构列表(包括停用的组织机构)。
+            </summary>
+            <param name="deptCodes">指定的组织机构编号数组</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Get_Depts_ByOwnerCode(System.String)">
+            <summary>
+            获取指定归属组织机构编码的组织机构列表
+            </summary>
+            <param name="ownerCode">指定的归属组织机构编码</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Get_DeptFamily_ByOwnerCode(System.String)">
+            <summary>
+            获取组织机构家族中的所有子辈组织机构列表(包括当前组织机构,包含停用组织机构)。
+            </summary>
+            <param name="deptCode">组织机构编码</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Get_DeptCodeFamily_ByOwner(System.String)">
+            <summary>
+            获取机构族中的所有子机构编码列表(包括当前机构,包含停用机构)。
+            </summary>
+            <param name="ownerCode">归属机构编码</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Get_Depts_WithUserRole(System.String,Framework.Entity.Platform)">
+            <summary>
+            获取所有的组织机构信息(带操作员和角色)。
+            </summary>
+            <param name="userId">操作员内码</param>
+            <param name="platform">适用平台</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Get_DeptFamily(System.String,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            获取机构族列表
+            </summary>
+            <param name="deptCode">搜索的机构编号</param>
+            <param name="searchChildren">true表示搜索所有子族机构，false表示搜索所有父族机构,null表示全族机构</param>
+            <param name="includeSelf">是否包含本机构</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Insert_Department(Framework.Entity.DepartmentItem[])">
+            <summary>
+            新增组织机构信息
+            </summary>
+            <param name="depts">新增的组织机构信息列表</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Update_Department(Framework.Entity.DepartmentItem,System.String)">
+            <summary>
+            修改组织机构信息
+            </summary>
+            <param name="item">修改的组织机构列表</param>
+            <param name="originalDeptCode">原组织机构编号</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Disabled_Department(System.String,System.Boolean)">
+            <summary>
+            组织机构停用
+            </summary>
+            <param name="deptCode">需要停用的组织机构编号</param>
+            <param name="disabled">停用状态,true表示停用，false表示启用。</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Delete_Department(System.String)">
+            <summary>
+            删除机构信息(同时删除子代机构)
+            </summary>
+            <param name="deptCode">机构编号</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Update_Ordinal(App.FunctionLibrary.Pair{System.Int32}[])">
+            <summary>
+            更新组织机构的显示索引
+            </summary>
+            <param name="pairs">Name表示组织机构编码,Value表示索引值</param>
+        </member>
+        <member name="M:Framework.Proxy.DepartmentManage.Update_CanLogin(System.String,System.Boolean)">
+            <summary>
+            更新组织机构的可登录状态
+            </summary>
+            <param name="deptCode">机构编号</param>
+            <param name="canlogin">可登录状态</param>
+        </member>
+        <member name="T:Framework.Proxy.DictionaryManage">
+            <summary>
+            系统字典表管理器
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.DictionaryManage.Item(System.String,System.String)">
+            <summary>
+            获取字典项
+            </summary>
+            <param name="ownerCode">字典归属编号</param>
+            <param name="dictCode">字典编号</param>
+        </member>
+        <member name="P:Framework.Proxy.DictionaryManage.Item(System.String,System.Enum)">
+            <summary>
+            获取字典项
+            </summary>
+            <param name="ownerCode">字典归属编号</param>
+            <param name="enum">字典枚举值(按MapCode映射的编码取值，如未做编码映射时按枚举值取编码值)。</param>
+        </member>
+        <member name="P:Framework.Proxy.DictionaryManage.Item(System.String)">
+            <summary>
+            获取字典项
+            </summary>
+            <param name="dictId">字典项的唯一内码</param>
+        </member>
+        <member name="P:Framework.Proxy.DictionaryManage.Item(System.String,System.Boolean)">
+            <summary>
+            根据归属编号获取字典项列表
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="onlyValid">true表示仅未停用字典，false表示全部字典</param>
+        </member>
+        <member name="P:Framework.Proxy.DictionaryManage.Item(System.Boolean,System.Boolean)">
+            <summary>
+            获取所有字典列表。
+            </summary>
+            <param name="onlyUser">true表示仅用户字典项，false表示全部字典项</param>
+            <param name="onlyValid">true表示仅有效的字典项，false表示全部字典项。</param>
+        </member>
+        <member name="P:Framework.Proxy.DictionaryManage.Item(System.String[])">
+            <summary>
+            根据字典内码获取字典列表。
+            </summary>
+            <param name="dictIds">字典内码列表</param>
+        </member>
+        <member name="P:Framework.Proxy.DictionaryManage.Item(System.String,System.String[])">
+            <summary>
+            获取字典列表
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="dictCodes">字典项编号数组</param>
+        </member>
+        <member name="P:Framework.Proxy.DictionaryManage.Item(System.String,System.Enum[])">
+            <summary>
+            获取字典列表
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="enums">字典枚举(依次按MapCode映射编码值、枚举值、枚举定义名称的顺序进行获取字段项)。</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_DictID(System.String,System.String)">
+            <summary>
+            由字典项的归属编码和字典编码获取字典项内码。
+            </summary>
+            <param name="ownerCode">归属编码</param>
+            <param name="dictCode">字典项编码</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_DictID(System.String,System.Enum)">
+            <summary>
+            由字典项的归属编码和字典项枚举获取字典项内码。
+            </summary>
+            <param name="ownerCode">字典归属编号</param>
+            <param name="enum">字典枚举值(按MapCode映射的编码取值，如未做编码映射时按枚举值取编码值)。</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_Dict(System.String)">
+            <summary>
+            字典内码获取字典项
+            </summary>
+            <param name="dictId">字典项的唯一内码。</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_Dict(System.String,System.String)">
+            <summary>
+            根据指定归属编号获取字典项
+            </summary>
+            <param name="ownerCode">字典归属编号</param>
+            <param name="dictCode">字典编码</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_Dict(System.String,System.Enum)">
+            <summary>
+            获取字典项
+            </summary>
+            <param name="ownerCode">字典归属编号</param>
+            <param name="enum">字典枚举值(按MapCode映射的编码取值，如未做编码映射时按枚举值取编码值)。</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_RootDict(System.String)">
+            <summary>
+            获取根级字典项
+            </summary>
+            <param name="dictCode">根级字典项编码</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_DefaultDict(System.String)">
+            <summary>
+            获取默认字典项.
+            </summary>
+            <param name="ownerCode">字典项归属编号</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_Dicts_All(System.Boolean,System.Boolean)">
+            <summary>
+            获取所有字典项列表。
+            </summary>
+            <param name="onlyUser">true表示仅用户字典项，false表示全部字典项</param>
+            <param name="onlyValid">true表示仅未停用字典，false表示全部字典</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_Dicts(System.String[])">
+            <summary>
+            根据字典内码获取字典列表。
+            </summary>
+            <param name="dictIds">字典内码列表</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_Dicts(System.String,System.Boolean)">
+            <summary>
+            根据归属编号获取字典项列表
+            </summary>
+            <param name="ownerCode">父字典項编码</param>
+            <param name="onlyValid">true表示仅未停用字典，false表示全部字典</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_Dicts_ByOwnerID(System.String,System.Boolean)">
+            <summary>
+            根据归属编号获取字典项列表
+            </summary>
+            <param name="ownerId">父字典項内码</param>
+            <param name="onlyValid">true表示仅未停用字典，false表示全部字典</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_Dicts_ByMark(System.String,System.Boolean)">
+            <summary>
+            根据字典项标签获取字典列表
+            </summary>
+            <param name="markStamp">标签戳</param>
+            <param name="islike">true表示包含匹配模式，false表示标记相等</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_Dicts(System.String,System.String[])">
+            <summary>
+            根据归属编号和字典编号获取字典列表。
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="dictCodes">字典编号数组</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_Dicts(System.String,System.Enum[])">
+            <summary>
+            获取字典列表
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="enums">字典枚举(依次按MapCode映射编码值、枚举值、枚举定义名称的顺序进行获取字段项)。</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_RootDicts(System.Boolean)">
+            <summary>
+            获取顶级字典列表
+            </summary>
+            <param name="onlyUser">true表示仅用户字典项，false表示全部字典项</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_DictPackage(System.String[])">
+            <summary>
+            根据归属编号获取字典项列表包(不包括停用字典)。
+            </summary>
+            <param name="ownerCodes">字典项归属编号参数组</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_DictPackage(System.Boolean,System.String[])">
+            <summary>
+            根据归属编号获取字典项列表包
+            </summary>
+            <param name="onlyValid">true表示仅未停用字典，false表示全部字典</param>
+            <param name="ownerCodes">字典项归属编号参数组</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_DictFamily(System.String,System.Boolean)">
+            <summary>
+            根据归属编号获取所有字典家族列表(包括停用字典)。
+            </summary>
+            <param name="ownerCode">归属编号</param>
+            <param name="allJunior">true表示家族内的所有晚辈字典,false表示仅当前子代的字段表</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_DictFamily(System.String,System.Int32)">
+            <summary>
+            根据归属编号获取字典家族列表(包括停用字典)。
+            </summary>
+            <param name="ownerCode">父字典项编号</param>
+            <param name="generation">查询的最大子代数(基于父字典项的代数,小于0表示所有子代)</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_DictFamily_ByOwnerID(System.String,System.Boolean)">
+            <summary>
+            根据归属编号获取所有字典家族列表(包括停用字典)。
+            </summary>
+            <param name="ownerId">父字典项内码</param>
+            <param name="allJunior">true表示家族内的所有晚辈字典,false表示仅当前子代的字段表</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Get_DictFamily_ByOwnerID(System.String,System.Int32)">
+            <summary>
+            根据归属编号获取字典家族列表(包括停用字典)。
+            </summary>
+            <param name="ownerId">父字典项内码</param>
+            <param name="generation">查询的最大子代数(基于父字典项的代数)</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Save_Dict(Framework.Entity.DictionaryItem[])">
+            <summary>
+             保存字典信息(只能修改或者添加，不允许删除)
+            </summary>
+            <param name="dicts">需要保存的字典项列表</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Delete_Dict(System.String[])">
+            <summary>
+            删除字典项
+            </summary>
+            <param name="dictIds">字典项内码列表</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Update_Ordinals(App.FunctionLibrary.Pair{System.Int32}[])">
+            <summary>
+            更新字典项顺序号
+            </summary>
+            <param name="ordinals">字典项顺序对儿(Name=字典项内码,Value=字典项同级顺序号)。</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Update_OwnerID(System.String,System.String)">
+            <summary>
+            更新字典项的父分类内码。
+            </summary>
+            <param name="dictId">更新归属分类的字典项内码</param>
+            <param name="ownerId">更新的归属分类字典项内码</param>
+        </member>
+        <member name="M:Framework.Proxy.DictionaryManage.Update_MarkStamp(System.String,System.String)">
+            <summary>
+            更新标记戳
+            </summary>
+            <param name="dictId">字典项内码</param>
+            <param name="markStamp">标记戳</param>
+        </member>
+        <member name="T:Framework.Proxy.DistrictManage">
+            <summary>
+            行政区划管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.InitializeCacher">
+            <summary>
+            初始化缓存
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Get_Districts_All">
+            <summary>
+            获取所有行政区划列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Get_District_ByCode(System.String)">
+            <summary>
+            获取指定区划编号的区划项
+            </summary>
+            <param name="districtsCode">区划编号</param>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Get_Districts_ByLevel(Framework.Entity.DivisionsLevel)">
+            <summary>
+            获取指定级别的行政区划列表
+            </summary>
+            <param name="levels">区划级别</param>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Get_Districts_BySpelling(System.String)">
+            <summary>
+            根据助记码获取区划列表
+            </summary>
+            <param name="spelling">助记码</param>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Get_Districts_BySpelling(System.String,System.String)">
+            <summary>
+            根据助记码获取区划列表
+            </summary>
+            <param name="ownerCode">归属区划编号</param>
+            <param name="spelling">助记码</param>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Get_Districts_BySpelling(Framework.Entity.DivisionsLevel,System.String)">
+            <summary>
+            根据助记码获取区划列表
+            </summary>
+            <param name="levels">区划级别</param>
+            <param name="spelling">助记码</param>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Get_Districts_ByOwnerCode(System.String)">
+            <summary>
+            获取指定父区划编码的所有子级区划列表(不包括所有区划子族)。
+            </summary>
+            <param name="ownerCode">父区划编码</param>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Get_Districts_ByOwnerCode(System.String,System.Boolean)">
+            <summary>
+            获取指定归属区划的行政区划列表
+            </summary>
+            <param name="ownerCode">归属区划编号</param>
+            <param name="includeSuboardination">是否包括从属的下级区划</param>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Get_Districts_ByOwnerCode(System.String,System.Int32)">
+            <summary>
+            获取指定区划编号的行政区划列表
+            </summary>
+            <param name="ownerCode">行政区划编号</param>
+            <param name="generation">获取字典项列表的最大子代数</param>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Insert_District(Framework.Entity.DistrictItem[])">
+            <summary>
+            插入新的区划数据
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Update_District(Framework.Entity.DistrictItem[])">
+            <summary>
+            修改区划
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Update_Ordinals(App.FunctionLibrary.Pair{System.Int32}[])">
+            <summary>
+            更新区划显示顺序号
+            </summary>
+            <param name="ordinals">Pair.Name表示区划编号，Pair.Value表示区划顺序号</param>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Save_District(Framework.Entity.DistrictItem[])">
+            <summary>
+            保存行政区划信息列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Delete_District(System.String[])">
+            <summary>
+            删除行政区划
+            </summary>
+            <param name="districtCodes">要删除的去和编码</param>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Create_DistrictFullText(System.String,System.String,System.String)">
+            <summary>
+            生成区划全名称
+            </summary>
+            <param name="ownerCode">上级区划编号</param>
+            <param name="districtText">生成全名称的区划名称</param>
+            <param name="aliasName">区划类别简称(由 DistrictItem.Create_DivisonTypes 函数产生的 Value 值决定)。</param>
+        </member>
+        <member name="M:Framework.Proxy.DistrictManage.Recursion_DistrictFamily(System.Collections.Generic.IList{Framework.Entity.DistrictItem},System.String,System.Int32,System.Int32)">
+            <summary>
+            递归行政区划子族
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.EmployeeManage">
+            <summary>
+            组织机构信息数据实体
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.IsExists_Employee_ByDeptCode(System.String)">
+            <summary>
+            判断指定的组织机构是否存在员工
+            </summary>
+            <param name="deptCode">组织机构编号</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.IsExists_Employee_ByUserID(System.String)">
+            <summary>
+            判断指定的登录用户内码是否存在员工
+            </summary>
+            <param name="userId">登录用户内码</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Get_Employees_Cacher">
+            <summary>
+            获取所有员工列表(10分钟缓存)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Get_Employees_All">
+            <summary>
+            获取全部员工信息
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Get_EmployeeList_ByType(System.String[])">
+            <summary>
+            获取员工列表
+            </summary>
+            <param name="employeeTypeIds">指定获取的员工类型编号</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Get_EmployeeList_ByType(System.Enum[])">
+            <summary>
+            由员工类型获取员工信息列表
+            </summary>
+            <param name="employeeTypes">员工类型枚举列表</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Get_Employee(System.String)">
+            <summary>
+            获取员工信息
+            </summary>
+            <param name="employeeCode">员工编号</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Get_Employees_ByDeptCode(System.String,System.Boolean)">
+            <summary>
+            获取指定组织机构归属下的所有员工列表。
+            </summary>
+            <param name="deptCode">组织机构编号</param>
+            <param name="recursive">是否包含下级子组织机构员工</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Get_Employees_ByEmployeeCodes(System.String[])">
+            <summary>
+            根据指定的员工编号获取一批员工信息
+            </summary>
+            <param name="employeeCodes">需要获取员工信息的员工编号列表</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Get_EmployeeList_ByState(System.String)">
+            <summary>
+            根据状态获取员工信息列表
+            </summary>
+            <param name="employeeStateId">员工状态内码</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Get_EmployeeList_ByUserID(System.String)">
+            <summary>
+            由操作员内码获取关联员工信息列表。
+            </summary>
+            <param name="userId">操作员内码</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Get_Employees_ByDisabled(System.Nullable{System.Boolean})">
+            <summary>
+            根据停用状态获取员工信息列表
+            </summary>
+            <param name="disabled">true表示停用，false表示非停用，null表示全部</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Get_Employees_ByDeptCode_ByEmployeeType(System.String[],System.String[])">
+            <summary>
+            获取指定组织机构和员工类别的员工列表
+            </summary>
+            <param name="deptCodes">组织机构编号</param>
+            <param name="employeeTypeIds">员工类别内码</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Query_Employees(System.String,System.String,App.FunctionLibrary.DatePair,System.String,System.String,System.String,System.String,System.String,System.String,App.FunctionLibrary.DatePair,App.FunctionLibrary.DatePair,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            员工信息综合查询
+            </summary>
+            <param name="birthday">出生日期时间段</param>
+            <param name="contact">联系方式(包含)</param>
+            <param name="deptCode">隶属组织机构</param>
+            <param name="disabled">是否停用</param>
+            <param name="dutyId">职位内码</param>
+            <param name="employeeName">员工名称(包含)</param>
+            <param name="employeeStateId">员工状态内码</param>
+            <param name="employeeTypeId">员工类型内码</param>
+            <param name="leaveDate">离职日期时间段</param>
+            <param name="sexId">性别内码</param>
+            <param name="startingDate">就在日期时间段</param>
+            <param name="titleId">职称内码</param>
+            <param name="recursive">是否包含下级子组织机构员工</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Insert_Employee(Framework.Entity.EmployeeItem)">
+            <summary>
+            新增员工信息(如有UserID，同时打开操作权限)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Update_Employee(Framework.Entity.EmployeeItem)">
+            <summary>
+            修改员工信息(同时更新用户的停用状态)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Delete_Employee(System.String)">
+            <summary>
+            删除员工信息(同时停用用户登录权限)
+            </summary>
+            <param name="employeeCode">员工编号</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Update_EmployeeState(System.String,System.String)">
+            <summary>
+            更新员工状态
+            </summary>
+            <param name="employeeCode">员工状态</param>
+            <param name="employeeStateID">员工状态内码</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Update_Disabled(System.String,System.Boolean)">
+            <summary>
+            更新员工的停用状态(同时更新用户登录权限)
+            </summary>
+            <param name="employeeCode">员工编号</param>
+            <param name="disabled">true表示停用，false表示启用</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Update_Ordinal(App.FunctionLibrary.Pair{System.Int32}[])">
+            <summary>
+            更新员工的显示顺序号
+            </summary>
+            <param name="ordinals">Pair.Name表示员工编号,Pair.Value表示顺序号</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Update_EmployeeDept(System.String,System.String)">
+            <summary>
+            更新员工组织机构
+            </summary>
+            <param name="employeeCode">员工编号</param>
+            <param name="deptCode">员工组织机构</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Save_Employee(Framework.Entity.EmployeeItem)">
+            <summary>
+            保存员工信息
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Close_Employee_UserPower(System.String)">
+            <summary>
+            关闭员工的操作员权限。
+            </summary>
+            <param name="employeeCode">员工编号</param>
+        </member>
+        <member name="M:Framework.Proxy.EmployeeManage.Open_Employee_UserPower(System.String,System.String,System.String)">
+            <summary>
+            打开员工的操作员权限,并且返回操作员内码
+            </summary>
+            <param name="employeeCode">员工编号</param>
+            <param name="userCode">员工登录系统账号</param>
+            <param name="password">员工登录系统的登录密码(明文)</param>
+        </member>
+        <member name="T:Framework.Proxy.EnvironProxy">
+            <summary>
+            代理层环境变量
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.#ctor">
+            <summary>
+            客户端系统环境变量对象(使用默认服务总线注册信息)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.#ctor(Framework.Proxy.ServiceBusRegisterParameter)">
+            <summary>
+            实例化客户端系统环境变量对象。
+            </summary>
+            <param name="parameter">服务总线的注册及返回参数集</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.#ctor(Framework.Proxy.EnvironProxy)">
+            <summary>
+            使用指定的代理实例化客户端系统环境变量对象。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.Default">
+            <summary>
+            默认代理环境变量实例(使用默认服务总线注册信息)
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.EnvironProxy.currentParameter">
+            <summary>
+            当前环境变量登录信息
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.EnvironProxy.defaultParameter">
+            <summary>
+            默认的Winform注册登录信息
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.DefaultParameter">
+            <summary>
+            默认的注册登录信息
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.UpdateParameter(System.Action{Framework.Proxy.ServiceBusRegisterParameter})">
+            <summary>
+            更新环境信息的登录参数
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.TerminalCode">
+            <summary>
+            注册的终端编号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.TerminalName">
+            <summary>
+            注册的终端名称
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.MacAddress">
+            <summary>
+            注册的终端网卡MAC地址
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.IpAddress">
+            <summary>
+            注册的终端网络通讯IP地址
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.DriveSerials">
+            <summary>
+            注册的终端硬盘序列号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.CPUSerials">
+            <summary>
+            注册的终端CPU序列号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.OperationSystem">
+            <summary>
+            注册的终端操作系统及版本
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.DbCode">
+            <summary>
+            登录的数据编号(调用方数据编号)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.UserID">
+            <summary>
+            登录操作员的唯一ID号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.UserCode">
+            <summary>
+            操作员登录名
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.UserName">
+            <summary>
+            操作员登录的用户姓名
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.Password">
+            <summary>
+            操作员登录的密码(密码算法由系统配置 PasswordCrypto 指定)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.Password2">
+            <summary>
+            操作员登录的密码(经过Xor计算的密文密码)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.EmployeeCode">
+            <summary>
+            与操作员关联的员工编号(如存在关联只取第一个员工编号,如无关联返回"空字符串")。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.EmployeeName">
+            <summary>
+            与操作员关联的员工姓名(如存在关联只取第一个员工姓名,如无关联返回"空字符串")。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.EmployeeType">
+            <summary>
+            与操作员关联的员工类别(如存在关联只取第一个员工类别,如无关联返回 null)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.Language">
+            <summary>
+            操作员使用的语种编号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.RoleCode">
+            <summary>
+            登录操作员的角色编号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.RoleText">
+            <summary>
+            操作员登录的角色名称
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.DeptCode">
+            <summary>
+            操作员登录的组织机构编号
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.DeptText">
+            <summary>
+            操作员登录的组织机构名称
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.DeptType">
+            <summary>
+            操作员登录的组织机构类别编码
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.DefaultProxy">
+            <summary>
+            环境变量专享的服务代理
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.SlowTime">
+            <summary>
+            系统标准时间
+            </summary>       
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.TimeStamp">
+            <summary>
+            时间戳(精度到微秒的20位时间序列字符串，理论上该值非唯一)。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.Purview(System.String)">
+            <summary>
+            权限点
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.Purview(System.String,System.String)">
+            <summary>
+            权限点
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.Purview(System.String,System.String,System.String)">
+            <summary>
+            权限点
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.NotifyMessage(System.String,Framework.Entity.NotifyKind,System.String,System.String)">
+            <summary>
+            对指定的接受者发送会话消息
+            </summary>
+            <param name="accepter">接收消息的操作员ID</param>
+            <param name="kind">消息类型</param>
+            <param name="body">消息内容</param>
+            <param name="header">消息标题</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.NotifyMessage(System.String,Framework.Entity.NotifyItem)">
+            <summary>
+            对指定的接受者发送会话消息
+            </summary>
+            <param name="accepter">接收消息的操作员ID</param>
+            <param name="notify">消息信息实体</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.NotifyMessage(System.String,Framework.Entity.NotifyItem[])">
+            <summary>
+            对指定组织机构的所有操作员发送消息通知
+            </summary>
+            <param name="deptCode">指定接收消息的组织机构编号</param>
+            <param name="notifies">消息信息实体列表</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.NotifyMessage(Framework.Entity.NotifyItem[])">
+            <summary>
+            对所有操作员发送会话消息
+            </summary>
+            <param name="notifies">消息信息实体列表</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.NotifyMessage(Framework.Entity.NotifyKind,System.String,System.String)">
+            <summary>
+            对所有操作员发送会话消息
+            </summary>
+            <param name="kind">消息类型</param>
+            <param name="body">消息内容</param>
+            <param name="header">消息标题</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.GetBarCode(System.String,System.Int32)">
+            <summary>
+            获取条形码
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.GetBarCode(System.String,System.Drawing.Size)">
+            <summary>
+            获取条形码
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.GetBarCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取条形码
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.GetBarCode(System.String,System.Drawing.Size,System.Single)">
+            <summary>
+            获取条形码
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.GetBarCode(System.String,System.Drawing.Size,System.Drawing.Font)">
+            <summary>
+            获取条形码
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.WorkDir">
+            <summary>
+            工作目录
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.TempDir">
+            <summary>
+            临时目录
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.TempFile">
+            <summary>
+            临时文件
+            </summary>      
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.IsDebugging">
+            <summary>
+            当前环境是否处于调试运行状态
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.Version">
+            <summary>
+            登录系统时的版本号。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.Token">
+            <summary>
+            登录令牌
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.UsbKey">
+            <summary>
+            数字证书
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.Platform">
+            <summary>
+            登录的客户端平台类别
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.Config">
+            <summary>
+            系统配置信息
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.Cookies">
+            <summary>
+            个人缓存信息
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.Dictionary">
+            <summary>
+            系统字典管理对象
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.EnvironProxy.Serials">
+            <summary>
+            序列号管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.RegisterServiceBus(System.String,System.String,System.String,Framework.Entity.Platform)">
+            <summary>
+            注册服务总线,并且返回注册消息(同时设置默认代理和默认环境凭证)。
+            </summary>
+            <param name="userName">登录总线的用户名称</param>
+            <param name="password">登录总线的用户密码(密码算法由系统配置 PasswordCrypto 指定)。</param>
+            <param name="platform">注册的客户端平台类型</param>
+            <param name="usbkey">数字证书</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.RegisterServiceBus(System.Uri,System.String,System.String,System.String,Framework.Entity.Platform)">
+            <summary>
+            注册服务总线,并且创建客户端环境凭证。
+            </summary>
+            <param name="userName">登录总线的用户名称</param>
+            <param name="password">登录总线的用户密码(密码算法由系统配置 PasswordCrypto 指定)。</param>
+            <param name="serviceHost">总线服务地址</param>
+            <param name="usbkey">数字证书</param>
+            <param name="platform">注册的客户端平台类型</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.UpdateServiceToken(System.String)">
+            <summary>
+            更新总线服务令牌(被更新的令牌将失效，并重新生成新令牌)。
+            </summary>
+            <param name="token">被更新的服务令牌</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.LoginServiceBus(System.String)">
+            <summary>
+            登入服务总线，并返回菜单信息列表(Pair.Name=菜单列表,Pair.Value=工具栏列表)
+            </summary>
+            <param name="deptCode">登入的工作组织机构编号</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.UnregisterServiceBus(System.Boolean)">
+            <summary>
+            注销服务总线。
+            </summary>
+            <param name="cleanParameter">是否清理环境变量参数缓存</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.CallProxy(System.String,System.Object[])">
+            <summary>
+            委托调用代理的服务方法。
+            </summary>
+            <param name="params">调用参数数组</param>
+            <param name="callName">服务函数接口的调用名称(格式:程序集名称.类名称.函数名称)</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.CallProxy``1(System.String,System.Object[])">
+            <summary>
+            委托调用代理的服务方法。
+            </summary>
+            <typeparam name="T">返回值的泛型类型。</typeparam>
+            <param name="params">调用参数数组</param>
+            <param name="callName">服务函数接口的调用名称(格式:程序集名称.类名称.函数名称)</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.Query(System.String,App.FunctionLibrary.WhereBuilder)">
+            <summary>
+            </summary>
+            数据库查询操作，并且返回结果集 DataTable.
+            <param name="script">不包含 Where 关键字的查询脚本字符串表达式(条件表达式用 {0} 占位标识，缺省{0}时表示自动追加到查询脚本的末尾行)</param>
+            <param name="wb">查询条件表达式</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.Query(System.String,System.Object[])">
+            <summary>
+            数据库查询操作，并且返回结果集 DataTable.
+            </summary>
+            <param name="script">复合格式查询字符串。</param>
+            <param name="args">一个对象数组，其中包含零个或多个要设置格式的对象。</param>
+            <remarks>如果查询字符串以 Select 开始被认定为"SQL文本命令"，否则视为"存储过程"，不支持"表名称"的形式。</remarks>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.Execute(System.String,App.FunctionLibrary.WhereBuilder)">
+            <summary>
+            执行Transact-SQL脚本语句，并且返回受影响的行数。
+            </summary>
+            <param name="commandText">不包含 Where 关键字的SQL脚本语句字符串(条件表达式用 {0} 占位标识，缺省{0}时表示自动追加到查询脚本的末尾行)</param>
+            <param name="wb">条件表达式</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.Execute(System.String,System.Object[])">
+            <summary>
+            执行Transact-SQL脚本语句，并且返回受影响的行数。
+            </summary>
+            <param name="commandText">需要执行的SQL脚本语句字符串</param> 
+            <param name="args">一个对象数组，其中包含零个或多个要设置格式的对象。</param>
+        </member>
+        <member name="E:Framework.Proxy.EnvironProxy.MessageArrived">
+            <summary>
+            消息通知到达时间
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.StartMessageListening(Framework.Proxy.IEnvironment)">
+            <summary>
+            启动消息通知侦听
+            </summary>
+            <param name="environ">开启侦听使用的环境变量(缺省使用默认环境变量)</param>
+        </member>
+        <member name="M:Framework.Proxy.EnvironProxy.StopMessageListening">
+            <summary>
+            关闭消息通知侦听
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.FileManage">
+            <summary>
+            文件管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Get_Files(System.String,System.String,App.FunctionLibrary.DatePair,App.FunctionLibrary.DatePair)">
+            <summary>
+            获取文件列表(仅获取前1000条记录,不包括文件流数据部分)。
+            </summary>
+            <param name="fileName">文件名称</param>
+            <param name="extension">文件扩展名</param>
+            <param name="creatieTime">文件创建时间</param>
+            <param name="modifyTime">文件修改时间</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Get_Files(System.String[],System.Boolean)">
+            <summary>
+            根据文件编号获取文件信息列表(自动迭代路由)。
+            </summary>
+            <param name="fileCodes">文件编号组</param>
+            <param name="includeContent">是否包括文件流数据(默认不包括，流数据量大，影响查询效率，非必须不要获取)。</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Get_File(System.String,System.Boolean)">
+            <summary>
+            获取文件项(包括文件流数据)
+            </summary>
+            <param name="fileCode">文件编号</param>
+            <param name="includeContent">是否包括文件流数据(默认不包括，流数据量大，影响查询效率，非必须不要获取)。</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Get_File_Multiple(System.String,System.Int32)">
+            <summary>
+            分段获取文件数据流(可以有效回避网络一次传输数据量大的问题)。
+            </summary>
+            <param name="fileCode">文件编号</param>
+            <param name="length">分段传输数据长度(单位:字节,小于等于0表示不分段)</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Get_File_URL(System.String,System.Boolean)">
+            <summary>
+            根据文件编号获取文件信息并且返回文件的超链接地址
+            </summary>
+            <param name="fileCode">文件编号</param>
+            <param name="useOriginalName">是否使用原始文件名称</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Insert_File(Framework.Entity.FileItem)">
+            <summary>
+            新增文件项，新增成功返回文件编号(包括文件内容部分)。
+            </summary>
+            <param name="item">新增的文件项</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Insert_Files(Framework.Entity.FileItem[])">
+            <summary>
+            批量新增文件数据，并且返回新增成功的文件编号(包括文件内容部分，自动迭代路由)。
+            </summary>
+            <param name="items">文件项数组</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Insert_File_Multiple(Framework.Entity.FileItem)">
+            <summary>
+            分段新增文件项，并返回文件编号(自动迭代路由,首次调用必须完善全部文件信息)。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Update_Files(Framework.Entity.FileItem[],System.Boolean)">
+            <summary>
+            批量修改文件信息。
+            </summary>
+            <param name="items">文件项数据组</param>
+            <param name="includeContent">是否包括文件流数据(默认不包括，流数据量大，影响查询效率，非必须不要更新)。</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Update_File(Framework.Entity.FileItem,System.Boolean)">
+            <summary>
+            修改文件信息。
+            </summary>
+            <param name="item">文件项数据</param>
+            <param name="includeContent">是否包括文件流数据(默认不包括，流数据量大，影响查询效率，非必须不要更新)。</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Update_File_Multiple(Framework.Entity.FileItem)">
+            <summary>
+            多段方式上传文件内容(由于新增时无文件编号，所以无法新增时进行多段模式上传文件内容,如果上传过程中有异常发生时必须从头重新上传)。
+            </summary>
+            <param name="item">修改的文件项(HasRemanent=true时表示全部上传完毕)。</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Delete_Files(System.String[])">
+            <summary>
+            删除文件
+            </summary>
+            <param name="fileCodes">文件编号数组</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Upload(System.String)">
+            <summary>
+            上传本地文件到文件服务器中并且返回文件编号。
+            </summary>
+            <param name="localFileName">本地文件的完全限定名称。</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Upload_Multiple(System.String,System.String)">
+            <summary>
+            上传本地文件到文件服务器中并且返回文件编号(分段模式上传,可以有效回避网络一次传输数据量大的问题)。
+            </summary>
+            <param name="fileCode">文件编号</param>
+            <param name="localFileName">本地文件的完全限定名称。</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Download_AsBinary(System.String)">
+            <summary>
+            下载文件输出为二进制字节流。
+            </summary>
+            <param name="fileCode">文件编号</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Download_Multiple(System.String,System.String)">
+            <summary>
+            下载文件到指定的本地文件完全限定名称中(分段模式下载,可以有效回避网络一次传输数据量大的问题)。
+            </summary>
+            <param name="fileCode">文件编号</param>
+            <param name="localFileName">本地文件完全限定名称。</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Download_AsFile(System.String,System.Boolean)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="fileCode">需要下载的文件编号</param>
+            <param name="useOriginalName">是否使用原始文件名称</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Download_AsURL(System.String,System.Boolean)">
+            <summary>
+            下载文件并返回文档的超链接地址(适用于Webform)
+            </summary>
+            <param name="fileCode">需要下载的文件编号</param>
+            <param name="useOriginalName">是否使用原始文件名称</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Download_AsThumbnail(System.String,System.Boolean)">
+            <summary>
+            下载图片文件并返回图片的缩略图超链接地址(适用于Webform)
+            </summary>
+            <param name="fileCode">需要下载的文件编号</param>
+            <param name="useOriginalName">是否使用原始文件名称</param>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.Download_AsThumbnailURL(System.String,System.Boolean)">
+            <summary>
+            下载图片文件并返回图片的缩略图超链接地址(适用于Webform)
+            </summary>
+            <param name="fileCode">需要下载的文件编号</param>
+            <param name="useOriginalName">是否使用原始文件名称</param>
+        </member>
+        <member name="T:Framework.Proxy.FileManage.TransmitEventHandler">
+            <summary>
+            文件分段上传、下载事件委托
+            </summary>
+            <param name="sender">事件发起方对象</param>
+            <param name="e">事件参数集</param>
+        </member>
+        <member name="E:Framework.Proxy.FileManage.Uploading">
+            <summary>
+            文件分段上传事件
+            </summary>
+        </member>
+        <member name="E:Framework.Proxy.FileManage.Downloading">
+            <summary>
+            文件分段下载事件
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.FileManage.TransmitEventArgs">
+            <summary>
+            文件传输事件参数集
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.FileManage.TransmitEventArgs.Index">
+            <summary>
+            文件传输的次数(从0开始的索引)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.FileManage.TransmitEventArgs.Length">
+            <summary>
+            文件传输的字节数。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.FileManage.TransmitEventArgs.Size">
+            <summary>
+            文件的大小(总长度)。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.FileManage.TransmitEventArgs.Data">
+            <summary>
+            传输的文件二进制数据。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.FileManage.TransmitEventArgs.HasRemanent">
+            <summary>
+            是否还有未传输完毕的剩余数据。
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.FileManage.TransmitEventArgs.FileInfo">
+            <summary>
+            传输的文件信息。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.FileManage.StorageLocalFile(Framework.Entity.FileItem)">
+            <summary>
+            存储本地文件
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.IEnvironment">
+            <summary>
+            客户端环境接口
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.IEnvironment.Password2">
+            <summary>
+            操作员登录的密码(经过Xor计算的密文密码)。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.Purview(System.String)">
+            <summary>
+            获取当前操作员操作当前窗口的节点权限(该窗口必须是对菜单公开的)。
+            </summary>
+            <param name="purviewName">权限节点名称</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.Purview(System.String,System.String)">
+            <summary>
+            获取指明窗口编号的当前操作员操作权限(该编号窗口必须是对菜单公开的)。
+            </summary>
+            <param name="formCode">窗口编号</param>
+            <param name="purviewName">权限节点名称</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.Purview(System.String,System.String,System.String)">
+            <summary>
+            获取当前操作员操作指明窗口和权限节点的权限。
+            </summary>
+            <param name="assemblyName">指明的程序集名称</param>
+            <param name="formName">指明的窗口名称(该窗口必须是对菜单公开的)。</param>
+            <param name="purviewName">权限节点名称(如果缺省表示是否具有指定窗口的权限)</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.NotifyMessage(System.String,Framework.Entity.NotifyKind,System.String,System.String)">
+            <summary>
+            对指定的接受者发送通知
+            </summary>
+            <param name="accepter">接收通知的操作员</param>
+            <param name="kind">通知类别</param>
+            <param name="body">通知内容</param>
+            <param name="header">通知标题</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.NotifyMessage(System.String,Framework.Entity.NotifyItem)">
+            <summary>
+            对指定的接受者发送通知
+            </summary>
+            <param name="accepter">接收通知的操作员ID</param>
+            <param name="notify">通知信息实体</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.NotifyMessage(System.String,Framework.Entity.NotifyItem[])">
+            <summary>
+            对指定组织机构的所有操作员发送消息通知
+            </summary>
+            <param name="deptCode">指定接收消息的组织机构编号</param>
+            <param name="notifys">消息信息实体列表</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.NotifyMessage(Framework.Entity.NotifyItem[])">
+            <summary>
+            对所有操作员发送通知
+            </summary>
+            <param name="notifys">通知信息</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.NotifyMessage(Framework.Entity.NotifyKind,System.String,System.String)">
+            <summary>
+            对所有操作员发送通知
+            </summary>
+            <param name="kind">通知类型</param>
+            <param name="body">通知内容</param>
+            <param name="header">通知标题</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.GetBarCode(System.String,System.Int32)">
+            <summary>
+            获取条形码图像文件(不包括条码值)。
+            </summary>
+            <param name="codeValue">条码值</param>
+            <param name="height">条码高度(像素)</param>
+            <returns>返回条码图片的临时文件名称</returns>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.GetBarCode(System.String,System.Drawing.Size)">
+            <summary>
+            获取条形码图像文件(不包括条码值)。
+            </summary>
+            <param name="codeValue">条码值</param>
+            <param name="size">条码尺寸(像素)</param>
+            <returns>返回条码图片的临时文件名称</returns>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.GetBarCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取条形码图像文件(不包括条码值)。
+            </summary>
+            <param name="codeValue">条码值</param>
+            <param name="width">条码宽度(像素)</param>
+            <param name="height">条码高度(像素)</param>
+            <returns>返回条码图片的临时文件名称</returns>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.GetBarCode(System.String,System.Drawing.Size,System.Single)">
+            <summary>
+            获取条形码图像文件(不包括条码值)。
+            </summary>
+            <param name="codeValue">条码值</param>
+            <param name="size">条码尺寸(像素)</param>
+            <param name="fontSize">条码值的文本字号(默认宋体)</param>
+            <returns>返回条码图片的临时文件名称</returns>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.GetBarCode(System.String,System.Drawing.Size,System.Drawing.Font)">
+            <summary>
+            获取条形码图像文件(不包括条码值)。
+            </summary>
+            <param name="codeValue">条码值</param>
+            <param name="size">条码尺寸(像素)</param>
+            <param name="font">条码值的文本字体</param>
+            <returns>返回条码图片的临时文件名称</returns>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.LoginServiceBus(System.String)">
+            <summary>
+            登入服务总线，并返回菜单信息列表
+            </summary>
+            <param name="deptCode">登入的工作组织机构编号</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.UpdateServiceToken(System.String)">
+            <summary>
+            更新总线服务令牌(被更新的令牌将失效，并重新生成新令牌)。
+            </summary>
+            <param name="token">被更新的服务令牌</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.UnregisterServiceBus(System.Boolean)">
+            <summary>
+            注销服务总线。
+            </summary>
+            <param name="cleanParameter">是否清理环境变量参数缓存</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.CallProxy(System.String,System.Object[])">
+            <summary>
+            委托调用代理的服务方法。
+            </summary>
+            <param name="params">调用参数数组</param>
+            <param name="callName">服务函数接口的调用名称(格式:程序集名称.类名称.函数名称)</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.CallProxy``1(System.String,System.Object[])">
+            <summary>
+            委托调用代理的服务方法。
+            </summary>
+            <typeparam name="T">返回值的泛型类型。</typeparam>
+            <param name="params">调用参数数组</param>
+            <param name="callName">服务函数接口的调用名称(格式:程序集名称.类名称.函数名称)</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.Query(System.String,App.FunctionLibrary.WhereBuilder)">
+            <summary>
+            </summary>
+            数据库查询操作，并且返回结果集 DataTable.
+            <param name="script">不包含 Where 关键字的查询脚本字符串表达式(条件表达式用 {0} 占位标识，缺省{0}时表示自动追加到查询脚本的末尾行)</param>
+            <param name="wb">查询条件表达式</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.Query(System.String,System.Object[])">
+            <summary>
+            数据库查询操作，并且返回结果集 DataTable.
+            </summary>
+            <param name="script">复合格式查询字符串。</param>
+            <param name="args">一个对象数组，其中包含零个或多个要设置格式的对象。</param>
+            <remarks>如果查询字符串以 Select 开始被认定为"SQL文本命令"，否则视为"存储过程"，不支持"表名称"的形式。</remarks>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.Execute(System.String,App.FunctionLibrary.WhereBuilder)">
+            <summary>
+            执行Transact-SQL脚本语句，并且返回受影响的行数。
+            </summary>
+            <param name="commandText">不包含 Where 关键字的SQL脚本语句字符串(条件表达式用 {0} 占位标识，缺省{0}时表示自动追加到查询脚本的末尾行)</param>
+            <param name="wb">条件表达式</param>
+        </member>
+        <member name="M:Framework.Proxy.IEnvironment.Execute(System.String,System.Object[])">
+            <summary>
+            执行Transact-SQL脚本语句，并且返回受影响的行数。
+            </summary>
+            <param name="commandText">需要执行的SQL脚本语句字符串</param> 
+            <param name="args">一个对象数组，其中包含零个或多个要设置格式的对象。</param>
+        </member>
+        <member name="T:Framework.Proxy.Initialization">
+            <summary>
+            客户端初始化(按顺序初始化客户端)。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.Initialization.A_CheckAssembly(System.Boolean)">
+            <summary>
+            1、检查客户端必备的程序集(返回缺失程序集名称列表)。
+            </summary>
+            <param name="checkConfig">是否检查配置文件 config.xml</param>
+        </member>
+        <member name="M:Framework.Proxy.Initialization.B_ServerConnectionTest(System.Int32)">
+            <summary>
+            2、服务器联接测试
+            </summary>
+            <param name="timeout">测试超时时间(秒钟)</param>
+        </member>
+        <member name="M:Framework.Proxy.Initialization.B_ServerConnectionTest(System.String@,System.Int32)">
+            <summary>
+            2、服务器联接测试
+            </summary>
+            <param name="message">测试失败时返回的异常表达式</param>
+            <param name="timeout">测试超时时间(秒钟)</param>
+        </member>
+        <member name="M:Framework.Proxy.Initialization.B_ServerConnectionTest(System.Uri,System.Int32)">
+            <summary>
+            2、服务器联接测试，并且返回代理服务对象实例。
+            </summary>
+            <param name="serviceHost">服务器主机地址</param>
+            <param name="timeout">测试超时时间</param>
+        </member>
+        <member name="M:Framework.Proxy.Initialization.C_SetCacheVariables">
+            <summary>
+            3、设置客户端缓存变量
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.Initialization.C_SetCacheVariables(Framework.Entity.IService)">
+            <summary>
+            3、设置客户端缓存变量
+            </summary>
+            <param name="defaultProxy">默认代理服务</param>
+        </member>
+        <member name="M:Framework.Proxy.Initialization.D_TerminalVerify">
+            <summary>
+            4、终端授权验证(返回终端机的状态,通过属性Accredited判断终端机是否授权)。
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.Initialization.OfficeChooseHandler">
+            <summary>
+            操作员登录组织机构选择委托
+            </summary>
+            <param name="depts">操作员可以登录的组织机构列表</param>
+        </member>
+        <member name="M:Framework.Proxy.Initialization.K_StartMessageNotifyListening">
+            <summary>
+            使用当前默认代理、已注册登录总线的操作员进行消息通知侦听。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.Initialization.L_MessageNotifyEvent(System.Action{Framework.Entity.NotifyItem})">
+            <summary>
+            挂接消息通知事件
+            </summary>
+            <param name="msg">带消息编号的通知到达事件委托</param>
+        </member>
+        <member name="M:Framework.Proxy.Initialization.M_StopMessageNotifyListening">
+            <summary>
+            停止通知消息侦听。
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.MenuManage">
+            <summary>
+            菜单管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.MenuManage.Get_Menus_ByRole(System.String[])">
+            <summary>
+            获取指定角色的菜单列表
+            </summary>
+            <param name="roleCodes">角色编号</param>
+        </member>
+        <member name="M:Framework.Proxy.MenuManage.Get_Menus_All">
+            <summary>
+            获取所有角色已经配置的菜单项列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.MenuManage.Get_Menu_ByCode(System.String)">
+            <summary>
+            获取指定菜单编号的才得到项目
+            </summary>
+            <param name="menuCode">菜单编号</param>
+        </member>
+        <member name="M:Framework.Proxy.MenuManage.Insert_Menus_ByRoleCode(System.String,Framework.Entity.MenuItem[])">
+            <summary>
+            新增菜单
+            </summary>
+            <param name="roleCode">新增菜单的角色编号</param>
+            <param name="menus">新增的菜单列表</param>
+        </member>
+        <member name="M:Framework.Proxy.MenuManage.Delete_Menus_ByRoleCode(System.String)">
+            <summary>
+            根据角色删除菜单
+            </summary>
+            <param name="roleCode">角色编号</param>
+        </member>
+        <member name="T:Framework.Proxy.ProxyBase">
+            <summary>
+            客户端服务代理基类
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ProxyBase.Environ">
+            <summary>
+            客户端环境变量
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.ProxyBase.RoutingService">
+            <summary>
+            默认的路由服务或上层服务。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.ProxyBase.CallProxy(Framework.Entity.IService,System.Object[])">
+            <summary>
+            调用服务代理。
+            </summary>
+            <param name="params">输入参数数组。</param>
+            <param name="proxy">代理服务对象(调用的接口函数在此代理服务中执行)。</param>
+        </member>
+        <member name="M:Framework.Proxy.ProxyBase.CallProxy``1(Framework.Entity.IService,System.Object[])">
+            <summary>
+            调用服务代理。
+            </summary>
+            <typeparam name="T">返回值的泛型类型。</typeparam>
+            <param name="params">输入参数数组</param>
+            <param name="proxy">代理服务对象(调用的接口函数在此代理服务中执行)。</param>
+        </member>
+        <member name="M:Framework.Proxy.ProxyBase.CallProxyCore``1(Framework.Entity.IService,Framework.Entity.DbCode,System.Reflection.MethodBase,System.Object[])">
+            <summary>
+            调用服务代理的基础方法
+            </summary>
+            <typeparam name="T">返回值的泛型类型。</typeparam>
+            <param name="params">调用参数数组</param>
+            <param name="dbCode">调用的目标数据编号(缺省表示当前登录数据编号)</param>
+            <param name="caller">服务函数接口的调用方方法</param>
+            <param name="proxy">代理服务对象(调用的接口函数在此代理服务中执行，不使用默认前端服务 RoutingService)。</param>
+        </member>
+        <member name="M:Framework.Proxy.ProxyBase.CreateValidateAssemblies">
+            <summary>
+            生成验证程序集列表
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.PurviewManage">
+            <summary>
+            权限节点管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.PurviewManage.HasPurview_ByFormCode(System.String,System.String,System.String)">
+            <summary>
+            获取指明的窗口编号及权限点名称的角色是否具有权限
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="purviewName">权限名称</param>
+            <param name="formCode">窗口编号</param>
+        </member>
+        <member name="M:Framework.Proxy.PurviewManage.HasPurview_ByFormName(System.String,System.String,System.String)">
+            <summary>
+            获取指明的窗口是否具有权限(非权限点的全新，是指窗口的权限)。
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="assemblyName">程序集名称</param>
+            <param name="formName">窗口名称</param>
+        </member>
+        <member name="M:Framework.Proxy.PurviewManage.HasPurview_ByPurviewName(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取指明的窗口、指明的权限点是否具有权限。
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="assemblyName">程序集名称</param>
+            <param name="formName">窗口名称</param>
+            <param name="purviewName">权限名称</param>
+        </member>
+        <member name="M:Framework.Proxy.PurviewManage.Get_Purviews_ByRole(System.String)">
+            <summary>
+            根据角色编号获取权限点列表
+            </summary>
+            <param name="roleCode">角色编号</param>
+        </member>
+        <member name="M:Framework.Proxy.PurviewManage.Get_Purviews_ByForm(System.String)">
+            <summary>
+            根据窗口编号获取权限点列表
+            </summary>
+            <param name="formCode">窗口编号</param>
+        </member>
+        <member name="M:Framework.Proxy.PurviewManage.Get_Purviews_All">
+            <summary>
+            获取所有权限点列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.PurviewManage.Save_Purviews(Framework.Entity.PurviewItem[])">
+            <summary>
+            保存权限点
+            </summary>
+            <param name="purviews">权限点列表</param>
+        </member>
+        <member name="M:Framework.Proxy.PurviewManage.Delete_Purviews(System.String[])">
+            <summary>
+            删除权限点
+            </summary>
+            <param name="purviewCodes">权限点编号</param>
+        </member>
+        <member name="T:Framework.Proxy.SuggestManage">
+            <summary>
+            意见反馈管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SuggestManage.IsExists_Suggest(System.String)">
+            <summary>
+            是否存在意见反馈信息
+            </summary>
+            <param name="suggestId">意见反馈编号</param>
+        </member>
+        <member name="M:Framework.Proxy.SuggestManage.Get_Suggest_BySuggestID(System.String)">
+            <summary>
+            获取意见反馈信息
+            </summary>
+            <param name="suggestId">意见反馈编号</param>
+        </member>
+        <member name="M:Framework.Proxy.SuggestManage.Get_Suggest_All">
+            <summary>
+            获取所有意见反馈列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SuggestManage.Query_Suggest(System.String,System.Nullable{System.Int32},System.String,App.FunctionLibrary.DatePair)">
+            <summary>
+            查询意见反馈列表
+            </summary>
+            <param name="summary">意见反馈标题</param>
+            <param name="level">意见反馈处理紧急等级</param>
+            <param name="userId">操作员编号</param>
+            <param name="createDate">用户提交反馈时间</param>
+        </member>
+        <member name="M:Framework.Proxy.SuggestManage.Insert_Suggest(Framework.Entity.SuggestItem)">
+            <summary>
+            新增意见反馈信息
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SuggestManage.Update_Suggest(Framework.Entity.SuggestItem)">
+            <summary>
+            修改意见反馈信息
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SuggestManage.Save_Suggest(Framework.Entity.SuggestItem)">
+            <summary>
+            保存意见反馈信息
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SuggestManage.Delete_Suggest(System.String)">
+            <summary>
+            删除意见反馈信息
+            </summary>
+            <param name="suggestId">意见反馈编号</param>
+        </member>
+        <member name="T:Framework.Proxy.TimingTaskConfig">
+            <summary>
+            定时任务配置
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.TimingTaskConfig.Get_TimingTaskTypes">
+            <summary>
+            获取定时任务类型(Pair.Name表示任务类型值,Pair.Value表示任务类型名称)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.TimingTaskConfig.Get_TimingStatusTypes">
+            <summary>
+            获取定时任务状态(Pair.Name表示状态值,Pair.Value表示状态名称)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.TimingTaskConfig.Get_TimingSchedules">
+            <summary>
+            获取所有定时任务规则列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.TimingTaskConfig.Save_TimingSchedules(Framework.Entity.TimingTaskItem[])">
+            <summary>
+            保存定时任务规则
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.ReportManage">
+            <summary>
+            报表文件管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.Get_Reports(System.String)">
+            <summary>
+            根据报表名称获取报表列表(不包括报表XML模板文档)。
+            </summary>
+            <param name="reportName">报表名称(缺省表示所有报表)</param>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.GetReportName(System.String)">
+            <summary>
+            获取报表名称(包括时间戳，但不包括报表XML模板文件)。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.GetReportXML(System.String)">
+            <summary>
+            获取报表XML文档(带时间戳)
+            </summary>
+            <param name="reportCode">报表编号</param>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.CreateReport(System.String)">
+            <summary>
+            根据报表编号创建报表文件,并且返回创建的报表文件名称。
+            </summary>
+            <param name="reportCode">报表编号</param>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.CreateReport(System.String,Framework.Entity.TimeStamp,App.FunctionLibrary.Filer)">
+            <summary>
+            根据报表编号创建指定文件名称的报表Xml模板文件。
+            </summary>
+            <param name="reportCode">报表编号</param>
+            <param name="timeStamp">模板时间戳</param>
+            <param name="file">创建的报表模板文件</param>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.SaveReport(Framework.Entity.ReportItem)">
+            <summary>
+            保存报表(不保存XML文档)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.SaveReport(Framework.Entity.ReportItem,App.FunctionLibrary.Filer)">
+            <summary>
+            保存报表(包括XML文档一起保存)
+            </summary>
+            <param name="report">报表文件实体对象(不包含 Xml 模板文档)</param>
+            <param name="file">报表模板文件(提供 Xml 模板文档的文件)</param>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.SaveReport(System.String,App.FunctionLibrary.Filer,System.String)">
+            <summary>
+            根据报表文件保存报表到数据库中(仅保存报表XML文档)
+            </summary>
+            <param name="reportCode">报表编号</param>
+            <param name="file">报表文件</param>
+            <param name="timestamp">时间戳，如果不提供时间戳自动生成</param>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.DeleteReport(System.String)">
+            <summary>
+            删除报表
+            </summary>
+            <param name="reportCode">报表编号</param>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.GetViewQueryData(System.String,Framework.Entity.ReportParameter[])">
+            <summary>
+            获取单个数据源预览数据(只查询1000条数据)。
+            </summary>
+            <param name="script">查询脚本</param>
+            <param name="params">参数组</param>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.GetReportData(System.String,Framework.Entity.ReportParameter[])">
+            <summary>
+            获取报表项的数据(不包括报表XML模板文件)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="parameters">报表的查询参数组</param>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.RequireCreate(App.FunctionLibrary.Filer,Framework.Entity.TimeStamp)">
+            <summary>
+            获取报表模板是否需要重新创建
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.ReportManage.CreateFile(App.FunctionLibrary.Filer,System.String,Framework.Entity.TimeStamp)">
+            <summary>
+            根据模板XML创建报表模板文件
+            </summary>
+            <param name="file">模板文件</param>
+            <param name="xml">模板XML字符串</param>
+            <param name="timestamp">时间戳</param>
+        </member>
+        <member name="T:Framework.Proxy.RoleManage">
+            <summary>
+            角色管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.RoleManage.Get_Roles(System.Nullable{Framework.Entity.Platform})">
+            <summary>
+            获取所有角色列表
+            </summary>
+            <param name="platform">平台类别(缺省表示所有平台)</param>
+        </member>
+        <member name="M:Framework.Proxy.RoleManage.Get_GroupName(System.Nullable{Framework.Entity.Platform})">
+            <summary>
+            获取分组名称
+            </summary>
+            <param name="platform">平台类别(缺省表示所有平台)</param>
+        </member>
+        <member name="M:Framework.Proxy.RoleManage.Insert_Role(Framework.Entity.RoleItem)">
+            <summary>
+            新增角色信息
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.RoleManage.Update_Role(Framework.Entity.RoleItem)">
+            <summary>
+            修改角色信息
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.RoleManage.Update_GroupName(System.String,System.String)">
+            <summary>
+            更新分组名称
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="groupName">分组名称</param>
+        </member>
+        <member name="M:Framework.Proxy.RoleManage.Delete_Role(System.String)">
+            <summary>
+            删除角色
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.RoleManage.Save_RoleUsers(Framework.Entity.UserDeptsItem[])">
+            <summary>
+            保存使用角色的所有操作员
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.RoleManage.Save_MenuPurview(System.String,Framework.Entity.MenuItem[],Framework.Entity.PurviewItem[])">
+            <summary>
+            保存菜单和权限点
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="menus">菜单列表</param>
+            <param name="purviews">权限点列表</param>
+        </member>
+        <member name="M:Framework.Proxy.RoleManage.Save_Toolbar(System.String,Framework.Entity.ToolbarItem[])">
+            <summary>
+            保存角色的工具栏配置
+            </summary>
+            <param name="roleCode">角色变换</param>
+            <param name="toolbars">工具栏列表</param>
+        </member>
+        <member name="T:Framework.Proxy.SeriesConfigManage">
+            <summary>
+            序列号配置管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SeriesConfigManage.Get_SerialConfigs">
+            <summary>
+            获取序列号配置列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SeriesConfigManage.Get_SerialConfig(System.String)">
+            <summary>
+            获取序列号配置项
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SeriesConfigManage.Save_SerialConfig(Framework.Entity.SeriesConfigItem[])">
+            <summary>
+            保存序列号配置(全量配置列表，先增后删模式)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SeriesConfigManage.Insert_SerialConfig(Framework.Entity.SeriesConfigItem[])">
+            <summary>
+            新增序列号配置项
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SeriesConfigManage.Update_SerialConfig(Framework.Entity.SeriesConfigItem[])">
+            <summary>
+            修改序列号配置项
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SeriesConfigManage.Delete_SerialConfig(System.String[])">
+            <summary>
+            删除序列号配置项
+            </summary>
+            <param name="serialNames">删除的序列号名称</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesConfigManage.Get_SerialValues(System.String)">
+            <summary>
+            获取指定序列号名称的所有序列号值
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.SeriesManage">
+            <summary>
+            序列号管理器
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.SeriesManage.Item(System.String)">
+            <summary>
+            获取序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+        </member>
+        <member name="P:Framework.Proxy.SeriesManage.Item(System.String,System.Int32)">
+            <summary>
+            获取序列号组
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="count">获取的种子数目</param>
+        </member>
+        <member name="P:Framework.Proxy.SeriesManage.Item(System.String,System.String)">
+            <summary>
+            获取序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="subName">序列号子名称</param>
+        </member>
+        <member name="P:Framework.Proxy.SeriesManage.Item(System.String,System.String,System.Int32)">
+            <summary>
+            获取序列号组
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="count">获取的种子数目</param>
+            <param name="subName">序列号子名称</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.GetSeries(System.String)">
+            <summary>
+            获取序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.GetSeries(System.String,System.Int32)">
+            <summary>
+            获取序列号组
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="count">获取的序列号数目</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.GetSeries(System.String,System.String)">
+            <summary>
+            获取序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="subName">序列号子名称</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.GetSeries(System.String,System.String,System.Int32)">
+            <summary>
+            获取序列号组
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="count">获取的序列号数目</param>
+            <param name="subName">序列号子名称</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.GetFormatString(System.String)">
+            <summary>
+            获取序列号的格式化字符串
+            </summary>
+            <param name="seriesName">序列号名称</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.GetSeriesTotalLength(System.String)">
+            <summary>
+            获取序列号表达式的总长度。
+            </summary>
+            <param name="seriesName">序列号名称</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.GetSeriesType(System.String)">
+            <summary>
+            获取序列号类型
+            </summary>
+            <param name="seriesName">序列号名称</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.GetUniqueSeries(System.Int32)">
+            <summary>
+            获取全系统绝对唯一的序列号(类似于GUID，但不同于GUID)。
+            </summary>
+            <param name="count">生成序列号的数目</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.GetUniqueSeries">
+            <summary>
+            获取全系统绝对唯一的序列号(类似于GUID，但不同于GUID)。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.ResetSeries(System.String,System.String)">
+            <summary>
+            回退序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="serialValue">回退的序列号值</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.ResetSeries(System.String,System.String[])">
+            <summary>
+            回退序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="serialValues">回退的种子值</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.ResetSeries(System.String,System.String,System.String)">
+            <summary>
+            回退子序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="subName">序列号子名称</param>
+            <param name="serialValue">回退的序列号值</param>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.ResetSeries(System.String,System.String,System.String[])">
+            <summary>
+            回退子序列号
+            </summary>
+            <param name="seriesName">序列号名称</param>
+            <param name="subName">序列号子名称</param>
+            <param name="serialValues">回退的序列号值</param>
+        </member>
+        <member name="F:Framework.Proxy.SeriesManage.TransPool">
+            <summary>
+            Pair.Name=Pair&lt;序列号名,序列号子名&gt;
+            Pair.Value=序列号值
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.Beginning">
+            <summary>
+            开始序列号获取事务，并记录获取的所有序列号值，为回退 Rollback 序列值做准备工作。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.Commit">
+            <summary>
+            提交序列号获取事务(提交后回滚无效)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SeriesManage.Rollback">
+            <summary>
+            回退 Beginning 之后获取的所有序列号值
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.SystemService">
+            <summary>
+            系统架构服务基础类
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.TryConnection(System.Int32)">
+            <summary>
+            测试配置文件指明的配置中间层服务器地址进行连接
+            </summary>
+            <param name="timeout">超时时间(秒钟)</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.TryConnection(System.Int32,System.String@)">
+            <summary>
+            测试配置文件指明的配置中间层服务器地址进行连接
+            </summary>
+            <param name="timeout">超时时间(秒钟)</param>
+            <param name="message">发生错误时的错误信息</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.TryConnection(System.Uri,System.Int32,System.String@)">
+            <summary>
+            测试配置文件指明的配置中间层服务器地址进行连接
+            </summary>
+            <param name="serviceHost">服务器主机地址</param>
+            <param name="timeout">超时时间(秒钟)</param>
+            <param name="message">发生错误时的错误信息</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.TryConnection(System.Uri,System.Int32,System.Boolean,System.String@)">
+            <summary>
+            测试配置文件指明的配置中间层服务器地址进行连接
+            </summary>
+            <param name="serviceHost">服务器主机地址</param>
+            <param name="timeout">超时时间(秒钟)</param>
+            <param name="message">发生错误时的错误信息</param>
+            <param name="tryPing">尝试Ping服务器</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.TryConnection(System.Uri,System.Int32,System.Boolean)">
+            <summary>
+            测试代理服务联接并且返回代理对象
+            </summary>
+            <param name="serviceHost">服务器主机地址</param>
+            <param name="timeout">测试连接测试时间</param>
+            <param name="tryPing">尝试Ping服务器</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.TryConnection(System.Uri,System.Int32,System.Boolean,System.String@,Framework.Entity.IService@)">
+            <summary>
+            测试配置文件指明的配置中间层服务器地址进行连接
+            </summary>
+            <param name="serviceHost">服务器主机地址</param>
+            <param name="timeout">超时时间(秒钟)</param>
+            <param name="message">发生错误时的错误信息</param>
+            <param name="tryPing">尝试Ping服务器</param>
+            <param name="proxy">输出代理对象</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.GetLocalTerminal">
+            <summary>
+            获取本地终端信息
+            </summary>
+        </member>
+        <member name="F:Framework.Proxy.SystemService.SlowTimeCacher">
+            <summary>
+            系统标准时间缓存器
+            </summary>
+        </member>
+        <member name="P:Framework.Proxy.SystemService.SlowTime">
+            <summary>
+            标准时间、服务器数据库时间
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.Get_FilesCopier">
+            <summary>
+            获取文件复制工具
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.RegisterServiceBus(Framework.Entity.ServiceRegisterRequest)">
+            <summary>
+            注册、登录服务总线。
+            </summary>
+            <param name="request">总线服务注册信息</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.LoginServiceBus(System.String)">
+            <summary>
+            登入服务总线,并返回登录的角色和组织机构信息。
+            </summary>
+            <param name="deptCode">登入的工作组织机构编号</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.UpdateServiceToken(System.String)">
+            <summary>
+            更新总线服务令牌(被更新的令牌将失效，并重新生成新令牌)。
+            </summary>
+            <param name="token">被更新的服务令牌</param>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.UnregisterServiceBus(System.String)">
+            <summary>
+            注销总线服务。
+            </summary>
+            <param name="token">将要注销注册时获取的登录令牌</param>
+        </member>
+        <member name="P:Framework.Proxy.SystemService.IsEipDB">
+            <summary>
+            是否为企业总线数据架构(true:企业总线数据架构，false:非企业总线数据架构,null:无数据库)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.SystemService.HasEipDB">
+            <summary>
+            是否为企业总线数据架构(true:企业总线数据架构，false:非企业总线数据架构,null:无数据库)
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.TerminalManage">
+            <summary>
+            终端机操作
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Get_Terminals_All">
+            <summary>
+            获取终端机列表
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Get_Terminals_Login(System.String)">
+            <summary>
+            获取登录的工作站设备列表
+            </summary>
+            <param name="dbCode">数据编号</param>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Get_TerminalsCount_Login(System.String)">
+            <summary>
+            获取登录的工作站设备数
+            </summary>
+            <param name="dbCode">数据编号</param>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Get_TerminalsCount(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            获取终端数
+            </summary>
+            <param name="dbcode">数据编号</param>
+            <param name="accredit">是否授权</param>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Get_Terminal(System.String)">
+            <summary>
+            获取终端机信息
+            </summary>
+            <param name="terminalCode">终端机编码</param>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Get_Terminals_ByDeptCode(System.String[])">
+            <summary>
+            获取指定登录组织机构的所以终端列表。
+            </summary>
+            <param name="deptCodes">登录的组织机构编号</param>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Get_Terminals_ByUserID(System.String)">
+            <summary>
+            获取指定操作员登录的终端列表。
+            </summary>
+            <param name="loginUserID">登录的操作员内码</param>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Get_GroupNames">
+            <summary>
+            获取工作站分组名称
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Registing(Framework.Entity.TerminalItem)">
+            <summary>
+            注册本地终端机(如果终端机不存在，则新增终端机)
+            <para>
+            (如果终端机存在则修改，如果不存在则新注册一个未授权的终端机，并且返回该终端机相关信息)。
+            </para>
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Get_Accrediting(System.String)">
+            <summary>
+            获取终端机的授权状态(true已授权，false未授权)。
+            </summary>
+            <param name="terminalCode">终端机编号。</param>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Set_Accrediting(System.String,System.Boolean)">
+            <summary>
+            设置终端机的授权状态。
+            </summary>
+            <param name="terminalCode">终端机编号。</param>
+            <param name="value">true已授权，false未授权</param>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.LogIn">
+            <summary>
+            操作员从本机登录进入系统平台。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.LogOut">
+            <summary>
+            操作员从本机登出退出系统平台。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Delete_Terminal(System.String[])">
+            <summary>
+            删除终端机信息
+            </summary>
+            <param name="terminalCode">终端机编号</param>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Insert_Terminal(Framework.Entity.TerminalItem)">
+            <summary>
+            新增终端机信息
+            </summary>
+            <param name="item">终端机信息</param>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Update_Terminal(Framework.Entity.TerminalItem)">
+            <summary>
+            修改终端机信息
+            </summary>
+            <param name="item">终端机信息</param>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Update_OwnerGroupName(System.String,System.String[])">
+            <summary>
+            更新父分组
+            </summary>
+            <param name="ownerGroupName">父分组名称</param>
+            <param name="terminalCode">工作站编号</param>
+        </member>
+        <member name="M:Framework.Proxy.TerminalManage.Update_Ordinal(App.FunctionLibrary.Pair{System.Int32}[])">
+            <summary>
+            更新分组顺序号
+            </summary>
+            <param name="values">Name表示工作站编号,Value表示顺序号</param>
+        </member>
+        <member name="T:Framework.Proxy.UsersManage">
+            <summary>
+            操作员信息管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.UserLogin(System.String,System.String)">
+            <summary>
+            当前数据库的操作员登录
+            </summary>
+            <param name="userCode">操作员登录的用户编号</param>
+            <param name="password">登录密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.IsExists_User_ByUserCode(System.String,System.String)">
+            <summary>
+            是否存在指定的用户
+            </summary>
+            <param name="dbCode">数据编号</param>
+            <param name="userCode">用户登录名</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.IsExists_UserDepts_ByUserID(System.String)">
+            <summary>
+            是否存在操作员授权登录的机构
+            </summary>
+            <param name="userId">操作员编号</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_UsersCount(System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            获取用户数。
+            </summary>
+            <param name="dbCode">数据编号(空表示全部数据编号)</param>
+            <param name="systemic">是否为系统用户(空表示全部用户)</param>
+            <param name="disable">是否为停用用户(空表示全部用户)</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_UsersCount_Login(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            获取登录的用户数(不包括失效的登录令牌用户)
+            </summary>
+            <param name="dbCode">数据编号(空表示全部数据编号)</param>
+            <param name="systemic">是否为系统用户(空表示全部用户)</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_User(System.String,System.String)">
+            <summary>
+            获取当前数据库的操作员(如果不存在返回 null)。
+            </summary>
+            <param name="userCode">用户登录名</param>
+            <param name="password">登录密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_User_UserCode(System.String,System.String)">
+            <summary>
+            获取当前数据库的操作员(如果不存在返回 null)。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_User(System.String)">
+            <summary>
+            根据操作员内码获取操作员信息
+            </summary>
+            <param name="userId">操作员内码</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_User_ByToken(System.String)">
+            <summary>
+            根据证书令牌获取用户信息
+            </summary>
+            <param name="token">证书令牌</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_UserID(System.String,System.String)">
+            <summary>
+            根据操作员登录名(编号)获取操作员内码。
+            </summary>
+            <param name="userCode">操作员登录名称、操作员编号。</param>
+            <param name="dbCode">数据编号，默认表示当前数据编号。</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_UserDepts_ByUserID(System.String,System.Nullable{Framework.Entity.Platform})">
+            <summary>
+            获取操作员管理的组织机构列表(包含停用的组织机构)。
+            </summary>
+            <param name="userId">操作员登录ID号</param>
+            <param name="platform">平台类别(缺省表示所有平台)</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_Users_All">
+            <summary>
+            获取所有操作员
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_Users_ByDbCode(System.String)">
+            <summary>
+            获取所有指定数据库编号的操作员列表
+            </summary>
+            <param name="dbCode">指定的数据库编号(空表示所有操作员)</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_Users_ByUserID(System.String[])">
+            <summary>
+            根据用户内码获取一批用户信息列表。
+            </summary>
+            <param name="userIds">获取用户信息的用户内码列表。</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_Users_ByDeptCode(System.String[])">
+            <summary>
+            获取具有指明组织机构操作权限的操作员列表。
+            </summary>
+            <param name="deptCodes">组织机构编号</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_Users_ByRoleCode(System.String)">
+            <summary>
+            获取分配了登录角色的所有操作员列表
+            </summary>
+            <param name="roleCode">角色编号</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_Users_Employee_ByDeptCode(System.String[])">
+            <summary>
+            根据组织机构编号查询组织机构下操作员(根据操作员对应员工)，组织机构传空，带出所有操作员
+            </summary>
+            <param name="deptCodes">组织机构数组（可为多个组织机构）</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_Users_UnbindingEmployee(System.String)">
+            <summary>
+            查询所有未绑定员工的操作员
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_Users_ByDeptType(System.String[])">
+            <summary>
+            获取具有指明组织机构类型操作权限的操作员列表。
+            </summary>
+            <param name="deptTypeCodes">组织机构类型编号列表</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_Users_ByDeptType(System.Enum[])">
+            <summary>
+            获取具有指明组织机构类型操作权限的操作员列表。
+            </summary>
+            <param name="deptTypes">组织机构类型组</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_Users_ByFormName_ByPurview_ByDeptCode(System.String,System.String,System.String)">
+            <summary>
+            查询所有具有页面和权限点访问权限的操作员列表
+            </summary>
+            <param name="formName">获取操作员列表的指定页面名称</param>
+            <param name="deptCode">获取指定页面名称登录于指定组织机构的操作员列表</param>
+            <param name="purviewName">获取具有指定权限名称的操作员列表</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Insert_User(Framework.Entity.UserItem)">
+            <summary>
+            新增操作员信息，并且返回新分配UserID的操作员信息(自动产生UserID)。
+            </summary>
+            <param name="item">操作员信息实体</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Update_User(Framework.Entity.UserItem)">
+            <summary>
+            修改操作员信息
+            </summary>
+            <param name="item">操作员信息实体</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Update_User(System.String,System.String,System.String)">
+            <summary>
+            更新操作员基本信息
+            </summary>
+            <param name="userId">操作员内码</param>
+            <param name="userCode">操作员登录编号</param>
+            <param name="userName">操作员名称</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Delete_User(System.String)">
+            <summary>
+            删除操作员信息，并且返回新的操作员列表
+            </summary>
+            <param name="userId">操作员登录ID号</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Delete_User(System.String,System.String,System.String)">
+            <summary>
+            删除指定登录名称和登录密码的用户。
+            </summary>
+            <param name="userCode">登录名称</param>
+            <param name="password">登录密码(密文)</param>
+            <param name="dbCode">数据编号，缺省表示当前登录的数据。</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Save_UserDepts(System.String,Framework.Entity.Platform,Framework.Entity.UserDeptsItem[])">
+            <summary>
+            保存操作员管理的组织机构设置(将清理所有未在组织机构列表中存在的组织机构登录权限)。
+            </summary>
+            <param name="userId">操作员编号</param>
+            <param name="depts">组织机构列表</param>
+            <param name="platform">平台类别</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Open_UserDepartRole(System.String,System.String,System.String)">
+            <summary>
+            开通操作员登录系统的组织机构和角色(不处理操作员关联的其他角色)。
+            </summary>
+            <param name="userId">操作员内码</param>
+            <param name="deptCode">组织机构编号</param>
+            <param name="roleCode">角色编号</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.DisablingUser(System.String,System.Boolean)">
+            <summary>
+            变更操作员的停用状态。
+            </summary>
+            <param name="userId">操作员ID</param>
+            <param name="disable">停用状态</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Update_HeaderPhoto(System.String,System.Byte[])">
+            <summary>
+            更新操作员头像
+            </summary>
+            <param name="userId">操作员内码</param>
+            <param name="headPhoto">头像数据流</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Update_HeaderPhoto(System.String,System.String)">
+            <summary>
+            用指定的本地文件名称更新操作员头像
+            </summary>
+            <param name="userId">操作员内码</param>
+            <param name="localFileName">本地文件全路径名称</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_HeaderPhoto(System.String)">
+            <summary>
+            获取操作员头像数据流
+            </summary>
+            <param name="userId">操作员内码</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Get_HeaderPhoto_URL(System.String)">
+            <summary>
+            获取操作员头像文件超链接地址。
+            </summary>
+            <param name="userId">操作员内码</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.ChangePassword(System.String,System.String,System.String,System.String)">
+            <summary>
+            变更密码
+            </summary>
+            <param name="userId">用户内码</param>
+            <param name="newUserCode">新用户登录名(空表示不修改登录名)</param>
+            <param name="newUserName">新用户姓名(空表示不修改用户姓名)</param>
+            <param name="newPassword">新密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.ChangePassword(System.String,System.String,System.String)">
+            <summary>
+            变更密码
+            </summary>
+            <param name="userId">操作员ID号</param>
+            <param name="oldPassword">原密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+            <param name="newPassword">新密码(密码算法由系统配置 PasswordCrypto 指定)</param> 
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.ChangePassword(System.String,System.String)">
+            <summary>
+            重置密码
+            </summary>
+            <param name="userId">用户内码</param>
+            <param name="newPassword">新密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.PasswordCrypto(System.String)">
+            <summary>
+            密码加密计算(由系统配置 PasswordCrypto 指定密码算法)
+            </summary>
+            <param name="password">需要加密计算的明文密码</param>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Authenticate(System.String,System.String,System.String,System.String)">
+            <summary>
+            认证用户是否被授权(认证成功返回用户内码 UserID)。
+            </summary>
+            <param name="dbcode">数据编号</param>
+            <param name="usbkey">数字证书</param>
+            <param name="usercode">用户编号(登录名)</param>
+            <param name="password">登录密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+            <remarks>密码二选一即可，认证失败抛出 AuthenticateException 异常。</remarks>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Authenticate(System.String,System.String,System.String)">
+            <summary>
+            认证用户是否被授权。
+            </summary>
+            <param name="userId">登录的用户内码</param>
+            <param name="usbkey">数字证书</param>
+            <param name="password">登录密码(密码算法由系统配置 PasswordCrypto 指定)</param>
+            <remarks>密码二选一即可，认证失败抛出 AuthenticateException 异常。</remarks>
+        </member>
+        <member name="M:Framework.Proxy.UsersManage.Authenticate(Framework.Security.Certificate)">
+            <summary>
+            认证数字证书是否被授信
+            </summary>
+            <param name="cer">被验证的数字证书</param>
+        </member>
+        <member name="T:Framework.Proxy.NotifyManage">
+            <summary>
+            会话通知管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.NotifyManage.Query_Notifys(Framework.Entity.NotifyKind,System.String,System.Nullable{System.Boolean},System.String,System.String,App.FunctionLibrary.DatePair)">
+            <summary>
+            查询通知列表(不包括通知正文)。
+            </summary>
+            <param name="kind">通知类型</param>
+            <param name="header">通知标题(包含)</param>
+            <param name="istop">是否置顶</param>
+            <param name="publisher">发布操作员内码</param>
+            <param name="publishDept">发布部门</param>
+            <param name="publishDate">发布时间</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyManage.Get_Notifys_ByPublisher(System.String,System.Boolean)">
+            <summary>
+            获取已发送的通知列表
+            </summary>
+            <param name="publisher">发送者</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyManage.Get_Notifys_ByPublishDept(System.String,System.Boolean)">
+            <summary>
+            获取已发送的通知列表
+            </summary>
+            <param name="publishDept">发布部门</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyManage.Get_Notify_ByNotifyID(System.String)">
+            <summary>
+            根据通知编号获取通知实体(包括通知正文)。
+            </summary>
+            <param name="notifyId">通知编号</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyManage.Insert_Notify(Framework.Entity.NotifyItem,System.String[])">
+            <summary>
+            新增通知
+            </summary>
+            <param name="item">通知</param>
+            <param name="receivers">通知接收者</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyManage.Delete_Notifys_ByNotifyID(System.String[])">
+            <summary>
+            删除通知
+            </summary>
+            <param name="notifyIds">通知编码列表</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyManage.Update_Notifys_Istop(System.String[],System.Boolean)">
+            <summary>
+            通知置顶
+            </summary>
+            <param name="notifyIds">通知编号列表</param>
+            <param name="istop">true表示置顶，false表示取消置顶</param>
+        </member>
+        <member name="T:Framework.Proxy.NotifyStatusManage">
+            <summary>
+            消息通知管理
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.NotifyStatusManage.Query_NotifyStatus(System.String,System.String,System.String,App.FunctionLibrary.DatePair,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            查询通知状态。
+            </summary>
+            <param name="receiver">接收者</param>
+            <param name="receiveDept">接收部门</param>
+            <param name="readDate">阅读时间</param>
+            <param name="readed">是否已读</param>
+            <param name="disabled">是否已删除</param>
+            <param name="header">通知标题(包含)</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyStatusManage.Get_NotifyStatus_ByNotifyID_ByReceiveUserID(System.String,System.String,System.Boolean)">
+            <summary>
+            获取通知状态
+            </summary>
+            <param name="notifyId">通知编号</param>
+            <param name="receiver">通知接受者</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyStatusManage.Get_NotifyStatus_ByNotifyID(System.String,System.Boolean)">
+            <summary>
+            获取指定通知编号的通知接收状态。
+            </summary>
+            <param name="notifyId">通知编号</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyStatusManage.Get_NotifyStatus_Unreaded(System.String,System.Boolean)">
+            <summary>
+            获取未读的会话列表。
+            </summary>
+            <param name="receiver">接受者</param>
+            <param name="includeBody">是否包含会话正文</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyStatusManage.Get_NotifyStatus_Readed(System.String,System.Boolean)">
+            <summary>
+            获取已读的通知列表
+            </summary>
+            <param name="receiver">接收者</param>
+            <param name="includeBody">是否包含会话正文</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyStatusManage.Get_NotifyStatus_Deleted(System.String,System.Boolean)">
+            <summary>
+            获取已删除的通知列表
+            </summary>
+            <param name="receiver">接收者</param>
+            <param name="includeBody">是否包含通知正文</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyStatusManage.Get_UnreadCount_ByReceiver(System.String)">
+            <summary>
+            获取操作员未读的会话数量
+            </summary>
+            <param name="receiver">指定的会话接收者</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyStatusManage.Insert_NotifyStatus(Framework.Entity.NotifyStatusItem[])">
+            <summary>
+            新增通知状态
+            </summary>
+            <param name="items">通知状态列表</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyStatusManage.Delete_NotifyStatus_ByNotifyID(System.String,System.String[])">
+            <summary>
+            删除指定通知编号的通知状态
+            </summary>
+            <param name="notifyId">通知编号</param>
+            <param name="receivers">通知接收者列表(缺省表示所有接收者)</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyStatusManage.Delete_NotifyStatus_ByReceiveUserID(System.String,System.String[])">
+            <summary>
+            删除指定接收者的消息状态。
+            </summary>
+            <param name="receiver">会话接收者</param>
+            <param name="notifyIds">会话编号列表(缺省表示所有会话)。</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyStatusManage.Update_NotifyStatus_Readed(System.Boolean,App.FunctionLibrary.Pair[])">
+            <summary>
+            更新消息状态是否已阅读
+            </summary>
+            <param name="readed">true表示已阅读，false表示取消阅读</param>
+            <param name="values">更新状态的会话列表(Name=会话编号,Value=接收者)。</param>
+        </member>
+        <member name="M:Framework.Proxy.NotifyStatusManage.Update_NotifyStatus_Disabled(System.Boolean,App.FunctionLibrary.Pair[])">
+            <summary>
+            更新通知状态是否已作废
+            </summary>
+            <param name="disabled">true表示已作废，false表示取消作废</param>
+            <param name="values">更新状态的通知列表(Name=通知编号,Value=接收者)。</param>
+        </member>
+        <member name="T:Framework.Proxy.VersionsCenterController">
+            <summary>
+            版本中心版本控制
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.VersionsCenterController.#ctor">
+            <summary>
+            版本中心版本控制
+            </summary>
+        </member>
+        <member name="T:Framework.Proxy.VersionsController">
+            <summary>
+            版本控制器
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Get_Versions">
+            <summary>
+            获取版本列表(不包括数据结构二进制流),只查询最近1000个版本列表。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Get_Versions(Framework.Entity.Versions,Framework.Entity.Versions)">
+            <summary>
+            获取开始版本和终止版本之间的所有关联版本(不包括数据结构二进制流)。
+            </summary>
+            <param name="begin">开始版本(null表示忽略开始版本)</param>
+            <param name="final">终止版本(null表示忽略终止版本)</param>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Get_VersionInfo(Framework.Entity.Versions)">
+            <summary>
+            获取版本信息(不包括数据结构二进制流)
+            </summary>
+            <param name="version">版本号</param>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Get_LatestVersion">
+            <summary>
+            获取最新的版本信息
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Get_DbSchema(Framework.Entity.Versions)">
+            <summary>
+            获取版本的数据结构(压缩的二进制流数据)
+            </summary>
+            <param name="version">版本号</param>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Update_DbSchema(Framework.Entity.Versions,System.Byte[])">
+            <summary>
+            更新版本的数据结构二进制流。
+            </summary> 
+            <param name="version">版本号</param>
+            <param name="data">数据结构二进制流</param>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Get_CurrentDbSchema">
+            <summary>
+            获取当前数据库的数据结构(压缩的二进制流数据)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Get_LatestDbSchema">
+            <summary>
+            获取版本中心的最新版本数据结构(压缩的二进制流数据)
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Get_Assemblies(Framework.Entity.Versions)">
+            <summary>
+            获取程序集列表(不包括程序集内容二进制流)。
+            </summary>
+            <param name="version">版本号</param>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Get_Assembly(Framework.Entity.Versions,System.String)">
+            <summary>
+            获取指定版本号及程序集名称的程序集(包括程序集内容，截止到指定版本的可用程序集)。
+            </summary>
+            <param name="version">版本号</param>
+            <param name="assemblyName">程序集名称(包括扩展名)</param>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Validate_Assemblies(Framework.Entity.AssemblyItem[])">
+            <summary>
+            验证当前版本的程序集是否正常，并且返回异常的程序集。
+            </summary>
+            <param name="assemblies">需要验证的程序集列表</param>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Get_Contents(Framework.Entity.Versions,System.String,System.String)">
+            <summary>
+            获取程序集二进制流数据。
+            </summary>
+            <param name="version">版本号</param>
+            <param name="assemblyName">程序集名称(包括扩展名)</param>
+            <param name="hashValue">程序集哈希值</param>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Create_Assembly_x86(System.String,System.String,System.String)">
+            <summary>
+            创建 x86 架构的 32bit 程序集,并返回程序集信息(不包括程序集内容，仅对脱机版本管理程序集有效)。
+            </summary>
+            <param name="assemblyName">原程序集名称(包括扩展名)</param>
+            <param name="x86AssemblyName">x86程序集名称(包括扩展名)</param>
+            <param name="hashValue">x86程序集哈希值</param>
+        </member>
+        <member name="P:Framework.Proxy.VersionsController.OfflineVersion">
+            <summary>
+            更新程序集版本管理模式(true表示离线版本管理模式，false表示联机版本管理模式)。
+            </summary>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Insert_VersionPackage(Framework.Entity.VersionItem,Framework.Entity.AssemblyItem[])">
+            <summary>
+            保存版本包
+            </summary>
+            <param name="version">版本信息</param>
+            <param name="assems">程序集信息</param>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Insert_VersionPackage(System.Byte[])">
+            <summary>
+            保存版本包
+            </summary>
+            <param name="packageData">包流数据(加密压缩的数据流)。</param>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Update_VersionPackage(Framework.Entity.Versions)">
+            <summary>
+            执行版本更新(升级系统为指定的版本号，系统内必须存在指定的版本号)
+            </summary>
+            <param name="version">版本号</param>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Delete_VersionPackage(Framework.Entity.Versions)">
+            <summary>
+            删除版本包,并且返回被关联删除的版本列表。
+            </summary>
+            <param name="version">版本号</param>
+        </member>
+        <member name="M:Framework.Proxy.VersionsController.Get_VersionPackage(Framework.Entity.Versions,System.String,System.Boolean)">
+            <summary>
+            获取版本升级包(加密压缩的数据流)。
+            </summary>
+            <param name="version">版本号</param>
+            <param name="dbCode">客户系统数据编号</param>
+            <param name="isIncrement">true表示增量程序集，false表示全量程序集。</param>
+        </member>
+    </members>
+</doc>

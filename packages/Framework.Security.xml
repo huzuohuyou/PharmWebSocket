@@ -1,0 +1,388 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Framework.Security</name>
+    </assembly>
+    <members>
+        <member name="T:Framework.Security.AESCrypto">
+            <summary>
+            AES编码算法(Advanced Encryption Standard)
+            </summary>
+            <remarks>
+            密码学中的高级加密标准（Advanced Encryption Standard，AES），又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。
+            这个标准用来替代原先的DES（Data Encryption Standard），已经被多方分析且广为全世界所使用。
+            经过五年的甄选流程，高级加密标准由美国国家标准与技术研究院 （NIST）于2001年11月26日发布于FIPS PUB 197，并在2002年5月26日成为有效的标准。
+            2006年，高级加密标准已然成为对称密钥加密中最流行的算法之一.
+            该算法为比利时密码学家Joan Daemen和Vincent Rijmen所设计，结合两位作者的名字，
+            以Rijdael之名命之，投稿高级加密标准的甄选流程。（Rijdael的发音近于 "Rhine doll"。）
+            </remarks>
+        </member>
+        <member name="P:Framework.Security.AESCrypto.Decodable">
+            <summary>
+            是否可以解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.AESCrypto.Decode(System.Byte[])">
+            <summary>
+            解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.AESCrypto.Encode(System.Byte[])">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="T:Framework.Security.Cryptography">
+            <summary>
+            密码算法基类
+            </summary>
+        </member>
+        <member name="P:Framework.Security.Cryptography.Decodable">
+            <summary>
+            指示密码算法是否可以进行解码操作
+            </summary>
+        </member>
+        <member name="P:Framework.Security.Cryptography.PublicKey">
+            <summary>
+            密码算法的公钥
+            </summary>
+        </member>
+        <member name="P:Framework.Security.Cryptography.PrivateKey">
+            <summary>
+            密码算法的私钥
+            </summary>
+        </member>
+        <member name="M:Framework.Security.Cryptography.Encode(System.String)">
+            <summary>
+            对字符串进行编码操作，并返回编码后的字符串结果。
+            </summary>
+            <param name="value">待编码的原始字符串</param>
+        </member>
+        <member name="M:Framework.Security.Cryptography.Decode(System.String)">
+            <summary>
+            对字符串进行解码操作，并返回解码后的字符串结果
+            </summary>
+            <param name="value">待解码的原始字符串</param>
+        </member>
+        <member name="M:Framework.Security.Cryptography.Encode(System.Byte[])">
+            <summary>
+            对字节组进行编码操作，并返回编码后的字节组。
+            </summary>
+            <param name="buffer">待编码的原始字节组</param>
+        </member>
+        <member name="M:Framework.Security.Cryptography.Decode(System.Byte[])">
+            <summary>
+            对字节组进行解码操作，并返回解码后的字节组。
+            </summary>
+            <param name="buffer">待解码的原始字节组</param>
+        </member>
+        <member name="T:Framework.Security.DESCrypto">
+            <summary>
+            DES编码算法(Data Encrytion Standard)
+            </summary>
+            <remarks>
+            DES算法为密码体制中的对称密码体制，又被称为美国数据加密标准，是1972年美国IBM公司研制的对称密码体制加密算法。 
+            明文按64位进行分组，密钥长64位，密钥事实上是56位参与DES运算（第8、16、24、32、40、48、56、64位是校验位， 使得每个密钥都有奇数个1）
+            分组后的明文组和56位的密钥按位替代或交换的方法形成密文组的加密方法。
+            </remarks>
+        </member>
+        <member name="P:Framework.Security.DESCrypto.Decodable">
+            <summary>
+            是否可以解码
+            </summary>
+        </member>
+        <member name="P:Framework.Security.DESCrypto.PublicKey">
+            <summary>
+            秘钥
+            </summary>
+        </member>
+        <member name="M:Framework.Security.DESCrypto.Decode(System.Byte[])">
+            <summary>
+            解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.DESCrypto.Encode(System.Byte[])">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.DESCrypto.Encode(System.String)">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.DESCrypto.Decode(System.String)">
+            <summary>
+            解码
+            </summary>
+        </member>
+        <member name="T:Framework.Security.MD5Crypto">
+            <summary>
+            MD5编码算法
+            </summary>
+        </member>
+        <member name="P:Framework.Security.MD5Crypto.Decodable">
+            <summary>
+            是否可以解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.MD5Crypto.Decode(System.Byte[])">
+            <summary>
+            解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.MD5Crypto.Encode(System.Byte[])">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.MD5Crypto.Decode(System.String)">
+            <summary>
+            解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.MD5Crypto.Encode(System.String)">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="T:Framework.Security.RSACrypto">
+            <summary>
+            RSA编码算法(Ron Rivest、Adi Shamir、Leonard Adleman)
+            </summary>
+            <remarks>
+            RSA是最流行的非对称加密算法之一。也被称为公钥加密。
+            它是由罗纳德·李维斯特（Ron Rivest）、阿迪·萨莫尔（Adi Shamir）和伦纳德·阿德曼（Leonard Adleman）在1977年一起提出的。
+            当时他们三人都在麻省理工学院工作。
+            RSA就是他们三人姓氏开头字母拼在一起组成的。
+            </remarks>
+        </member>
+        <member name="P:Framework.Security.RSACrypto.Decodable">
+            <summary>
+            可以解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.RSACrypto.Encode(System.Byte[])">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.RSACrypto.Decode(System.Byte[])">
+            <summary>
+            解码
+            </summary>
+        </member>
+        <member name="T:Framework.Security.SHA1Crypto">
+            <summary>
+            SHA安全散列算法(SecureHashAlgorithm)
+            </summary>
+            <remarks>
+            一种数据加密算法，该算法的思想是接收一段明文，
+            然后以一种不可逆的方式将它转换成一段（通常更小）密文，
+            也可以简单的理解为取一串输入码（称为预映射或信息），
+            并把它们转化为长度较短、位数固定的输出序列即散列值（也称为信息摘要或信息认证代码）的过程。
+            </remarks>
+        </member>
+        <member name="P:Framework.Security.SHA1Crypto.Decodable">
+            <summary>
+            是否允许解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.SHA1Crypto.Decode(System.Byte[])">
+            <summary>
+            解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.SHA1Crypto.Encode(System.Byte[])">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="T:Framework.Security.SHA256Crypto">
+            <summary>
+            SHA安全散列算法(SecureHashAlgorithm)
+            </summary>
+            <remarks>
+            一种数据加密算法，该算法的思想是接收一段明文，
+            然后以一种不可逆的方式将它转换成一段（通常更小）密文，
+            也可以简单的理解为取一串输入码（称为预映射或信息），
+            并把它们转化为长度较短、位数固定的输出序列即散列值（也称为信息摘要或信息认证代码）的过程。
+            </remarks>
+        </member>
+        <member name="P:Framework.Security.SHA256Crypto.Decodable">
+            <summary>
+            是否允许解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.SHA256Crypto.Decode(System.Byte[])">
+            <summary>
+            解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.SHA256Crypto.Encode(System.Byte[])">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="T:Framework.Security.SHA384Crypto">
+            <summary>
+            SHA安全散列算法(SecureHashAlgorithm)
+            </summary>
+            <remarks>
+            一种数据加密算法，该算法的思想是接收一段明文，
+            然后以一种不可逆的方式将它转换成一段（通常更小）密文，
+            也可以简单的理解为取一串输入码（称为预映射或信息），
+            并把它们转化为长度较短、位数固定的输出序列即散列值（也称为信息摘要或信息认证代码）的过程。
+            </remarks>
+        </member>
+        <member name="P:Framework.Security.SHA384Crypto.Decodable">
+            <summary>
+            是否允许解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.SHA384Crypto.Decode(System.Byte[])">
+            <summary>
+            解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.SHA384Crypto.Encode(System.Byte[])">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="T:Framework.Security.SHA512Crypto">
+            <summary>
+            SHA安全散列算法(SecureHashAlgorithm)
+            </summary>
+            <remarks>
+            一种数据加密算法，该算法的思想是接收一段明文，
+            然后以一种不可逆的方式将它转换成一段（通常更小）密文，
+            也可以简单的理解为取一串输入码（称为预映射或信息），
+            并把它们转化为长度较短、位数固定的输出序列即散列值（也称为信息摘要或信息认证代码）的过程。
+            </remarks>
+        </member>
+        <member name="P:Framework.Security.SHA512Crypto.Decodable">
+            <summary>
+            是否允许解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.SHA512Crypto.Decode(System.Byte[])">
+            <summary>
+            解码
+            </summary>
+        </member>
+        <member name="M:Framework.Security.SHA512Crypto.Encode(System.Byte[])">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="T:Framework.Security.SM3Crypto">
+            <summary>
+            国密3算法实现
+            </summary>
+        </member>
+        <member name="P:Framework.Security.SM3Crypto.Decodable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Framework.Security.SM3Crypto.Decode(System.Byte[])">
+            <summary>
+            解密
+            </summary>
+            <param name="buffer">byte 数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:Framework.Security.SM3Crypto.Encode(System.Byte[])">
+            <summary>
+            加密
+            </summary>
+            <param name="buffer">byte 数组</param>
+            <returns></returns>
+        </member>
+        <member name="F:Framework.Security.SM3Crypto.GeneralDigest.xBuf">
+            <summary>
+            4byte 缓存
+            </summary>
+        </member>
+        <member name="F:Framework.Security.SM3Crypto.GeneralDigest.byteCount">
+            <summary>
+            输入字节长度
+            </summary>
+        </member>
+        <member name="M:Framework.Security.SM3Crypto.GeneralDigest.Update(System.Byte)">
+            <summary>
+            Append
+            </summary>
+            <param name="input"></param>
+        </member>
+        <member name="P:Framework.Security.SM3Crypto.GeneralDigest.AlgorithmName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Framework.Security.SM3Crypto.SupportClass.URShift(System.Int32,System.Int32)">
+            <summary>
+            Performs an unsigned bitwise right shift with the specified number
+            </summary>
+            <param name="number">Number to operate on</param>
+            <param name="bits">Ammount of bits to shift</param>
+            <returns>The resulting number from the shift operation</returns>
+        </member>
+        <member name="M:Framework.Security.SM3Crypto.SupportClass.URShift(System.Int32,System.Int64)">
+            <summary>
+            Performs an unsigned bitwise right shift with the specified number
+            </summary>
+            <param name="number">Number to operate on</param>
+            <param name="bits">Ammount of bits to shift</param>
+            <returns>The resulting number from the shift operation</returns>
+        </member>
+        <member name="M:Framework.Security.SM3Crypto.SupportClass.URShift(System.Int64,System.Int32)">
+            <summary>
+            Performs an unsigned bitwise right shift with the specified number
+            </summary>
+            <param name="number">Number to operate on</param>
+            <param name="bits">Ammount of bits to shift</param>
+            <returns>The resulting number from the shift operation</returns>
+        </member>
+        <member name="M:Framework.Security.SM3Crypto.SupportClass.URShift(System.Int64,System.Int64)">
+            <summary>
+            Performs an unsigned bitwise right shift with the specified number
+            </summary>
+            <param name="number">Number to operate on</param>
+            <param name="bits">Ammount of bits to shift</param>
+            <returns>The resulting number from the shift operation</returns>
+        </member>
+        <member name="M:Framework.Security.SM3Crypto.SM3Digest.ProcessWord(System.Byte[],System.Int32)">
+            <summary>
+            4个字节，转换成一个int
+            </summary>
+            <param name="in_Renamed"></param>
+            <param name="inOff"></param>
+        </member>
+        <member name="T:Framework.Security.SM4Crypto">
+            <summary>
+            国密4算法
+            </summary>
+        </member>
+        <member name="P:Framework.Security.SM4Crypto.Decodable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Framework.Security.SM4Crypto.Decode(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Framework.Security.SM4Crypto.Encode(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

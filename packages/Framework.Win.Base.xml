@@ -1,0 +1,2533 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Framework.Win.Base</name>
+    </assembly>
+    <members>
+        <member name="T:Framework.Win.Base.BaseButtonProperties">
+            <summary>
+            基类窗口控件属性控制
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseButtonProperties.#ctor(System.Windows.Forms.Button)">
+            <summary>
+            基类窗口控件属性控制
+            </summary>
+            <param name="button">目标按钮控件</param>
+        </member>
+        <member name="P:Framework.Win.Base.BaseButtonProperties.Text">
+            <summary>
+            与该控件关联的文本。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseButtonProperties.Visible">
+            <summary>
+            控件的可视属性。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseButtonProperties.Enabled">
+            <summary>
+            控件的可用属性。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseButtonProperties.Image">
+            <summary>
+            设置或者返回按钮控件上面显示的图标。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseButtonProperties.Focused">
+            <summary>
+            控件是否有输入焦点。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseButtonProperties.Focusing">
+            <summary>
+            设置控件获取到聚焦(线程间安全)。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseButtonProperties.Focusing(System.Int32)">
+            <summary>
+            设置控件获取到聚焦(线程间安全)。
+            </summary>
+            <param name="delay">延迟后再次设置焦点的延迟时间(单位：毫秒。)</param>
+        </member>
+        <member name="M:Framework.Win.Base.BaseButtonProperties.PerformClick">
+            <summary>
+            生成按钮的Click事件。
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.ReportPrintViewHandler">
+            <summary>
+            报表打印的事件委托
+            </summary>
+            <param name="reportFile">报表模板文件</param>
+            <param name="dataSources">数据源组</param>
+            <param name="directPrint">true表示直接打印不预览，false表示打印预览。</param>
+            <param name="printerName">使用的打印机名称(缺省表示使用系统默认打印机)</param>
+            <param name="parameters">打印报表使用的参数组</param>
+        </member>
+        <member name="T:Framework.Win.Base.ReportRenderHandler">
+             <summary>
+             报表渲染的事件委托
+             </summary>
+             <param name="reportFile">报表模板文件</param>
+            <param name="localReport">本地报表对象</param>
+             <param name="dataSources">数据源组</param>
+             <param name="parameters">打印报表使用的参数组</param>
+        </member>
+        <member name="T:Framework.Win.Base.ProgressHandler">
+            <summary>
+            状态栏进度条事件委托(委托框架主窗口进行事务处理)。
+            </summary>
+            <param name="start">true表示开始进度展示，false表示停止进度展示。</param>
+        </member>
+        <member name="T:Framework.Win.Base.TipTakeHandler">
+            <summary>
+            动态提示信息获取(委托框架主窗口进行事务处理)。
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.TipShownEventHandler">
+            <summary>
+            动态提示消息显示事件
+            </summary>
+            <param name="message">显示的消息信息</param>
+            <param name="clear">自动清理消息的时长(毫秒，小于0表示不自动清理)</param>
+            <param name="freeze">消息被冻结不被覆盖的时长(毫秒，小于0表示不被冻结)</param>
+        </member>
+        <member name="T:Framework.Win.Base.Awaitting">
+            <summary>
+            窗口句柄销毁等待管理器(通常在异步代码执行过程中，指明特定的窗口句柄不允许进行销毁处理)。
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.Awaitting.signal">
+            <summary>
+            句柄销毁等待信号
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.Awaitting.#ctor(System.Windows.Forms.Form)">
+            <summary>
+            导致窗口句柄在销毁之前务必等待程序执行完毕(等待失败抛出异常 AwaittingException)。
+            </summary>
+            <param name="awaitter">将要进行等待不允许销毁句柄的窗口对象</param>
+            <remarks>等待失败时抛出异常 AwaittingException,一般借助 try...catch... 处理等待失败代码断的处理</remarks>
+        </member>
+        <member name="M:Framework.Win.Base.Awaitting.Dispose">
+            <summary>
+            如窗口正在销毁时，恢复销毁以致于窗口可以正常进行销毁。
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.AwaittingException">
+            <summary>
+            窗口销毁等待失败
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.AwaittingException.#ctor(System.Exception)">
+            <summary>
+            窗口销毁等待失败
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.EnvironWin">
+            <summary>
+            WinForm交互层环境变量
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.EnvironWin.Default">
+            <summary>
+            默认客户端环境变量实例(使用默认服务总线注册信息)
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.#ctor(Framework.Proxy.IEnvironment)">
+            <summary>
+            使用代理层环境变量实例化交互层环境变量
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.EnvironWin.formManager">
+            <summary>
+            窗口管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.SetupFormManager(System.Windows.Forms.Form)">
+            <summary>
+            安装窗口管理器
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#FormManager">
+            <summary>
+            窗口管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#Show(System.Windows.Forms.Form)">
+            <summary>
+            加载并显示子窗体实例(已经加载的窗口则激活该窗口)。
+            </summary>
+            <param name="showform">需要加载的子窗体</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#Show``1(``0@)">
+            <summary>
+            加载并显示子窗体实例(已经加载的窗口则激活并且传出该窗口实例)。
+            </summary>
+            <param name="showform">需要加载的子窗体</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ShowDialog(System.Windows.Forms.Form,System.Windows.Forms.IWin32Window)">
+            <summary>
+            加载模式子窗体
+            </summary>
+            <param name="showform">需要加载的子窗体</param>
+            <param name="owner">将拥有模式对话框的顶级窗口</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ShowDialogMax(System.Windows.Forms.Form,System.Windows.Forms.IWin32Window)">
+            <summary>
+            将窗体按主窗口最大客户区显示为模式对话框，并将当前活动窗口设置为它的所有者(当客户区小于窗口的设计尺寸时将按窗口设计尺寸显示)。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Proxy#IEnvironment#Purview(System.String)">
+            <summary>
+            权限点
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,Framework.Entity.ReportPrintMode)">
+            <summary>
+             报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,System.Data.DataTable[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,System.Data.DataTable[],Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,System.Data.DataTable,Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="params">报表参数集</param>
+            <param name="table">报表数据源(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,Framework.Entity.ReportParameter[],System.Data.DataTable[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="params">报表参数集</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,System.String,System.String,System.Data.DataTable[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="paramName">参数名称</param>
+            <param name="paramValue">参数值</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint``1(System.String,``0[],System.String,Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="values">报表数据源实体</param>
+            <typeparam name="T">报表源数据实体元素类型</typeparam>
+            <param name="name">列表名称,设置为报表数据源对应的名称。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint``1(System.String,Framework.Entity.ReportParameter[],``0[],System.String)">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="values">报表数据源实体</param>
+            <typeparam name="T">报表源数据实体元素类型</typeparam>
+            <param name="name">列表名称,设置为报表数据源对应的名称。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,Framework.Entity.ReportPrintMode,Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="params">报表参数集</param>
+            <param name="printMode">打印模式</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,Framework.Entity.ReportPrintMode,System.Data.DataTable[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,Framework.Entity.ReportPrintMode,System.Data.DataTable[],Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,Framework.Entity.ReportPrintMode,System.Data.DataTable,Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+            <param name="table">报表数据源(表名称TableName设置为报表数据源对应的名称)。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,Framework.Entity.ReportPrintMode,Framework.Entity.ReportParameter[],System.Data.DataTable[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+            <param name="params">报表参数集</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint(System.String,Framework.Entity.ReportPrintMode,System.String,System.String,System.Data.DataTable[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="paramName">参数名称</param>
+            <param name="paramValue">参数值</param>
+            <param name="printMode">打印模式</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint``1(System.String,Framework.Entity.ReportPrintMode,``0[],System.String,Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+            <param name="values">报表数据源实体</param>
+            <typeparam name="T">报表源数据实体元素类型</typeparam>
+            <param name="name">列表名称,设置为报表数据源对应的名称。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportPrint``1(System.String,Framework.Entity.ReportPrintMode,Framework.Entity.ReportParameter[],``0[],System.String)">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+            <param name="values">报表数据源实体</param>
+            <typeparam name="T">报表源数据实体元素类型</typeparam>
+            <param name="name">列表名称,设置为报表数据源对应的名称。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ReportRender(System.String,System.Object,System.Data.DataTable[],Framework.Entity.ReportParameter[])">
+             <summary>
+             报表打印(取消打印抛出 BreakException 异常)。
+             </summary>
+             <param name="reportName">报表名称</param>
+            <param name="localReport">本地报表对象</param>
+             <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+             <param name="params">报表参数集</param>
+        </member>
+        <member name="F:Framework.Win.Base.EnvironWin.tipTaker">
+            <summary>
+            获取动态提示信息的委托
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.EnvironWin.TipShown">
+            <summary>
+            动态提示消息显示事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.SetupTipHandler(Framework.Win.Base.TipTakeHandler,Framework.Win.Base.TipShownEventHandler)">
+            <summary>
+            安装状态栏动态提示委托
+            </summary>
+            <param name="taker">获取消息委托器</param>
+            <param name="shown">显示消息委托器</param>
+        </member>
+        <member name="P:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#Tip">
+            <summary>
+            状态栏动态提示信息
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#Tips">
+            <summary>
+            状态栏动态提示信息
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#AsyncProgress">
+            <summary>
+            运行于异步线程上的进度提示栏。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#AsyncProgressing">
+            <summary>
+            开始进度显示，并在销毁时隐藏进度显示。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#TabPageProgressing">
+            <summary>
+            页签进度显示，并在销毁是停止进度显示
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ProgressBar``1(System.Windows.Forms.Form,System.Func{System.Action{System.String},``0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <typeparam name="T">返回值的泛型类型</typeparam>
+            <param name="ownerform">宿主窗口</param>
+            <param name="handler">异步委托(同时提供了推送提示消息的委托)</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ProgressBar(System.Windows.Forms.Form,System.Action{System.Action{System.String}})">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <param name="handler">异步委托(同时提供了推送提示消息的委托)</param>
+            <param name="ownerform">宿主窗口</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ProgressBar``1(System.Func{System.Action{System.String},``0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <param name="handler">异步委托(同时提供了推送提示消息的委托)</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ProgressBar(System.Action{System.Action{System.String}})">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <param name="handler">异步事件委托(同时提供了推送提示消息的委托)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ProgressBar(System.Action)">
+            <summary>
+            进度提示工具栏
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ProgressBar``1(System.Func{``0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ProgressBar``1(System.Windows.Forms.Form,System.Func{``0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ProgressBar(System.String,System.Action)">
+            <summary>
+            进度提示工具栏
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ProgressBar``1(System.String,System.Func{``0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ProgressBar(System.Windows.Forms.Form,System.Action)">
+            <summary>
+            进度提示工具栏
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ProgressBar(System.Windows.Forms.Form,System.String,System.Action)">
+            <summary>
+            进度提示工具栏
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#ProgressBar``1(System.Windows.Forms.Form,System.String,System.Func{``0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.RestartPlatform">
+            <summary>
+            重启平台客户端
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.EnvironWin.Platform_Startup">
+            <summary>
+            平台启动事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.EnvironWin.Platform_Login">
+            <summary>
+            操作员登录成功事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.EnvironWin.Platform_Logout">
+            <summary>
+            操作员注销登录事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.EnvironWin.Platform_Gohome">
+            <summary>
+            平台回到待机桌面事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.EnvironWin.Platform_Dispose">
+            <summary>
+            平台关闭销毁事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.EnvironWin.Platform_ProcessExited">
+            <summary>
+            工作进程退出事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.RaisePlatformEvent(Framework.Win.Base.PlatformEventKind)">
+            <summary>
+            激活触发平台事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.Framework#Win#Base#IEnvironment#CheckAssemblies(App.FunctionLibrary.Filer[],System.Boolean,System.Windows.Forms.Form,System.Action{System.String})">
+            <summary>
+            验证程序集版本并更新(true-更新成功，false-更新失败，null-无更新)
+            </summary>
+            <param name="msg">消息委托</param>
+            <param name="files">被验证的程序集文件</param>
+            <param name="owner">消息对话框宿主窗口</param>
+            <param name="cleanup">是否清理无效程序集</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.FilesCheckUpgrade(App.FunctionLibrary.Filer[],System.Boolean,Framework.Entity.AssemblyItem[]@,System.Windows.Forms.Form,System.Action{System.String})">
+            <summary>
+            检查并更新程序集
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.FileDownload(App.FunctionLibrary.Filer,Framework.Entity.AssemblyItem[],System.Windows.Forms.Form,System.Action{System.String})">
+            <summary>
+            文件下载
+            </summary>
+            <param name="dir">下载路径</param>
+            <param name="assemblies">现在的文件</param>
+            <param name="msg">消息处理器</param>
+            <param name="owner">对话框宿主窗口</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.FileDownloadHandler(App.FunctionLibrary.Filer,Framework.Entity.AssemblyItem[],System.Windows.Forms.Form,System.Action{System.String})">
+            <summary>
+            程序下载处理程序
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.FilesCopying_DirectCopy(App.FunctionLibrary.Filer[],System.Action{System.String})">
+            <summary>
+            文件拷贝、复制(true表示复制文件成功，false表示复制文件失败)。
+            </summary>
+            <param name="froms">需要复制的临时文件</param>
+            <param name="msg">消息处理委托</param>
+        </member>
+        <member name="M:Framework.Win.Base.EnvironWin.FilesCopying_RequireExit(App.FunctionLibrary.Filer[],System.Action{System.String})">
+            <summary>
+            文件拷贝、复制(true表示启动版本更新工具成功，false表示启动失败)。
+            </summary>
+            <param name="froms">需要复制的临时文件</param>
+            <param name="msg">消息处理委托</param>
+        </member>
+        <member name="T:Framework.Win.Base.IDeveloperSurface">
+            <summary>
+            开发者接口
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.IDeveloperSurface.DeveloperMode">
+            <summary>
+            开发者调用模式
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.IEnvironment">
+            <summary>
+            客户端环境接口
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.IEnvironment.FormManager">
+            <summary>
+            窗体管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.Show(System.Windows.Forms.Form)">
+            <summary>
+            加载并显示子窗体实例(已经加载的窗口则激活该窗口)。
+            </summary>
+            <param name="showform">需要加载的子窗体</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.Show``1(``0@)">
+            <summary>
+            加载并显示子窗体实例(已经加载的窗口则激活并且传出该窗口实例)。
+            </summary>
+            <param name="showform">需要加载的子窗体</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ShowDialog(System.Windows.Forms.Form,System.Windows.Forms.IWin32Window)">
+            <summary>
+            加载模式子窗体
+            </summary>
+            <param name="showform">需要加载的子窗体</param>
+            <param name="owner">将拥有模式对话框的顶级窗口</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ShowDialogMax(System.Windows.Forms.Form,System.Windows.Forms.IWin32Window)">
+            <summary>
+            将窗体按主窗口最大客户区显示为模式对话框，并将指定的 owner 窗口设置为它的所有者(当客户区小于窗口的设计尺寸时将按窗口设计尺寸显示)。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,Framework.Entity.ReportPrintMode)">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,System.Data.DataTable[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,System.Data.DataTable[],Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="talbes">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,System.Data.DataTable,Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="params">报表参数集</param>
+            <param name="table">报表数据源(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,Framework.Entity.ReportParameter[],System.Data.DataTable[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="params">报表参数集</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,System.String,System.String,System.Data.DataTable[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="paramName">参数名称</param>
+            <param name="paramValue">参数值</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint``1(System.String,``0[],System.String,Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="values">报表数据源实体</param>
+            <typeparam name="T">报表源数据实体元素类型</typeparam>
+            <param name="name">列表名称,设置为报表数据源对应的名称。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint``1(System.String,Framework.Entity.ReportParameter[],``0[],System.String)">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="values">报表数据源实体</param>
+            <typeparam name="T">报表源数据实体元素类型</typeparam>
+            <param name="name">列表名称,设置为报表数据源对应的名称。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,Framework.Entity.ReportPrintMode,Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="params">报表参数集</param>
+            <param name="printMode">打印模式</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,Framework.Entity.ReportPrintMode,System.Data.DataTable[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,Framework.Entity.ReportPrintMode,System.Data.DataTable[],Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,Framework.Entity.ReportPrintMode,System.Data.DataTable,Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+            <param name="table">报表数据源(表名称TableName设置为报表数据源对应的名称)。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,Framework.Entity.ReportPrintMode,Framework.Entity.ReportParameter[],System.Data.DataTable[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+            <param name="params">报表参数集</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint(System.String,Framework.Entity.ReportPrintMode,System.String,System.String,System.Data.DataTable[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="paramName">参数名称</param>
+            <param name="paramValue">参数值</param>
+            <param name="printMode">打印模式</param>
+            <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint``1(System.String,Framework.Entity.ReportPrintMode,``0[],System.String,Framework.Entity.ReportParameter[])">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+            <param name="values">报表数据源实体</param>
+            <typeparam name="T">报表源数据实体元素类型</typeparam>
+            <param name="name">列表名称,设置为报表数据源对应的名称。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportPrint``1(System.String,Framework.Entity.ReportPrintMode,Framework.Entity.ReportParameter[],``0[],System.String)">
+            <summary>
+            报表打印(取消打印抛出 BreakException 异常)。
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="printMode">打印模式</param>
+            <param name="values">报表数据源实体</param>
+            <typeparam name="T">报表源数据实体元素类型</typeparam>
+            <param name="name">列表名称,设置为报表数据源对应的名称。</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ReportRender(System.String,System.Object,System.Data.DataTable[],Framework.Entity.ReportParameter[])">
+             <summary>
+             报表打印(取消打印抛出 BreakException 异常)。
+             </summary>
+             <param name="reportName">报表名称</param>
+            <param name="localReport">本地报表对象</param>
+             <param name="tables">报表数据源集(表名称TableName设置为报表数据源对应的名称)。</param>
+             <param name="params">报表参数集</param>
+        </member>
+        <member name="P:Framework.Win.Base.IEnvironment.Tip">
+            <summary>
+            显示的动态状态条提示信息栏(线程间是安全的)
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.IEnvironment.Tips">
+            <summary>
+            显示的动态状态条提示信息栏(线程间是安全的)
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.IEnvironment.AsyncProgress">
+            <summary>
+            运行于异步线程上的进度提示(true表示打开，false表示关闭)。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.AsyncProgressing">
+            <summary>
+            开始进度显示，并在销毁时隐藏进度显示。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.TabPageProgressing">
+            <summary>
+            页签进度显示，并在销毁是停止进度显示
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ProgressBar(System.Action)">
+            <summary>
+            进度提示工具栏
+            </summary> 
+            <param name="handler">异步委托</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ProgressBar(System.String,System.Action)">
+            <summary>
+            进度提示工具栏
+            </summary> 
+            <param name="message">消息提示信息</param>
+            <param name="handler">异步委托</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ProgressBar(System.Action{System.Action{System.String}})">
+            <summary>
+            进度提示工具栏
+            </summary> 
+            <param name="handler">异步委托(同时提供了推送提示消息的委托)</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ProgressBar``1(System.Func{System.Action{System.String},``0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <typeparam name="T">返回值的泛型类型</typeparam>
+            <param name="handler">异步委托(同时提供了推送提示消息的委托)</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ProgressBar``1(System.Func{``0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <typeparam name="T">返回值的泛型类型</typeparam>
+            <param name="handler">异步委托，并且返回委托值。</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ProgressBar``1(System.String,System.Func{``0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <typeparam name="T">返回值的泛型类型</typeparam>
+            <param name="message">消息提示信息</param>
+            <param name="handler">异步委托，并且返回委托值。</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ProgressBar(System.Windows.Forms.Form,System.Action)">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <param name="ownerform">宿主窗口</param>
+            <param name="handler">异步委托</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ProgressBar(System.Windows.Forms.Form,System.String,System.Action)">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <param name="message">消息提示信息</param>
+            <param name="ownerform">宿主窗口</param>
+            <param name="handler">异步委托</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ProgressBar(System.Windows.Forms.Form,System.Action{System.Action{System.String}})">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <param name="ownerform">宿主窗口</param>
+            <param name="handler">异步委托(同时提供了推送提示消息的委托)</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ProgressBar``1(System.Windows.Forms.Form,System.Func{``0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ProgressBar``1(System.Windows.Forms.Form,System.Func{System.Action{System.String},``0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <typeparam name="T">返回值的泛型类型</typeparam>
+            <param name="ownerform">宿主窗口</param>
+            <param name="handler">异步委托(同时提供了推送提示消息的委托)</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.ProgressBar``1(System.Windows.Forms.Form,System.String,System.Func{``0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <typeparam name="T">返回值的泛型类型</typeparam>
+            <param name="ownerform">宿主窗口</param>
+            <param name="message">消息提示信息</param>
+            <param name="handler">异步委托，并且返回委托值。</param>
+        </member>
+        <member name="M:Framework.Win.Base.IEnvironment.CheckAssemblies(App.FunctionLibrary.Filer[],System.Boolean,System.Windows.Forms.Form,System.Action{System.String})">
+            <summary>
+            验证程序集版本并更新(true-更新成功，false-更新失败，null-无更新)。
+            </summary>
+            <param name="msg">消息委托</param>
+            <param name="files">被验证的程序集文件</param>
+            <param name="owner">消息对话框宿主窗口</param>
+            <param name="cleanup">是否清理无效程序集</param>
+        </member>
+        <member name="T:Framework.Win.Base.IMainformSurface">
+            <summary>
+            主界面接口
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.IMainformSurface.IsRequireRestart">
+            <summary>
+            用户要求的系统重启
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.IMainformSurface.Restart">
+            <summary>
+            重启
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.IMainformSurface.GoHome">
+            <summary>
+            回到桌面
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.IMainformSurface.Relogin">
+            <summary>
+            重新登录
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.IMainformSurface.LoginOut">
+            <summary>
+            登出系统
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.IMainformSurface.ShutDown">
+            <summary>
+            关闭系统
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.PlatformEventKind">
+            <summary>
+            平台事件类别
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.PlatformEventKind.Startup">
+            <summary>
+            平台启动
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.PlatformEventKind.Login">
+            <summary>
+            登录平台
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.PlatformEventKind.Logout">
+            <summary>
+            登出平台
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.PlatformEventKind.Gohome">
+            <summary>
+            回到主页
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.PlatformEventKind.Dispose">
+            <summary>
+            平台关闭及销毁
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.PlatformEventKind.ProcessExited">
+            <summary>
+            工作进程退出
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.ReportPrintView">
+            <summary>
+            报表打印/预览管理
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ReportPrintView.Print(System.Boolean,System.String,App.FunctionLibrary.Filer,System.Collections.Generic.IList{System.Data.DataTable},System.Collections.Generic.IList{Framework.Entity.ReportParameter})">
+            <summary>
+            报表打印的事件(由框架主窗口创建事件委托)
+            </summary>
+            <param name="directPrint">true表示直接打印不预览，false表示打印预览</param>
+            <param name="printer">使用的打印机名称(缺省表示使用系统默认打印机)</param>
+            <param name="file">RDLC 报表模板文件</param>
+            <param name="tables">打印报表使用的数据组</param>
+            <param name="parameters">打印报表使用的参数组</param>
+        </member>
+        <member name="M:Framework.Win.Base.ReportPrintView.Render(App.FunctionLibrary.Filer,System.Object,System.Collections.Generic.IList{System.Data.DataTable},System.Collections.Generic.IList{Framework.Entity.ReportParameter})">
+             <summary>
+             本地报表渲染
+             </summary>
+             <param name="file">报表名称</param>
+             <param name="tables">数据源组(表名称设置为报表数据源对应名称)。</param>
+             <param name="parameters">打印报表使用的参数组</param>
+            <param name="localReport">本地报表对象</param>
+        </member>
+        <member name="M:Framework.Win.Base.ReportPrintView.CheckUpgrade(System.Action{System.String})">
+            <summary>
+            报表组件验证并更新
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ReportPrintView.ConvertReportParameter(System.Collections.Generic.IList{Framework.Entity.ReportParameter})">
+            <summary>
+            转换报表参数，解决多值问题。
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.TipIndexer">
+            <summary>
+            状态栏动态提示索引器
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TipIndexer.Item(System.Boolean)">
+            <param name="clear">自动清理过期的提示信息。</param>
+        </member>
+        <member name="P:Framework.Win.Base.TipIndexer.Item(System.Int32)">
+            <param name="freeze">冻结当前提示信息的有效时间(毫秒)。</param>
+        </member>
+        <member name="P:Framework.Win.Base.TipIndexer.Item(System.Boolean,System.Int32)">
+            <param name="clear">自动清理过期的提示信息。</param>
+            <param name="freeze">冻结当前提示信息的有效时间(毫秒)。</param>
+        </member>
+        <member name="P:Framework.Win.Base.TipIndexer.Item(System.Int32,System.Boolean)">
+            <param name="clear">自动清理过期的提示信息。</param>
+            <param name="freeze">冻结当前提示信息的有效时间(毫秒)。</param>
+        </member>
+        <member name="P:Framework.Win.Base.TipIndexer.Item(System.Boolean,System.Boolean)">
+            <param name="clear">自动清理过期的提示信息。</param>
+            <param name="freeze">冻结当前提示信息不被覆盖(1秒钟)。</param>
+        </member>
+        <member name="P:Framework.Win.Base.TipIndexer.Item(System.Int32,System.Int32)">
+            <param name="clear">自动清理过期提示信息的失效时间(毫秒)。</param>
+            <param name="freeze">冻结当前提示信息的有效时间(毫秒)。</param>
+        </member>
+        <member name="T:Framework.Win.Base.WinExtension">
+            <summary>
+            客户端扩展函数
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.WinExtension.Publish(System.Exception)">
+            <summary>
+            发布异常信息到动态提示栏。
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.DatePairSelector">
+            <summary>
+            时间对儿选择器
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.DepartmentSelector">
+            <summary>
+            部门选择器
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.DepartmentSelector.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DepartmentSelector.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Framework.Win.Base.DepartmentSelector.#ctor">
+            <summary>
+            部门选择器
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DepartmentSelector.DeptCode">
+            <summary>
+            获取或设置部门编号
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DepartmentSelector.DeptFamilyCodes">
+            <summary>
+            获取部门族编号组(包含当前部门编号)。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DepartmentSelector.DataSource">
+            <summary>
+            获取或者设置数据源
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DepartmentSelector.DeptText">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DepartmentSelector.DeptFullText">
+            <summary>
+            部门全路径名称
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DepartmentSelector.ShowFullText">
+            <summary>
+            在文本录入栏显示部门的全名称
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DepartmentSelector.VirtualMode">
+            <summary>
+            是否为虚数据源模式(实模式在控件创建时自动获取数据，虚模式需要通过 DataSource 设置数据源)。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DepartmentSelector.IncludeDisabled">
+            <summary>
+            在自动初始化加载时是否包含停用的部门(外部传入的数据源不受该属性约束)。
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.DepartmentSelector.DepartmentChanged">
+            <summary>
+            部门选择改变事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DepartmentSelector.OnDepartmentChanged(System.EventArgs)">
+            <summary>
+            激活部门选择改变事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DepartmentSelector.OnHandleCreated(System.EventArgs)">
+            <summary>
+            句柄创建
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DepartmentSelector.OnDropOpening(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            打开弹出页 
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DepartmentSelector.OnDropClosed(App.ControlLibrary.DropClosedEventArgs)">
+            <summary>
+            关闭弹出页
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DepartmentSelector.OnQuickPreviewing(App.ControlLibrary.QuickPreviewEventArgs)">
+            <summary>
+            快速预览
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DepartmentSelector.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            键盘按下事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DepartmentSelector.OnTextChanged(System.EventArgs)">
+            <summary>
+            文本改变事件
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.EmployeeSelector">
+            <summary>
+            员工选择器
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.EmployeeSelector.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EmployeeSelector.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Framework.Win.Base.EmployeeSelector.#ctor">
+            <summary>
+            员工选择器
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.EmployeeSelector.EmployeeCode">
+            <summary>
+            获取或设置员工编号
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.EmployeeSelector.DeptCode">
+            <summary>
+            获取员工的组织机构编号
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.EmployeeSelector.EmployeeName">
+            <summary>
+            获取当前选的员工姓名
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.EmployeeSelector.VirtualMode">
+            <summary>
+            是否为虚数据源模式(实模式在控件创建时自动获取数据，虚模式需要通过 DataSource 设置数据源)。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.EmployeeSelector.IncludeDisabled">
+            <summary>
+            在自动初始化加载时是否包含停用的员工(外部传入的数据源不受该属性约束)。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.EmployeeSelector.DataSource">
+            <summary>
+            获取或设置数据源
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.EmployeeSelector.EmployeeChanged">
+            <summary>
+            员工改变事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EmployeeSelector.OnEmployeeChanged(System.EventArgs)">
+            <summary>
+            激活员工改变事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EmployeeSelector.OnHandleCreated(System.EventArgs)">
+            <summary>
+            句柄创建
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EmployeeSelector.OnDropOpening(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            展开事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EmployeeSelector.OnDropClosed(App.ControlLibrary.DropClosedEventArgs)">
+            <summary>
+            收缩事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EmployeeSelector.OnQuickPreviewing(App.ControlLibrary.QuickPreviewEventArgs)">
+            <summary>
+            快速预览
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EmployeeSelector.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            键盘按下
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EmployeeSelector.OnTextChanged(System.EventArgs)">
+            <summary>
+            文本改变事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.EmployeeSelector.RemoveEmptyDept(System.String,System.Data.DataTable)">
+            <summary>
+            移除没有员工的空组织机构
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.TabContainer">
+            <summary>
+            页签容器控件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.TabContainer.DoubleCloseChanged">
+            <summary>
+            页签双击关闭属性改变事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.TabContainer.RemoveCompleted">
+            <summary>
+            页签删除完成事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.TabContainer.AddTabCompleted">
+            <summary>
+            页签新增完毕事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.TabContainer.AddTabRequest">
+            <summary>
+            页签新增请求事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.TabContainer.ActiveTabChanged">
+            <summary>
+            当前选中的活动页签改变事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.TabContainer.RemoveRequest">
+            <summary>
+            页签删除请求事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.#ctor">
+            <summary>
+            实例化页签容器控件
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabContainer.ActiveTab">
+            <summary>
+            当前选中的活动页签
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabContainer.TabCount">
+            <summary>
+            页签总数目
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabContainer.DoubleClose">
+            <summary>
+            双击页签标题自动关闭
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.OnResize(System.EventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.OnDoubleClick(System.EventArgs)">
+            <summary />
+        </member>
+        <member name="P:Framework.Win.Base.TabContainer.FirstTab">
+            <summary>
+            第一个页签
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabContainer.LastTab">
+            <summary>
+            最后一个页签
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.AddTab(System.String,System.Drawing.Icon,System.Windows.Forms.Form)">
+            <summary>
+            新增页签
+            </summary>
+            <param name="title">新增页签的标题</param>
+            <param name="icon">新增页签的图标</param>
+            <param name="page">页签关联的窗口页</param>
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.AddTab(System.String,System.Drawing.Icon,System.Drawing.Font,System.Windows.Forms.Form)">
+            <summary>
+            新增页签
+            </summary>
+            <param name="title">新增页签的标题</param>
+            <param name="icon">新增页签的图标</param>
+            <param name="font">新增页签的字体</param>
+            <param name="form">页签关联的窗口页</param>
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.RemoveTab(Framework.Win.Base.TabHeader)">
+            <summary>
+            移除页签
+            </summary>
+            <param name="tab">指定的将要被移除的标签</param>
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.RemoveTab(System.Int32)">
+            <summary>
+            移除页签
+            </summary>
+            <param name="tabIndex">指定的将要被移除的标签索引</param>
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.Clear">
+            <summary>
+            清理标签容器中的所有标签
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.TabContainer.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Framework.Win.Base.TabContainer.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.TabHeader">
+            <summary>
+            页签头
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.TabHeader.OnPaintRequest">
+            <summary>
+            重绘请求事件
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabHeader.Title">
+            <summary>
+            页签标题
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabHeader.Selected">
+            <summary>
+            页签选择状态
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabHeader.Parent">
+            <summary>
+            页签容器控件
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabHeader.Page">
+            <summary>
+            页签关联的窗口页
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabHeader.Icon">
+            <summary>
+            页签图标
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabHeader.TabIndex">
+            <summary>
+            页签在容器中的索引位置
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabHeader.Font">
+            <summary>
+            页签字体
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabHeader.Left">
+            <summary>
+            页签在容器坐标的左侧位置
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabHeader.Height">
+            <summary>
+            页签高度
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabHeader.Width">
+            <summary>
+            页签宽度
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabHeader.Right">
+            <summary>
+            页签在容器坐标的右侧位置
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.TabHeader.InLoading">
+            <summary>
+            是否显示加载动画图标
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.TabHeader.#ctor(System.Int32,System.Int32,System.String,System.Drawing.Font,Framework.Win.Base.TabContainer)">
+            <summary>
+            创建Tab
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.TabHeader.DrawAll(System.Drawing.Graphics)">
+            <summary>
+            重绘
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.TabHeader.HitTest(System.Drawing.Point)">
+            <summary>
+            测试目标坐标位置是否在控件范围内
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.TabHeader.CloseHitTest(System.Drawing.Point)">
+            <summary>
+            测试目标坐标位置是否在控件的关闭按钮范围内
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.TabHeader.Dispose">
+            <summary>
+            销毁资源
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.TabHeader.CompareTo(System.Object)">
+            <summary />
+        </member>
+        <member name="T:Framework.Win.Base.BaseForm">
+            <summary>
+            必须继承的基类窗口
+            <para>
+            窗口加载事件按以下顺序：Load(同步)、Loading(异步)、Loaded(同步)。
+            </para>
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.#ctor">
+            <summary>
+            必须继承的基类窗口
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseForm.AutoScaleMode">
+            <summary>
+            确定当屏幕分辨率或字体更改时窗口或控件将如何缩放。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseForm.Environ">
+            <summary>
+            客户端窗口页面环境变量接口
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseForm.IsLoadCompleted">
+            <summary>
+            窗口是否加载完毕。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseForm.IsShowned">
+            <summary>
+            窗口是否已经显示
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseForm.IsResizing">
+            <summary>
+            窗口是否处于调整尺寸的状态(ResizeBegin事件为True，ResizeEnd事件为False)。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseForm.IsDialogic">
+            <summary>
+            当前窗口是否为模式窗口。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseForm.IsActivated">
+            <summary>
+            当前窗口是否已经获取焦点激活状态。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseForm.IsClosed">
+            <summary>
+            窗口是否已关闭
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseForm.IsClosing">
+            <summary>
+            窗口是否处于关闭操作中
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseForm.IsDefaultIcon">
+            <summary>
+            判断窗口图标是否为系统默认的图标
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.BaseForm.DefaultIcon">
+            <summary>
+            获取窗口的系统默认图标
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.OnLoad(System.EventArgs)">
+            <summary>
+            窗口加载事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.BaseForm.WindowStateChanged">
+            <summary>
+            窗体的窗口状态改变事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.OnWindowStateChanged(System.EventArgs)">
+            <summary>
+            激活窗体的窗口状态改变事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.OnHandleDestroyed(System.EventArgs)">
+            <summary>
+            句柄销毁
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.OnFormClosed(System.Windows.Forms.FormClosedEventArgs)">
+            <summary>
+            FormClosed事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.OnShown(System.EventArgs)">
+            <summary>
+            Show事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.OnActivated(System.EventArgs)">
+            <summary>
+            窗口激活
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.OnDeactivate(System.EventArgs)">
+            <summary>
+            窗口未激活
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.OnResizeBegin(System.EventArgs)">
+            <summary>
+            ResizeBegin事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.OnResizeEnd(System.EventArgs)">
+            <summary>
+            ResizeEnd事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.OnSizeChanged(System.EventArgs)">
+            <summary>
+            窗口调整尺寸事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.OnPaintRefercnceLine(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            绘制分辨率参考线
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            重写窗口的消息处理
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.ApplyCurrentCulture">
+            <summary>
+            应用当前区域性信息(多语言支持)。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.ApplyCulture(System.String)">
+            <summary>
+            应用区域性信息(多语言支持)。
+            </summary>
+            <param name="cultureName">区域性的名称</param>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.ApplyCulture(System.Int32)">
+            <summary>
+            应用区域性信息(多语言支持)。
+            </summary>
+            <param name="culture">区域性标识</param>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.ShowAllColumns">
+            <summary>
+            打开表格的所有隐藏列
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.SeekMenus(System.Windows.Forms.ToolStripItemCollection)">
+            <summary>
+            搜索指明控件管理的所有菜单(包括所有子孙级的菜单)。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.RequireDisposabled">
+            <summary>
+            要求销毁的声明对象
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.ShowDialog">
+            <summary>
+            将窗体显示为模式对话框，并将当前活动窗口设置为它的所有者。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.ShowDialog(System.Windows.Forms.IWin32Window)">
+            <summary>
+            将窗体显示为具有指定所有者的模式对话框。
+            </summary>
+            <param name="owner">任何实现 IWin32Window（表示将拥有模式对话框的顶级窗口）的对象。</param>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.Show">
+            <summary>
+            向用户加载显示窗口。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.Show(System.Windows.Forms.IWin32Window)">
+            <summary>
+            向用户加载显示窗口。
+            </summary>
+            <param name="owner">任何实现 IWin32Window（表示将拥有模式对话框的顶级窗口）的对象。</param>
+        </member>
+        <member name="F:Framework.Win.Base.BaseForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Framework.Win.Base.BaseForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.DialogForm">
+            <summary>
+            必须继承的对话框基类窗口(默认DialogResult返回Ok表示确认,Cancel表示取消)。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DialogForm.#ctor">
+            <summary>
+            实例化对话框基类窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DialogForm.OnResize(System.EventArgs)">
+            <summary>
+            窗口调整尺寸事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DialogForm.OnPaddingChanged(System.EventArgs)">
+            <summary />
+        </member>
+        <member name="M:Framework.Win.Base.DialogForm.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            窗口重绘背景事件
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.DialogForm.DialogClickEventHandler">
+            <summary>
+            "按钮"点击事件。
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.DialogForm.DialogOKClick">
+            <summary>
+            "确定"按钮点击事件。
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.DialogForm.DialogCancelClick">
+            <summary>
+            "取消"按钮点击事件。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DialogForm.OnDialogOKClick(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            激活"确定"按钮点击事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DialogForm.OnDialogCancelClick(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            激活"确定"按钮点击事件
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DialogForm.DialogOK">
+            <summary>
+            "确定"按钮
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DialogForm.DialogCancel">
+            <summary>
+            "取消"按钮
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DialogForm.ClientSize">
+            <summary>
+            获取窗口工作区的大小
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DialogForm.ClientRectangle">
+            <summary>
+            获取窗口工作区的矩形
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DialogForm.StartPosition">
+            <summary>
+            获取或设置运行时窗体的起始位置。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DialogForm.Padding">
+            <summary>
+            获取或设置窗口内的空白。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DialogForm.Show">
+            <summary>
+            向用户加载显示窗口。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DialogForm.Show(System.Windows.Forms.IWin32Window)">
+            <summary>
+            向用户加载显示窗口。
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.DialogForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DialogForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Framework.Win.Base.DialogForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.DivisionSelector">
+            <summary>
+            行政区划拾取器
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DivisionSelector.#ctor">
+            <summary>
+            行政区划拾取器
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DivisionSelector.DivisionCode">
+            <summary>
+            获取或者设置行政区划编号
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DivisionSelector.DivisionText">
+            <summary>
+            行政区划名称
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DivisionSelector.DivisionFullText">
+            <summary>
+            行政区划全称
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DivisionSelector.DivisionLevel">
+            <summary>
+            行政区划等级
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DivisionSelector.DataSource">
+            <summary>
+            获取或者设置数据源。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DivisionSelector.VirtualMode">
+            <summary>
+            是否为虚数据源模式(实模式在控件创建时自动获取数据，虚模式需要通过 DataSource 设置数据源)。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.DivisionSelector.LowestLevel">
+            <summary>
+            列表项显示的最低行政区划级别。
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.DivisionSelector.DivisionChanged">
+            <summary>
+            行政区划改变事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DivisionSelector.OnDivisionChanged(System.EventArgs)">
+            <summary>
+            激活行政区划改变事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DivisionSelector.OnHandleCreated(System.EventArgs)">
+            <summary>
+            句柄创建
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DivisionSelector.OnDropOpening(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            打开下拉页
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DivisionSelector.OnDropClosed(App.ControlLibrary.DropClosedEventArgs)">
+            <summary>
+            关闭下拉页
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DivisionSelector.OnQuickPreviewing(App.ControlLibrary.QuickPreviewEventArgs)">
+            <summary>
+            快速预览
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DivisionSelector.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            键盘按下
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DivisionSelector.OnTextChanged(System.EventArgs)">
+            <summary>
+            文本值改变
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.DivisionSelector.UpdateListSource">
+            <summary>
+            更新数据源
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.FormManage">
+            <summary>
+            子窗口管理器
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.#ctor(System.Windows.Forms.Form,Framework.Win.Base.IEnvironment)">
+            <summary>
+            实例化子窗体管理工具(自动边距)
+            </summary>
+            <param name="env">环境信息</param>
+            <param name="mainform">主框架窗体</param>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.#ctor(System.Windows.Forms.Form,System.Windows.Forms.Padding)">
+            <summary>
+            实例化子窗体管理工具
+            </summary>
+            <param name="mainform">主框架窗体</param> 
+            <param name="margin">子页面在主框架窗口中的边距</param>
+        </member>
+        <member name="P:Framework.Win.Base.FormManage.MainForm">
+            <summary>
+            获取主窗口
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.FormManage.MainTabPage">
+            <summary>
+            获取主窗口标签控件
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.FormManage.Location">
+            <summary>
+            获取子窗口的布局位置。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.FormManage.Size">
+            <summary>
+            获取子窗口的布局大小。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.FormManage.Margin">
+            <summary>
+            子页面在主框架窗口中的边距
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.FormManage.CursorBusying">
+            <summary>
+            鼠标的指针图形表示的忙碌状态
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.GetMargin">
+            <summary>
+            获取子页面在主框架窗口中的布局边距(自动计算边距)。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.RelayoutAll">
+            <summary>
+            重新布局所有子窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.RelayoutForm(System.Windows.Forms.Form)">
+            <summary>
+            重新布局子窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.GetClientRectangle">
+            <summary>
+            获取子页面在主框架窗口中的矩形的位置和大小。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.GetFormList">
+            <summary>
+            获取所有已经加载的子窗体列表。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.FormManage.HasChildrenForm">
+            <summary>
+            是否存在已加载的子窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.GoHome(System.Boolean)">
+            <summary>
+            返回到主待机窗体，同时卸载所有加载的子窗体。
+            </summary>
+            <param name="force">true表示强行卸载所有子窗口，false表示通知子窗口关闭。</param>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.Show(System.Windows.Forms.Form,System.Windows.Forms.Form[])">
+            <summary>
+            加载并显示子窗体实例(已经加载的窗口则激活该窗口)。
+            </summary>
+            <param name="showform">需要加载的子窗体</param>
+            <param name="unloadforms">需要卸载的其他子窗体集</param>
+            <remarks>如果需要加载的窗口实例在子窗口列表中已经被加载，则返回已经被加载的子窗口实例，并且自动卸载需要加载的窗口实例。</remarks>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.Show``1(``0@,System.Windows.Forms.Form[])">
+            <summary>
+            加载并显示子窗体实例(已经加载的窗口则激活并且传出该窗口实例)。
+            </summary>
+            <typeparam name="T">传出的泛型窗口类型</typeparam>
+            <param name="showform">需要加载的子窗体</param>
+            <param name="unloadforms">需要卸载的其他子窗体集</param>
+            <remarks>如果需要加载的窗口实例在子窗口列表中已经被加载，则返回已经被加载的子窗口实例，并且自动卸载需要加载的窗口实例。</remarks>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.ShowDialog(System.Windows.Forms.Form,System.Windows.Forms.IWin32Window)">
+            <summary>
+            加载模式子窗体
+            </summary>
+            <param name="showform">需要加载的子窗体</param>
+            <param name="owner">将用于模式窗口的顶级窗口</param>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.ShowDialogMax(System.Windows.Forms.Form,System.Windows.Forms.IWin32Window)">
+            <summary>
+            将窗体按主窗口最大客户区显示为模式对话框，并将指定的 owner 窗口设置为它的所有者(当客户区小于窗口的设计尺寸时将按窗口设计尺寸显示)。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.Unload(System.Windows.Forms.Form[])">
+            <summary>
+            卸载子窗口
+            </summary>
+            <param name="unloadforms">指明需要卸载的子窗口集合</param>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.Unload(System.Boolean,System.Windows.Forms.Form[])">
+            <summary>
+            卸载子窗口
+            </summary>
+            <param name="force">强行卸载关闭子窗口，True表示强行卸载，False表示通知子窗口关闭。</param>
+            <param name="unloadforms">指明需要卸载的子窗口集合。</param>
+        </member>
+        <member name="P:Framework.Win.Base.FormManage.ActivatedForm">
+            <summary>
+            当前被激活的最顶层子窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.GetActivated``1">
+            <summary>
+            获取指定类型的被激活的最顶层子窗口
+            </summary>
+            <typeparam name="T">指定的被激活的最顶层子窗口类型</typeparam>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.Exists(System.Windows.Forms.Form)">
+            <summary>
+            指定的窗口是否已经被加载到子窗口列表中
+            </summary>
+            <param name="form">指定的窗口</param>
+        </member>
+        <member name="E:Framework.Win.Base.FormManage.Load">
+            <summary>
+            子窗口加载事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.FormManage.Activated">
+            <summary>
+            子窗口被激活的事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.FormManage.Deactivate">
+            <summary>
+            子窗口丢失活动的事件
+            </summary> 
+        </member>
+        <member name="E:Framework.Win.Base.FormManage.FormClosing">
+            <summary>
+            子窗口关闭前的事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.FormManage.FormClosed">
+            <summary>
+            子窗口关闭后的事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.FormManage.SizeChanged">
+            <summary>
+            子窗口Size 属性改变时的事件
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.FormManage.VisibleChanged">
+            <summary>
+            子窗口的Visible 属性值更改时发生
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.Activate(System.Windows.Forms.Form)">
+            <summary>
+            设置指定的窗口显示出来并且调整到最前层激活并且获取到焦点
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.AddEventHandler_TopLevel(System.Windows.Forms.Form)">
+            <summary>
+            委托指定窗体的事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.FormManage.AddEventHandler(System.Windows.Forms.Form)">
+            <summary>
+            委托指定窗体的事件
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.PageForm">
+            <summary>
+            必须继承的对话框基类窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.#ctor">
+            <summary>
+            实例化对话框基类窗口
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.PageForm.FormCode">
+            <summary>
+            窗口页面在系统中的唯一编号(只有菜单加载的页面才有该编号)。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.PageForm.AttachData">
+            <summary>
+            窗口页面配置的附加数据或参数。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.PageForm.ClientSize">
+            <summary>
+            获取窗口工作区的大小
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.PageForm.ClientRectangle">
+            <summary>
+            获取窗口工作区的矩形
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.PageForm.ShowAuxiliaryLines">
+            <summary>
+            页面底部边栏是否显示按钮辅助线
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.PageForm.ShowTitle">
+            <summary>
+            页面顶部是否显示标题
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.PageForm.ShowSideBar">
+            <summary>
+            是否显示页面底边栏
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.PageForm.Padding">
+            <summary>
+            获取或设置窗口内的空白。
+            </summary>
+        </member>
+        <member name="E:Framework.Win.Base.PageForm.Gohome">
+            <summary>
+            主窗口发起的"回到桌面"事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.OnGohome(System.EventArgs)">
+            <summary>
+            主窗口发起的"回到桌面"事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.OnFormClosed(System.Windows.Forms.FormClosedEventArgs)">
+            <summary>
+            窗口关闭事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.OnTextChanged(System.EventArgs)">
+            <summary>
+            标题改变事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.OnSizeChanged(System.EventArgs)">
+            <summary>
+            窗口调整尺寸事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            窗口绘制背景事件
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.PageForm.MessageReceivedEventHandler">
+            <summary>
+            消息派送并送达事件委托
+            </summary>
+            <param name="e">派送的消息</param>
+        </member>
+        <member name="E:Framework.Win.Base.PageForm.MessageReceived">
+            <summary>
+            消息派送并送达事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.OnMessageReceived(Framework.Entity.NotifyItem)">
+            <summary>
+            激活消息送达事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.ResponseResized">
+            <summary>
+            响应尺寸改变事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.PaintRectange(System.Drawing.Graphics)">
+            <summary>
+            绘制边框
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.PaintTitile(System.Drawing.Graphics)">
+            <summary>
+            绘制顶部标题
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.PaintButtonGuidelines(System.Drawing.Graphics)">
+            <summary>
+            绘按钮辅助线
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.PageForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Framework.Win.Base.PageForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.Progressing">
+            <summary>
+            旋转进度控件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.Progressing.#ctor">
+            <summary>
+            实例化
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.Progressing.Dispose(System.Boolean)">
+            <summary>
+            销毁
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.Progressing.Finalize">
+            <summary>
+            析构
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Progressing.Style">
+            <summary>
+            进度样式
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Progressing.SpokeNumber">
+            <summary>
+            进度栏旋转条的数目
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Progressing.SpokeThickness">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Progressing.RingThickness">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Progressing.RotationSpeed">
+            <summary>
+            进度栏旋转速度(数值越小越快)
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Progressing.Active">
+            <summary>
+            进度栏是否激活(true启动，false停止)
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Progressing.BaseColor">
+            <summary>
+            进度栏基础颜色
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.Progressing.DefaultSize">
+            <summary>
+            进度栏默认尺寸
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.Progressing.Start">
+            <summary>
+            启动旋转进度控件。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.Progressing.Stop">
+            <summary>
+            停用旋转进度控件。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.Progressing.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            绘图
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.LoadingProgressStyle">
+            <summary>
+            加载进度条样式
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.LoadingProgressStyle.Line">
+            <summary>
+            线条
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.LoadingProgressStyle.Circel">
+            <summary>
+            圆圈
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.PrintViewer">
+            <summary>
+            RDLC 报表打印阅览页面
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.#ctor">
+            <summary>
+            RDLC报表打印阅览页面
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.#ctor(System.String,App.FunctionLibrary.Filer,System.Collections.Generic.IList{System.Data.DataTable},System.Collections.Generic.IList{Framework.Entity.ReportParameter})">
+            <summary>
+            RDLC报表打印阅览页面
+            </summary>
+            <param name="printer">使用的打印机名称</param>
+            <param name="file">RDLC报表文件的全路径名称或者工程中的文件名称</param>
+            <param name="tables">数据表集</param>
+            <param name="params">报表参数集</param>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.AddDataSource(Microsoft.Reporting.WinForms.ReportDataSource[])">
+            <summary>
+            增加报表数据源
+            </summary>
+            <param name="sources">报表数据源集</param>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.AddDataSource(System.String,System.Data.DataTable)">
+            <summary>
+            增加报表数据源
+            </summary>
+            <param name="name">RDLC报表文件中设置的数据源名称。</param>
+            <param name="table">需要打印的实体数据源。</param>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.OnShown(System.EventArgs)">
+            <summary>
+            窗口第一次展示事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.OnDialogOKClick(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            打印按钮
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.PrintViewer.PrinterNames">
+            <summary>
+            获取系统已经安装的打印机名称
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.PrintViewer.DefaultPrinter">
+            <summary>
+            获取系统默认的打印机名称
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.PrintViewer.ExportFormat">
+            <summary>
+            报表导出文件格式
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.PrintViewer.ExportFormat.Excel">
+            <summary>
+            Excel表格
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.PrintViewer.ExportFormat.PDF">
+            <summary>
+            PDF文档
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.PrintViewer.ExportFormat.Image">
+            <summary>
+            IMG图像
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.PrintViewer.ExportFormat.Word">
+            <summary>
+            Word文档
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.Export(Microsoft.Reporting.WinForms.LocalReport,Framework.Win.Base.PrintViewer.ExportFormat,System.String)">
+            <summary>
+            导出报表
+            </summary>
+            <param name="report">报表源</param>
+            <param name="format">导出文件格式</param>
+            <param name="file">导出的文件名称(包括路径)</param>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.Export(Framework.Win.Base.PrintViewer.ExportFormat,System.String)">
+            <summary>
+            导出当前报表
+            </summary>
+            <param name="format">导出文件格式</param>
+            <param name="file">导出的文件名称(包括路径)</param>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.CreateStream(System.String,System.String,System.Text.Encoding,System.String,System.Boolean)">
+            <summary>
+            创建报表流
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.PrintPage(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+            <summary>
+            打印报表页
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.PrintToPrinter(Microsoft.Reporting.WinForms.LocalReport,System.String)">
+            <summary>
+            直接打印到打印机
+            </summary>
+            <param name="report">需要打印的本地报表源</param>
+            <param name="printer">打印到的打印机名称</param>
+        </member>
+        <member name="F:Framework.Win.Base.PrintViewer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Framework.Win.Base.PrintViewer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.ProgressingForm">
+            <summary>
+            进度栏窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ProgressingForm.#ctor">
+            <summary>
+            进度栏窗口
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.ProgressingForm.CreateParams">
+            <summary>
+            创建为不激活的窗口。
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ProgressingForm.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+            <summary>
+            屏蔽所有按键
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.ProgressingForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ProgressingForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Framework.Win.Base.ProgressingForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.ProgressMessageBar`1">
+            <summary>
+            进度提示工具栏
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ProgressMessageBar`1.#ctor(System.Func{Framework.Win.Base.ProgressMessageBar{`0},`0})">
+            <summary>
+            进度提示工具栏
+            </summary>
+            <param name="transacter">线程执行事件委托</param>
+        </member>
+        <member name="P:Framework.Win.Base.ProgressMessageBar`1.CreateParams">
+            <summary>
+            创建为不激活的窗口
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ProgressMessageBar`1.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+            <summary>
+            屏蔽所有按键
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.ProgressMessageBar`1.Tip">
+            <summary>
+            提示信息
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.ProgressMessageBar`1.ReturnVaule">
+            <summary>
+            返回值
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.ProgressMessageBar`1.Exception">
+            <summary>
+            抛出的异常
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ProgressMessageBar`1.OnShown(System.EventArgs)">
+            <summary>
+            窗口加载事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ProgressMessageBar`1.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            鼠标按下事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ProgressMessageBar`1.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            鼠标移动事件
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ProgressMessageBar`1.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            鼠标弹起事件
+            </summary>
+        </member>
+        <member name="F:Framework.Win.Base.ProgressMessageBar`1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ProgressMessageBar`1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Framework.Win.Base.ProgressMessageBar`1.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Framework.Win.Base.ToolsBoxForm">
+            <summary>
+            工具箱窗口基类
+            </summary>
+        </member>
+        <member name="M:Framework.Win.Base.ToolsBoxForm.#ctor">
+            <summary />
+        </member>
+        <member name="T:Framework.Win.Base.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Properties.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Properties.Resources.close_normal">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Properties.Resources.close_on">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Properties.Resources.user">
+            <summary>
+              查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:Framework.Win.Base.Properties.Resources.users">
+            <summary>
+              查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
+            </summary>
+        </member>
+    </members>
+</doc>
