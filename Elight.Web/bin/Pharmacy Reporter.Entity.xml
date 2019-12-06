@@ -1,0 +1,497 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pharmacy Reporter.Entity</name>
+    </assembly>
+    <members>
+        <member name="T:Pharmacy_Reporter.Entity.InPatientCheck">
+            <summary>
+            日间手术签到表
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.ORDERGUBUN">
+            <summary>
+            医嘱区分类型
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.PTNO">
+            <summary>
+            患者编号
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.Sname">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.WARDCODE">
+            <summary>
+            病区
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.Roomcode">
+            <summary>
+            房间号
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.Bedno">
+            <summary>
+            创号
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.WARDNAME">
+            <summary>
+            病区
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.BI1">
+            <summary>
+            患者区分
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.BI">
+            <summary>
+            患者区分
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.DEPTNAME">
+            <summary>
+            科室
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.DEPTCODE">
+            <summary>
+            科室编码
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.DRNAME">
+            <summary>
+            医生姓名
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.DRCODE">
+            <summary>
+            医生编码
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.AMSET1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.JUPSU">
+            <summary>
+            收费状态
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.InPatientCheck.INDATE">
+            <summary>
+            入院日期
+            </summary>
+        </member>
+        <member name="T:Pharmacy_Reporter.Entity.PharmacyWindow">
+            <summary>
+            药房窗口
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.PharmacyWindow.Code">
+            <summary>
+            窗口编码
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.PharmacyWindow.Name">
+            <summary>
+            窗口名称
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.PharmacyWindow.Num">
+            <summary>
+            取药工作量
+            </summary>
+        </member>
+        <member name="T:Pharmacy_Reporter.Entity.Prescription">
+            <summary>
+            处方单实体
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.Prescription.Ptno">
+            <summary>
+            患者编号
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.Prescription.Bdate">
+            <summary>
+            医嘱日期
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.Prescription.Presno">
+            <summary>
+            处方单号
+            </summary>
+        </member>
+        <member name="T:Pharmacy_Reporter.Entity.SignInEntity">
+            <summary>
+            报道状态登记实体
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.PTNO">
+            <summary>
+            患者编号
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.CHECKDATE">
+            <summary>
+            报道日期
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.CHECKTIME">
+            <summary>
+            报道时间
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.FLAG">
+            <summary>
+            ?
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.TuyakNo">
+            <summary>
+            取窗口号
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.CHUANGKOU">
+            <summary>
+            取药窗口
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.IS_DONE">
+            <summary>
+            是否取药
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.BDATE">
+            <summary>
+            开单日期
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.PRESNO">
+            <summary>
+            处方单号
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.CREATE_USER_ID">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.CREATE_TIME">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.UPDATE_USER_ID">
+            <summary>
+            最后更新人
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.UPDATE_TIME">
+            <summary>
+            最后更新日期
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.DBCODE">
+            <summary>
+            数据库编号
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SignInEntity.TIMESPAN">
+            <summary>
+            时间戳
+            </summary>
+        </member>
+        <member name="T:Pharmacy_Reporter.Entity.SigninStrip">
+            <summary>
+            报到条
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SigninStrip.PTNO">
+            <summary>
+            病人编号
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SigninStrip.PTNAME">
+            <summary>
+             病人名称
+             </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SigninStrip.WINDOW_NAME">
+            <summary>
+            窗口名
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.SigninStrip.CHECK_DATE">
+            <summary>
+            报道时间
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.Entity.SigninStrip.ToString">
+            <summary>
+            打印模板字符串表达式
+            </summary>
+        </member>
+        <member name="T:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK">
+            <summary>
+            日间手术发药报道实体
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.GBIO">
+            <summary>
+            //门诊/住院                NOT NULL,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.PTNO">
+            <summary>
+            // 患者编码              NOT NULL,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.BI">
+            <summary>
+            // 患者身份,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.DEPTCODE">
+            <summary>
+            // 科室,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.DRCODE">
+            <summary>
+            // 负责医生,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.WARDCODE">
+            <summary>
+            // 病区,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.ROOMCODE">
+            <summary>
+            // 房间号,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.ORDERGUBUN">
+            <summary>
+            // 医嘱类别,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.ORDERCODE">
+            <summary>
+            //医嘱编码,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.SENDDEPT1">
+            <summary>
+            // 传送部门,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.BDATE">
+            <summary>
+            // 医嘱日期,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.SUCODE">
+            <summary>
+            // 价格编码,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.BUN">
+            <summary>
+            // 分类,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.SLIPNO">
+            <summary>
+            // 医嘱分类,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.QTY">
+            <summary>
+            // 数量,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.NAL">
+            <summary>
+            // 天数,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.DIV">
+            <summary>
+            // 用量,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.REALQTY">
+            <summary>
+            // 实际用量,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.DOSCODE">
+            <summary>
+            // 用法,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.GRP">
+            <summary>
+            // 分组,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.REMARK">
+            <summary>
+            // 备注,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.STATUS">
+            <summary>
+            // 状态,       0未发药，1发药，取消发药
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.ORDERNO">
+            <summary>
+            // 医嘱号,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.CHUANGKOU">
+            <summary>
+            // 窗口,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.PUMCODE">
+            <summary>
+            // xy码,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.PRESNO">
+            <summary>
+            // 处方号,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.CHECKDATE">
+            <summary>
+            // 签到日期,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.FLAG">
+            <summary>
+            // 状态             0未签到，1签到，2取消签到
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.CHECKTIME">
+            <summary>
+            // 签到时间,    
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.OUTUSER">
+            <summary>
+            // 发药人(6 BYTE),
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.OUTDATE">
+            <summary>
+            // 发药日期,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.OUTTIME">
+            <summary>
+            // 发药时间,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.REUSER">
+            <summary>
+            // 退药人(6 BYTE),
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.REDATE">
+            <summary>
+            // 退药日期,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.RETIME">
+            <summary>
+            // 退药时间,
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK.HOSPITALIZEDUID">
+            <summary>
+            // 患者主索引(16 BYTE),
+            </summary>
+        </member>
+        <member name="T:Pharmacy_Reporter.Entity.TWORD_JBINFO_180104">
+            <summary>
+            药房报道表
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWORD_JBINFO_180104.JBUSE">
+            <summary>
+            PATIENT_NO
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWORD_JBINFO_180104.PUMCODE">
+            <summary>
+            窗口
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWORD_JBINFO_180104.PLACECODE">
+            <summary>
+            报道时间
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWORD_JBINFO_180104.MINQTY">
+            <summary>
+            处方号
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWORD_JBINFO_180104.MAXQTY">
+            <summary />
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWORD_JBINFO_180104.BASEJQTY">
+            <summary />
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.TWORD_JBINFO_180104.OPENFLAG">
+            <summary />
+        </member>
+        <member name="T:Pharmacy_Reporter.Entity.WindowJobDetails">
+            <summary>
+            队列明细
+            </summary>
+        </member>
+        <member name="T:Pharmacy_Reporter.Entity.WindowJobs">
+            <summary>
+            工作量实体
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.WindowJobs.Name">
+            <summary>
+            发药窗口字符串表达式
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.WindowJobs.CODE">
+            <summary>
+            窗口编号
+            </summary>
+        </member>
+        <member name="P:Pharmacy_Reporter.Entity.WindowJobs.COUNT">
+            <summary>
+            工作量
+            </summary>
+        </member>
+    </members>
+</doc>

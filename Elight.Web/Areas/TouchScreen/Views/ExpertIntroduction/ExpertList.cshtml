@@ -1,0 +1,203 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>字典选项列表</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/layui/css/layui.css?v=12" rel="stylesheet" />
+    <link href="~/Content/framework/css/console.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/jquery/jquery.min.js?v=1"></script>
+    <script src="~/Content/layui/layui.js?v=1"></script>
+    <script src="~/Content/framework/js/global.js?v=1"></script>
+    <link href="~/Content/ztree/css/metroStyle/metroStyle.css" rel="stylesheet" />
+    <script src="~/Content/ztree/js/jquery.ztree.all.min.js"></script>
+
+    <style>
+        .layui-table tr:hover, .layui-table[lay-even] tr:nth-child(even) {
+            background-color: #3eb6e2;
+        }
+
+        .test-1::-webkit-scrollbar { /*滚动条整体样式*/
+            width: 30px; /*高宽分别对应横竖滚动条的尺寸*/
+            height: 1px;
+        }
+
+        .test-1::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            background: #535353;
+        }
+
+        .test-1::-webkit-scrollbar-track { /*滚动条里面轨道*/
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            background: #EDEDED;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid fadeIn animated">
+        <div class="row">
+            <div class="col-md-3 left-grid" style="position:absolute;">
+                <div class="panel container-panel">
+                    <div class="panel-body test-1" style="    overflow: scroll;
+    height: 440px;">
+                        <table id="deptList" class="layui-form layui-table elight-table" lay-skin="line">
+                            <thead>
+                                <tr>
+                                    <th style="width:30%">序号</th>
+                                    <th style="width:70%">名称</th>
+                                </tr>
+                            </thead>
+                            <!--内容容器-->
+                            <tbody id="deptContent"></tbody>
+                        </table>
+                        <div id="dptpaged"></div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-9 right-grid" >
+                    <div class="panel container-panel">
+                        <div class="panel-body">
+                            
+                            <table id="experlist_gridList" class="layui-form layui-table elight-table" lay-skin="line">
+                                <thead>
+                                    <tr>
+                                        <th style="width:10%">序号</th>
+                                        <th style="width:20%">姓名</th>
+                                        <th style="width:70%">专业特长</th>
+                                    </tr>
+                                </thead>
+                                <!--内容容器-->
+                                <tbody id="experlist_content"></tbody>
+                            </table>
+                            <div id="experlist_paged"></div>
+                            <span style="color:orangered">提示：1）点击科室，查询专家及特长；2）点击专家姓名，查看详细介绍；</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+</body>
+</html>
+
+<!--内容模板-->
+<script id="deptContentTpl" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <tr>
+        <td  onclick="initGrid('{{item.Name}}')">{{item.RN}}</td>
+        <td onclick="initGrid('{{item.Name}}')">{{item.Name}}</td>
+        
+
+    </tr>
+    {{#  }); }}
+    {{# if(d.list.length<=0) { }}
+    <tr style="color: red">
+        <td colspan="8">查无数据。</td>
+    </tr>
+    {{# } }}
+</script>
+
+<script id="contentTpl" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <tr>
+
+        <td style="display:none">{{item.idnumber}}</td>
+        <td onclick="initExpert('{{item.idnumber}}','{{item.Name}}')">{{item.RN}}</td>
+        <td onclick="initExpert('{{item.idnumber}}','{{item.Name}}')">{{item.Name}}</td>
+        <td onclick="initExpert('{{item.idnumber}}','{{item.Name}}')">{{item.Specialty}}</td>
+    </tr>
+    {{#  }); }}
+    {{# if(d.list.length<=0) { }}
+    <tr style="color: red">
+        <td colspan="6">查无数据。</td>
+    </tr>
+    {{# } }}
+</script>
+
+<script type="text/javascript">
+    var paging;
+    layui.config({
+        base: parent._baseUrl
+    }).use(['paging', 'form'], function () {
+        var form = layui.form();
+        paging = layui.paging();
+        initDeptGrid();
+        let deptName = document.getElementById("deptList").rows[1].cells[1].innerHTML;
+        console.log(deptName);
+        initGrid(deptName);
+        });
+
+    function initDeptGrid() {
+        
+        var keyWord = getQueryString("keyWord");
+        paging.init({
+            url: '/TouchScreen/ExpertIntroduction/GetDepts',
+            elem: '#deptContent',
+            tempElem: '#deptContentTpl',
+            params: {
+                keyWord: keyWord
+            },
+            pageConfig: {
+                elem: '#dptpaged',
+                pageSize: 30,
+                skip: false,
+            },
+            success: function () {
+
+            }
+        });
+    }
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+
+            return decodeURI(r[2]);//修改之后  
+        } else { return null; }
+    }
+    function initGrid(deptName) {
+        console.log('123')
+        var deptType = getQueryString("keyWord");
+        paging.init({
+            url: '/TouchScreen/ExpertIntroduction/GetExperts',
+            elem: '#experlist_content',
+            tempElem: '#contentTpl',
+            params: {
+                deptType: deptType,
+                deptName: deptName
+            },
+            pageConfig: {
+                elem: '#experlist_paged',
+                pageSize: 10,
+                skip: false,
+            },
+            success: function () {
+
+            }
+        });
+    }
+
+    function initExpert(idnumber, Name) {
+        $.layerOpen({
+            id: "edit",
+            title: "专家信息",
+            width: "90%",
+            height: "100%",
+            content: encodeURI("/TouchScreen/ExpertIntroduction/Form?idnumber=" + idnumber + "&Name=" + Name),
+            btn: []
+        });
+    }
+
+    
+
+</script>
+

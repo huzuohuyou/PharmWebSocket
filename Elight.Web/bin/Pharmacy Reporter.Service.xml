@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pharmacy Reporter.Service</name>
+    </assembly>
+    <members>
+        <member name="T:Pharmacy_Reporter.Service.PharmacyReporterService">
+            <summary>
+            门诊报道机服务
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.Service.PharmacyReporterService.GetInPatientWindowNo(Pharmacy_Reporter.ORM.PharmacyReporterManager,System.String)">
+            <summary>
+            获取已分配的窗口
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.Service.PharmacyReporterService.GetOutPatientWindowNo(Pharmacy_Reporter.ORM.PharmacyReporterManager,System.String)">
+            <summary>
+            获取窗口号
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.Service.PharmacyReporterService.LogPharm(Pharmacy_Reporter.Entity.TWORD_JBINFO_180104)">
+            <summary>
+            记录发药分配窗口记录
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.Service.PharmacyReporterService.GetWorkingWindowsLineUpNums(System.Boolean,System.Boolean)">
+            <summary>
+            获取窗口排队状态
+            </summary>
+            <param name="dm">ture是否包含毒麻发药窗口，false不包含毒麻发药窗口</param>
+            <param name="working">ture表示仅开放发药窗口，false表示所有发药窗口</param>
+        </member>
+        <member name="M:Pharmacy_Reporter.Service.PharmacyReporterService.GetWindowJobs">
+            <summary>
+            窗口工作量
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.Service.PharmacyReporterService.GetLeastLineUpNumsWindow(System.Boolean)">
+            <summary>
+            获取最少的排队窗口
+            </summary>
+            <param name="dm">ture是否包含毒麻发药窗口，false不包含毒麻发药窗口</param>
+        </member>
+        <member name="M:Pharmacy_Reporter.Service.PharmacyReporterService.PrintReportStrip(System.String)">
+            <summary>
+            打印签到条
+            </summary>
+        </member>
+    </members>
+</doc>

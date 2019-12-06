@@ -1,0 +1,270 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Default</title>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Content/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/console.css?v=1.5" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/jquery/jquery.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel-body">
+                    <p style="text-align:right;font-size:4.5rem;color:orangered;font-weight:bolder;">药房自助取号系统</p>
+                </div>
+                <div class="panel container-panel" style="margin-top: 0px !important; ">
+                    <img class="layui-header-logo"
+                         src="/Content/framework/images/573f0ee6461ab3873dce4f4b8cdbefb7.gif"
+                         style="top:0px;width:60%;height:100%;left:0px;" />
+                </div>
+                <p style="width:40%;text-align:center;font-size:5.5rem;color:orangered;font-weight:bolder;position:absolute;top:180px;right:10px;">同一位患者仅取【一个号】</p>
+                <div id="my-div" class="panel container-panel show615">
+                    <div class="panel-body">
+                        <input id="ptno" autocomplete="off" onblur="always_focus()" oninput="get_window_no()" autofocus="autofocus" style="text-align:center;font-size:6.5rem;color:orangered;font-weight:bolder;margin:20px;" type="text" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+<script src="~/Content/layui/layui.js"></script>
+<script type="text/javascript">
+    //var x = 0, y = 0;
+    //$('input').focus();
+    layui.use(['element'], function () {
+        var element = layui.element();
+    });
+    var myDate = new Date();
+
+    Date.prototype.format = function (format) {
+        var args = {
+            "M+": this.getMonth() + 1,
+            "d+": this.getDate(),
+            "h+": this.getHours(),
+            "m+": this.getMinutes(),
+            "s+": this.getSeconds(),
+            "q+": Math.floor((this.getMonth() + 3) / 3),  //quarter
+            "S": this.getMilliseconds()
+        };
+        if (/(y+)/.test(format))
+            format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var i in args) {
+            var n = args[i];
+            if (new RegExp("(" + i + ")").test(format))
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
+        }
+        return format;
+    };
+    document.getElementById("my-div").style['display'] = 'none';
+    if (ConvertStrToDate(new Date().format("yyyy-MM-dd")) >= ConvertStrToDate("2019-06-15")) {
+        document.getElementById("my-div").style['display'] = 'block';
+
+    }
+
+    function ConvertStrToDate(datetimeStr) {
+        var mydateint = Date.parse(datetimeStr);//数值格式的时间
+        if (!isNaN(mydateint)) {
+            var mydate = new Date(mydateint);
+            return mydate;
+        }
+        var mydate = new Date(datetimeStr);//字符串格式时间
+        var monthstr = mydate.getMonth() + 1;
+        if (!isNaN(monthstr)) {//转化成功
+            return mydate;
+        }//字符串格式时间转化失败
+        var dateParts = datetimeStr.split(" ");
+        var dateToday = new Date();
+        var year = dateToday.getFullYear();
+        var month = dateToday.getMonth();
+        var day = dateToday.getDate();
+        if (dateParts.length >= 1) {
+            var dataPart = dateParts[0].split("-");//yyyy-mm-dd  格式时间
+            if (dataPart.length == 1) {
+                dataPart = dateParts[0].split("/");//yyyy/mm/dd格式时间
+            }
+            if (dataPart.length == 3) {
+                year = Math.floor(dataPart[0]);
+                month = Math.floor(dataPart[1]) - 1;
+                day = Math.floor(dataPart[2]);
+            }
+        }
+        if (dateParts.length == 2) {//hh:mm:ss格式时间
+            var timePart = dateParts[1].split(":");//hh:mm:ss格式时间
+            if (timePart.length == 3) {
+                var hour = Math.floor(timePart[0]);
+                var minute = Math.floor(timePart[1]);
+                var second = Math.floor(timePart[2]);
+                return new Date(year, month, day, hour, minute, second);
+            }
+        }
+        else {
+            return new Date(year, month, day);
+        }
+    }
+    function get_window_no() {
+        console.log($("#ptno").val());
+
+        if ($("#ptno").val().length == 10) {
+
+            $.ajax({
+                url: "/Pharm/Check/GetWindows",
+                type: "post",
+                data: { ptno: $("#ptno").val() },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    console.log("==" + data.PTNO)
+                    if (wsc.readyState == 1) {
+                        wsc.send(JSON.stringify({
+                            PTNO: data.PTNO,
+                            PTNAME: data.PTNAME,
+                            WINDOW_NAME: data.WINDOW_NAME,
+                            CHECK_DATE: data.CHECK_DATE
+                        }));
+                        top.layer.msg(data.WINDOW_NAME);
+                    } else {
+                        console.log("service is not available");
+                    }
+                }
+            });
+            $("#ptno").val("");
+        }
+
+    }
+
+    function always_focus() {
+        console.log('lost focus');
+        $('#ptno').focus();
+        console.log('get focus');
+    }
+</script>
+
+<script type="text/javascript">
+    function getUserIP(onNewIP) { //  onNewIp - your listener function for new IPs
+        //compatibility for firefox and chrome
+        var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
+        var pc = new myPeerConnection({
+            iceServers: []
+        }),
+            noop = function () { },
+            localIPs = {},
+            ipRegex = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g,
+            key;
+
+        function iterateIP(ip) {
+            if (!localIPs[ip]) onNewIP(ip);
+            localIPs[ip] = true;
+        }
+
+        //create a bogus data channel
+        pc.createDataChannel("");
+
+        // create offer and set local description
+        pc.createOffer().then(function (sdp) {
+            sdp.sdp.split('\n').forEach(function (line) {
+                if (line.indexOf('candidate') < 0) return;
+                line.match(ipRegex).forEach(iterateIP);
+            });
+
+            pc.setLocalDescription(sdp, noop, noop);
+        }).catch(function (reason) {
+            // An error occurred, so handle the failure to connect
+        });
+
+        //sten for candidate events
+        pc.onicecandidate = function (ice) {
+            if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(ipRegex)) return;
+            ice.candidate.candidate.match(ipRegex).forEach(iterateIP);
+        };
+    }
+
+    // Usage
+    getUserIP(function (ip) {
+        if ("WebSocket" in window) {
+            let localip = "";
+            getUserIP(function (ip) {
+                localip = ip;
+            });
+            // init the websocket client
+            console.log("localip" + ip);
+            wsc = new WebSocket("ws://" + ip + ":6690/app");
+            wsc.onopen = function () {
+                console.log("connected");
+            };
+            wsc.onclose = function () {
+                console.log("closed");
+            };
+            wsc.onmessage = function (e) {
+                var data = JSON.parse(e.data);
+                echo(data.msg || e.data);
+                console.log(data.msg || e.data);
+            };
+
+            // define click event for submit button
+            document.getElementById("ptno").addEventListener('oninput', get_window_no());
+        }
+    });
+
+</script>
+
+@*<script>
+        let wsc;
+        var echo = function (text) {
+            var echoone = function (text) {
+                var dom = document.createElement("li");
+                var t = document.createTextNode(text);
+                dom.appendChild(t);
+                var cnt = document.getElementById("outCnt");
+                cnt.appendChild(dom);
+            };
+            if (Array.isArray(text)) {
+                text.map(function (t) {
+                    echoone(t);
+                });
+            } else {
+                echoone(text);
+            }
+        };
+        (function () {
+            if ("WebSocket" in window) {
+                // init the websocket client
+                wsc = new WebSocket("ws://" + localip + ":6690/app");
+                wsc.onopen = function () {
+                    echo("connected");
+                };
+                wsc.onclose = function () {
+                    echo("closed");
+                };
+                wsc.onmessage = function (e) {
+                    var data = JSON.parse(e.data);
+                    echo(data.msg || e.data);
+                    console.log(data.msg || e.data);
+                };
+
+                // define click event for submit button
+                document.getElementById("btnSub").addEventListener('click', function () {
+                    var a = parseInt(document.getElementById("inpA").value);
+                    var b = parseInt(document.getElementById("inpB").value);
+                    if (wsc.readyState == 1) {
+                        wsc.send(JSON.stringify({ a: a, b: b }));
+                    } else {
+                        echo("service is not available");
+                    }
+                });
+            }
+        })();
+    </script>*@

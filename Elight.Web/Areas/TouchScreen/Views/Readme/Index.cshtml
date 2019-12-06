@@ -1,0 +1,72 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Default</title>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Content/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/console.css?v=1.3" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+
+        span {
+            font-size:2rem;
+            line-height:2.3rem;
+            color:darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <img style="opacity:0;border:0px;position:absolute;right:0px;bottom:0px;width:30px;height:30px;background-color:red;" onclick="close_win()"></img>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel container-panel" style="padding:15px;">
+                    <span> 如何使用北京朝阳医院物价查询系统</span>
+                    <br>
+                    <span> 1.如何查看物价文件：</span>
+                    <br>
+                    <span> &nbsp;（1）.点击物价文件查询按钮</span>
+                    <br>
+                    <span> &nbsp;（2）.点击文件发布的年份按钮</span>
+                    <br>
+                    <span> &nbsp;（3）.选择文件的发布部门</span>
+                    <br>
+                    <span> &nbsp;（4）.从文件目录点击文件的名称就可以看到文件的具体内容了</span>
+                    <br>
+                    <br>
+                    <span> 2.如何查询各种收费项目：</span>
+                    <br>
+                    <span> &nbsp;（1）.点击屏幕上收费项目的分类按钮，按屏幕上显示内容查看详细的收费项目</span>
+                    <br>
+                    <span> &nbsp;（2）.在需要输入拼音查询的地方，请输入查询项目名称的每个字拼音的第一个字母，如：要查询“心电图”，则输入“XDT",要查”感冒清热颗粒“，则输入”GMQRKL",然后点击搜索按钮，即可得到相关的收费项目。</span>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="~/Content/layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['element'], function () {
+        var element = layui.element();
+    });
+    function close_win() {
+        window.opener = null;
+        window.open('', '_self');
+        window.parent.close();
+    }
+</script>

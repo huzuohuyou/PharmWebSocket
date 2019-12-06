@@ -1,0 +1,12 @@
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\bin\x86\Debug\Pharmacy Reporter.Entity.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\bin\x86\Debug\Pharmacy Reporter.Entity.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\bin\x86\Debug\Pharmacy Reporter.Entity.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\bin\x86\Debug\Framework.Entity.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\bin\x86\Debug\Functions Library.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\bin\x86\Debug\Framework.Entity.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\bin\x86\Debug\Functions Library.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\obj\x86\Debug\Pharmacy Reporter.Entity.csprojAssemblyReference.cache
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\obj\x86\Debug\Pharmacy Reporter.Entity.csproj.CoreCompileInputs.cache
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\obj\x86\Debug\Pharmacy Reporter.Entity.csproj.CopyComplete
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\obj\x86\Debug\Pharmacy Reporter.Entity.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Entity\obj\x86\Debug\Pharmacy Reporter.Entity.pdb

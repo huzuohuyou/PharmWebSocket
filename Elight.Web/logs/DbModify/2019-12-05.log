@@ -1,0 +1,520 @@
+--------------------09:58:31.0054596--------------------
+Update TWOCS_OORDER 
+Set 
+	JUPSU = :JUPSU
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE)
+
+参数值:
+(String)    JUPSU = 1
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------09:58:31.0164293--------------------
+Update      TWOCS_PRSLIP 
+Set         TUYAKNO = '2',
+	        CHUANGKOU = '06',
+	        CHECKDATE = to_date('2019-12-05','yyyy-mm-dd hh24:mi:ss'),
+	        FLAG = 1,
+	        CHECKTIME = to_date('2019-12-05 09:32:28','yyyy-mm-dd hh24:mi:ss')
+Where       PTNO = '0000001422' 
+And         PRESNO = '81083961' 
+--And         CHECKTIME IS NULL
+--------------------09:58:31.0443886--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------10:02:38.3246356--------------------
+Update TWOCS_OORDER 
+Set 
+	JUPSU = :JUPSU
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE)
+
+参数值:
+(String)    JUPSU = 1
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------10:02:38.3266409--------------------
+Update      TWOCS_PRSLIP 
+Set         TUYAKNO = '3',
+	        CHUANGKOU = '06',
+	        CHECKDATE = to_date('2019-12-05','yyyy-mm-dd hh24:mi:ss'),
+	        FLAG = 1,
+	        CHECKTIME = to_date('2019-12-05 09:36:35','yyyy-mm-dd hh24:mi:ss')
+Where       PTNO = '0000001422' 
+And         PRESNO = '81083961' 
+--And         CHECKTIME IS NULL
+--------------------10:02:38.3395972--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------10:06:00.0939131--------------------
+Update TWOCS_OORDER 
+Set 
+	JUPSU = :JUPSU
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE)
+
+参数值:
+(String)    JUPSU = 1
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------10:06:00.1128641--------------------
+Update      TWOCS_PRSLIP 
+Set         TUYAKNO = '4',
+	        CHUANGKOU = '06',
+	        CHECKDATE = to_date('2019-12-05','yyyy-mm-dd hh24:mi:ss'),
+	        FLAG = 1,
+	        CHECKTIME = to_date('2019-12-05 09:39:57','yyyy-mm-dd hh24:mi:ss')
+Where       PTNO = '0000001422' 
+And         PRESNO = '81083961' 
+--And         CHECKTIME IS NULL
+--------------------10:06:00.1408199--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------10:06:30.3360966--------------------
+Update TWOCS_OORDER 
+Set 
+	JUPSU = :JUPSU
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE)
+
+参数值:
+(String)    JUPSU = 1
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------10:06:30.3380917--------------------
+Update      TWOCS_PRSLIP 
+Set         TUYAKNO = '5',
+	        CHUANGKOU = '06',
+	        CHECKDATE = to_date('2019-12-05','yyyy-mm-dd hh24:mi:ss'),
+	        FLAG = 1,
+	        CHECKTIME = to_date('2019-12-05 09:40:27','yyyy-mm-dd hh24:mi:ss')
+Where       PTNO = '0000001422' 
+And         PRESNO = '81083961' 
+--And         CHECKTIME IS NULL
+--------------------10:06:30.3809765--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------10:42:57.8577987--------------------
+Update TWOCS_OORDER 
+Set 
+	JUPSU = :JUPSU
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE)
+
+参数值:
+(String)    JUPSU = 1
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------10:42:57.8667759--------------------
+Update      TWOCS_PRSLIP 
+Set         TUYAKNO = '6',
+	        CHUANGKOU = '06',
+	        CHECKDATE = to_date('2019-12-05','yyyy-mm-dd hh24:mi:ss'),
+	        FLAG = 1,
+	        CHECKTIME = to_date('2019-12-05 10:16:55','yyyy-mm-dd hh24:mi:ss')
+Where       PTNO = '0000001422' 
+And         PRESNO = '81083961' 
+--And         CHECKTIME IS NULL
+--------------------10:42:57.9035077--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------10:44:44.4932042--------------------
+Update TWOCS_OORDER 
+Set 
+	JUPSU = :JUPSU
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE)
+
+参数值:
+(String)    JUPSU = 1
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------10:44:44.4952009--------------------
+Update      TWOCS_PRSLIP 
+Set         TUYAKNO = '7',
+	        CHUANGKOU = '06',
+	        CHECKDATE = to_date('2019-12-05','yyyy-mm-dd hh24:mi:ss'),
+	        FLAG = 1,
+	        CHECKTIME = to_date('2019-12-05 10:18:41','yyyy-mm-dd hh24:mi:ss')
+Where       PTNO = '0000001422' 
+And         PRESNO = '81083961' 
+--And         CHECKTIME IS NULL
+--------------------10:44:44.5115023--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------10:52:33.3236197--------------------
+Update TWOCS_OORDER 
+Set 
+	JUPSU = :JUPSU
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE)
+
+参数值:
+(String)    JUPSU = 1
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------10:52:33.3345566--------------------
+Update      TWOCS_PRSLIP 
+Set         TUYAKNO = '8',
+	        CHUANGKOU = '06',
+	        CHECKDATE = to_date('2019-12-05','yyyy-mm-dd hh24:mi:ss'),
+	        FLAG = 1,
+	        CHECKTIME = to_date('2019-12-05 10:26:30','yyyy-mm-dd hh24:mi:ss')
+Where       PTNO = '0000001422' 
+And         PRESNO = '81083961' 
+--And         CHECKTIME IS NULL
+--------------------10:52:33.3684967--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------10:57:17.7416418--------------------
+Update TWOCS_OORDER 
+Set 
+	JUPSU = :JUPSU
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE)
+
+参数值:
+(String)    JUPSU = 1
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------10:57:19.3153548--------------------
+Update      TWOCS_PRSLIP 
+Set         TUYAKNO = '10',
+	        CHUANGKOU = '06',
+	        CHECKDATE = to_date('2019-12-05','yyyy-mm-dd hh24:mi:ss'),
+	        FLAG = 1,
+	        CHECKTIME = to_date('2019-12-05 10:31:16','yyyy-mm-dd hh24:mi:ss')
+Where       PTNO = '0000001422' 
+And         PRESNO = '81083961' 
+--And         CHECKTIME IS NULL
+--------------------10:57:28.6788749--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------11:00:01.8449874--------------------
+Update TWOCS_OORDER 
+Set 
+	JUPSU = :JUPSU
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE)
+
+参数值:
+(String)    JUPSU = 1
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------11:00:01.8479790--------------------
+Update      TWOCS_PRSLIP 
+Set         TUYAKNO = '11',
+	        CHUANGKOU = '06',
+	        CHECKDATE = to_date('2019-12-05','yyyy-mm-dd hh24:mi:ss'),
+	        FLAG = 1,
+	        CHECKTIME = to_date('2019-12-05 10:33:58','yyyy-mm-dd hh24:mi:ss')
+Where       PTNO = '0000001422' 
+And         PRESNO = '81083961' 
+--And         CHECKTIME IS NULL
+--------------------11:00:01.8639351--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------11:39:43.5427649--------------------
+Update TWOCS_OORDER 
+Set 
+	JUPSU = :JUPSU
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE)
+
+参数值:
+(String)    JUPSU = 1
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------11:39:43.5547348--------------------
+Update      TWOCS_PRSLIP 
+Set         TUYAKNO = '13',
+	        CHUANGKOU = '06',
+	        CHECKDATE = to_date('2019-12-05','yyyy-mm-dd hh24:mi:ss'),
+	        FLAG = 1,
+	        CHECKTIME = to_date('2019-12-05 11:13:41','yyyy-mm-dd hh24:mi:ss')
+Where       PTNO = '0000001422' 
+And         PRESNO = '81083961' 
+--And         CHECKTIME IS NULL
+--------------------11:39:43.5766756--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------11:40:44.7994810--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------11:43:47.6036557--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------11:58:37.9651508--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------11:59:35.6072520--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001422
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null
+--------------------12:08:46.7024431--------------------
+Update TWOCS_OORDER 
+Set 
+	JUPSU = :JUPSU
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE)
+
+参数值:
+(String)    JUPSU = 1
+(String)    Original_PTNO = 0000001441
+(String)    Original_PRESNO = 81084027
+--------------------12:08:46.7084263--------------------
+Update      TWOCS_PRSLIP 
+Set         TUYAKNO = '20',
+	        CHUANGKOU = '06',
+	        CHECKDATE = to_date('2019-12-05','yyyy-mm-dd hh24:mi:ss'),
+	        FLAG = 1,
+	        CHECKTIME = to_date('2019-12-05 11:42:44','yyyy-mm-dd hh24:mi:ss')
+Where       PTNO = '0000001441' 
+And         PRESNO = '81084027' 
+--And         CHECKTIME IS NULL
+--------------------12:08:46.7203951--------------------
+Insert Into TWORD_JBINFO_180104
+(
+	JBUSE,PUMCODE,PLACECODE,MINQTY,MAXQTY,
+	BASEJQTY,OPENFLAG
+)
+Values
+(
+	:JBUSE,:PUMCODE,:PLACECODE,:MINQTY,:MAXQTY,
+	:BASEJQTY,:OPENFLAG
+)
+
+参数值:
+(String)    JBUSE = 0000001441
+(String)    PUMCODE = 06
+(String)    PLACECODE = 2019-12-05
+(String)    MINQTY = 药房报道机日志
+(String)    MAXQTY = null
+(String)    BASEJQTY = null
+(String)    OPENFLAG = null

@@ -1,0 +1,1417 @@
+--------------------13:48:08.4742410--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '内科系统' 
+                         group by depttype,deptname
+                         order by deptname
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:09.8316058--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '内科系统' 
+                         group by depttype,deptname
+                         order by deptname  
+) A
+--------------------13:48:09.8864578--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:09.8954330--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:11.9607698--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 20  
+)  
+WHERE RN > 10
+--------------------13:48:11.9747322--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:13.9600529--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:13.9660372--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:15.2383665--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 20  
+)  
+WHERE RN > 10
+--------------------13:48:15.2433530--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:16.5417083--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:16.5476917--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:18.0543195--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 20  
+)  
+WHERE RN > 10
+--------------------13:48:18.0593063--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:19.2604243--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:19.2654108--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:20.1411131--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '风湿免疫'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:20.1490920--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '风湿免疫'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:20.7900429--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '感染科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:20.7980214--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '感染科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:21.2609707--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '高压氧科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:21.2729378--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '高压氧科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:21.7167506--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '临床心理科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:21.7257269--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '临床心理科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:24.3030104--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '临床心理科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:24.3089928--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '临床心理科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:25.0948902--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '临床心理科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 20  
+)  
+WHERE RN > 10
+--------------------13:48:25.1038675--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '临床心理科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:26.4923967--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '临床心理科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:26.4973606--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '临床心理科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:27.0701214--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '肾内科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:27.0780998--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '肾内科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:29.0546286--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '肾内科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 20  
+)  
+WHERE RN > 10
+--------------------13:48:29.0616410--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '肾内科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:33.8745030--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '内科系统' 
+                         group by depttype,deptname
+                         order by deptname
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:33.8834783--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '内科系统' 
+                         group by depttype,deptname
+                         order by deptname  
+) A
+--------------------13:48:33.9203811--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:33.9263660--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:35.8494345--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '妇儿' 
+                         group by depttype,deptname
+                         order by deptname
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:35.8574065--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '妇儿' 
+                         group by depttype,deptname
+                         order by deptname  
+) A
+--------------------13:48:35.8763549--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '妇儿'
+ and trim(deptname) = '儿科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:35.8843408--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '妇儿'
+ and trim(deptname) = '儿科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:37.2463142--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '内科系统' 
+                         group by depttype,deptname
+                         order by deptname
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:37.2572874--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '内科系统' 
+                         group by depttype,deptname
+                         order by deptname  
+) A
+--------------------13:48:37.2792275--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:37.2842091--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:38.5289803--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '外科系统' 
+                         group by depttype,deptname
+                         order by deptname
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:38.5379571--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '外科系统' 
+                         group by depttype,deptname
+                         order by deptname  
+) A
+--------------------13:48:38.5618938--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:38.5708696--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:40.4767443--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 20  
+)  
+WHERE RN > 10
+--------------------13:48:40.4837253--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:41.8225094--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:41.8274957--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:42.7500987--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 20  
+)  
+WHERE RN > 10
+--------------------13:48:42.7560832--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:44.4609235--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:44.4649111--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:46.5903430--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '五官科' 
+                         group by depttype,deptname
+                         order by deptname
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:46.5983236--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '五官科' 
+                         group by depttype,deptname
+                         order by deptname  
+) A
+--------------------13:48:46.6192654--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '五官科'
+ and trim(deptname) = '耳鼻喉'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:46.6262467--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '五官科'
+ and trim(deptname) = '耳鼻喉'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:48.1726997--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '医技科室' 
+                         group by depttype,deptname
+                         order by deptname
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:48.1946402--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '医技科室' 
+                         group by depttype,deptname
+                         order by deptname  
+) A
+--------------------13:48:48.2185774--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '医技科室'
+ and trim(deptname) = '病理科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:48.2265547--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '医技科室'
+ and trim(deptname) = '病理科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:49.4782218--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '其他科室' 
+                         group by depttype,deptname
+                         order by deptname
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:49.4891776--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '其他科室' 
+                         group by depttype,deptname
+                         order by deptname  
+) A
+--------------------13:48:49.5161056--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '其他科室'
+ and trim(deptname) = '急诊科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:49.5240844--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '其他科室'
+ and trim(deptname) = '急诊科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:51.4688820--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '内科系统' 
+                         group by depttype,deptname
+                         order by deptname
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:51.4758631--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '内科系统' 
+                         group by depttype,deptname
+                         order by deptname  
+) A
+--------------------13:48:51.5047858--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:51.5107699--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:48:52.6387528--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '外科系统' 
+                         group by depttype,deptname
+                         order by deptname
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:52.6507209--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '外科系统' 
+                         group by depttype,deptname
+                         order by deptname  
+) A
+--------------------13:48:52.6956047--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:48:52.7095631--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:15.4929382--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 20  
+)  
+WHERE RN > 10
+--------------------13:49:15.4969300--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:18.2912020--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '外科ICU'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:18.3068239--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '外科ICU'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:19.6055584--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '手麻科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:19.6155310--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '手麻科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:20.1680536--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '神经外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:20.1750358--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '神经外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:20.7092138--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '神经外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:20.7131958--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '神经外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:21.6789826--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:21.6839690--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '肝胆外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:22.7246861--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '骨科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:22.7316651--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '骨科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:23.3729523--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '甲状腺科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:23.3789379--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '甲状腺科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:23.9005938--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '介入科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:23.9085420--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '介入科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:24.4281849--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '泌尿外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:24.4351381--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '泌尿外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:24.9651689--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '普外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:24.9751427--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '普外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:25.5176936--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '乳腺外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:25.5246742--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '乳腺外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:25.9964108--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '神经外科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:26.0013975--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '神经外科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:26.5241937--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '手麻科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:26.5281482--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '手麻科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:27.1368174--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '外科ICU'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:27.1524182--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '外科ICU'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:30.9007545--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '外科ICU'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:30.9047364--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '外科系统'
+ and trim(deptname) = '外科ICU'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:49:40.8942235--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '内科系统' 
+                         group by depttype,deptname
+                         order by deptname
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:40.9012052--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select depttype,deptname Name from twopd_zjjj 
+                        where trim(depttype) = '内科系统' 
+                         group by depttype,deptname
+                         order by deptname  
+) A
+--------------------13:49:45.4092863--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 10  
+)  
+WHERE RN > 0
+--------------------13:49:45.4142729--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+) A
+--------------------13:50:38.0858252--------------------
+SELECT * FROM  
+(  
+SELECT A.*, ROWNUM RN  
+FROM (
+
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+
+) A  
+WHERE ROWNUM <= 20  
+)  
+WHERE RN > 10
+--------------------13:50:38.0928085--------------------
+SELECT max( ROWNUM ) 
+FROM (
+select idnumber,username Name,techang1 Specialty from twopd_zjjj
+ where trim(depttype) = '内科系统'
+ and trim(deptname) = '放疗科'
+ and uflag = '1' 
+ order by idnumber
+) A

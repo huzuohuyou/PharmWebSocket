@@ -1,0 +1,204 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户列表</title>
+    <link href="~/Content/layui/css/layui.css?v=12" rel="stylesheet" />
+    <link href="~/Content/framework/css/console.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/touch-screen.css?v=12" rel="stylesheet" />
+    <link href="~/Content/framework/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/jquery/jquery.min.js"></script>
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/framework/js/global.js"></script>
+    <style>
+        .my-buton-group {
+            width: 100%;
+            text-align: center;
+        }
+
+        .my-buton {
+            height: 38px;
+            width: 10%;
+        }
+
+        .layui-layer-btn0 {
+            display: none !important;
+        }
+
+        .layui-layer-btn1 {
+            display: none !important;
+        }
+
+        .nei-rong {
+            max-width: 200px;
+            min-width: 200px;
+            word-wrap: break-word;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        nei-rong:hover {
+            white-space: normal;
+            overflow: auto;
+            background-color: #b6384f;
+            color: white;
+        }
+
+
+        btn-return {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .layui-layer-setwin .layui-layer-close1 {
+            background-position: 10px -40px;
+            cursor: pointer;
+        }
+
+        .layui-btn-normal {
+            box-shadow: none !important;
+            /*color: #8f2b3f;*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel animated fadeIn">
+        <div class="panel-body">
+            <div id="toolbar" class="elight-table-toolbar">
+                <div class="layui-btn-group my-buton-group">
+                    <button id="btn_jy" class="layui-btn layui-btn-normal my-buton">
+                        检验
+                    </button>
+                    <button id="btn_bl" onclick="initGrid('cgjc')" class="layui-btn layui-btn-normal my-buton">
+                        病理
+                    </button>
+                    
+                </div>
+                
+            </div>
+            <table id="gridList" class="layui-form layui-table table-hover elight-table" lay-skin="line">
+                <thead>
+                    <tr>
+                        <th class="td-num">序号</th>
+                        <th style="width:10%">编码</th>
+                        <th style="width:30%">项目名称</th>
+                        <th style="width:10%;text-align:center;">计量单位</th>
+                        <th style="width:10%;text-align:right;">收费标准</th>
+                        <th style="width:10%;text-align:right;">特需价格</th>
+                        @*<th style="width:10%">内容说明</th>*@
+                        @*<th style="width:10%">详细内容</th>*@
+                    </tr>
+                </thead>
+                <!--内容容器-->
+                <tbody id="content"></tbody>
+            </table>
+            <div id="paged"></div><span style="color:red;">点击列表行显示详情</span>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--内容模板-->
+<script id="contentTpl" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <tr>
+        <td onclick="btn_detail('{{item.BCODE}}')">{{item.RN}}</td>
+        <td onclick="btn_detail('{{item.BCODE}}')">{{item.BCODE}}</td>
+        <td onclick="btn_detail('{{item.BCODE}}')">{{item.SUNAMEK}}</td>
+        <td onclick="btn_detail('{{item.BCODE}}')" style="text-align:center;">{{item.CUNIT}}</td>
+        <td onclick="btn_detail('{{item.BCODE}}')" style="text-align:right">{{item.BOAMT_VALUE}}</td>
+        <td onclick="btn_detail('{{item.BCODE}}')" style="text-align:right">{{item.GIAMT_VALUE}}</td>
+        @*<td>{{item.REMARK}}</td>*@
+        @*<td style="padding:0px;">
+            <button onclick="btn_detail('{{item.BCODE}}')"
+                    id="btn_detail" type="button" class="layui-btn layui-btn-primary layui-btn-sm"
+                    style="margin:0px;width:100%;height:100%;background-color: cornflowerblue;color:black">
+                详细信息
+            </button>
+        </td>*@
+    </tr>
+    {{#  }); }}
+     {{# if(d.list.length<=0) { }}
+        <tr style="color: red">
+            <td colspan="8">查无数据。</td>
+        </tr>
+    {{# } }}
+</script>
+
+<script type="text/javascript">
+
+    var paging, layer;
+    layui.config({
+        base: parent._baseUrl
+    }).use(['paging', 'form', 'layer'], function () {
+        layer = parent.layer || layui.layer;
+        var form = layui.form();
+        paging = layui.paging();
+        $('#btn_jy').click(btn_jy);
+        $('#btn_bl').click(btn_bl);
+        keyWord = 'btn_jy';
+        initGrid();
+    });
+
+    function close_layer() {
+        layer.closeAll();
+    }
+
+    var keyWord = '';
+
+    function btn_jy() {
+        keyWord = 'btn_jy';
+        initGrid();
+    }
+
+    function btn_bl() {
+        keyWord = 'btn_bl';
+        initGrid();
+    }
+
+
+    function initGrid() {
+        $("button").removeClass("btn-active");
+        $("#" + keyWord).toggleClass("btn-active")
+        paging.init({
+            url: '/TouchScreen/CheckTreatment/GetList',
+            elem: '#content',
+            tempElem: '#contentTpl',
+            params: {
+                keyWord: keyWord
+            },
+            pageConfig: {
+                elem: '#paged',
+                pageSize: 10,
+                skip: false,
+            },
+            success: function () {
+
+            }
+        });
+    }
+
+    function btn_detail(BCODE) {
+        $.layerOpen({
+            id: "add",
+            title: "详细信息",
+            width: "670px",
+            height: "100%",
+            content: "/TouchScreen/CheckTreatment/Detail?BCODE=" + BCODE,
+                
+            btn: []
+        });
+    }
+
+</script>

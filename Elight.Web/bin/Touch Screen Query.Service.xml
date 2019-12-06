@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Touch Screen Query.Service</name>
+    </assembly>
+    <members>
+        <member name="T:TouchScreenQuery.Service.DrugInquiryService">
+            <summary>
+            药品查询
+            </summary>
+        </member>
+        <member name="T:TouchScreenQuery.Service.SurgeryService">
+            <summary>
+            病理检查
+            </summary>
+        </member>
+        <member name="T:TouchScreenQuery.Service.PathologicalExaminationService">
+            <summary>
+            病理检查
+            </summary>
+        </member>
+    </members>
+</doc>

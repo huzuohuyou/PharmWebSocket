@@ -1,0 +1,2322 @@
+--------------------15:22:24.5481479--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 1111111111
+--------------------15:22:24.6588917--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 1111111111
+--------------------15:22:24.6768756--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:22:49.0521866--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:22:49.0641564--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:22:49.0661486--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:23:56.2843370--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:23:56.2982910--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:23:56.3002859--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:23:56.3322661--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------15:23:56.3591201--------------------
+Select Value From eip.SystemConfig Where DbCode=Value And Name='DBCODE'
+--------------------15:23:56.3641257--------------------
+Select * From eip.SystemConfig
+Where Dbcode = :Original_Dbcode
+
+参数值:
+(String)    Original_Dbcode = 0001
+--------------------15:23:56.3870452--------------------
+SELECT SYSDATE FROM DUAL
+--------------------15:23:56.3955421--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:23:56.4388795--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:23:56.4737853--------------------
+SELECT      COUNT(*) C FROM (
+SELECT      (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+            WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+            WHEN P.BUN IN ('F0','F1') THEN 'C' 
+            WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+            WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) DM FROM TWOCS_PRSLIP P
+            WHERE PRESNO='81083961' )K WHERE K.DM ='D'
+--------------------15:23:56.5076931--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And FLAG =1 And GBOUT IS NULL And STATUS =0 And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------15:23:56.5485837--------------------
+SELECT      AA.CHUANGKUO CODE,AA.CHUANGKUO CHUANGKOU ,BB.COUNT FROM (
+SELECT      CHUANGKUO       
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+
+GROUP BY    CHUANGKUO
+) AA
+LEFT JOIN 
+(
+SELECT      COUNT(*) COUNT ,CHUANGKOU 
+FROM (
+SELECT      * 
+FROM ( 
+SELECT      P.PTNO,  p.GBPRINT, p.GBOUT, 
+            A.SNAME,A.SEX, A.BIRTHDATE,P.BI CODE, 
+            TW_HSP_PMPA.TWBAS_GETNAME.PTBINAME(P.PTNO) CODENAME, 
+            P.CHUANGKOU,
+                        P.STATUS, A.JUSO, A.JUMIN  ,P.BDATE,P.TUYAKNO,TO_CHAR(P.CHECKTIME,'YYYY-MM-DD HH24:MI') CHECKTIME 
+FROM        TW_HSP_OCS.TWOCS_PRSLIP    P, 
+            TW_HSP_PMPA.TWBAS_PATIENT  A 
+WHERE       P.PTNO     = A.PTNO 
+AND ( P.GBOUT = '0' OR P.GBOUT IS NULL )
+AND P.STATUS ='0'
+AND P.FLAG = '2'
+AND  P.ENTDATE = TO_DATE( to_char(sysdate,'yyyy-MM-dd'),'YYYY-MM-DD')
+) GROUP BY PTNO,  GBPRINT, GBOUT,TUYAKNO,CHECKTIME, 
+           SNAME,SEX, BIRTHDATE, CODE,CODENAME, 
+           STATUS, JUSO, JUMIN  ,BDATE,CHUANGKOU   
+ )
+GROUP BY CHUANGKOU
+) BB 
+ON AA.CHUANGKUO=BB.CHUANGKOU
+--------------------15:23:56.5755140--------------------
+Select * From TWOCS_OORDER Where 1=2
+--------------------15:24:00.4976597--------------------
+Select * From TWORD_JBINFO_180104 Where 1=2
+--------------------15:24:04.0530607--------------------
+SELECT      CODENAME 
+FROM        TWBAS_BASECODE    
+
+Where BUSINESS = :Original_BUSINESS And BUN = :Original_BUN And GBUSE = :Original_GBUSE And NFLAG1 = :Original_NFLAG1 And CODE = :Original_CODE
+
+参数值:
+(String)    Original_BUSINESS = 药房
+(String)    Original_BUN = 窗口
+(String)    Original_GBUSE = 0
+(String)    Original_NFLAG1 = 1
+(String)    Original_CODE = 09
+--------------------15:24:59.3241242--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:24:59.3321033--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:24:59.3341088--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:24:59.3470637--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------15:24:59.3520510--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:24:59.3560394--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:24:59.3610254--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '1' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:25:03.0987270--------------------
+SELECT      PRESNO 
+FROM        TWOCS_OORDER 
+WHERE       PTNO = '0000001422' 
+AND         BDATE    = TO_DATE('2019-12-04','YYYY-MM-DD')
+--------------------15:25:03.1047116--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU != '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:25:06.8370907--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL And (GBOUT IS NULL OR GBOUT =0)
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------15:25:35.9866903--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:25:35.9946684--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:25:35.9976704--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:25:36.0161483--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------15:25:36.0211718--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:25:36.0251513--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:25:36.0281187--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '1' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:25:36.0311111--------------------
+SELECT      PRESNO 
+FROM        TWOCS_OORDER 
+WHERE       PTNO = '0000001422' 
+AND         BDATE    = TO_DATE('2019-12-04','YYYY-MM-DD')
+--------------------15:25:36.0341045--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU != '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:25:36.0660165--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL And (GBOUT IS NULL OR GBOUT =0)
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------15:26:07.8883429--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:26:07.8963264--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:26:07.9003120--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:26:07.9192601--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------15:26:07.9232506--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:26:07.9312287--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:26:07.9342200--------------------
+SELECT      COUNT(*) C FROM (
+SELECT      (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+            WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+            WHEN P.BUN IN ('F0','F1') THEN 'C' 
+            WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+            WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) DM FROM TWOCS_PRSLIP P
+            WHERE PRESNO='81083961' )K WHERE K.DM ='D'
+--------------------15:26:07.9651406--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And FLAG =1 And GBOUT IS NULL And STATUS =0 And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------15:26:07.9681295--------------------
+SELECT      AA.CHUANGKUO CODE,AA.CHUANGKUO CHUANGKOU ,BB.COUNT FROM (
+SELECT      CHUANGKUO       
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+
+GROUP BY    CHUANGKUO
+) AA
+LEFT JOIN 
+(
+SELECT      COUNT(*) COUNT ,CHUANGKOU 
+FROM (
+SELECT      * 
+FROM ( 
+SELECT      P.PTNO,  p.GBPRINT, p.GBOUT, 
+            A.SNAME,A.SEX, A.BIRTHDATE,P.BI CODE, 
+            TW_HSP_PMPA.TWBAS_GETNAME.PTBINAME(P.PTNO) CODENAME, 
+            P.CHUANGKOU,
+                        P.STATUS, A.JUSO, A.JUMIN  ,P.BDATE,P.TUYAKNO,TO_CHAR(P.CHECKTIME,'YYYY-MM-DD HH24:MI') CHECKTIME 
+FROM        TW_HSP_OCS.TWOCS_PRSLIP    P, 
+            TW_HSP_PMPA.TWBAS_PATIENT  A 
+WHERE       P.PTNO     = A.PTNO 
+AND ( P.GBOUT = '0' OR P.GBOUT IS NULL )
+AND P.STATUS ='0'
+AND P.FLAG = '2'
+AND  P.ENTDATE = TO_DATE( to_char(sysdate,'yyyy-MM-dd'),'YYYY-MM-DD')
+) GROUP BY PTNO,  GBPRINT, GBOUT,TUYAKNO,CHECKTIME, 
+           SNAME,SEX, BIRTHDATE, CODE,CODENAME, 
+           STATUS, JUSO, JUMIN  ,BDATE,CHUANGKOU   
+ )
+GROUP BY CHUANGKOU
+) BB 
+ON AA.CHUANGKUO=BB.CHUANGKOU
+--------------------15:26:12.1549117--------------------
+SELECT      CODENAME 
+FROM        TWBAS_BASECODE    
+
+Where BUSINESS = :Original_BUSINESS And BUN = :Original_BUN And GBUSE = :Original_GBUSE And NFLAG1 = :Original_NFLAG1 And CODE = :Original_CODE
+
+参数值:
+(String)    Original_BUSINESS = 药房
+(String)    Original_BUN = 窗口
+(String)    Original_GBUSE = 0
+(String)    Original_NFLAG1 = 1
+(String)    Original_CODE = 09
+--------------------15:27:48.6346655--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:27:48.7503569--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:27:48.7583691--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:27:48.7994938--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------15:27:48.8423799--------------------
+Select Value From eip.SystemConfig Where DbCode=Value And Name='DBCODE'
+--------------------15:27:48.8483627--------------------
+Select * From eip.SystemConfig
+Where Dbcode = :Original_Dbcode
+
+参数值:
+(String)    Original_Dbcode = 0001
+--------------------15:27:48.8713029--------------------
+SELECT SYSDATE FROM DUAL
+--------------------15:27:48.8792800--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:27:48.8852671--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:27:48.8902528--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '1' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:27:48.8962700--------------------
+SELECT      PRESNO 
+FROM        TWOCS_OORDER 
+WHERE       PTNO = '0000001422' 
+AND         BDATE    = TO_DATE('2019-12-04','YYYY-MM-DD')
+--------------------15:27:48.9002243--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU != '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:27:48.9401176--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL And (GBOUT IS NULL OR GBOUT =0)
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------15:28:05.0757575--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:28:05.0837358--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:28:05.0857317--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:28:05.0977112--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------15:28:05.1016882--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:28:05.1056774--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:28:05.1076717--------------------
+SELECT      COUNT(*) C FROM (
+SELECT      (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+            WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+            WHEN P.BUN IN ('F0','F1') THEN 'C' 
+            WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+            WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) DM FROM TWOCS_PRSLIP P
+            WHERE PRESNO='81083961' )K WHERE K.DM ='D'
+--------------------15:28:05.1355974--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And FLAG =1 And GBOUT IS NULL And STATUS =0 And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------15:28:05.1700076--------------------
+SELECT      AA.CHUANGKUO CODE,AA.CHUANGKUO CHUANGKOU ,BB.COUNT FROM (
+SELECT      CHUANGKUO       
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+
+GROUP BY    CHUANGKUO
+) AA
+LEFT JOIN 
+(
+SELECT      COUNT(*) COUNT ,CHUANGKOU 
+FROM (
+SELECT      * 
+FROM ( 
+SELECT      P.PTNO,  p.GBPRINT, p.GBOUT, 
+            A.SNAME,A.SEX, A.BIRTHDATE,P.BI CODE, 
+            TW_HSP_PMPA.TWBAS_GETNAME.PTBINAME(P.PTNO) CODENAME, 
+            P.CHUANGKOU,
+                        P.STATUS, A.JUSO, A.JUMIN  ,P.BDATE,P.TUYAKNO,TO_CHAR(P.CHECKTIME,'YYYY-MM-DD HH24:MI') CHECKTIME 
+FROM        TW_HSP_OCS.TWOCS_PRSLIP    P, 
+            TW_HSP_PMPA.TWBAS_PATIENT  A 
+WHERE       P.PTNO     = A.PTNO 
+AND ( P.GBOUT = '0' OR P.GBOUT IS NULL )
+AND P.STATUS ='0'
+AND P.FLAG = '2'
+AND  P.ENTDATE = TO_DATE( to_char(sysdate,'yyyy-MM-dd'),'YYYY-MM-DD')
+) GROUP BY PTNO,  GBPRINT, GBOUT,TUYAKNO,CHECKTIME, 
+           SNAME,SEX, BIRTHDATE, CODE,CODENAME, 
+           STATUS, JUSO, JUMIN  ,BDATE,CHUANGKOU   
+ )
+GROUP BY CHUANGKOU
+) BB 
+ON AA.CHUANGKUO=BB.CHUANGKOU
+--------------------15:28:05.1935302--------------------
+Select * From TWOCS_OORDER Where 1=2
+--------------------15:28:05.2467635--------------------
+Select * From TWORD_JBINFO_180104 Where 1=2
+--------------------15:28:05.2796747--------------------
+SELECT      CODENAME 
+FROM        TWBAS_BASECODE    
+
+Where BUSINESS = :Original_BUSINESS And BUN = :Original_BUN And GBUSE = :Original_GBUSE And NFLAG1 = :Original_NFLAG1 And CODE = :Original_CODE
+
+参数值:
+(String)    Original_BUSINESS = 药房
+(String)    Original_BUN = 窗口
+(String)    Original_GBUSE = 0
+(String)    Original_NFLAG1 = 1
+(String)    Original_CODE = 09
+--------------------15:28:23.5762648--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:28:23.5872309--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:28:23.5902196--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:28:23.6091693--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------15:28:23.6131589--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:28:23.6171483--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:28:23.6221365--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '1' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:28:23.6261235--------------------
+SELECT      PRESNO 
+FROM        TWOCS_OORDER 
+WHERE       PTNO = '0000001422' 
+AND         BDATE    = TO_DATE('2019-12-04','YYYY-MM-DD')
+--------------------15:28:23.6291160--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU != '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:28:23.6630252--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL And (GBOUT IS NULL OR GBOUT =0)
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------15:29:36.3323968--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:29:36.3393783--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:29:36.3423821--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:29:36.3673035--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------15:29:36.3712935--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:29:36.3772850--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:29:36.3812656--------------------
+SELECT      COUNT(*) C FROM (
+SELECT      (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+            WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+            WHEN P.BUN IN ('F0','F1') THEN 'C' 
+            WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+            WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) DM FROM TWOCS_PRSLIP P
+            WHERE PRESNO='81083961' )K WHERE K.DM ='D'
+--------------------15:29:36.4071965--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And FLAG =1 And GBOUT IS NULL And STATUS =0 And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------15:29:36.4111858--------------------
+SELECT      AA.CHUANGKUO CODE,AA.CHUANGKUO CHUANGKOU ,BB.COUNT FROM (
+SELECT      CHUANGKUO       
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+
+GROUP BY    CHUANGKUO
+) AA
+LEFT JOIN 
+(
+SELECT      COUNT(*) COUNT ,CHUANGKOU 
+FROM (
+SELECT      * 
+FROM ( 
+SELECT      P.PTNO,  p.GBPRINT, p.GBOUT, 
+            A.SNAME,A.SEX, A.BIRTHDATE,P.BI CODE, 
+            TW_HSP_PMPA.TWBAS_GETNAME.PTBINAME(P.PTNO) CODENAME, 
+            P.CHUANGKOU,
+                        P.STATUS, A.JUSO, A.JUMIN  ,P.BDATE,P.TUYAKNO,TO_CHAR(P.CHECKTIME,'YYYY-MM-DD HH24:MI') CHECKTIME 
+FROM        TW_HSP_OCS.TWOCS_PRSLIP    P, 
+            TW_HSP_PMPA.TWBAS_PATIENT  A 
+WHERE       P.PTNO     = A.PTNO 
+AND ( P.GBOUT = '0' OR P.GBOUT IS NULL )
+AND P.STATUS ='0'
+AND P.FLAG = '2'
+AND  P.ENTDATE = TO_DATE( to_char(sysdate,'yyyy-MM-dd'),'YYYY-MM-DD')
+) GROUP BY PTNO,  GBPRINT, GBOUT,TUYAKNO,CHECKTIME, 
+           SNAME,SEX, BIRTHDATE, CODE,CODENAME, 
+           STATUS, JUSO, JUMIN  ,BDATE,CHUANGKOU   
+ )
+GROUP BY CHUANGKOU
+) BB 
+ON AA.CHUANGKUO=BB.CHUANGKOU
+--------------------15:29:36.4725901--------------------
+SELECT      CODENAME 
+FROM        TWBAS_BASECODE    
+
+Where BUSINESS = :Original_BUSINESS And BUN = :Original_BUN And GBUSE = :Original_GBUSE And NFLAG1 = :Original_NFLAG1 And CODE = :Original_CODE
+
+参数值:
+(String)    Original_BUSINESS = 药房
+(String)    Original_BUN = 窗口
+(String)    Original_GBUSE = 0
+(String)    Original_NFLAG1 = 1
+(String)    Original_CODE = 09
+--------------------15:31:45.1161954--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:31:45.1351419--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:31:45.1401307--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:31:45.1610718--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------15:31:45.1650605--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:31:45.1760319--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:31:45.1800242--------------------
+SELECT      COUNT(*) C FROM (
+SELECT      (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+            WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+            WHEN P.BUN IN ('F0','F1') THEN 'C' 
+            WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+            WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) DM FROM TWOCS_PRSLIP P
+            WHERE PRESNO='81083961' )K WHERE K.DM ='D'
+--------------------15:31:45.2099398--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And FLAG =1 And GBOUT IS NULL And STATUS =0 And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------15:31:45.2139308--------------------
+SELECT      AA.CHUANGKUO CODE,AA.CHUANGKUO CHUANGKOU ,BB.COUNT FROM (
+SELECT      CHUANGKUO       
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+
+GROUP BY    CHUANGKUO
+) AA
+LEFT JOIN 
+(
+SELECT      COUNT(*) COUNT ,CHUANGKOU 
+FROM (
+SELECT      * 
+FROM ( 
+SELECT      P.PTNO,  p.GBPRINT, p.GBOUT, 
+            A.SNAME,A.SEX, A.BIRTHDATE,P.BI CODE, 
+            TW_HSP_PMPA.TWBAS_GETNAME.PTBINAME(P.PTNO) CODENAME, 
+            P.CHUANGKOU,
+                        P.STATUS, A.JUSO, A.JUMIN  ,P.BDATE,P.TUYAKNO,TO_CHAR(P.CHECKTIME,'YYYY-MM-DD HH24:MI') CHECKTIME 
+FROM        TW_HSP_OCS.TWOCS_PRSLIP    P, 
+            TW_HSP_PMPA.TWBAS_PATIENT  A 
+WHERE       P.PTNO     = A.PTNO 
+AND ( P.GBOUT = '0' OR P.GBOUT IS NULL )
+AND P.STATUS ='0'
+AND P.FLAG = '2'
+AND  P.ENTDATE = TO_DATE( to_char(sysdate,'yyyy-MM-dd'),'YYYY-MM-DD')
+) GROUP BY PTNO,  GBPRINT, GBOUT,TUYAKNO,CHECKTIME, 
+           SNAME,SEX, BIRTHDATE, CODE,CODENAME, 
+           STATUS, JUSO, JUMIN  ,BDATE,CHUANGKOU   
+ )
+GROUP BY CHUANGKOU
+) BB 
+ON AA.CHUANGKUO=BB.CHUANGKOU
+--------------------15:31:45.2957128--------------------
+SELECT      CODENAME 
+FROM        TWBAS_BASECODE    
+
+Where BUSINESS = :Original_BUSINESS And BUN = :Original_BUN And GBUSE = :Original_GBUSE And NFLAG1 = :Original_NFLAG1 And CODE = :Original_CODE
+
+参数值:
+(String)    Original_BUSINESS = 药房
+(String)    Original_BUN = 窗口
+(String)    Original_GBUSE = 0
+(String)    Original_NFLAG1 = 1
+(String)    Original_CODE = 09
+--------------------15:32:37.5304439--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:32:37.5364268--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:32:37.5394192--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:32:37.5534362--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------15:32:37.5584199--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:32:37.5634054--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:32:37.5663981--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '1' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:32:37.5693916--------------------
+SELECT      PRESNO 
+FROM        TWOCS_OORDER 
+WHERE       PTNO = '0000001422' 
+AND         BDATE    = TO_DATE('2019-12-04','YYYY-MM-DD')
+--------------------15:32:37.5713848--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU != '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:32:37.6042959--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL And (GBOUT IS NULL OR GBOUT =0)
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------15:33:02.5011657--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:33:02.5071499--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------15:33:02.5101420--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------15:33:02.5211438--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------15:33:02.5241041--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------15:33:02.5290903--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------15:33:02.5310855--------------------
+SELECT      COUNT(*) C FROM (
+SELECT      (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+            WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+            WHEN P.BUN IN ('F0','F1') THEN 'C' 
+            WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+            WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) DM FROM TWOCS_PRSLIP P
+            WHERE PRESNO='81083961' )K WHERE K.DM ='D'
+--------------------15:33:02.5600082--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And FLAG =1 And GBOUT IS NULL And STATUS =0 And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------15:33:02.5630000--------------------
+SELECT      AA.CHUANGKUO CODE,AA.CHUANGKUO CHUANGKOU ,BB.COUNT FROM (
+SELECT      CHUANGKUO       
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+
+GROUP BY    CHUANGKUO
+) AA
+LEFT JOIN 
+(
+SELECT      COUNT(*) COUNT ,CHUANGKOU 
+FROM (
+SELECT      * 
+FROM ( 
+SELECT      P.PTNO,  p.GBPRINT, p.GBOUT, 
+            A.SNAME,A.SEX, A.BIRTHDATE,P.BI CODE, 
+            TW_HSP_PMPA.TWBAS_GETNAME.PTBINAME(P.PTNO) CODENAME, 
+            P.CHUANGKOU,
+                        P.STATUS, A.JUSO, A.JUMIN  ,P.BDATE,P.TUYAKNO,TO_CHAR(P.CHECKTIME,'YYYY-MM-DD HH24:MI') CHECKTIME 
+FROM        TW_HSP_OCS.TWOCS_PRSLIP    P, 
+            TW_HSP_PMPA.TWBAS_PATIENT  A 
+WHERE       P.PTNO     = A.PTNO 
+AND ( P.GBOUT = '0' OR P.GBOUT IS NULL )
+AND P.STATUS ='0'
+AND P.FLAG = '2'
+AND  P.ENTDATE = TO_DATE( to_char(sysdate,'yyyy-MM-dd'),'YYYY-MM-DD')
+) GROUP BY PTNO,  GBPRINT, GBOUT,TUYAKNO,CHECKTIME, 
+           SNAME,SEX, BIRTHDATE, CODE,CODENAME, 
+           STATUS, JUSO, JUMIN  ,BDATE,CHUANGKOU   
+ )
+GROUP BY CHUANGKOU
+) BB 
+ON AA.CHUANGKUO=BB.CHUANGKOU
+--------------------15:33:02.6318170--------------------
+SELECT      CODENAME 
+FROM        TWBAS_BASECODE    
+
+Where BUSINESS = :Original_BUSINESS And BUN = :Original_BUN And GBUSE = :Original_GBUSE And NFLAG1 = :Original_NFLAG1 And CODE = :Original_CODE
+
+参数值:
+(String)    Original_BUSINESS = 药房
+(String)    Original_BUN = 窗口
+(String)    Original_GBUSE = 0
+(String)    Original_NFLAG1 = 1
+(String)    Original_CODE = 09
+--------------------16:05:20.5660879--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------16:05:20.6791398--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------16:05:20.6861208--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------16:05:20.7260505--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------16:05:20.7489665--------------------
+Select Value From eip.SystemConfig Where DbCode=Value And Name='DBCODE'
+--------------------16:05:20.7539530--------------------
+Select * From eip.SystemConfig
+Where Dbcode = :Original_Dbcode
+
+参数值:
+(String)    Original_Dbcode = 0001
+--------------------16:05:20.7759259--------------------
+SELECT SYSDATE FROM DUAL
+--------------------16:05:20.7838733--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------16:05:20.7922005--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------16:05:20.7971866--------------------
+SELECT      COUNT(*) C FROM (
+SELECT      (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+            WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+            WHEN P.BUN IN ('F0','F1') THEN 'C' 
+            WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+            WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) DM FROM TWOCS_PRSLIP P
+            WHERE PRESNO='81083961' )K WHERE K.DM ='D'
+--------------------16:05:20.8251113--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And FLAG =1 And GBOUT IS NULL And STATUS =0 And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------16:05:20.8682034--------------------
+SELECT      AA.CHUANGKUO CODE,AA.CHUANGKUO CHUANGKOU ,BB.COUNT FROM (
+SELECT      CHUANGKUO       
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+
+GROUP BY    CHUANGKUO
+) AA
+LEFT JOIN 
+(
+SELECT      COUNT(*) COUNT ,CHUANGKOU 
+FROM (
+SELECT      * 
+FROM ( 
+SELECT      P.PTNO,  p.GBPRINT, p.GBOUT, 
+            A.SNAME,A.SEX, A.BIRTHDATE,P.BI CODE, 
+            TW_HSP_PMPA.TWBAS_GETNAME.PTBINAME(P.PTNO) CODENAME, 
+            P.CHUANGKOU,
+                        P.STATUS, A.JUSO, A.JUMIN  ,P.BDATE,P.TUYAKNO,TO_CHAR(P.CHECKTIME,'YYYY-MM-DD HH24:MI') CHECKTIME 
+FROM        TW_HSP_OCS.TWOCS_PRSLIP    P, 
+            TW_HSP_PMPA.TWBAS_PATIENT  A 
+WHERE       P.PTNO     = A.PTNO 
+AND ( P.GBOUT = '0' OR P.GBOUT IS NULL )
+AND P.STATUS ='0'
+AND P.FLAG = '2'
+AND  P.ENTDATE = TO_DATE( to_char(sysdate,'yyyy-MM-dd'),'YYYY-MM-DD')
+) GROUP BY PTNO,  GBPRINT, GBOUT,TUYAKNO,CHECKTIME, 
+           SNAME,SEX, BIRTHDATE, CODE,CODENAME, 
+           STATUS, JUSO, JUMIN  ,BDATE,CHUANGKOU   
+ )
+GROUP BY CHUANGKOU
+) BB 
+ON AA.CHUANGKUO=BB.CHUANGKOU
+--------------------16:05:20.9260618--------------------
+Select * From TWOCS_OORDER Where 1=2
+--------------------16:05:20.9938422--------------------
+Select * From TWORD_JBINFO_180104 Where 1=2
+--------------------16:05:21.0317430--------------------
+SELECT      CODENAME 
+FROM        TWBAS_BASECODE    
+
+Where BUSINESS = :Original_BUSINESS And BUN = :Original_BUN And GBUSE = :Original_GBUSE And NFLAG1 = :Original_NFLAG1 And CODE = :Original_CODE
+
+参数值:
+(String)    Original_BUSINESS = 药房
+(String)    Original_BUN = 窗口
+(String)    Original_GBUSE = 0
+(String)    Original_NFLAG1 = 1
+(String)    Original_CODE = 09
+--------------------16:06:52.5176662--------------------
+SELECT      COUNT(1) COUNT
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------16:06:52.5246476--------------------
+SELECT      SNAME 
+FROM        TWBAS_PATIENT
+Where ptno = :Original_ptno
+
+参数值:
+(String)    Original_ptno = 0000001422
+--------------------16:06:52.5276406--------------------
+SELECT      CHUANGKUO CODE      
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+GROUP BY    CHUANGKUO
+--------------------16:06:52.5465928--------------------
+SELECT      TW_HSP_PMPA.SEQ_TUYAK.NEXTVAL TUYAK 
+FROM        DUAL
+--------------------16:06:52.5506104--------------------
+SELECT PRESNO,PTNO, TUYAKNO, DEPTCODE, DRCODE,DRNAME, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A  FROM ( 
+ SELECT P.PRESNO,P.PTNO, p.TUYAKNO, p.DEPTCODE, p.DRCODE, p.USERID, p.GBPRINT, A.SNAME, 
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('药房','窗口',P.CHUANGKOU) CHUANGKOU, 
+        A.SEX, A.BIRTHDATE, P.BI CODE, P.STATUS, 
+        TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(P.DEPTCODE) DEPTNAMEK,
+        TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(P.DRCODE) DRNAME,
+        TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',P.BI) CODENAME ,
+        A.JUSO, A.JUMIN, P.BDATE,ORDERGUBUN, 
+        (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+        WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+        WHEN P.BUN IN ('F0','F1') THEN 'C' 
+        WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+        WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) A 
+   FROM TW_HSP_OCS.TWOCS_PRSLIP    P, 
+        TW_HSP_PMPA.TWBAS_PATIENT  A 
+  WHERE P.PTNO     = A.PTNO 
+    AND  P.PTNO = '0000001422' 
+    AND P.CHUANGKOU= '00'     
+    AND (P.GBOUT    = '0' OR P.GBOUT IS NULL)                                                   
+    AND P.ENTDATE    >= TO_DATE('2019-12-02','YYYY-MM-DD')                              
+    AND P.ENTDATE    <= TO_DATE('2019-12-04','YYYY-MM-DD')                         
+    AND P.Gbio     = 'O'                                                                        
+    AND P.STATUS    = '0'                                                                       
+    AND ((P.DEPTCODE ='ER' AND P.BUN IN ('F0','F1')) OR P.DEPTCODE <> 'ER')                     
+  ) 
+ GROUP BY PRESNO,PTNO, TUYAKNO, DEPTCODE,DRNAME, DRCODE, USERID, GBPRINT, SNAME, 
+          SEX,  BIRTHDATE, CODE, CODENAME, DEPTNAMEK,STATUS, 
+          JUSO, JUMIN ,BDATE,CHUANGKOU,ORDERGUBUN,A 
+ ORDER BY GBPRINT,TUYAKNO DESC
+--------------------16:06:52.5568087--------------------
+SELECT  
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L') ORDERGUBUN, 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.WardCode, M.Roomcode, M.Bedno, 
+  TW_HSP_PMPA.TWBAS_GETNAME.WARDNAME(O.WARDCODE) WARDNAME , 
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('BASIC','BI',O.BI) BI1 ,O.BI,
+  TW_HSP_PMPA.TWBAS_GETNAME.DEPTNAME(O.DEPTCODE) DEPTNAME,O.DEPTCODE, 
+  TW_HSP_PMPA.TWBAS_GETNAME.DRNAME(O.DRCODE) DRNAME,O.DRCODE,
+  TW_HSP_PMPA.TWBAS_COMMON.S_CodeName('IPD','在院状态',M.AMSET1) AMSET1 ,
+  O.JUPSU, M.INDATE 
+   FROM TW_HSP_OCS.TWOCS_IORDER_ZG O,
+        TW_HSP_PMPA.VIEW_MASTER M ,
+        TW_HSP_PMPA.TWBAS_NSUGA N
+  WHERE
+  o.ptno='0000001422'
+  and O.BDATE <= TO_DATE('2019-12-04','YYYY-MM-DD') 
+    AND O.BDATE >= TO_DATE('2019-12-02','YYYY-MM-DD') 
+    AND O.GBPICKUP = '1'
+    AND SUBSTR(O.SENDDEPT1,1,2) = '70' 
+    AND O.GBAUTO NOT IN ('T','Z') 
+    AND O.STATUS = '0'
+    AND O.JUPSU = '0' 
+    AND O.ORDERGUBUN = 'H' 
+        AND N.SUNEXT = O.SUCODE 
+    AND O.SUNSUNAP ='3' 
+    AND M.AMSET4 <> '2' 
+    AND M.AMSET1 = '0' 
+    AND (O.STOPCHKID IS NULL OR TRIM(O.STOPCHKID) = '' ) 
+    AND O.STOPCHKDATE IS NULL 
+    AND O.PTNO     = M.PTNO
+    AND O.BI       = M.BI
+    AND O.INDATE   = M.INDATE
+    AND O.ADMSEQNO = M.ADMSEQNO
+  GROUP BY
+  DECODE(O.ORDERGUBUN,'B','B','H','H','L'), 
+  O.Ptno , M.Sname, M.Sex, M.Age, O.Bi, O.WardCode, M.Roomcode, M.Bedno, 
+  O.DEPTCODE, O.DRCODE, M.AMSET1, O.JUPSU, M.INDATE
+--------------------16:06:52.5589961--------------------
+SELECT      COUNT(*) C FROM (
+SELECT      (CASE WHEN P.BUN IN ('E0','E1') AND P.GBHIGH IS NULL THEN 'K'  
+            WHEN P.BUN IN ('E2') AND P.GBHIGH IS NULL THEN 'Z'  
+            WHEN P.BUN IN ('F0','F1') THEN 'C' 
+            WHEN P.GBHIGH ='N' AND SLIPNO NOT IN ('1132','2132') THEN 'D' 
+            WHEN P.GBHIGH ='N' AND SLIPNO IN ('1132','2132') THEN 'D2' ELSE  '0' END) DM FROM TWOCS_PRSLIP P
+            WHERE PRESNO='81083961' )K WHERE K.DM ='D'
+--------------------16:06:52.5887225--------------------
+SELECT      COUNT(*) COUNT 
+FROM        TWOCS_PRSLIP
+Where PTNO = :Original_PTNO And PRESNO = :Original_PRESNO And FLAG =1 And GBOUT IS NULL And STATUS =0 And BDATE=  TRUNC(SYSDATE) And CHECKDATE IS NOT NULL And CHECKTIME IS NOT NULL
+
+参数值:
+(String)    Original_PTNO = 0000001422
+(String)    Original_PRESNO = 81083961
+--------------------16:06:52.5927125--------------------
+SELECT      AA.CHUANGKUO CODE,AA.CHUANGKUO CHUANGKOU ,BB.COUNT FROM (
+SELECT      CHUANGKUO       
+FROM        TWOCS_PRCAOZUO  P, (
+SELECT      CODE 
+FROM        TWBAS_BASECODE    
+WHERE       BUSINESS='药房'      
+AND         BUN='窗口'      
+AND         NFLAG1='1') B     
+WHERE       JOBDATE = TRUNC(SYSDATE)   
+AND         GBEND='0'   
+AND         P.CHUANGKUO=B.CODE  
+
+GROUP BY    CHUANGKUO
+) AA
+LEFT JOIN 
+(
+SELECT      COUNT(*) COUNT ,CHUANGKOU 
+FROM (
+SELECT      * 
+FROM ( 
+SELECT      P.PTNO,  p.GBPRINT, p.GBOUT, 
+            A.SNAME,A.SEX, A.BIRTHDATE,P.BI CODE, 
+            TW_HSP_PMPA.TWBAS_GETNAME.PTBINAME(P.PTNO) CODENAME, 
+            P.CHUANGKOU,
+                        P.STATUS, A.JUSO, A.JUMIN  ,P.BDATE,P.TUYAKNO,TO_CHAR(P.CHECKTIME,'YYYY-MM-DD HH24:MI') CHECKTIME 
+FROM        TW_HSP_OCS.TWOCS_PRSLIP    P, 
+            TW_HSP_PMPA.TWBAS_PATIENT  A 
+WHERE       P.PTNO     = A.PTNO 
+AND ( P.GBOUT = '0' OR P.GBOUT IS NULL )
+AND P.STATUS ='0'
+AND P.FLAG = '2'
+AND  P.ENTDATE = TO_DATE( to_char(sysdate,'yyyy-MM-dd'),'YYYY-MM-DD')
+) GROUP BY PTNO,  GBPRINT, GBOUT,TUYAKNO,CHECKTIME, 
+           SNAME,SEX, BIRTHDATE, CODE,CODENAME, 
+           STATUS, JUSO, JUMIN  ,BDATE,CHUANGKOU   
+ )
+GROUP BY CHUANGKOU
+) BB 
+ON AA.CHUANGKUO=BB.CHUANGKOU
+--------------------16:06:52.6595351--------------------
+SELECT      CODENAME 
+FROM        TWBAS_BASECODE    
+
+Where BUSINESS = :Original_BUSINESS And BUN = :Original_BUN And GBUSE = :Original_GBUSE And NFLAG1 = :Original_NFLAG1 And CODE = :Original_CODE
+
+参数值:
+(String)    Original_BUSINESS = 药房
+(String)    Original_BUN = 窗口
+(String)    Original_GBUSE = 0
+(String)    Original_NFLAG1 = 1
+(String)    Original_CODE = 09

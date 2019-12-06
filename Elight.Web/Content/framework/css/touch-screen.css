@@ -1,0 +1,20 @@
+﻿.td-num {
+    text-align: center;
+    width: 50px;
+}
+
+.td-price {
+    text-align: right;
+}
+
+.td-short-text {
+    text-align: center;
+}
+
+.td-long-text {
+    text-align: left;
+}
+
+.btn-active {
+    background-color: #b3364d;
+}

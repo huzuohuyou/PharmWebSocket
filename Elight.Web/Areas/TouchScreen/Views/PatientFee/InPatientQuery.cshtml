@@ -1,0 +1,924 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户列表</title>
+    <link href="~/Content/layui/css/layui.css?v=12" rel="stylesheet" />
+    <link href="~/Content/framework/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/framework/js/jquery-1.7.2.js"></script>
+
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/framework/js/paging.js"></script>
+    <script src="~/Content/framework/js/global.js"></script>
+    <style>
+        .layui-table tr:hover, .layui-table[lay-even] tr:nth-child(even) {
+            background-color: #3eb6e2;
+        }
+
+        table thead tr:nth-child(1) {
+            background-color: #b6374e;
+            height: 53px;
+            color: white;
+        }
+
+            table thead tr:nth-child(1):hover {
+                background-color: #b6374e;
+                height: 53px;
+                color: white;
+            }
+        /*奇偶行变色-标题行变色*/
+        table tr:nth-child(even) {
+            background-color: #F0F0F0;
+        }
+
+        /*内容过长显示为固定长度，多余部分用省略号代替*/
+        tr td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 0px
+        }
+
+        /*table的内部布局固定大小*/
+        table {
+            table-layout: fixed
+        }
+
+            table tr {
+                height: 40px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container-fluid animated fadeIn">
+        <div class="panel-body">
+            <div id="toolbar" class="elight-table-toolbar" style="margin: 30px auto;">
+                <div style="width:90%;margin-left:5%">
+                    <input type="text" id="pno"
+                           placeholder="请输入医疗卡号"
+                           autocomplete="off"
+                           class="layui-input numkeyboard"
+                           style="width: 25%; float: left;font-size: 1.4rem" />
+
+                    @*<input class="layui-input"
+                           id="date"
+                           lay-verify="required"
+                           autocomplete="off"
+                           placeholder="住院日期"
+                           onclick="layui.laydate({ elem: this })"
+                           style="width: 33%; float: left;margin-left:4%; font-size: 2rem" />*@
+                    
+                    <button id="btnSearch" class="layui-btn layui-btn-normal" style="width: 10%; float: left;font-size:1.2rem;margin-left:8px">查询</button>
+                    <select id="typeselectBox" style="width:58%;float: left;font-size:1.2rem;padding:5px;margin-left:8px">
+                        <option value="-1">请选择就诊记录</option>
+                    </select>
+                    
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="row">
+          
+            <div class="col-md-9"
+                 style="width: 95%;
+                        float: left;
+                        /* margin: 10%; */
+                        margin-left: 2%;">
+                <div class="panel container-panel">
+                    <div class="panel-body">
+
+                        <table id="gridList" class="layui-form layui-table elight-table" lay-skin="line">
+                            <thead>
+                                <tr>
+                                    <th style="width:8%">序号</th>
+                                    <th style="width:14%">病区</th>
+                                    <th style="width:10%">项目分类</th>
+                                    <th style="width:25%">项目名称(规格)</th>
+                                    <th style="width:12%;text-align:right">单价</th>
+                                    <th style="width:9%;text-align:center">数量</th>
+                                    <th style="width:13%;text-align:right">金额</th>
+                                    <th style="width:10%;text-align:center">报销</th>
+                                </tr>
+                            </thead>
+                            <!--内容容器-->
+                            <tbody id="content"></tbody>
+                        </table>
+                        <div id="paged"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<!--内容模板-->
+<script id="deptContentTpl" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <tr>
+        <td onclick="initGrid('{{item.SEQNO}}','{{item.BI}}','{{item.DRCODE}}')">{{item.RN}}</td>
+        <td onclick="initGrid('{{item.SEQNO}}','{{item.BI}}','{{item.DRCODE}}')">{{item.DEPTNAME}}</td>
+        <td onclick="initGrid('{{item.SEQNO}}','{{item.BI}}','{{item.DRCODE}}')">{{item.SEQNO}}</td>
+        <td onclick="initGrid('{{item.SEQNO}}','{{item.BI}}','{{item.DRCODE}}')">{{item.ATMS}}</td>
+        <td style="display:none" )">{{item.BI}}</td>
+        <td style="display:none" )">{{item.DRCODE}}</td>
+    </tr>
+    {{#  }); }}
+    {{# if(d.list.length<=0) { }}
+    <tr style="color: red">
+        <td colspan="8">查无数据。</td>
+    </tr>
+    {{# } }}
+</script>
+
+<script id="contentTpl" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    {{# if(item.WARDNAME=='小 计') { }}
+    <tr style="background-color:#ffbdb3fc;">
+        <td>{{item.RN}}</td>
+        <td>{{item.WARDNAME}}</td>
+        <td>{{item.CODENAME}}</td>
+        <td onclick="display(this)">{{item.SUNAMEK}}{{item.SPEC}}</td>
+        <td style="text-align:right">{{item.BASEAMT_VALUE}}</td>
+        <td style="text-align:center">{{item.QTY}}</td>
+        <td style="text-align:right">{{item.AMTT1_VALUE}}</td>
+        <td style="text-align:center">{{item.SELF}}</td>
+    </tr>
+    {{# } }}
+    {{# if(item.WARDNAME!='小 计') { }}
+    <tr>
+        <td>{{item.RN}}</td>
+        <td>{{item.WARDNAME}}</td>
+        <td>{{item.CODENAME}}</td>
+        <td onclick="display(this)">{{item.SUNAMEK}}{{item.SPEC}}</td>
+        <td style="text-align:right">{{item.BASEAMT_VALUE}}</td>
+        <td style="text-align:center">{{item.QTY}}</td>
+        <td style="text-align:right">{{item.AMTT1_VALUE}}</td>
+        <td style="text-align:center">{{item.SELF}}</td>
+    </tr>
+    {{# } }}
+    {{#  }); }}
+    {{# if(d.list.length<=0) { }}
+    <tr style="color: red">
+        <td colspan="6">查无数据。</td>
+    </tr>
+    {{# } }}
+</script>
+
+<script type="text/javascript">
+    var paging, layer;
+    layui.config({
+        base: parent._baseUrl
+    }).use(['paging', 'form', 'laydate', 'layer'], function () {
+        var form = layui.form();
+        layer = parent.layer || layui.layer;
+        paging = layui.paging(); 
+        $('#pno').keydown(keyDownPno);
+        $('#btnSearch').click(initDeptGrid);
+        $('#typeselectBox').change(searchData);
+        document.getElementById("pno").focus();
+    });
+
+    function keyDownPno() {
+        var event = arguments.callee.caller.arguments[0] || window.event;//消除浏览器差异  
+        if (event.keyCode == 13) {
+            initDeptGrid();
+        }
+    }
+
+    function display(td) {
+        $(td).parent().parent().find("tr td").removeAttr("title")
+        $(td).attr("title", td.innerText)
+    }
+
+    function initDeptGrid() {
+
+        var ptno = $("#pno").val();
+        var temp = 10 - ptno.length;
+        if (temp > 0) {
+            for (var i = 0; i < temp; i++) {
+                ptno = "0" + ptno;
+            }
+            $("#pno").val(ptno)
+        }
+
+        var ui = document.getElementById("keyboard_5xbogf8c");
+        ui.style.display = "none";
+        $.ajax({
+            url: "/TouchScreen/PatientFee/GetInFeeSummary",
+            type: 'POST',
+            data: {
+                keyWord: $("#pno").val()
+            },
+            success(data) {
+                $("#typeselectBox").empty();
+                var datajson = $.parseJSON(data);
+                for (var i = 0; i < datajson["count"]; i++) {
+
+                    var indate = datajson["list"][i]["INDATE"].substring(0, 10)
+                    var admseqno = datajson["list"][i]["ADMSEQNO"]  
+                    var deptname = datajson["list"][i]["DEPTNAME"]
+                    var sumfee = datajson["list"][i]["SUMFEE"] 
+                    var admseqname 
+
+                    if (datajson["count"].length > 1) {
+                        if (admseqno.length == 1) {
+                            admseqname = " 第" + admseqno + " 次住院 "
+                        } else {
+                            admseqname = " 第" + admseqno + "次住院 "
+                        }
+                    } else {
+                        admseqname = " 第" + admseqno + "次住院 "
+                    }
+                     
+                    var key = indate + admseqname; 
+
+                    for (var j = 0; j < (10 - sumfee.length); j += 2) {
+                        key += "　";
+                    }
+                    if (sumfee.length % 2 == 0) {
+                        key += " ";
+                    }
+
+                    key += sumfee + "　" + deptname 
+                    var value = indate + "/" + admseqno + "/" + deptname
+
+                    typeselectBox.options[i] = new Option(key, value);
+                }
+                searchData()
+            }
+        })
+    };
+
+    function searchData() {
+        var value = $('#typeselectBox').val();
+        var list = value.split("/");
+        var indate = list[0]
+        var admseqno = list[1] 
+        initGrid(indate, admseqno)
+    }
+
+    function initGrid(indate, admseqno) {
+        var ui = document.getElementById("keyboard_5xbogf8c");
+        ui.style.display = "none";
+        paging.init({
+            url: '/TouchScreen/PatientFee/GetInFeeDetail',
+            elem: '#content',
+            tempElem: '#contentTpl',
+            params: {
+                pno: $("#pno").val(),
+                date: indate,
+                admseqno: admseqno,
+                
+            },
+            pageConfig: {
+                elem: '#paged',
+                pageSize: 10,
+                skip: false,
+                
+            },
+            success: function () {
+
+            }
+        });
+    }
+
+    function close_layer() {
+        layer.closeAll();
+    }
+
+
+    function initExpert(idnumber, Name) {
+        $.layerOpen({
+            id: "edit",
+            title: "专家信息",
+            width: "100%",
+            height: "100%",
+            content: encodeURI("/TouchScreen/ExpertIntroduction/Form?idnumber=" + idnumber + "&Name=" + Name),
+            btn: []
+        });
+    }
+
+
+
+</script>
+
+
+
+
+<script>
+    $(function () {
+        $(".numkeyboard").ioskeyboard({
+            keyboardRadix: 80,//键盘大小基数，实际大小比为9.4，即设置为100时实际大小为940X330
+            keyboardRadixMin: 40,//键盘大小的最小值，默认为60，实际大小为564X198
+            keyboardRadixChange: true,//是否允许用户改变键盘大小,该功能仅能完美支持Chrome26；仅当keyboardRadixMin不小于60时才较好支持Safari内核浏览器
+            clickeve: true,//是否绑定元素click事件
+            colorchange: true,//是否开启按键记忆功能，如果开启，将随着按键次数的增加加深相应按键的背景颜色
+            colorchangeStep: 1,//按键背景颜色改变步伐，采用RBG值，默认为RGB(255,255,255),没按一次三个数字都减去步伐值
+            colorchangeMin: 154//按键背影颜色的最小值，默认为RGB(154,154,154)
+        });
+    });
+</script>
+<style>
+    #keyboard_5xbogf8c, #keyboard_5xbogf8c li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    #keyboard_5xbogf8c {
+        position: fixed;
+        z-index: 10;
+        width: 9.30em;
+        background: rgba(158,180,185,1);
+        background: -webkit-gradient(linear, 0 50%, 100% 0,from( rgba(158,180,185,1)),to(rgba(169,156,173,1)),color-stop(50%, rgba(222,157,193,1)));
+        background: linear-gradient(60deg, rgba(158,180,185,1), rgba(222,157,193,1) 50%, rgba(169,156,173,1) 100%);
+        padding-left: 0.1em;
+        border-radius: 0.05em;
+        padding-top: 0.1em;
+        box-shadow: 0 0.05em 0.1em rgba(0,0,0,.5);
+        display: none;
+        font-size: 100px;
+        left: 5%;
+        top:70px;
+        /*bottom: 367px;*/
+        -webkit-text-size-adjust: none;
+    }
+
+    #keyboard_5xbogf8c_left {
+        position: absolute;
+        width: 0.2em;
+        height: 0.2em;
+        font-size: 1em;
+        top: 0em;
+        left: 0em;
+        cursor: nw-resize;
+    }
+
+    #keyboard_5xbogf8c_right {
+        position: absolute;
+        width: 0.2em;
+        height: 0.2em;
+        font-size: 1em;
+        top: 0em;
+        right: 0em;
+        cursor: ne-resize;
+    }
+
+    #keyboard_5xbogf8c ::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    #keyboard_5xbogf8c li {
+        position: relative;
+        font-family: arial,"Vrinda";
+        width: 2.88em;
+        height: 2.8em;
+        line-height: 2.8em;
+        background-color: rgba(255,255,255,.8);
+        border-radius: 0.2em;
+        float: left;
+        text-align: center;
+        font-size: 0.25em;
+        vertical-align: text-top;
+        margin-right: 0.4em;
+        margin-bottom: 0.4em;
+        box-shadow: 0 0.2em 0.4em rgba(0,0,0,.5);
+        cursor: pointer;
+        position: relative;
+        overflow: visible;
+    }
+
+        #keyboard_5xbogf8c li:active {
+            box-shadow: inset 0 0.04em 0 rgba(0,0,0,.5);
+            top: 0.08em;
+        }
+
+        #keyboard_5xbogf8c li:nth-child(11), #keyboard_5xbogf8c li:nth-child(43), #keyboard_5xbogf8c li:nth-child(22) {
+            background: rgba(188,188,188,.5);
+            font-size: 0.20em;
+            width: 5em;
+            height: 3.5em;
+            line-height: 3.5em;
+            border-radius: 0.25em;
+            margin-right: 0.5em;
+            margin-bottom: 0.5em;
+            box-shadow: 0 0.25em 0.5em rgba(0,0,0,.5);
+        }
+
+        #keyboard_5xbogf8c li:nth-child(43) {
+            width: 3.6em;
+        }
+
+        #keyboard_5xbogf8c li:nth-child(12) {
+            margin-left: 0.96em;
+        }
+
+        #keyboard_5xbogf8c li:nth-child(23) {
+            margin-left: 1.92em;
+        }
+
+        #keyboard_5xbogf8c li:nth-child(22) {
+            width: 3.6em;
+            height: 4.2em;
+            background-color: rgba(238,238,238,1);
+            border-bottom-right-radius: 0em;
+            border-bottom-left-radius: 0em;
+            position: absolute;
+            top: 4.5em;
+            right: 0em;
+            box-shadow: inset 0 0em 0 rgba(0,0,0,.5);
+        }
+
+        #keyboard_5xbogf8c li:nth-child(32) {
+            width: 5.04em;
+            top: 0;
+            background-color: rgba(238,238,238,1);
+            border-top-right-radius: 0em;
+            padding-left: 0.32em;
+            box-shadow: inset 0 0em 0 rgba(0,0,0,.5);
+        }
+
+        #keyboard_5xbogf8c li:nth-child(33) {
+            font-size: 0.20em;
+            width: 5em;
+            height: 3.5em;
+            line-height: 3.5em;
+            border-radius: 0.25em;
+            margin-right: 0.5em;
+            margin-bottom: 0.5em;
+            box-shadow: 0 0.25em 0.5em rgba(0,0,0,.5);
+        }
+
+        #keyboard_5xbogf8c li:nth-child(41) {
+            box-sizing: border-box;
+            padding-top: 0.6em;
+        }
+
+            #keyboard_5xbogf8c li:nth-child(41) span {
+                display: block;
+                line-height: 0.6;
+            }
+
+        #keyboard_5xbogf8c li:nth-child(42) {
+            box-sizing: border-box;
+            padding-top: 0.6em;
+        }
+
+            #keyboard_5xbogf8c li:nth-child(42) span {
+                display: block;
+                line-height: 0.6;
+            }
+</style>
+<script>
+
+    (function ($) {
+        $.fn.ioskeyboard = function (options) {
+            var defaults = {
+                keyboardRadix: 100,//键盘大小基数，实际大小比为9.4，即设置为100时实际大小为940X330
+                keyboardRadixMin: 60,//键盘大小的最小值，默认为60，实际大小为564X198
+                keyboardRadixChange: true,//是否允许用户改变键盘大小,该功能仅能完美支持Chrome26；仅当keyboardRadixMin不小于60时，完美支持Safari内核浏览器
+                clickeve: true,//是否绑定元素click事件
+                colorchange: true,//是否开启按键记忆功能，如果开启，将随着按键次数的增加加深相应按键的背景颜色
+                colorchangeStep: 1,//按键背景颜色改变步伐，采用RBG值，默认为RGB(255,255,255),没按一次三个数字都减去步伐值
+                colorchangeMin: 154//按键背影颜色的最小值，默认为RGB(154,154,154)
+            }
+            var options = $.extend(defaults, options);
+            var numkeyboardcount = 0;
+            var activeinputele;
+            var keyboardRadix = options.keyboardRadix;
+            var keyboardRadixMin = options.keyboardRadixMin;
+            var colorchange = options.colorchange;
+            var colorchangeStep = options.colorchangeStep;
+            var colorchangeMin = options.colorchangeMin;
+            var bMouse = false;
+            var bToch = false;
+            var MAction = false;
+            var MTouch = false;
+            var keyfixed = false;
+            if (keyboardRadix < keyboardRadixMin) {
+                keyboardRadix = keyboardRadixMin;
+            }
+            this.each(function () {
+                numkeyboardcount++;
+                //添加键盘
+                if (numkeyboardcount < 2) {
+                    $("body").append("<ul id='keyboard_5xbogf8c'>" +
+                        "<li>1</li>" +
+                        "<li>2</li>" +
+                        "<li>3</li>" +
+                        "<li>4</li>" +
+                        "<li>5</li>" +
+                        "<li>6</li>" +
+                        "<li>7</li>" +
+                        "<li>8</li>" +
+                        "<li>9</li>" +
+                        "<li>0</li>" +
+                        "<li>删除</li>" +
+                        "<li>Q</li>" +
+                        "<li>W</li>" +
+                        "<li>E</li>" +
+                        "<li>R</li>" +
+                        "<li>T</li>" +
+                        "<li>Y</li>" +
+                        "<li>U</li>" +
+                        "<li>I</li>" +
+                        "<li>O</li>" +
+                        "<li>P</li>" +
+                        "<li></li>" +
+                        "<li>A</li>" +
+                        "<li>S</li>" +
+                        "<li>D</li>" +
+                        "<li>F</li>" +
+                        "<li>G</li>" +
+                        "<li>H</li>" +
+                        "<li>J</li>" +
+                        "<li>K</li>" +
+                        "<li>L</li>" +
+                        "<li>关闭键盘</li>" +
+                        "<li>大小写</li>" +
+                        "<li>Z</li>" +
+                        "<li>X</li>" +
+                        "<li>C</li>" +
+                        "<li>V</li>" +
+                        "<li>B</li>" +
+                        "<li>N</li>" +
+                        "<li>M</li>" +
+                        "<li><span>-</span><span>_</span></li>" +
+                        "<li><span>/</span><span>.</span></li>" +
+                        "<li>清空</li>" +
+                        "<div id='keyboard_5xbogf8c_left'></div>" +
+                        "<div id='keyboard_5xbogf8c_right'></div>" +
+                        "</ul>");
+                }
+
+                var inputele = $(this);
+                var keyboard = $("#keyboard_5xbogf8c");
+                var keys = keyboard.children("li");
+                var hiddenbutton = keyboard.children("div");
+                keyboard.css({ "font-size": keyboardRadix + "px" });
+
+                //keyboard.css({"position":"fixed","right":"0.05em","bottom":"0.05em"});
+                exit();
+                var shiftbool = false;
+                if (numkeyboardcount < 2) {
+                    if (options.keyboardRadixChange) {
+                        BmouseDrag();
+                        BtouchDrag();
+                    }
+                    keyboard.dblclick(function () {
+                        if (keyfixed) {
+                            keyfixed = false;
+                        } else {
+                            keyboard.css({ "position": "fixed", "right": "0.05em", "bottom": "0.05em" });
+                            keyfixed = true;
+                        }
+                    });
+                    keys.click(function (event) {
+                        var keyele = $(this);
+                        var keytext = keyele.text();
+                        var evebool = true;
+                        if (keytext === "大小写") {
+                            activeinputele[0].focus();
+                            if (shiftbool) {
+                                keyele.css({ background: "rgba(255,255,255,.9)" });
+                                shiftbool = false;
+                            } else {
+                                keyele.css({ background: "rgba(188,188,188,.5)" });
+                                shiftbool = true;
+                            }
+
+                            evebool = false;
+                        }
+                        if (keytext === "关闭键盘" || keytext.length < 1) {
+                            simulateKeyEvent(activeinputele[0], 13);
+                            exit();
+                            evebool = false;
+                        }
+                        if (keytext === "删除") {
+                            activeinputele[0].focus();
+                            backspace();
+                            evebool = false;
+                        }
+                        if (keytext === "清空") {
+                            activeinputele[0].focus();
+                            keyclear();
+                            evebool = false;
+                        }
+                        if (evebool) {
+                            if (shiftbool) {
+                                if (keytext.length === 2) {
+                                    keytext = keytext.substring(0, 1);
+                                }
+                            } else {
+                                if (keytext.length === 2) {
+                                    keytext = keytext.substring(1, 2);
+                                } else {
+                                    keytext = keytext.toLowerCase();
+                                }
+
+                            }
+                            clickkey(keytext);
+                            if (colorchange) {
+                                var oldbabkground = $(this).css("background").split(',')[0].split('(')[1];
+                                var newbabkground = oldbabkground - colorchangeStep;
+                                if (newbabkground < colorchangeMin) {
+                                    newbabkground = colorchangeMin;
+                                    alert("min")
+                                }
+                                $(this).css("background", "rgba(" + newbabkground + "," + newbabkground + "," + newbabkground + ",.9)");
+                            }
+                        }
+                    })
+                    keyboard.children("li:eq(" + 21 + ")").mousedown(function (event) {
+                        $(this).css({ top: "4.6em", "box-shadow": "inset 0 0.04em 0 rgba(0,0,0,.5)" });
+                        keyboard.children("li:eq(" + 31 + ")").css({ top: "0.1em", "box-shadow": "inset 0 0em 0 rgba(0,0,0,.5)" });
+                    })
+                        .mouseup(function (event) {
+                            $(this).css({ top: "4.5em", "box-shadow": " inset 0 0em 0 rgba(0,0,0,.5)" });
+                            keyboard.children("li:eq(" + 31 + ")").css({ top: "0px", "box-shadow": " inset 0 0em 0 rgba(0,0,0,.5)" });
+                        });
+                    keyboard.children("li:eq(" + 31 + ")").mousedown(function (event) {
+                        $(this).css({ top: "0.1em", "box-shadow": "inset 0 0em 0 rgba(0,0,0,.5)" });
+                        keyboard.children("li:eq(" + 21 + ")").css({ top: "4.6em", "box-shadow": "inset 0 0.04em 0 rgba(0,0,0,.5)" });
+                    })
+                        .mouseup(function (event) {
+                            $(this).css({ top: "0px", "box-shadow": " inset 0 0em 0 rgba(0,0,0,.5)" });
+                            keyboard.children("li:eq(" + 21 + ")").css({ top: "4.5em", "box-shadow": " inset 0 0em 0 rgba(0,0,0,.5)" });
+                        });
+                }
+
+                inputele.focus(function (event) {
+                    activeinputele = inputele;
+                    var p = GetScreenPosition(this);
+                    if (keyboard.css("display") == "none") {
+                        keyboard.css({ "display": "block" });
+                        mouseDrag();
+                        touchDrag();
+                    }
+                });
+
+                if (options.clickeve) {
+                    inputele.click(function () {
+                        activeinputele = inputele;
+                        var p = GetScreenPosition(this);
+                        if (keyboard.css("display") == "none") {
+                            keyboard.css({ "display": "block" });
+                            mouseDrag();
+                            touchDrag();
+                        }
+                    });
+                }
+
+                function GetScreenPosition(object) {
+                    var position = {};
+                    position.x = object.offsetLeft;
+                    position.y = object.offsetTop;
+                    while (object.offsetParent) {
+                        position.x = position.x + object.offsetParent.offsetLeft;
+                        position.y = position.y + object.offsetParent.offsetTop;
+                        if (object == document.getElementsByTagName("body")[0]) {
+                            break;
+                        }
+                        else {
+                            object = object.offsetParent;
+                        }
+                    }
+                    return position;
+                }
+
+                function keyclear() {
+                    activeinputele.val("");
+                }
+                function backspace() {
+                    var inputtext = activeinputele.val();
+                    if (inputtext.length > 0) {
+                        inputtext = inputtext.substring(0, inputtext.length - 1);
+                        activeinputele.val(inputtext);
+                    }
+                }
+                function clickkey(key) {
+                    var inputtext = activeinputele.val();
+                    inputtext = inputtext + key;
+                    activeinputele.val(inputtext);
+                    activeinputele[0].focus();
+                }
+
+                function exit() {
+                    keyboard.css({ "display": "none" });
+                }
+
+
+                function BmouseDrag() {
+                    var eventEle = hiddenbutton;
+                    var eventEleId;
+                    var moveEle = keyboard;
+                    var stx = etx = curX = 0;
+                    var keyboardfontsize = +moveEle.css("font-size").split('px')[0];
+                    var tempsize;
+                    eventEle.mousedown(function (event) {
+                        bMouse = true;
+                        stx = event.pageX;
+                        keyboardfontsize = +moveEle.css("font-size").split('px')[0];
+                        eventEleId = $(this).attr('id');
+                        event.preventDefault();
+                    });
+                    $("body").mousemove(function (event) {
+                        if (bMouse) {
+                            var curX = event.pageX - stx;
+                            if (eventEleId === "keyboard_5xbogf8c_left") {
+                                tempsize = keyboardfontsize - Math.ceil(curX / 10);
+                            }
+                            if (eventEleId === "keyboard_5xbogf8c_right") {
+                                tempsize = keyboardfontsize + Math.ceil(curX / 10);
+                            }
+                            if (tempsize < keyboardRadixMin) {
+                                tempsize = keyboardRadixMin;
+                            }
+                            moveEle.css({ "font-size": tempsize });
+                            event.preventDefault();
+                        }
+                    });
+                    $("body").mouseup(function (event) {
+                        stx = etx = curX = 0;
+                        bMouse = false;
+                    });
+                }
+
+                function BtouchDrag() {
+                    var eventEle = hiddenbutton;
+                    var moveEle = keyboard;
+                    var eventEleId;
+                    var stx = etx = curX = 0;
+                    var keyboardfontsize = +moveEle.css("font-size").split('px')[0];
+                    var tempsize;
+                    eventEle.on("touchstart", function (event) { //touchstart
+                        var event = event.originalEvent;
+                        bToch = true;
+                        curX = 0;
+                        eventEleId = $(this).attr('id');
+                        keyboardfontsize = +moveEle.css("font-size").split('px')[0];
+                        stx = event.touches[0].pageX;
+                        sty = event.touches[0].pageY;
+                    });
+                    eventEle.on("touchmove", function (event) {
+                        if (bToch) {
+                            var event = event.originalEvent;
+
+                            curX = event.touches[0].pageX - stx;
+                            if (eventEleId === "keyboard_5xbogf8c_left") {
+                                tempsize = keyboardfontsize - Math.ceil(curX / 10);
+                            }
+                            if (eventEleId === "keyboard_5xbogf8c_right") {
+                                tempsize = keyboardfontsize + Math.ceil(curX / 10);
+                            }
+                            if (tempsize < keyboardRadixMin) {
+                                tempsize = keyboardRadixMin;
+                            }
+                            moveEle.css({ "font-size": tempsize });
+                            event.preventDefault();
+                        }
+
+                    });
+                    eventEle.on("touchend", function (event) {
+                        stx = etx = curX = 0;
+                        bToch = false;
+
+                    })
+
+                }
+
+                function mouseDrag() {
+                    var eventEle = keyboard;
+                    var stx = etx = curX = sty = ety = curY = 0;
+                    var eleRight = +eventEle.css("right").split('px')[0];
+                    var eleBottom = +eventEle.css("bottom").split('px')[0];
+                    eventEle.mousedown(function (event) {
+                        //console.log("down",+eventEle.css("right").split('px')[0]);
+                        if (!keyfixed) {
+                            MAction = true;
+                        }
+                        //alert(MAction);
+                        stx = event.pageX;
+                        sty = event.pageY;
+                        //eleRight = +eventEle.css("left").split('px')[0];
+                        //eleBottom = +eventEle.css("top").split('px')[0];
+                        eleRight = +eventEle.css("right").split('px')[0];
+                        eleBottom = +eventEle.css("bottom").split('px')[0];
+
+                        event.preventDefault();
+                    });
+                    $("body").mousemove(function (event) {
+                        if (MAction && !bMouse) {
+                            var curX = event.pageX - stx;
+                            var curY = event.pageY - sty;
+                            eventEle.css({ "right": eleRight - curX, "bottom": eleBottom - curY });
+                            //console.log("move",+eventEle.css("right").split('px')[0]);
+                            event.preventDefault();
+                        }
+                    });
+                    $("body").mouseup(function (event) {
+                        stx = etx = curX = sty = ety = curY = 0;
+                        MAction = false;
+                        //console.log("up",+eventEle.css("right").split('px')[0]);
+
+                    });
+                }
+
+                function touchDrag() {
+                    var eventEle = keyboard;
+                    var stx = sty = etx = ety = curX = curY = 0;
+                    var MTouch = false;
+                    var eleRight = +eventEle.css("right").split('px')[0];
+                    var eleBottom = +eventEle.css("bottom").split('px')[0];
+                    eventEle.on("touchstart", function (event) { //touchstart
+                        // alert(bToch);
+                        var event = event.originalEvent;
+                        MTouch = true;
+                        curX = curY = 0;
+                        // 元素当前位置
+                        eleRight = +eventEle.css("right").split('px')[0];
+                        eleBottom = +eventEle.css("bottom").split('px')[0];
+                        // 手指位置
+                        stx = event.touches[0].pageX;
+                        sty = event.touches[0].pageY;
+                        //console.log("up",+eventEle.css("right").split('px')[0]);
+                    });
+                    eventEle.on("touchmove", function (event) {
+
+                        if (MTouch && !bToch) {
+
+                            var event = event.originalEvent;
+                            event.preventDefault();
+                            curX = event.touches[0].pageX - stx;
+                            curY = event.touches[0].pageY - sty;
+                            //console.log("move",eleRight-curX);
+                            //alert(eleRight+"-"+gundongX);
+                            eventEle.css({ "right": eleRight - curX, "bottom": eleBottom - curY });
+                        }
+
+                    });
+                    eventEle.on("touchend", function (event) {
+                        stx = etx = curX = sty = ety = curY = 0;
+                        MTouch = false;
+
+                    })
+
+                }
+
+                //模拟键盘事件,仅支持firefox，ie8-
+
+                function simulateKeyEvent(target, keyCode) {
+                    var customEvent = null;
+                    var a = typeof document.createEvent;
+
+                    if (typeof document.createEvent == "function") {//firefox
+                        try {
+                            customEvent = document.createEvent("KeyEvents");
+                            customEvent.initKeyEvent("keypress", true, true, window, false, false, false, false, keyCode, keyCode);
+                            target.dispatchEvent(customEvent);
+                        } catch (ex) {
+                            //console.log("This example is only demonstrating event simulation in firefox and IE.");
+                        }
+
+
+                    } else if (document.createEventObject) { //IE
+                        customEvent = document.createEventObject();
+                        customEvent.bubbles = true;
+                        customEvent.cancelable = true;
+                        customEvent.view = window;
+                        customEvent.ctrlKey = false;
+                        customEvent.altKey = false;
+                        customEvent.shiftKey = false;
+                        customEvent.metaKey = false;
+                        customEvent.keyCode = keyCode;
+                        target.fireEvent("onkeypress", customEvent);
+
+                    }
+                    else {
+                        //console.log("This example is only demonstrating event simulation in firefox and IE.");
+                    }
+                }
+
+            });
+        };
+    })(jQuery);
+
+
+</script>

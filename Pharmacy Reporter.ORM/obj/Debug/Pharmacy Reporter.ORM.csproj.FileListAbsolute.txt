@@ -1,0 +1,10 @@
+D:\TFS\EIP 3.0\EIP 3.0\bin\Pharmacy Reporter.ORM.xml
+D:\TFS\EIP 3.0\EIP 3.0\bin\Pharmacy Reporter.ORM.dll
+D:\TFS\EIP 3.0\EIP 3.0\bin\Pharmacy Reporter.ORM.pdb
+D:\TFS\EIP 3.0\bin\Pharmacy Reporter.ORM.xml
+D:\TFS\EIP 3.0\bin\Pharmacy Reporter.ORM.dll
+D:\TFS\EIP 3.0\bin\Pharmacy Reporter.ORM.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.ORM\obj\Debug\Pharmacy Reporter.ORM.csprojAssemblyReference.cache
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.ORM\obj\Debug\Pharmacy Reporter.ORM.csproj.CopyComplete
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.ORM\obj\Debug\Pharmacy Reporter.ORM.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.ORM\obj\Debug\Pharmacy Reporter.ORM.pdb

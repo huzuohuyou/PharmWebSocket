@@ -1,0 +1,149 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<style>
+    .my-item {
+        text-align: center;
+    }
+</style>
+
+<form id="form" class="layui-form" style="margin-top: 25px">
+    @Html.AntiForgeryToken()
+    <div class="layui-form-item my-item" style="float: left; width: 128px; position: absolute; left: 0%;">
+
+        <img src="~/Content/framework/images/avatar.png" />
+    </div>
+
+    <div class="layui-form-item my-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-inline">
+                @*<label name="Name" style="
+        display: -webkit-box;
+        height: 38px;
+        padding: 10px;
+    "></label>*@
+            <input type="text" name="Name" lay-verify="required" placeholder="-" autocomplete="off" class="layui-input" readonly="readonly" disabled="disabled">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-inline">
+                <input type="text" name="Sex" lay-verify="required" placeholder="-" autocomplete="off" class="layui-input" readonly="readonly" disabled="disabled">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item my-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">学位</label>
+            <div class="layui-input-inline">
+                <input type="hidden" name="Id" />
+                <input type="text" name="BachelorofScience" lay-verify="required" placeholder="-" autocomplete="off" class="layui-input" readonly="readonly" disabled="disabled">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">毕业院校</label>
+            <div class="layui-input-inline">
+                <input type="text" name="GraduatedSchool" lay-verify="required" placeholder="-" autocomplete="off" class="layui-input" readonly="readonly" disabled="disabled">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item my-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">专业</label>
+            <div class="layui-input-inline">
+                <input type="hidden" name="Id" />
+                <input type="text" name="Profession" lay-verify="required" placeholder="-" autocomplete="off" class="layui-input" readonly="readonly" disabled="disabled">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">技术职称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="JobTitle" lay-verify="required" placeholder="-" autocomplete="off" class="layui-input" readonly="readonly" disabled="disabled">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item my-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">医师服务费</label>
+            <div class="layui-input-inline">
+                <input type="text" name="ServiceFee" lay-verify="required" placeholder="-" autocomplete="off" class="layui-input" readonly="readonly" disabled="disabled">
+            </div>
+        </div>
+        <div class="layui-inline" style="visibility:hidden">
+            <label class="layui-form-label">出诊时间</label>
+            <div class="layui-input-inline">
+                <input type="hidden" name="Id" />
+                <input type="text" name="VisitTime" lay-verify="required" placeholder="-" autocomplete="off" class="layui-input" readonly="readonly" disabled="disabled">
+            </div>
+        </div>
+
+    </div>
+    <div class="layui-form-item my-item">
+        <div class="layui-inline" style="width: 620px;margin-right: 0px;margin-left: 0px;">
+            <label class="layui-form-label" style="left:-15px;">出诊时间</label>
+            <div class="layui-input-inline" style="width: 510px;margin-right:0px;left: -10px;">
+                <textarea name="VisitTime" class="layui-textarea" style="height:40px;min-height:40px;" readonly="readonly" disabled="disabled"> </textarea>
+            </div>
+        </div>
+
+    </div>
+    <div class="layui-form-item my-item">
+        <div class="layui-inline" style="width: 620px;margin-right: 0px;margin-left: 0px;">
+            <label class="layui-form-label" style="left:-15px;">专业特长</label>
+            <div class="layui-input-inline" style="width: 510px;margin-right:0px;left: -10px;">
+                <textarea name="Specialty2" class="layui-textarea" style="min-height:10px; display:inline" readonly="readonly" disabled="disabled"> </textarea>
+            </div>
+        </div>
+
+    </div>
+    <div class="layui-form-item my-item">
+        <div class="layui-inline" style="width: 620px;margin-right: 0px;margin-left: 0px;">
+            <label class="layui-form-label" style="left:-15px;">专家介绍</label>
+            <div class="layui-input-inline" style="width: 510px;margin-right:0px;left: -10px;">
+                
+                <textarea name="Introduction" class="layui-textarea" style="min-height:10px; display:inline;height:350px;" readonly="readonly" disabled="disabled"> </textarea>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+<script>
+    var layer;
+    layui.use(['form', 'layer'], function () {
+        var form = layui.form();
+        layer = parent.layer || layui.layer;
+
+        var id = $.getQueryString("idnumber");
+        var name = getQueryString("Name");// URLDecoder.decode(request.getQueryString(), "utf-8");
+            $.ajax({
+                url: "/TouchScreen/ExpertIntroduction/GetForm",
+                data: { idnumber: id, Name: name },
+                type: "post",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    $("#form").formSerialize(data);
+                }
+            });
+
+        form.render();
+        
+    });
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            
+            return decodeURI(r[2]);//修改之后  
+        } else { return null; }
+    }
+
+    function close_layer() {
+        layer.closeAll();
+    }
+</script>

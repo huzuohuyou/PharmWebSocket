@@ -1,0 +1,155 @@
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\obj\Debug\Touch Screen Query.Web.csproj.CoreCompileInputs.cache
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\x86\CefSharp.WinForms.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\x86\CefSharp.WinForms.pdb
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\x86\CefSharp.WinForms.XML
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\x64\CefSharp.WinForms.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\x64\CefSharp.WinForms.pdb
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\x64\CefSharp.WinForms.XML
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Reference\Elight.Entity.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Reference\Elight.Infrastructure.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Reference\Elight.IRepository.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Reference\Elight.IService.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Reference\Elight.Repository.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Reference\Elight.Service.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Elight.Web.dll.config
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Elight.Web.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Elight.Web.pdb
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Autofac.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Autofac.Integration.Mvc.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Elight.Entity.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Elight.Infrastructure.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Elight.IRepository.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Elight.IService.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Elight.Repository.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Elight.Service.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Exceptionless.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Exceptionless.Mvc.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Framework.Entity.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Framework.ORM.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Framework.Service.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\MySql.Data.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Newtonsoft.Json.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\NLog.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Oracle.ManagedDataAccess.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Net.Http.Formatting.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.Helpers.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.Http.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.Http.WebHost.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.Mvc.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.Razor.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.WebPages.Deployment.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.WebPages.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.WebPages.Razor.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Touch Screen Query.Entity.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Touch Screen Query.ORM.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Touch Screen Query.Service.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Functions Library.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Touch Screen Query.Entity.pdb
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Touch Screen Query.Entity.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Touch Screen Query.ORM.pdb
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Touch Screen Query.ORM.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Touch Screen Query.Service.pdb
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Touch Screen Query.Service.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Autofac.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Autofac.Integration.Mvc.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Exceptionless.pdb
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Exceptionless.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Exceptionless.Mvc.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Framework.Entity.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Framework.ORM.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Framework.Service.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Newtonsoft.Json.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\NLog.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Net.Http.Formatting.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.Helpers.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.Http.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.Http.WebHost.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.Mvc.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.Razor.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.WebPages.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.WebPages.Deployment.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\System.Web.WebPages.Razor.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\bin\Functions Library.xml
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\obj\Debug\Touch Screen Query.Web.csprojAssemblyReference.cache
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\obj\Debug\Touch Screen Query.Web.csproj.CopyComplete
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\obj\Debug\Elight.Web.dll
+D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\obj\Debug\Elight.Web.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\obj\Debug\Elight.Web.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\obj\Debug\Elight.Web.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\x86\CefSharp.WinForms.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\x86\CefSharp.WinForms.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\x86\CefSharp.WinForms.XML
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\x64\CefSharp.WinForms.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\x64\CefSharp.WinForms.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\x64\CefSharp.WinForms.XML
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Reference\Elight.Entity.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Reference\Elight.Infrastructure.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Reference\Elight.IRepository.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Reference\Elight.IService.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Reference\Elight.Repository.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Reference\Elight.Service.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Elight.Web.dll.config
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Elight.Web.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Elight.Web.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Autofac.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Autofac.Integration.Mvc.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Elight.Entity.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Elight.Infrastructure.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Elight.IRepository.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Elight.IService.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Elight.Repository.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Elight.Service.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Exceptionless.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Exceptionless.Mvc.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Framework.Entity.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Framework.ORM.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Framework.Service.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\MySql.Data.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Newtonsoft.Json.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\NLog.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Oracle.ManagedDataAccess.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Net.Http.Formatting.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.Helpers.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.Http.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.Http.WebHost.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.Mvc.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.Razor.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.WebPages.Deployment.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.WebPages.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.WebPages.Razor.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Functions Library.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Autofac.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Autofac.Integration.Mvc.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Exceptionless.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Exceptionless.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Exceptionless.Mvc.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Newtonsoft.Json.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\NLog.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Net.Http.Formatting.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.Helpers.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.Http.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.Http.WebHost.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.Mvc.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.Razor.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.WebPages.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.WebPages.Deployment.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\System.Web.WebPages.Razor.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\obj\Debug\Touch Screen Query.Web.csproj.CopyComplete
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\obj\Debug\Touch Screen Query.Web.csprojAssemblyReference.cache
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Pharmacy Reporter.Entity.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Pharmacy Reporter.Entity.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Pharmacy Reporter.Entity.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Reference\Framework.Entity.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Reference\Framework.ORM.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Reference\Framework.Proxy.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Reference\Framework.Service.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Reference\Functions Library.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Pharmacy Reporter.Service.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Pharmacy Reporter.ORM.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Pharmacy Reporter.Service.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Pharmacy Reporter.Service.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Pharmacy Reporter.ORM.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Pharmacy Reporter.ORM.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Elight.Web\bin\Functions Library.xml

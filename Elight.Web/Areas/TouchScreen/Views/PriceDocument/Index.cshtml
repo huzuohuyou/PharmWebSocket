@@ -1,0 +1,96 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户列表</title>
+    <link href="~/Content/layui/css/layui.css?v=19" rel="stylesheet" />
+    <link href="~/Content/framework/css/console.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/jquery/jquery.min.js"></script>
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/framework/js/global.js"></script>
+</head>
+<body>
+    @*<div class="panel animated fadeIn">
+        <div class="panel-body">
+            <div id="toolbar" class="elight-table-toolbar">
+
+
+            </div>*@
+            <button id="btn_2019" class="layui-btn layui-btn-normal index-button">2019年</button>
+            <button id="btn_2018" class="layui-btn layui-btn-normal index-button">2018年</button>
+            <button id="btn_2017" class="layui-btn layui-btn-normal index-button">2017年</button>
+            <button id="btn_2016" class="layui-btn layui-btn-normal index-button">2016年以前</button>
+        @*</div>
+    </div>*@
+</body>
+</html>
+
+<!--内容模板-->
+
+<script type="text/javascript">
+
+    var paging;
+    layui.config({
+        base: parent._baseUrl
+    }).use(['paging', 'form', 'layer'], function () {
+        var layer = parent.layer || layui.layer;
+        var form = layui.form();
+        paging = layui.paging();
+        $('#btn_2019').click(btn_2019);
+        $('#btn_2018').click(btn_2018);
+        $('#btn_2017').click(btn_2017);
+        $('#btn_2016').click(btn_2016);
+    });
+
+    function btn_2019() {
+        $.layerOpen({
+            id: "edit",
+            title: "2019年",
+            width: "90%",
+            height: "100%",
+            content: "/TouchScreen/PriceDocument/PriceDocument?keyWord=2019",
+            btn: []
+        });
+    }
+
+    function btn_2018() {
+        $.layerOpen({
+            id: "edit",
+            title: "2018年",
+            width: "90%",
+            height: "100%",
+            content: "/TouchScreen/PriceDocument/PriceDocument?keyWord=2018",
+            btn: []
+        });
+    }
+
+    function btn_2017() {
+        $.layerOpen({
+            id: "edit",
+            title: "2017年",
+            width: "90%",
+            height: "100%",
+            content: "/TouchScreen/PriceDocument/PriceDocument?keyWord=2017",
+            btn: []
+        });
+    }
+
+    function btn_2016() {
+        $.layerOpen({
+            id: "edit",
+            title: "2016年以前",
+            width: "90%",
+            height: "100%",
+            content: "/TouchScreen/PriceDocument/PriceDocument?keyWord=2016",
+            btn: []
+        });
+    }
+    
+</script>

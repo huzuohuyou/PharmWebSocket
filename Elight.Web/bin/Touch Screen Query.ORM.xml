@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Touch Screen Query.ORM</name>
+    </assembly>
+    <members>
+        <member name="T:TouchScreenQuery.ORM.DrugInquiryManager">
+            <summary>
+            药品查询
+            </summary>
+        </member>
+    </members>
+</doc>

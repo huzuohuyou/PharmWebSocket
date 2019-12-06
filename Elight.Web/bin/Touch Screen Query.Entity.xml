@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Touch Screen Query.Entity</name>
+    </assembly>
+    <members>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.RN">
+            <summary>
+            行号
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.idnumber">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.Specialty">
+            <summary>
+            列表专业特长
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.BachelorofScience">
+            <summary>
+            学位
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.Profession">
+            <summary>
+            专业
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.GraduatedSchool">
+            <summary>
+            毕业学校
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.JobTitle">
+            <summary>
+            职称
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.Specialty2">
+            <summary>
+            个人信息中的专业特长
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.Introduction">
+            <summary>
+            简介
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.VisitTime">
+            <summary>
+            出诊时间
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.ExpertEntity.ServiceFee">
+            <summary>
+            服务费
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.FeeEntity.DEPTNAME">
+            <summary>
+            诊疗科室
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.FeeEntity.ATMS">
+            <summary>
+            票据总金额
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.FeeEntity.SEQNO">
+            <summary>
+            票据编号
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.FeeEntity.NU">
+            <summary>
+            分类
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.FeeEntity.AMT1">
+            <summary>
+            费用明细
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.FeeEntity.QTY">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.FeeEntity.BASEAMT">
+            <summary>
+            单价
+            </summary> 
+        </member>
+        <member name="P:TouchScreen_uery.Entity.FeeEntity.SPEC">
+            <summary>
+            规格
+            </summary>
+        </member>
+        <member name="T:TouchScreen_uery.Entity.SatisfactionEntity">
+            <summary>
+            满意度调查
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q21">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q22">
+            <summary>
+            就诊科室
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q23">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q24">
+            <summary>
+            就诊类别
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q25">
+            <summary>
+            挂号方式
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q26">
+            <summary>
+            付费方式
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q27">
+            <summary>
+            您来自
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q28">
+            <summary>
+            您到达门诊进入诊室的时间大约是
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q29">
+            <summary>
+            医生给您看病的时间大约是
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q1">
+            <summary>
+            门诊环境整洁
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q2">
+            <summary>
+            门诊就诊指示标志清楚
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q3">
+            <summary>
+            门诊厕所干净
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q4">
+            <summary>
+            挂号过程合理
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q5">
+            <summary>
+            您能接收本次就诊等候的时间
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q6">
+            <summary>
+            医院提供方便的预约复诊服务
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q7">
+            <summary>
+            医院提供方便的预约复诊服务
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q8">
+            <summary>
+            医生能听您讲述患病经历
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q9">
+            <summary>
+            医生能听您讲述患病经历
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q10">
+            <summary>
+            医生能解答您的问题
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q11">
+            <summary>
+            您与医务人员的沟通交流顺利
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q12">
+            <summary>
+            您与医务人员的沟通交流顺利
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q13">
+            <summary>
+            /您能够按时拿到化验或检查的时间
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q14">
+            <summary>
+            您在门诊的缴费过程顺利
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q15">
+            <summary>
+            您在门诊的取药过程顺利
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q16">
+            <summary>
+            在就诊中，医务人员注意保护您的隐私
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q17">
+            <summary>
+            您任务门诊服务流程合理
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q18">
+            <summary>
+            您对整个门诊服务满意
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q19">
+            <summary>
+            门诊护士服务好
+            </summary>
+        </member>
+        <member name="P:TouchScreen_uery.Entity.SatisfactionEntity.Q20">
+            <summary>
+            住院期间，医务人员是否向您索要，收受红包及其他财务
+            </summary>
+        </member>
+    </members>
+</doc>

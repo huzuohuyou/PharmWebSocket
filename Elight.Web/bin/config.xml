@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config product="朝阳医院管理信息系统" alias="朝阳HIS" version="2.0.0">
+  <logger>
+    <DbQuery />
+    <DbModify />
+    <ServiceBus />
+  </logger>
+
+  <service>
+    <dataBase provider="Oracle.ManagedDataAccess.OracleConnection" connection="Data Source={source}/{base};User ID={userId};Password={password};" paramChar=":" noneip="true">
+      <source>192.168.5.58</source>
+      <base>ocsdb</base>
+      <userId>tw_hsp_pmpa</userId>
+      <password>YGd7eGF8aWQ=</password>
+    </dataBase>
+  </service>
+</config>

@@ -1,0 +1,174 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户列表</title>
+    <link href="~/Content/layui/css/layui.css?v=12" rel="stylesheet" />
+    <link href="~/Content/framework/css/console.css?v=1" rel="stylesheet" />
+    <link href="~/Content/framework/css/touch-screen.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/jquery/jquery.min.js"></script>
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/framework/js/global.js"></script>
+    <style>
+        .my-buton-group {
+            width: 100%;
+            text-align: center;
+        }
+
+        .my-buton {
+            height: 50px;
+            width: 10%;
+        }
+
+        .layui-layer-btn0 {
+            display: none !important;
+        }
+
+        .layui-layer-btn1 {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel animated fadeIn">
+        <div class="panel-body">
+            <div id="toolbar" class="elight-table-toolbar">
+                <div class="layui-btn-group my-buton-group">
+                    <button style="visibility:hidden" id="btn_jn_zcy" class="layui-btn layui-btn-normal my-buton">
+                        胶囊
+                    </button>
+                    <div class="layui-btn-group my-buton-group">
+                       
+                    </div>
+                </div>
+                <table id="gridList" class="layui-form layui-table table-hover elight-table" lay-skin="line">
+                    <thead>
+                        <tr>
+                            <th class="td-num">序号</th>
+                            <th style="width:10%">编码</th>
+                            <th style="width:25%">项目名称</th>
+                            <th style="width:10%;text-align:center;">单位</th>
+                            <th style="width:10%;text-align:right;">标准价</th>
+                            <th style="width:10%;text-align:right;">特需价</th>
+                            @*<th style="width:35%">备注</th>*@
+                            @*<th style="width:10%">详细内容</th>*@
+                        </tr>
+                    </thead>
+                    <!--内容容器-->
+                    <tbody id="content"></tbody>
+                </table>
+                <div id="paged"></div><span style="color:red;">点击列表行显示详情</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--内容模板-->
+<script id="contentTpl" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <tr>
+        <td style="text-align:center;" onclick="btn_xxxx('{{item.SUNAMEK}}','{{item.CHARGEBASIS}}','{{item.EXCEPT}}','{{item.CONTAINS}}','{{item.PriceStructure}}')">{{item.RN}}</td>
+        <td  onclick="btn_xxxx('{{item.SUNAMEK}}','{{item.CHARGEBASIS}}','{{item.EXCEPT}}','{{item.CONTAINS}}','{{item.PriceStructure}}')">{{item.BCODE}}</td>
+        <td  onclick="btn_xxxx('{{item.SUNAMEK}}','{{item.CHARGEBASIS}}','{{item.EXCEPT}}','{{item.CONTAINS}}','{{item.PriceStructure}}')">{{item.SUNAMEK}}</td>
+        <td  onclick="btn_xxxx('{{item.SUNAMEK}}','{{item.CHARGEBASIS}}','{{item.EXCEPT}}','{{item.CONTAINS}}','{{item.PriceStructure}}')" style="text-align:center;">{{item.CUNIT}}</td>
+        <td onclick="btn_xxxx('{{item.SUNAMEK}}','{{item.CHARGEBASIS}}','{{item.EXCEPT}}','{{item.CONTAINS}}','{{item.PriceStructure}}')" style="text-align:right;">{{item.BOAMT_VALUE}}</td>
+        <td onclick="btn_xxxx('{{item.SUNAMEK}}','{{item.CHARGEBASIS}}','{{item.EXCEPT}}','{{item.CONTAINS}}','{{item.PriceStructure}}')" style="text-align:right;">{{item.GIAMT_VALUE}}</td>
+        @*<td class="nei-rong">{{item.REMARK}}</td>*@
+        <td style="display:none">{{item.CHARGEBASIS}}</td>
+        <td style="display:none">{{item.EXCEPT}}</td>
+        <td style="display:none">{{item.CONTAINS}}</td>
+        <td style="display:none">{{item.PriceStructure}}</td>
+        @*<td style="padding:0px;">
+            <button  onclick="btn_xxxx('{{item.SUNAMEK}}','{{item.CHARGEBASIS}}','{{item.EXCEPT}}','{{item.CONTAINS}}','{{item.PriceStructure}}')"
+                    id="btn_xxxx" type="button"
+                    class="layui-btn layui-btn-primary layui-btn-sm"
+                    style="margin:0px;width:100%;height:100%;background-color: cornflowerblue;color:black">
+                详细信息
+            </button>
+        </td>*@ 
+    </tr>
+    {{#  }); }}
+     {{# if(d.list.length<=0) { }}
+        <tr style="color: red">
+            <td colspan="8">查无数据。</td>
+        </tr>
+    {{# } }}
+</script>
+
+<script type="text/javascript">
+
+    var paging,layer;
+    layui.config({
+        base: parent._baseUrl
+    }).use(['paging', 'form', 'layer'], function () {
+         layer = parent.layer || layui.layer;
+        var form = layui.form();
+        paging = layui.paging();
+        $('#qtxm').click(btn_xxxx);
+        keyWord = 'qtxm';
+        initGrid();
+    });
+
+    function close_layer() {
+        layer.closeAll();
+    }
+
+    var keyWord = '';
+
+    function btn_qtxm() {
+        keyWord = 'qtxm';
+        initGrid();
+    }
+
+    function initGrid() {
+        var a = this.id;
+        paging.init({
+            url: '/TouchScreen/OtherProjects/Index',
+            elem: '#content',
+            tempElem: '#contentTpl',
+            params: {
+                keyWord: "qtxm"
+            },
+            pageConfig: {
+                elem: '#paged',
+                pageSize: 10,
+                skip: false,
+            },
+            success: function () {
+
+            }
+        });
+    }
+     
+    function btn_xxxx(SUNAMEK, CHARGEBASIS, EXCEPT, CONTAINS, PriceStructure) {
+                  
+        $.layerOpen({
+            id: "add",
+            title: "详细内容",
+            width: "70%",
+            height: "100%",
+            btn:[],
+            content: "/TouchScreen/OtherProjects/Detail?SUNAMEK=" + SUNAMEK
+                + '&CHARGEBASIS=' + CHARGEBASIS
+                + '&EXCEPT=' + EXCEPT
+                + '&CONTAINS=' + CONTAINS
+                + '&PriceStructure=' + PriceStructure,
+
+            yes: function (iBody) {
+                iBody.find('#btnSubmit').click();
+                initGrid();
+            }
+        });
+    }
+      
+    
+</script>

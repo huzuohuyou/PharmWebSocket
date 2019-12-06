@@ -1,0 +1,252 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户列表</title>
+    <link href="~/Content/layui/css/layui.css?v=12" rel="stylesheet" />
+    <link href="~/Content/framework/css/console.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/touch-screen.css?v=12" rel="stylesheet" />
+    <link href="~/Content/framework/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/jquery/jquery.min.js"></script>
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/framework/js/global.js"></script>
+    <style>
+        .my-buton-group {
+            width: 100%;
+            text-align: center;
+        }
+
+        .my-buton {
+            height: 38px;
+            width: 12%;
+        }
+
+        .layui-layer-btn0 {
+            display: none !important;
+        }
+
+        .layui-layer-btn1 {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel animated fadeIn">
+        <div class="panel-body">
+            <div id="toolbar" class="elight-table-toolbar">
+                <div class="layui-btn-group my-buton-group">
+                    <button id="jccl" class="layui-btn layui-btn-normal my-buton">
+                        检查材料
+                    </button>
+                    <button id="ctcl" class="layui-btn layui-btn-normal my-buton">
+                       CT材料
+                    </button>
+                    <button id="cgzcl" class="layui-btn layui-btn-normal my-buton">
+                        磁共振材料
+                    </button>
+                    <button id="fscl" class="layui-btn layui-btn-normal my-buton">
+                       放射材料
+                    </button>
+                    <button id="hycl" class="layui-btn layui-btn-normal my-buton">
+                       化验材料
+                    </button>
+                    <button id="sscl" class="layui-btn layui-btn-normal my-buton">
+                       手术材料
+                    </button>
+
+                </div>
+                <div class="layui-btn-group my-buton-group" style="margin-left:0px;margin-top:20px;">
+                    <button id="wzjrcl" class="layui-btn layui-btn-normal my-buton">
+                        外周介入材料
+                    </button>
+                    <button id="wkzlcl" class="layui-btn layui-btn-normal my-buton">
+                        外科治疗材料
+                    </button>
+                    <button id="sxcl" class="layui-btn layui-btn-normal my-buton">
+                        输血材料
+                    </button>
+                    <button id="txcl" class="layui-btn layui-btn-normal my-buton">
+                        透析材料
+                    </button>
+                    <button id="gyycl" class="layui-btn layui-btn-normal my-buton">
+                        高压氧材料
+                    </button>
+                    <button id="ybwscl" class="layui-btn layui-btn-normal my-buton">
+                        一般卫生材料
+                    </button>
+                    
+                </div>
+            </div>
+            <table id="gridList" class="layui-form layui-table table-hover elight-table" lay-skin="line">
+                <thead>
+                    <tr>
+                        <th class="td-num";>序号</th>
+                        <th style="width:20%">名称</th>
+                        <th style="width:10%;text-align:center;">规格</th>
+                        <th style="width:10%;text-align:center;">单位</th>
+                        @*<th style="width:5%">数量</th>*@
+                        <th style="width:10%;text-align:right;">标准价</th>
+                        <th style="width:10%;text-align:right;">特需价</th>
+                        <th style="width:15%">生产厂家</th>
+                        @*<th style="width:15%">内容说明</th>*@
+                        @*<th style="width:10%">详情</th>*@
+                    </tr>
+                </thead>
+                <!--内容容器-->
+                <tbody id="content"></tbody>
+            </table>
+            <div id="paged"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--内容模板-->
+<script id="contentTpl" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <tr>
+        <td style="text-align:center;">{{item.RN}}</td>
+        <td title="{{item.SUNAMEK}}">{{item.SUNAMEK}}</td>
+        <td title="{{item.SPEC}}">{{item.SPEC}}</td>
+        <td title="{{item.CUNIT}}" style="text-align:center;">{{item.CUNIT}}</td>
+        @*<td>{{item.SUHAM}}</td>*@
+        <td style="text-align:right">{{item.BOAMT_VALUE}}</td>
+        <td style="text-align:right">{{item.GIAMT_VALUE}}</td>
+        <td>{{item.MANUFACT}}</td>
+        @*<td>{{item.remark}}</td>*@
+        @*<td>{{item.CHARGEBASIS}}</td>*@
+    </tr>
+    {{#  }); }}
+    {{# if(d.list.length<=0) { }}
+    <tr style="color: red">
+        <td colspan="8">查无数据。</td>
+    </tr>
+    {{# } }}
+</script>
+
+<script type="text/javascript">
+
+    var paging, layer;
+    layui.config({
+        base: parent._baseUrl
+    }).use(['paging', 'form', 'layer'], function () {
+         layer = parent.layer || layui.layer;
+        var form = layui.form();
+        paging = layui.paging();
+        initGrid();
+        $('#jccl').click(btn_jccl);
+        $('#ctcl').click(btn_ctcl);
+        $('#cgzcl').click(btn_cgzcl);
+        $('#fscl').click(btn_fscl);
+        $('#hycl').click(btn_hycl);
+        $('#sscl').click(btn_sscl);
+        $('#wzjrcl').click(btn_wzjrcl);
+        $('#wkzlcl').click(btn_wkzlcl);
+        $('#sxcl').click(btn_sxcl);
+        $('#txcl').click(btn_txcl);
+        $('#gyycl').click(btn_gyycl);
+        $('#ybwscl').click(btn_ybwscl);
+
+        keyWord = 'jccl';
+        initGrid();
+    });
+
+
+    function close_layer() {
+        layer.closeAll();
+    }
+
+
+    var keyWord = '';
+
+    function btn_jccl() {
+        keyWord = 'jccl';
+        initGrid();
+    }
+
+    function btn_ctcl() {
+        keyWord = 'ctcl';
+        initGrid();
+    }
+
+    function btn_cgzcl() {
+        keyWord = 'cgzcl';
+        initGrid();
+    }
+
+    function btn_fscl() {
+        keyWord = 'fscl';
+        initGrid();
+    }
+
+    function btn_hycl() {
+        keyWord = 'hycl';
+        initGrid();
+    }
+
+    function btn_sscl() {
+        keyWord = 'sscl';
+        initGrid();
+    }
+
+    function btn_wzjrcl() {
+        keyWord = 'wzjrcl';
+        initGrid();
+    }
+
+    function btn_wkzlcl() {
+        keyWord = 'wkzlcl';
+        initGrid();
+    }
+
+    function btn_sxcl() {
+        keyWord = 'sxcl';
+        initGrid();
+    }
+
+    function btn_txcl() {
+        keyWord = 'txcl';
+        initGrid();
+    }
+
+    function btn_gyycl() {
+        keyWord = 'gyycl';
+        initGrid();
+    }
+
+    function btn_ybwscl() {
+        keyWord = 'ybwscl';
+        initGrid();
+    }
+
+    function initGrid() {
+        $("button").removeClass("btn-active");
+        $("#" + keyWord).toggleClass("btn-active")
+        paging.init({
+            url: '/TouchScreen/HygienicMaterials/Index',
+            elem: '#content',
+            tempElem: '#contentTpl',
+            params: {
+                keyWord: keyWord
+            },
+            pageConfig: {
+                elem: '#paged',
+                pageSize: 10,
+                skip: false,
+            },
+            success: function () {
+
+            }
+        });
+    }
+
+
+
+</script>

@@ -1,0 +1,20 @@
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Pharmacy ReporterConsoler.exe
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Pharmacy ReporterConsoler.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Newtonsoft.Json.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\websocket-sharp.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Newtonsoft.Json.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\websocket-sharp.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\obj\Debug\Pharmacy Reporter.Consoler.csproj.CopyComplete
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\obj\Debug\Pharmacy ReporterConsoler.exe
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\obj\Debug\Pharmacy ReporterConsoler.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Framework.Entity.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Pharmacy Reporter.Entity.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Functions Library.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Pharmacy Reporter.Entity.pdb
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Pharmacy Reporter.Entity.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Framework.Entity.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Functions Library.xml
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\obj\Debug\Pharmacy Reporter.Consoler.csprojAssemblyReference.cache
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\bin\Debug\Resources\ThLPrinterDLL.dll
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\obj\Debug\Pharmacy_Reporter.Consoler.Properties.Resources.resources
+D:\TFS\EIP 3.0\药品部分\药房取药报到\Pharmacy Reporter.Console\obj\Debug\Pharmacy Reporter.Consoler.csproj.GenerateResource.cache

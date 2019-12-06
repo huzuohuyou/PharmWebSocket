@@ -1,0 +1,35 @@
+ 发生时间：2019-09-23 14:39:53.2372
+ 日志级别：ERROR
+ 操作账号：
+ 操作者IP：
+ IP归属地：
+ 浏 览 器：
+ 操作模块：
+ 提示信息：   在 System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   在 System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OleDb.OleDbConnection.Open()
+   在 App.FunctionLibrary.DbConnectExtension.<>c__DisplayClass2_0.<OpenAuto>b__0()
+   在 App.FunctionLibrary.Disposer`1..ctor(Func`1 initial, Action`1 final)
+   在 App.FunctionLibrary.DbConnectExtension.OpenAuto(DbConnection cnn, Action byMyOpen)
+   在 App.FunctionLibrary.DBFactory.query(String queryScript, ParameterBuilder params)
+   在 App.FunctionLibrary.DBFactory.Query[T](String script, ParameterBuilder parameters)
+   在 App.FunctionLibrary.DBFactory.Query[T](String script, WhereBuilder wb)
+   在 TouchScreenQuery.ORM.CheckTreatmentManager.Select(Int32 pageIndex, Int32 pageSize, String keyWord) 位置 D:\TFS\EIP 3.0\其他部分\触摸屏查询\Touch Screen Query.ORM\CheckTreatmentManager.cs:行号 184
+   在 TouchScreenQuery.Service.CheckTreatmentService.GetList(Int32 pageIndex, Int32 pageSize, String keyWord) 位置 D:\TFS\EIP 3.0\其他部分\触摸屏查询\Touch Screen Query.Service\CheckTreatmentService.cs:行号 31
+   在 Elight.Web.Areas.TouchScreen.Controllers.CheckTreatmentController.Index(Int32 pageIndex, Int32 pageSize, String keyWord) 位置 D:\TFS\EIP 3.0\其他部分\触摸屏查询\Elight.Web\Areas\TouchScreen\Controllers\CheckTreatmentController.cs:行号 115
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+

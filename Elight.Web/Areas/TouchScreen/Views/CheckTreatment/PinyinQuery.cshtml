@@ -1,0 +1,218 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户列表</title>
+    <link href="~/Content/layui/css/layui.css?v=12" rel="stylesheet" />
+    <link href="~/Content/framework/css/console.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/jquery/jquery.min.js"></script>
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/framework/js/global.js"></script>
+    <style>
+        .my-buton-group {
+            width: 100%;
+            text-align: center;
+        }
+
+        .my-buton {
+            height: 50px;
+            width: 10%;
+        }
+
+        .layui-layer-btn0 {
+            display: none !important;
+        }
+
+        .layui-layer-btn1 {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel animated fadeIn">
+        <div class="panel-body">
+            <div id="toolbar" class="elight-table-toolbar">
+                <div class="layui-btn-group my-buton-group">
+                    <button id="zl"  class="layui-btn layui-btn-primary layui-btn-large my-buton">
+                        <i class="fa fa-plus-square-o" aria-hidden="true"></i>治疗
+                    </button>
+                    <button id="cgjc" onclick="initGrid('cgjc')" class="layui-btn layui-btn-primary layui-btn-large my-buton">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>常规检查
+                    </button>
+                    <button id="dgzl" onclick="initGrid('dgzl')" class="layui-btn layui-btn-primary layui-btn-large my-buton">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>导管治疗
+                    </button>
+                    <button id="zyzl" onclick="initGrid('zyzl')" class="layui-btn layui-btn-primary layui-btn-large my-buton">
+                        <i class="fa fa-eye" aria-hidden="true"></i>中医治疗
+                    </button>
+                    <button id="fckzl" onclick="initGrid('fckzl')" class="layui-btn layui-btn-primary layui-btn-large my-buton">
+                        <i class="fa fa-eye" aria-hidden="true"></i>妇产科治疗
+                    </button>
+                    <button id="pkzl" onclick="initGrid('pkzl')" class="layui-btn layui-btn-primary layui-btn-large my-buton">
+                        <i class="fa fa-eye" aria-hidden="true"></i>皮科治疗
+                    </button>
+                    <button id="wgzl" onclick="initGrid('wgzl')" class="layui-btn layui-btn-primary layui-btn-large my-buton">
+                        <i class="fa fa-eye" aria-hidden="true"></i>五官治疗
+                    </button>
+                    <button id="fs" onclick="initGrid('fs')" class="layui-btn layui-btn-primary layui-btn-large my-buton">
+                        <i class="fa fa-eye" aria-hidden="true"></i>放射
+                    </button>
+                </div>
+                
+            </div>
+            <table id="gridList" class="layui-form layui-table table-hover elight-table" lay-skin="line">
+                <thead>
+                    <tr>
+                        <th style="width:10%">序号</th>
+                        <th style="width:10%">编码</th>
+                        <th style="width:30%">项目名称</th>
+                        <th style="width:10%">计量单位</th>
+                        <th style="width:10%">收费标准</th>
+                        <th style="width:10%">特需价格</th>
+                        <th style="width:10%">内容说明</th>
+                        <th style="width:10%">详细信息</th>
+                    </tr>
+                </thead>
+                <!--内容容器-->
+                <tbody id="content"></tbody>
+            </table>
+            <div id="paged"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--内容模板-->
+<script id="contentTpl" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <tr>
+        <td>{{item.RN}}</td>
+        <td>{{item.BCODE}}</td>
+        <td>{{item.SUNAMEK}}</td>
+        <td>{{item.CUNIT}}</td>
+        <td  style="text-align:right">{{item.BOAMT_VALUE}}</td>
+        <td  style="text-align:right">{{item.GIAMT_VALUE}}</td>
+        <td>{{item.REMARK}}</td>
+        <td>
+            <button onclick="btn_detail('{{item.SUNAMEK}}','{{item.CONTAINS}}','{{item.CHARGEBASIS}}','{{item.EXCEPT}}','{{item.PriceStructure}}')"
+                    id="btn_detail" type="button" class="layui-btn layui-btn-primary layui-btn-sm">
+                详细信息
+            </button>
+        </td>
+    </tr>
+    {{#  }); }}
+     {{# if(d.list.length<=0) { }}
+        <tr style="color: red">
+            <td colspan="8">查无数据。</td>
+        </tr>
+    {{# } }}
+</script>
+
+<script type="text/javascript">
+
+    var paging;
+    layui.config({
+        base: parent._baseUrl
+    }).use(['paging', 'form', 'layer'], function () {
+        var layer = parent.layer || layui.layer;
+        var form = layui.form();
+        paging = layui.paging();
+        initGrid();
+        $('#zl').click(btn_zl);
+        $('#cgjc').click(btn_cgjc);
+        $('#dgzl').click(btn_dgzl);
+        $('#zyzl').click(btn_zyzl);
+        $('#fckzl').click(btn_fckzl);
+        $('#pkzl').click(btn_pkzl);
+        $('#wgzl').click(btn_wgzl);
+        $('#fs').click(btn_fs);
+    });
+
+    var keyWord = '';
+
+    function btn_zl() {
+        keyWord = 'zl';
+        initGrid();
+    }
+
+    function btn_cgjc() {
+        keyWord = 'cgjc';
+        initGrid();
+    }
+
+    function btn_dgzl() {
+        keyWord = 'dgzl';
+        initGrid();
+    }
+
+    function btn_zyzl() {
+        keyWord = 'zyzl';
+        initGrid();
+    }
+
+    function btn_fckzl() {
+        keyWord = 'fckzl';
+        initGrid();
+    }
+
+    function btn_pkzl() {
+        keyWord = 'pkzl';
+        initGrid();
+    }
+
+    function btn_wgzl() {
+        keyWord = 'wgzl';
+        initGrid();
+    }
+
+    function btn_fs() {
+        keyWord = 'fs';
+        initGrid();
+    }
+
+    function initGrid() {
+        var a = this.id;
+        paging.init({
+            url: '/TouchScreen/CheckTreatment/Index',
+            elem: '#content',
+            tempElem: '#contentTpl',
+            params: {
+                keyWord: keyWord
+            },
+            pageConfig: {
+                elem: '#paged',
+                pageSize: 10,
+                skip: false,
+            },
+            success: function () {
+
+            }
+        });
+    }
+
+    function btn_detail(SUNAMEK, CONTAINS, CHARGEBASIS, EXCEPT, PriceStructure) {
+        $.layerOpen({
+            id: "add",
+            title: "详细信息",
+            width: "670px",
+            height: "100%",
+            content: "/TouchScreen/CheckTreatment/Detail?SUNAMEK=" + SUNAMEK
+                + '&CONTAINS=' + CONTAINS
+                + '&CHARGEBASIS=' + CHARGEBASIS
+                + '&EXCEPT=' + EXCEPT
+                + '&PriceStructure=' + PriceStructure,
+            btn: []
+        });
+    }
+
+    
+
+</script>

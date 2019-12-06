@@ -1,0 +1,180 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<style>
+    .form-label {
+        text-align: left;
+    }
+    
+</style>
+<div class="container-fluid fadeIn animated" style="padding: 10px;
+    background: white;
+    margin: 30px;">
+    <form id="form" class="layui-form" style="margin-top: 25px">
+        @Html.AntiForgeryToken()
+        @*<div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label label-required form-label">年龄</label>
+                <div class="layui-input-inline">
+                    <input type="number"  name="Q21" id="Q21" lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label label-required form-label">就诊科室</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="Q22" id="Q22"   autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+        </div>*@
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label  form-label">性别</label>
+                <div class="layui-input-inline">
+                    <input type="radio" name="Q23" value="1" title="男" checked />
+                    <input type="radio" name="Q23" value="2" title="女" />
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label  form-label">就诊类别</label>
+                <div class="layui-input-inline">
+                    <input type="radio" name="Q24" value="1" title="初诊" checked />
+                    <input type="radio" name="Q24" value="2" title="复诊" />
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label  form-label">挂号方式</label>
+                <div class="layui-input-inline">
+                    <input type="radio" name="Q25" value="1" title="预约" checked />
+                    <input type="radio" name="Q25" value="2" title="门诊窗口" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label  form-label">付费方式</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q26" value="1" title="自费" checked />
+                    <input type="radio" name="Q26" value="2" title="公费" />
+                    <input type="radio" name="Q26" value="3" title="医保" />
+                    <input type="radio" name="Q26" value="4" title="新农合" />
+                    <input type="radio" name="Q26" value="5" title="其他" />
+
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label  form-label">您来自</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q27" value="1" title="本市城区" checked />
+                    <input type="radio" name="Q27" value="2" title="本市郊区" />
+                    <input type="radio" name="Q27" value="3" title="本市以外" />
+
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label  form-label" style="width:100%;">您到达门诊进入诊室的时间大约是</label>
+
+            </div>
+
+            <div class="layui-inline" style="width:100%;margin-left: 15px;">
+                <div class="layui-input-inline" style="width:100%;">
+                    <input type="radio" name="Q28" value="1" title="30分钟之内" checked />
+                    <input type="radio" name="Q28" value="2" title="30-60分钟" />
+                    <input type="radio" name="Q28" value="3" title="1-2小时" />
+                    <input type="radio" name="Q28" value="4" title="2-3小时" />
+                    <input type="radio" name="Q28" value="5" title="超过3小时" />
+                    <input type="radio" name="Q28" value="6" title="不确定" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label  form-label" style="width:100%;">医生给您看病的时间大约是</label>
+
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+
+            <div class="layui-inline" style="width:100%;margin-left: 15px;">
+                <div class="layui-input-inline" style="width:100%;">
+                    <input type="radio" name="Q29" value="1" title="5分钟之内" checked />
+                    <input type="radio" name="Q29" value="2" title="6-10分钟" />
+                    <input type="radio" name="Q29" value="3" title="11-20分钟" />
+                    <input type="radio" name="Q29" value="4" title="20-31分钟" />
+                    <input type="radio" name="Q29" value="5" title="超过30分钟" />
+                    <input type="radio" name="Q29" value="6" title="不确定" />
+                </div>
+            </div>
+        </div>
+
+
+        <button onclick="btn_next()" class="layui-btn" style="
+    text-align: center;
+    position: fixed;
+    top: 10%;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+    display:block;
+    background-color:coral;
+    border-radius:5px;
+">
+            满意度
+        </button>
+
+        <div class="layui-form-item" style="display: none">
+            <div class="layui-input-block">
+                <button id="btnSubmit" class="layui-btn" lay-submit lay-filter="add">提交</button>
+            </div>
+        </div>
+    </form>
+    </div>
+    <script src="~/Content/jquery/jquery.md5.js"></script>
+    <script>
+        layui.use(['element', 'form', 'laydate', 'layer'], function () {
+            var form = layui.form();
+            var element = layui.element();
+            var layer = parent.layer || layui.layer;
+           
+
+          
+
+        });
+        function btn_next() {
+            $.layerOpen({
+                id: "edit",
+                title: "满意度",
+                width: "80%",
+                height: "100%",
+                content: "/TouchScreen/Satisfaction/Questionnaire?Q21=" + $("#Q21").val()
+                    + "&Q22=" + $("#Q22").val()
+                    + "&Q23=" + $("input[name='Q28']:checked").val()
+                    + "&Q24=" + $("input[name='Q28']:checked").val()
+                    + "&Q25=" + $("input[name='Q28']:checked").val()
+                    + "&Q26=" + $("input[name='Q28']:checked").val()
+                    + "&Q27=" + $("input[name='Q28']:checked").val()
+                    + "&Q28=" + $("input[name='Q28']:checked").val()
+                    + "&Q29=" + $("input[name='Q29']:checked").val(),
+                btn: []
+            });
+
+          
+        }
+    </script>

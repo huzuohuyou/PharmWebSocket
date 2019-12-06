@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<form id="form" class="layui-form" style="margin-top: 25px">
+    @*@Html.AntiForgeryToken()*@
+    <div class="layui-form-item">
+
+        <div class="layui-inline">
+            <label class="layui-form-label">名称</label>
+            <div class="layui-input-inline" style="width: 514px;">
+                @*<span name="PriceStructure">@ViewBag.SUNAMEK</span>*@
+                    @*<span name="PriceStructure" style="
+        display: -webkit-box;
+        height: 38px;
+        padding: 10px;
+    ">@ViewBag.SUNAMEK</span>*@
+                <input type="text" value="@ViewBag.SUNAMEK" name="SUNAMEK" autocomplete="off" class="layui-input" disabled="disabled" readonly="readonly">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">收费依据</label>
+        <div class="layui-input-inline" style="width: 514px;">
+            @*<span name="PriceStructure" style="
+        display: -webkit-box;
+        height: 38px;
+        padding: 10px;
+    ">@ViewBag.CHARGEBASIS</span>*@
+        <textarea name="REMARK" class="layui-textarea" disabled="disabled" readonly="readonly">@ViewBag.CHARGEBASIS</textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">项目内涵</label>
+        <div class="layui-input-inline" style="width: 514px;">
+            @*<span name="PriceStructure" style="
+        display: -webkit-box;
+        height: 38px;
+        padding: 10px;
+    ">@ViewBag.CONTAINS</span>*@
+        <textarea name="CONTAINS" class="layui-textarea" disabled="disabled" readonly="readonly">@ViewBag.CONTAINS</textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label" >除外内容</label>
+        <div class="layui-input-inline" style="width: 514px;" disabled="disabled" readonly="readonly">
+            @*<span name="PriceStructure" style="
+        display: -webkit-box;
+        height: 38px;
+        padding: 10px;
+    ">@ViewBag.EXCEPT</span>*@
+        <textarea name="EXCEPT" class="layui-textarea" disabled="disabled" readonly="readonly">@ViewBag.EXCEPT</textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">价格说明</label>
+
+            <div class="layui-input-inline" style="width: 514px;">
+                @*<span name="PriceStructure" style="
+        display: -webkit-box;
+        height: 38px;
+        padding: 10px;
+    ">@ViewBag.PriceStructure</span>*@
+                <textarea name="PriceStructure" class="layui-textarea" disabled="disabled" readonly="readonly">@ViewBag.PriceStructure</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item" style="display: none">
+        <div class="layui-input-block">
+            <button id="btnSubmit" class="layui-btn" lay-submit lay-filter="add">提交</button>
+        </div>
+    </div>
+</form>
+
+<script src="~/Content/jquery/jquery.md5.js"></script>
+<script>
+    var layer;
+    layui.use(['element', 'form', 'laydate', 'layer'], function () {
+        var form = layui.form();
+        layer = parent.layer || layui.layer;
+        var element = layui.element();
+    });
+
+    function close_layer() {
+        var index = parent.layer.getFrameIndex(window.name);
+        layer.close(index);
+    }
+    //function close_layer() {
+    //    layer.closeAll();
+    //}
+</script>

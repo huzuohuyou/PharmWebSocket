@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pharmacy Reporter.ORM</name>
+    </assembly>
+    <members>
+        <member name="T:Pharmacy_Reporter.ORM.PharmacyReporterManager">
+            <summary>
+            门诊报道机数据库交互
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetTuyakNo">
+            <summary>
+            获取发药编号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.HasDMOrder(System.String)">
+            <summary>
+            是否存在毒麻药品
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.IsOrderCharged(System.String)">
+            <summary>
+            true 收费 false未收费
+            </summary>
+            <param name="presNo">门诊处方号</param>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.ExistPatient(System.String)">
+            <summary>
+            是否存在患者信息
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetPatientName(System.String)">
+            <summary>
+            获取用户名
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.OrderMedicationAppointment(System.String,System.String)">
+            <summary>
+            更新医嘱表状态为取药预约
+            </summary>
+            <param name="ptno">患者编号</param>
+            <param name="presno">处方号</param>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.HadCheckedIn(System.String,System.String)">
+            <summary>
+            已签到未取药 true
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.HadCheckedInWindow(System.String,System.String)">
+            <summary>
+            已签到未取药 true
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.InPatientHadCheckedIn(System.String,System.String)">
+            <summary>
+            日间手术 已签到未取药 true
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.InPatientHadCheckedIn2(System.String,System.String)">
+            <summary>
+            日间手术室签到
+            </summary>
+            <param name="ptno">患者编号</param>
+            <param name="orderNo">医嘱编号</param>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetCurrentWindow(System.String,System.String)">
+            <summary>
+            已签到未发药 已分配窗口
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.InPatientGetCurrentWindow(System.String,System.String)">
+            <summary>
+            日间手术室已签到未发药 已分配窗口
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.PrslipMedicationAppointment(System.String,System.String,System.String,System.String)">
+            <summary>
+            更新发药记录表预约状态
+            </summary>
+            <param name="ptno">患者编号</param>
+            <param name="presno">处方号</param>
+            <param name="tuyakNo">发药序号</param>
+            <param name="window">窗口号</param>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetPresNO(System.String)">
+            <summary>
+            获取患者的  处方、预约 处方单状态单
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetOutPresNO(System.String)">
+            <summary>
+            获取门诊今日处方
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetPresNOwithWindow(System.String)">
+            <summary>
+            获取患者的  处方、预约 处方单状态单
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetInPresNO(System.String)">
+            <summary>
+            获取患者的  处方、预约 处方单状态单
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetAllWindow">
+            <summary>
+            获取全部窗口
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetWorkingWindow">
+            <summary>
+            获取工作窗口的取药数量
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetWindowName(System.String)">
+            <summary>
+            获取窗口名称
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetInPatientCheckInfo(System.String)">
+            <summary>
+            获取签到病人信息
+            </summary>
+            <param name="ptno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetInPatientCheckedInfo(System.String)">
+            <summary>
+            获取 已经 签到病人信息
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.InsertIprslip(Pharmacy_Reporter.Entity.InPatientCheck)">
+            <summary>
+            住院发药记录登记
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetInpatientOrder(Pharmacy_Reporter.Entity.InPatientCheck)">
+            <summary>
+            获取日间手术病人医嘱
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetInpatientCheckedOrder(Pharmacy_Reporter.Entity.InPatientCheck)">
+            <summary>
+            获取日间手术病人医嘱
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.UpdateIOrderZG(Pharmacy_Reporter.Entity.InPatientCheck)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.ExixtOrder(System.String)">
+            <summary>
+            存在登记医嘱True;
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetWindowJobs">
+            <summary>
+            存在登记医嘱True;
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.GetWorkingWindowsLineUpNums(System.Boolean,System.Boolean)">
+            <summary>
+            排队人最少的窗口
+            </summary>
+            <param name="dm">是否取毒麻药品</param>
+            <param name="working"></param>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.InPatientSignIn(Pharmacy_Reporter.Entity.TWOCS_PRSLIP_CHECK,Pharmacy_Reporter.Entity.InPatientCheck)">
+            <summary>
+            报道登记
+            </summary>
+        </member>
+        <member name="M:Pharmacy_Reporter.ORM.PharmacyReporterManager.LogPharm(Pharmacy_Reporter.Entity.TWORD_JBINFO_180104)">
+            <summary>
+            记录发药分配窗口记录
+            </summary>
+        </member>
+    </members>
+</doc>

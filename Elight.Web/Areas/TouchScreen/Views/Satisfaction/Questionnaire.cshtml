@@ -1,0 +1,430 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="container-fluid fadeIn animated" style="padding: 10px;
+    background: white;
+    margin: 30px;">
+    <form id="form" class="layui-form" style="margin-top: 25px">
+        @Html.AntiForgeryToken()
+
+
+
+        <div class="layui-form-item" id="1-5">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（1）.门诊环境整洁</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q1" value="1" title="满意" checked />
+                    <input type="radio" name="Q1" value="0" title="非常满意" />
+                    <input type="radio" name="Q1" value="2" title="一般" />
+                    <input type="radio" name="Q1" value="3" title="不满意" />
+                    <input type="radio" name="Q1" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（2）.门诊就诊指示标志清楚</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q2" value="1" title="满意" checked />
+                    <input type="radio" name="Q2" value="0" title="非常满意" />
+                    <input type="radio" name="Q2" value="2" title="一般" />
+                    <input type="radio" name="Q2" value="3" title="不满意" />
+                    <input type="radio" name="Q2" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（3）.门诊厕所干净、方便使用</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q3" value="1" title="满意" checked />
+                    <input type="radio" name="Q3" value="0" title="非常满意" />
+                    <input type="radio" name="Q3" value="2" title="一般" />
+                    <input type="radio" name="Q3" value="3" title="不满意" />
+                    <input type="radio" name="Q3" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（4）.挂号过程合理</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q4" value="1" title="满意" checked />
+                    <input type="radio" name="Q4" value="0" title="非常满意" />
+                    <input type="radio" name="Q4" value="2" title="一般" />
+                    <input type="radio" name="Q4" value="3" title="不满意" />
+                    <input type="radio" name="Q4" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（5）.您能接收本次就诊等候的时间</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q5" value="1" title="满意" checked />
+                    <input type="radio" name="Q5" value="0" title="非常满意" />
+                    <input type="radio" name="Q5" value="2" title="一般" />
+                    <input type="radio" name="Q5" value="3" title="不满意" />
+                    <input type="radio" name="Q5" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item" id="6-10">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（6）.医院提供方便的预约复诊服务</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q6" value="1" title="满意" checked />
+                    <input type="radio" name="Q6" value="0" title="非常满意" />
+                    <input type="radio" name="Q6" value="2" title="一般" />
+                    <input type="radio" name="Q6" value="3" title="不满意" />
+                    <input type="radio" name="Q6" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（7）.医院提供方便的预约复诊服务</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q7" value="1" title="满意" checked />
+                    <input type="radio" name="Q7" value="0" title="非常满意" />
+                    <input type="radio" name="Q7" value="2" title="一般" />
+                    <input type="radio" name="Q7" value="3" title="不满意" />
+                    <input type="radio" name="Q7" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（8）.医生能听您讲述患病经历</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q8" value="1" title="满意" checked />
+                    <input type="radio" name="Q8" value="0" title="非常满意" />
+                    <input type="radio" name="Q8" value="2" title="一般" />
+                    <input type="radio" name="Q8" value="3" title="不满意" />
+                    <input type="radio" name="Q8" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（9）.医生能解答您的问题</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q9" value="1" title="满意" checked />
+                    <input type="radio" name="Q9" value="0" title="非常满意" />
+                    <input type="radio" name="Q9" value="2" title="一般" />
+                    <input type="radio" name="Q9" value="3" title="不满意" />
+                    <input type="radio" name="Q9" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（10）.医生的诊疗水平很好</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q10" value="1" title="满意" checked />
+                    <input type="radio" name="Q10" value="0" title="非常满意" />
+                    <input type="radio" name="Q10" value="2" title="一般" />
+                    <input type="radio" name="Q10" value="3" title="不满意" />
+                    <input type="radio" name="Q10" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item" id="11-15">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（11）.您与医务人员的沟通交流顺利</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q11" value="1" title="满意" checked />
+                    <input type="radio" name="Q11" value="0" title="非常满意" />
+                    <input type="radio" name="Q11" value="2" title="一般" />
+                    <input type="radio" name="Q11" value="3" title="不满意" />
+                    <input type="radio" name="Q11" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（12）.您能够接收等候化验或检查的时间(如抽血、X线、CT、核磁、B超、病理等)</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q12" value="1" title="满意" checked />
+                    <input type="radio" name="Q12" value="0" title="非常满意" />
+                    <input type="radio" name="Q12" value="2" title="一般" />
+                    <input type="radio" name="Q12" value="3" title="不满意" />
+                    <input type="radio" name="Q12" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（13）.您能够按时拿到化验或检查的时间(如抽血、X线、CT、核磁、B超、病理等)</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q13" value="1" title="满意" checked />
+                    <input type="radio" name="Q13" value="0" title="非常满意" />
+                    <input type="radio" name="Q13" value="2" title="一般" />
+                    <input type="radio" name="Q13" value="3" title="不满意" />
+                    <input type="radio" name="Q13" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（14）.您在门诊的缴费过程顺利</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q14" value="1" title="满意" checked />
+                    <input type="radio" name="Q14" value="0" title="非常满意" />
+                    <input type="radio" name="Q14" value="2" title="一般" />
+                    <input type="radio" name="Q14" value="3" title="不满意" />
+                    <input type="radio" name="Q14" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（15）.您在门诊的取药过程顺利</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q15" value="1" title="满意" checked />
+                    <input type="radio" name="Q15" value="0" title="非常满意" />
+                    <input type="radio" name="Q15" value="2" title="一般" />
+                    <input type="radio" name="Q15" value="3" title="不满意" />
+                    <input type="radio" name="Q15" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="layui-form-item" id="16-20">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（16）.在就诊中，医务人员注意保护您的隐私</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q16" value="1" title="满意" checked />
+                    <input type="radio" name="Q16" value="0" title="非常满意" />
+                    <input type="radio" name="Q16" value="2" title="一般" />
+                    <input type="radio" name="Q16" value="3" title="不满意" />
+                    <input type="radio" name="Q16" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（17）.您任务门诊服务流程合理</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q17" value="1" title="满意" checked />
+                    <input type="radio" name="Q17" value="0" title="非常满意" />
+                    <input type="radio" name="Q17" value="2" title="一般" />
+                    <input type="radio" name="Q17" value="3" title="不满意" />
+                    <input type="radio" name="Q17" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（18）.您对整个门诊服务满意</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q18" value="1" title="满意" checked />
+                    <input type="radio" name="Q18" value="0" title="非常满意" />
+                    <input type="radio" name="Q18" value="2" title="一般" />
+                    <input type="radio" name="Q18" value="3" title="不满意" />
+                    <input type="radio" name="Q18" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（19）.门诊护士服务好</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q19" value="1" title="满意" checked />
+                    <input type="radio" name="Q19" value="0" title="非常满意" />
+                    <input type="radio" name="Q19" value="2" title="一般" />
+                    <input type="radio" name="Q19" value="3" title="不满意" />
+                    <input type="radio" name="Q19" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline" style="width:100%;">
+                <label class="layui-form-label " style="width:20%;text-align:left;">（20）.住院期间，医务人员是否向您索要，收受红包及其他财务</label>
+                <div class="layui-input-inline" style="width:70%;">
+                    <input type="radio" name="Q20" value="1" title="满意" checked />
+                    <input type="radio" name="Q20" value="0" title="非常满意" />
+                    <input type="radio" name="Q20" value="2" title="一般" />
+                    <input type="radio" name="Q20" value="3" title="不满意" />
+                    <input type="radio" name="Q20" value="4" title="很不满意" />
+                </div>
+            </div>
+        </div>
+        <div id="buttom"></div>
+        @*<a href="#form" style="
+                text-align: center;
+                position: fixed;
+                top: 60%;
+                right: 40px;
+                width: 80px;
+                height: 80px;
+                padding: 20px;
+                display:block;
+                background-color:cornflowerblue;
+                border-radius:5px;
+            ">返回顶部</a>*@
+
+        <a href="#1-5" style="
+    text-align: center;
+    position: fixed;
+    top: 40%;
+    right: 40px;
+    width: 80px;
+    height: 40px;
+    padding: 10px;
+    display:block;
+    background-color:deepskyblue;
+    border-radius:5px;
+">1-5</a>
+        <a href="#6-10" style="
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    right: 40px;
+    width: 80px;
+    height: 40px;
+    padding: 10px;
+    display:block;
+    background-color:deepskyblue;
+    border-radius:5px;
+">6-10</a>
+        <a href="#11-15" style="
+    text-align: center;
+    position: fixed;
+    top: 60%;
+    right: 40px;
+    width: 80px;
+    height: 40px;
+    padding: 10px;
+    display:block;
+    background-color:deepskyblue;
+    border-radius:5px;
+">11-15</a>
+
+        <a href="#16-20" style="
+    text-align: center;
+    position: fixed;
+    top: 70%;
+    right: 40px;
+    width: 80px;
+    height: 40px;
+    padding: 10px;
+    display:block;
+    background-color:deepskyblue;
+    border-radius:5px;
+">16-20</a>
+
+
+
+
+
+        <div id="" class="layui-form-item" style="display: none">
+            <div class="layui-input-block">
+                <button id="btnSubmit" class="layui-btn" lay-submit lay-filter="add">提交</button>
+            </div>
+        </div>
+    </form>
+    <button onclick="btn_ok()" class="layui-btn" style="
+    text-align: center;
+    position: fixed;
+    top: 20%;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+    display:block;
+    background-color:coral;
+    border-radius:5px;
+">
+        提交
+    </button>
+</div>
+    <script src="~/Content/jquery/jquery.md5.js"></script>
+    <script>
+        var layer;
+        layui.use(['element', 'form', 'laydate', 'layer'], function () {
+            var form = layui.form();
+            var element = layui.element();
+            layer = parent.layer || layui.layer;
+        });
+        function btn_ok() {
+            layer.msg('提交完成！');
+            $.ajax({
+                url: "/TouchScreen/Satisfaction/SubmitBaseInfo",
+                data: {
+                     
+                    Q1: $("input[name='Q1']:checked").val(),
+                    Q2: $("input[name='Q2']:checked").val(),
+                    Q3: $("input[name='Q3']:checked").val(),
+                    Q4: $("input[name='Q4']:checked").val(),
+                    Q5: $("input[name='Q5']:checked").val(),
+                    Q6: $("input[name='Q6']:checked").val(),
+                    Q7: $("input[name='Q7']:checked").val(),
+                    Q8: $("input[name='Q8']:checked").val(),
+                    Q9: $("input[name='Q9']:checked").val(),
+                    Q10: $("input[name='Q10']:checked").val(),
+                    Q11: $("input[name='Q11']:checked").val(),
+                    Q12: $("input[name='Q12']:checked").val(),
+                    Q13: $("input[name='Q13']:checked").val(),
+                    Q14: $("input[name='Q14']:checked").val(),
+                    Q15: $("input[name='Q15']:checked").val(),
+                    Q16: $("input[name='Q16']:checked").val(),
+                    Q17: $("input[name='Q17']:checked").val(),
+                    Q18: $("input[name='Q18']:checked").val(),
+                    Q19: $("input[name='Q19']:checked").val(),
+                    Q20: $("input[name='Q20']:checked").val(),
+
+                    Q21: getQueryString("Q21"),
+                    Q22: getQueryString("Q22"),
+                    Q23: getQueryString("Q23"),
+                    Q24: getQueryString("Q24"),
+                    Q25: getQueryString("Q25"),
+                    Q26: getQueryString("Q26"),
+                    Q27: getQueryString("Q27"),
+                    Q28: getQueryString("Q28"),
+                    Q29: getQueryString("Q29"),
+                        
+                },
+                type: "post",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    $("#form").formSerialize(data);
+                }
+            });
+            setTimeout(function () { layer.closeAll() }, 1500)
+
+            
+        }
+
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+
+                return decodeURI(r[2]);//修改之后  
+            } else { return null; }
+        }
+    </script>
